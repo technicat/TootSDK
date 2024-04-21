@@ -371,7 +371,7 @@ extension TootClient {
     ///
     /// - Parameter feature: The feature to check if is supported.
     /// - Returns: `true` if the feature is supported.
-    public func supportsFeature(_ feature: TootFeature) -> Bool {
-        return feature.supportedFlavours.contains(flavour)
-    }
+    //    public func supportsFeature(_ feature: TootFeature) -> Bool {
+    //        return feature.supportedFlavours.contains(flavour)
+    //    }
 }
