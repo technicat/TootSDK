@@ -221,23 +221,6 @@ extension TootClient {
         return (data, httpResponse)
     }
 
-    internal func requireFlavour(_ supportedFlavours: Set<TootSDKFlavour>) throws {
-        // don't throw, we are checking platform support (see fedicat)
-        // before calling
-        //        if !supportedFlavours.contains(flavour) {
-        //            throw TootSDKError.unsupportedFlavour(current: flavour, required: supportedFlavours)
-        //        }
-    }
-
-    internal func requireFlavour(otherThan unsupportedFalvours: Set<TootSDKFlavour>) throws {
-        let supportedFlavours = Set(TootSDKFlavour.allCases).subtracting(unsupportedFalvours)
-        try requireFlavour(supportedFlavours)
-    }
-
-    internal func requireFeature(_ feature: TootFeature) throws {
-        try requireFlavour(feature.supportedFlavours)
-    }
-
     /// Performs a request that returns paginated arrays
     /// - Parameters:
     ///   - req: the HTTP request to execute
@@ -368,12 +351,4 @@ extension TootClient {
     public var isAnonymous: Bool {
         accessToken == nil
     }
-
-    /// Returns `true` if this instance of `TootClient` can perform methods that are related to given `feature`.
-    ///
-    /// - Parameter feature: The feature to check if is supported.
-    /// - Returns: `true` if the feature is supported.
-    //    public func supportsFeature(_ feature: TootFeature) -> Bool {
-    //        return feature.supportedFlavours.contains(flavour)
-    //    }
 }

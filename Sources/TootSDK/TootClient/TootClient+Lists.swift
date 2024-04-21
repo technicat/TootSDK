@@ -7,7 +7,6 @@ extension TootClient {
 
     /// Fetch all lists that the user owns.
     public func getLists() async throws -> [List] {
-        try requireFeature(.lists)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists"])
             $0.method = .get
@@ -21,7 +20,6 @@ extension TootClient {
     ///     - id: The ID of the List in the database.
     /// - Returns: the List, if successful, throws an error if not
     public func getList(id: String) async throws -> List {
-        try requireFeature(.lists)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id])
             $0.method = .get
@@ -33,7 +31,6 @@ extension TootClient {
     /// Create a new list.
     /// - Returns: the List created, if successful, throws an error if not
     public func createList(params: ListParams) async throws -> List {
-        try requireFeature(.lists)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists"])
             $0.method = .post
@@ -46,7 +43,6 @@ extension TootClient {
     /// Change the title of a list, or which replies to show.
     /// - Returns: the List created, if successful, throws an error if not
     public func createList(id: String, params: ListParams) async throws -> List {
-        try requireFeature(.lists)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id])
             $0.method = .put
@@ -58,7 +54,6 @@ extension TootClient {
 
     /// Delete a list
     public func deleteList(id: String) async throws {
-        try requireFeature(.lists)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id])
             $0.method = .delete
@@ -70,7 +65,6 @@ extension TootClient {
     /// View accounts in a list
     /// - Returns: a PagedResult with an array of accounts if successful, throws an error if not
     public func getListAccounts(id: String, _ pageInfo: PagedInfo? = nil, limit: Int? = nil) async throws -> PagedResult<[Account]> {
-        try requireFeature(.lists)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id, "accounts"])
             $0.method = .get
@@ -82,7 +76,6 @@ extension TootClient {
 
     /// Add accounts to a list
     public func addAccountsToList(id: String, params: AddAccountsToListParams) async throws {
-        try requireFeature(.lists)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id, "accounts"])
             $0.method = .post
@@ -94,7 +87,6 @@ extension TootClient {
 
     /// Remove account from a list
     public func removeAccountsFromList(id: String, params: RemoveAccountsFromListParams) async throws {
-        try requireFeature(.lists)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "lists", id, "accounts"])
             $0.method = .delete
@@ -103,11 +95,4 @@ extension TootClient {
 
         _ = try await fetch(req: req)
     }
-}
-
-extension TootFeature {
-
-    /// Ability to create lists.
-    ///
-    public static let lists = TootFeature(supportedFlavours: [.mastodon, .pleroma, .friendica, .akkoma, .firefish, .sharkey])
 }

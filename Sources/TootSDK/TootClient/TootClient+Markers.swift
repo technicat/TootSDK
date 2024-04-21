@@ -12,7 +12,6 @@ extension TootClient {
     ///
     /// - Parameter timelines: The timeline(s) for which markers should be fetched.
     public func getMarkers(for timelines: Set<Marker.Timeline>) async throws -> [Marker.Timeline: Marker] {
-        try requireFeature(.markers)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "markers"])
             $0.method = .get
@@ -31,7 +30,6 @@ extension TootClient {
         homeLastReadId: String? = nil,
         notificationsLastReadId: String? = nil
     ) async throws -> [Marker.Timeline: Marker] {
-        try requireFeature(.markers)
         var queryItems: [URLQueryItem] = []
         if let homeLastReadId {
             queryItems.append(URLQueryItem(name: "home[last_read_id]", value: homeLastReadId))
@@ -55,9 +53,4 @@ extension TootClient {
         }
         return queryItems
     }
-}
-
-extension TootFeature {
-    /// Ability to save timeline positions.
-    public static let markers = TootFeature(supportedFlavours: [.mastodon, .pleroma, .friendica, .akkoma])
 }

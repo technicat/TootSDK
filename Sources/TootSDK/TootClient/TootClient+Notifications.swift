@@ -46,7 +46,6 @@ extension TootClient {
 
     /// Dismiss a single notification from the server.
     public func dismissNotification(id: String) async throws {
-        try requireFeature(.dismissNotification)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "notifications", id, "dismiss"])
             $0.method = .post
@@ -60,7 +59,6 @@ extension TootClient {
     /// If you create a new subscription, the old subscription is deleted.
     @discardableResult
     public func createPushSubscription(params: PushSubscriptionParams) async throws -> PushSubscription {
-        try requireFeature(.pushSubscriptions)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "push", "subscription"])
             $0.method = .post
@@ -72,7 +70,6 @@ extension TootClient {
 
     /// View the PushSubscription currently associated with this access token.
     public func getPushSubscription() async throws -> PushSubscription {
-        try requireFeature(.pushSubscriptions)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "push", "subscription"])
             $0.method = .get
@@ -85,7 +82,6 @@ extension TootClient {
     ///
     /// To change fundamentals, a new subscription must be created instead.
     public func changePushSubscription(params: PushSubscriptionUpdateParams) async throws -> PushSubscription {
-        try requireFeature(.pushSubscriptions)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "push", "subscription"])
             $0.method = .put
@@ -97,21 +93,12 @@ extension TootClient {
 
     /// Removes the current Web Push API subscription.
     public func deletePushSubscription() async throws {
-        try requireFeature(.pushSubscriptions)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "push", "subscription"])
             $0.method = .delete
         }
         _ = try await fetch(req: req)
     }
-}
-
-extension TootFeature {
-    /// Ability to create Web Push API subscriptions to receive notifications.
-    public static let pushSubscriptions = TootFeature(supportedFlavours: [.mastodon, .akkoma, .friendica, .pleroma])
-
-    /// Ability to specify policy for push notifications.
-    public static let pushSubscriptionsPolicy = TootFeature(supportedFlavours: [.mastodon])
 }
 
 extension TootClient {
@@ -188,11 +175,4 @@ extension TootClient {
         }
         return queryParameters
     }
-}
-
-extension TootFeature {
-
-    /// Ability to dismiss (or mark as read) a single notification
-    ///
-    public static let dismissNotification = TootFeature(supportedFlavours: [.mastodon, .akkoma, .pleroma, .pixelfed, .friendica, .firefish])
 }

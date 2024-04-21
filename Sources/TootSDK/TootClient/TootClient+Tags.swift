@@ -24,7 +24,6 @@ extension TootClient {
     /// - Note: Requires hashtag following feature to be available.
     @discardableResult
     public func followTag(_ id: String) async throws -> Tag {
-        try requireFeature(.hashtagFollowing)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "tags", id, "follow"])
             $0.method = .post
@@ -39,7 +38,6 @@ extension TootClient {
     /// - Note: Requires hashtag following feature to be available.
     @discardableResult
     public func unfollowTag(_ id: String) async throws -> Tag {
-        try requireFeature(.hashtagFollowing)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "tags", id, "unfollow"])
             $0.method = .post
@@ -55,7 +53,6 @@ extension TootClient {
     /// - Returns: the tags requested
     /// - Note: Requires hashtag following feature to be available.
     public func getFollowedTags(_ pageInfo: PagedInfo? = nil, limit: Int? = nil) async throws -> PagedResult<[Tag]> {
-        try requireFeature(.hashtagFollowing)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "followed_tags"])
             $0.method = .get
@@ -64,11 +61,4 @@ extension TootClient {
 
         return try await fetchPagedResult(req)
     }
-}
-
-extension TootFeature {
-
-    /// Ability to follow hashtags.
-    ///
-    public static let hashtagFollowing = TootFeature(supportedFlavours: [.mastodon, .friendica, .pixelfed])
 }

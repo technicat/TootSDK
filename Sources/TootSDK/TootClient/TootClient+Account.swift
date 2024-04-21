@@ -40,7 +40,6 @@ extension TootClient {
     /// Update the user’s display and preferences.
     /// - Returns: The user’s own Account with source attribute
     public func updateCredentials(params: UpdateCredentialsParams) async throws -> Account {
-        try requireFeature(.updateCredentials)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
             if self.flavour == .pixelfed {
@@ -276,11 +275,4 @@ extension TootClient {
     }
 
     // TODO: - Lookup account ID from Webfinger address
-}
-
-extension TootFeature {
-
-    /// Ability to edit your profile
-    ///
-    public static let updateCredentials = TootFeature(supportedFlavours: [.mastodon, .akkoma, .pleroma, .pixelfed, .firefish, .sharkey])
 }

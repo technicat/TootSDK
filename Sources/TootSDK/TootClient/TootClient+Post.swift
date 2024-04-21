@@ -118,7 +118,6 @@ extension TootClient {
 
     /// Privately bookmark a post.
     public func bookmarkPost(id: String) async throws -> Post {
-        try requireFeature(.bookmark)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "bookmark"])
             $0.method = .post
@@ -128,7 +127,6 @@ extension TootClient {
 
     /// Remove a post from your private bookmarks.
     public func unbookmarkPost(id: String) async throws -> Post {
-        try requireFeature(.bookmark)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "unbookmark"])
             $0.method = .post
@@ -142,7 +140,6 @@ extension TootClient {
 
     /// Do not receive notifications for the thread that this post is part of. Must be a thread in which you are a participant.
     public func mutePost(id: String) async throws -> Post {
-        try requireFeature(.mutePost)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "mute"])
             $0.method = .post
@@ -152,7 +149,6 @@ extension TootClient {
 
     /// Start receiving notifications again for the thread that this post is part of.
     public func unmutePost(id: String) async throws -> Post {
-        try requireFeature(.mutePost)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "unmute"])
             $0.method = .post
@@ -230,7 +226,6 @@ extension TootClient {
 
     /// Obtain the source properties for a post so that it can be edited.
     public func getPostSource(id: String) async throws -> PostSource {
-        try requireFlavour(otherThan: [.friendica])
 
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "source"])
@@ -246,7 +241,6 @@ extension TootClient {
 
     /// Translate the post content into some language.
     public func getPostTranslation(id: String, params: PostTranslationParams? = nil) async throws -> Translation {
-        try requireFeature(.translatePost)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "translate"])
             $0.method = .post
@@ -254,25 +248,4 @@ extension TootClient {
         }
         return try await fetch(Translation.self, req)
     }
-}
-
-extension TootFeature {
-
-    /// Ability to bookmark posts
-    ///
-    public static let bookmark = TootFeature(supportedFlavours: [.mastodon, .akkoma, .pleroma, .pixelfed, .friendica, .firefish])
-}
-
-extension TootFeature {
-
-    /// Ability to mute a conversation that mentions you
-    ///
-    public static let mutePost = TootFeature(supportedFlavours: [.mastodon, .akkoma, .pleroma, .pixelfed, .friendica, .firefish])
-}
-
-extension TootFeature {
-
-    /// Ability to translate a post
-    ///
-    public static let translatePost = TootFeature(supportedFlavours: [.mastodon])
 }

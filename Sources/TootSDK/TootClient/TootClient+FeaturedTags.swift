@@ -14,7 +14,6 @@ extension TootClient {
     /// - Returns: The featured tags or an error if unable to retrieve.
     /// - Note: Requires featured tags feature to be available.
     public func getFeaturedTags(forUser userID: String) async throws -> [FeaturedTag] {
-        try requireFeature(.featuredTags)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", userID, "featured_tags"])
             $0.method = .get
@@ -27,7 +26,6 @@ extension TootClient {
     /// - Returns: The featured tags or an error if unable to retrieve.
     /// - Note: Requires featured tags feature to be available.
     public func getFeaturedTags() async throws -> [FeaturedTag] {
-        try requireFeature(.featuredTags)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "featured_tags"])
             $0.method = .get
@@ -40,7 +38,6 @@ extension TootClient {
     /// - Returns: Array of ``Tag``.
     /// - Note: Requires featured tags feature to be available.
     public func getFeaturedTagsSuggestions() async throws -> [Tag] {
-        try requireFeature(.featuredTags)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "featured_tags", "suggestions"])
             $0.method = .get
@@ -54,7 +51,6 @@ extension TootClient {
     /// - Note: Requires featured tags feature to be available.
     @discardableResult
     public func featureTag(name: String) async throws -> FeaturedTag {
-        try requireFeature(.featuredTags)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "featured_tags"])
             $0.method = .post
@@ -70,7 +66,6 @@ extension TootClient {
     /// - Parameter id: The ID of the FeaturedTag in the database.
     /// - Note: Requires featured tags feature to be available.
     public func unfeatureTag(id: String) async throws {
-        try requireFeature(.featuredTags)
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "featured_tags", id])
             $0.method = .delete
@@ -78,11 +73,4 @@ extension TootClient {
 
         _ = try await fetch(req: req)
     }
-}
-
-extension TootFeature {
-
-    /// Ability to promote hashtags on user profiles.
-    ///
-    public static let featuredTags = TootFeature(supportedFlavours: [.mastodon])
 }
