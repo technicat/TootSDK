@@ -9,17 +9,6 @@ import Foundation
 
 extension TootClient {
 
-    /// Generic post request function
-    /// - Parameters:
-    ///   - req: the http request to make
-    ///   - pageInfo: the page info to be applied
-    ///   - limit: the limit of posts being requested
-    /// - Returns: a paged result with an array of posts
-    internal func getPosts(_ req: HTTPRequestBuilder, _ pageInfo: PagedInfo? = nil, _ limit: Int? = nil) async throws -> PagedResult<[Post]> {
-
-        return try await fetchPagedResult(req)
-    }
-
     /// Provides the url paths as an array of strings, based on the type of timeline
     /// - Returns: the url paths creatd
     internal func getURLPaths(timeline: Timeline) -> [String] {
@@ -75,7 +64,7 @@ extension TootClient {
             $0.method = .get
             $0.query = getQueryParams(pageInfo, limit: limit, query: timelineQuery)
         }
-        return try await getPosts(req, pageInfo, limit)
+        return try await fetchPagedResult(req)
     }
 
 }
