@@ -164,9 +164,10 @@ extension TootClient {
             req.headers["Content-Type"] = "application/json"
         }
 
-        if flavour == .sharkey && req.body == nil {
+        // need this for Sharkey but seems to be generally correct
+        if req.body == nil {
             req.headers["Content-Type"] = nil
-            if req.method == .post || req.method == .put || req.method == .patch || req.method == .delete {
+            if req.method != .get {
                 req.headers["Content-Length"] = "0"
             }
         }
@@ -223,9 +224,9 @@ extension TootClient {
     internal func requireFlavour(_ supportedFlavours: Set<TootSDKFlavour>) throws {
         // don't throw, we are checking platform support (see fedicat)
         // before calling
-//        if !supportedFlavours.contains(flavour) {
-//            throw TootSDKError.unsupportedFlavour(current: flavour, required: supportedFlavours)
-//        }
+        //        if !supportedFlavours.contains(flavour) {
+        //            throw TootSDKError.unsupportedFlavour(current: flavour, required: supportedFlavours)
+        //        }
     }
 
     internal func requireFlavour(otherThan unsupportedFalvours: Set<TootSDKFlavour>) throws {
