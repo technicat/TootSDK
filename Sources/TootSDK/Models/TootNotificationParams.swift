@@ -38,18 +38,18 @@ public struct TootNotificationParams: Codable, Sendable {
     }
 }
 
-extension TootNotificationParams {
-    func corrected(for flavour: TootSDKFlavour) -> TootNotificationParams {
-        guard flavour == .friendica || flavour == .sharkey else { return self }
-        var params = self
-        if let types = params.types {
-            var correctedExcludeTypes = TootNotification.NotificationType.supported(by: flavour).subtracting(types)
-            if let excludeTypes = params.excludeTypes {
-                correctedExcludeTypes.formUnion(excludeTypes)
-            }
-            params.excludeTypes = correctedExcludeTypes
-            params.types = nil
-        }
-        return params
-    }
-}
+// extension TootNotificationParams {
+//     func corrected(for flavour: TootSDKFlavour) -> TootNotificationParams {
+//         guard flavour == .friendica || flavour == .sharkey else { return self }
+//         var params = self
+//         if let types = params.types {
+//             var correctedExcludeTypes = TootNotification.NotificationType.supported(by: flavour).subtracting(types)
+//             if let excludeTypes = params.excludeTypes {
+//                 correctedExcludeTypes.formUnion(excludeTypes)
+//             }
+//             params.excludeTypes = correctedExcludeTypes
+//             params.types = nil
+//         }
+//         return params
+//     }
+// }

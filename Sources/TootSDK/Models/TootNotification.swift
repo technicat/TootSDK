@@ -43,42 +43,42 @@ public struct TootNotification: Codable, Hashable, Identifiable, Sendable {
         case update = "update"
 
         /// Returns notification types supported by the given `flavour`.
-        public static func supported(by flavour: TootSDKFlavour) -> Set<NotificationType> {
-            switch flavour {
-            case .mastodon, .sharkey:
-                return Set(allCases)
-            case .pleroma, .akkoma:
-                return [.follow, .mention, .repost, .favourite, .poll, .followRequest, .update]
-            case .friendica:
-                return [.follow, .mention, .repost, .favourite, .poll]
-            case .pixelfed:
-                return [.follow, .mention, .repost, .favourite]
-            case .firefish:
-                return [.follow, .mention, .repost, .poll, .followRequest]
-            }
-        }
+        // public static func supported(by flavour: TootSDKFlavour) -> Set<NotificationType> {
+        //     switch flavour {
+        //     case .mastodon, .sharkey:
+        //         return Set(allCases)
+        //     case .pleroma, .akkoma:
+        //         return [.follow, .mention, .repost, .favourite, .poll, .followRequest, .update]
+        //     case .friendica:
+        //         return [.follow, .mention, .repost, .favourite, .poll]
+        //     case .pixelfed:
+        //         return [.follow, .mention, .repost, .favourite]
+        //     case .firefish:
+        //         return [.follow, .mention, .repost, .poll, .followRequest]
+        //     }
+        // }
 
-        /// Returns push notification types supported by the given `flavour`.
-        public static func supportedAsPush(by flavour: TootSDKFlavour) -> Set<NotificationType> {
-            switch flavour {
-            case .mastodon:
-                return Set(allCases)
-            case .pleroma, .akkoma, .friendica, .sharkey:
-                return [.follow, .mention, .repost, .favourite, .poll]
-            case .pixelfed, .firefish:
-                return []
-            }
-        }
+        // /// Returns push notification types supported by the given `flavour`.
+        // public static func supportedAsPush(by flavour: TootSDKFlavour) -> Set<NotificationType> {
+        //     switch flavour {
+        //     case .mastodon:
+        //         return Set(allCases)
+        //     case .pleroma, .akkoma, .friendica, .sharkey:
+        //         return [.follow, .mention, .repost, .favourite, .poll]
+        //     case .pixelfed, .firefish:
+        //         return []
+        //     }
+        // }
 
-        /// Returns true if this notification type is supported by the given `flavour`.
-        public func isSupported(by flavour: TootSDKFlavour) -> Bool {
-            return Self.supported(by: flavour).contains(self)
-        }
+        // /// Returns true if this notification type is supported by the given `flavour`.
+        // public func isSupported(by flavour: TootSDKFlavour) -> Bool {
+        //     return Self.supported(by: flavour).contains(self)
+        // }
 
-        /// Returns true if this notification type is supported as push notification by the given `flavour`.
-        public func isSupportedAsPush(by flavour: TootSDKFlavour) -> Bool {
-            return Self.supportedAsPush(by: flavour).contains(self)
-        }
+        // /// Returns true if this notification type is supported as push notification by the given `flavour`.
+        // public func isSupportedAsPush(by flavour: TootSDKFlavour) -> Bool {
+        //     return Self.supportedAsPush(by: flavour).contains(self)
+        // }
     }
 
     enum CodingKeys: String, CodingKey {

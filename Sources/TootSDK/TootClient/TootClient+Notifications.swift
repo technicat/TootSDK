@@ -105,7 +105,7 @@ extension TootClient {
     internal func createQuery(from params: TootNotificationParams) -> [URLQueryItem] {
         var queryParameters = [URLQueryItem]()
 
-        let params = params.corrected(for: flavour)
+       //  let params = params.corrected(for: flavour)
 
         if let types = params.types, !types.isEmpty {
             let name: String
