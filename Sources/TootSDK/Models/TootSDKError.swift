@@ -15,8 +15,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case requiredURLNotSet
     case missingParameter(parameterName: String)
     case invalidParameter(parameterName: String)
-    /// The requested operation is not supported by the current server flavour.
-    case unsupportedFlavour(current: TootSDKFlavour, required: Set<TootSDKFlavour>)
     case unexpectedError(_ description: String)
     /// The remote instance did not respond with the expected payload during authorization
     case clientAuthorizationFailed
@@ -41,9 +39,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "A required parameter is not provided: \(parameterName)."
         case .invalidParameter(let parameterName):
             return "A parameter has an illegal value: \(parameterName)."
-        case .unsupportedFlavour(let current, let required):
-            return
-                "Operation not supported for server flavour \(current), compatible flavours are: \(required.map({"\($0)"}).joined(separator: ", "))."
         case .unexpectedError(let description):
             return "Unexpected error: \(description)"
         case .clientAuthorizationFailed:
