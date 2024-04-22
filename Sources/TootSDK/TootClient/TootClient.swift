@@ -160,9 +160,10 @@ extension TootClient {
 
     /// Fetch data asynchronously and return the raw response.
     internal func fetch(req: HTTPRequestBuilder) async throws -> (Data, HTTPURLResponse) {
-        if req.headers.index(forKey: "Content-Type") == nil {
-            req.headers["Content-Type"] = "application/json"
-        }
+        // this should be set appropriately already
+        // if req.headers.index(forKey: "Content-Type") == nil {
+        //     req.headers["Content-Type"] = "application/json"
+        // }
 
         // need this for Sharkey but seems to be generally correct
         if req.body == nil {
