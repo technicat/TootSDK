@@ -21,8 +21,8 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
 
         let postParams = try container.decode(ScheduledPostParams.self, forKey: .params)
         self.params = postParams
-
-        let attachments = try container.decode([MediaAttachment].self, forKey: .mediaAttachments)
+        // pleroma/akkoma doesn't return attachments
+        let attachments = (try? container.decode([MediaAttachment].self, forKey: .mediaAttachments)) ?? []
 
         if let mediaIds = params.mediaIds {
             // sort attachments in the order of mediaIds
