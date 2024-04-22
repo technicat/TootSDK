@@ -38,6 +38,7 @@
 		7800247D2BD5F3C7004BB968 /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247A2BD5F3C7004BB968 /* UIFont+Traits.swift */; };
 		7800247E2BD5F3C7004BB968 /* NSAttributedString+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247B2BD5F3C7004BB968 /* NSAttributedString+helpers.swift */; };
 		7800247F2BD5F3C7004BB968 /* NSFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247C2BD5F3C7004BB968 /* NSFont+Traits.swift */; };
+		780024822BD5F94F004BB968 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 780024812BD5F94F004BB968 /* SwiftSoup */; };
 		B51EFA1B299FD5BA004F6FF1 /* EmojiText in Frameworks */ = {isa = PBXBuildFile; productRef = B51EFA1A299FD5BA004F6FF1 /* EmojiText */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 				55B19AE8297E208E0097B1F8 /* NukeUI in Frameworks */,
 				550CF66C2931F6A200D07EA0 /* SwiftKeychainWrapper in Frameworks */,
 				55B19AE6297E208E0097B1F8 /* Nuke in Frameworks */,
+				780024822BD5F94F004BB968 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +230,7 @@
 				55B19AE5297E208E0097B1F8 /* Nuke */,
 				55B19AE7297E208E0097B1F8 /* NukeUI */,
 				B51EFA1A299FD5BA004F6FF1 /* EmojiText */,
+				780024812BD5F94F004BB968 /* SwiftSoup */,
 			);
 			productName = "TootSDK-Demo";
 			productReference = 55ACC1DC2917618F0046363F /* SwiftUI-Toot.app */;
@@ -261,6 +264,7 @@
 				550CF66A2931F6A200D07EA0 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				55B19AE4297E208E0097B1F8 /* XCRemoteSwiftPackageReference "Nuke" */,
 				B51EFA19299FD5BA004F6FF1 /* XCRemoteSwiftPackageReference "EmojiText" */,
+				780024802BD5F94F004BB968 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = 55ACC1DD2917618F0046363F /* Products */;
 			projectDirPath = "";
@@ -534,6 +538,14 @@
 				minimumVersion = 11.6.2;
 			};
 		};
+		780024802BD5F94F004BB968 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.2;
+			};
+		};
 		B51EFA19299FD5BA004F6FF1 /* XCRemoteSwiftPackageReference "EmojiText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/divadretlaw/EmojiText";
@@ -563,6 +575,11 @@
 		55B8B17A2917675700339479 /* TootSDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TootSDK;
+		};
+		780024812BD5F94F004BB968 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 780024802BD5F94F004BB968 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 		B51EFA1A299FD5BA004F6FF1 /* EmojiText */ = {
 			isa = XCSwiftPackageProductDependency;
