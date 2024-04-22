@@ -55,7 +55,7 @@ extension TootClient {
         if let forward = params.forward {
             queryItems.append(.init(name: "forward", value: String(forward).lowercased()))
         }
-            queryItems.append(.init(name: "category", value: params.category.rawValue))
+        queryItems.append(.init(name: "category", value: params.category.rawValue))
         for ruleId in params.ruleIds {
             queryItems.append(.init(name: "rule_ids[]", value: String(ruleId)))
         }
