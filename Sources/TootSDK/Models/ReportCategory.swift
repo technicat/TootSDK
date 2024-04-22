@@ -21,23 +21,4 @@ public enum ReportCategory: String, CaseIterable, Codable {
     case terrorism
     case other
     case violation
-
-    public static let pixelfedSupported: Set<ReportCategory> = [
-        .spam,
-        .sensitive,
-        .abusive,
-        .underage,
-        .violence,
-        .copyright,
-        .impersonation,
-        .scam,
-        .terrorism,
-    ]
-
-    public static let mastodonSupported: Set<ReportCategory> = [
-        .spam,
-        .legal,
-        .other,
-        .violation,
-    ]
 }
