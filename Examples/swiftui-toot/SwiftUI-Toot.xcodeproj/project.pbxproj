@@ -30,6 +30,14 @@
 		55B8B17B2917675700339479 /* TootSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 55B8B17A2917675700339479 /* TootSDK */; };
 		55C14EB02954367B00579342 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C14EAF2954367B00579342 /* PostView.swift */; };
 		55F9D91429190A9E0062CFA9 /* TootManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F9D91329190A9E0062CFA9 /* TootManager.swift */; };
+		780024732BD5F0EC004BB968 /* UIKitAttribStringRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800246F2BD5F0EC004BB968 /* UIKitAttribStringRenderer.swift */; };
+		780024742BD5F0EC004BB968 /* AppKitAttribStringRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780024702BD5F0EC004BB968 /* AppKitAttribStringRenderer.swift */; };
+		780024752BD5F0EC004BB968 /* TootHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780024712BD5F0EC004BB968 /* TootHTML.swift */; };
+		780024762BD5F0EC004BB968 /* UniversalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780024722BD5F0EC004BB968 /* UniversalRenderer.swift */; };
+		780024792BD5F1A4004BB968 /* TootContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780024782BD5F1A4004BB968 /* TootContent.swift */; };
+		7800247D2BD5F3C7004BB968 /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247A2BD5F3C7004BB968 /* UIFont+Traits.swift */; };
+		7800247E2BD5F3C7004BB968 /* NSAttributedString+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247B2BD5F3C7004BB968 /* NSAttributedString+helpers.swift */; };
+		7800247F2BD5F3C7004BB968 /* NSFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800247C2BD5F3C7004BB968 /* NSFont+Traits.swift */; };
 		B51EFA1B299FD5BA004F6FF1 /* EmojiText in Frameworks */ = {isa = PBXBuildFile; productRef = B51EFA1A299FD5BA004F6FF1 /* EmojiText */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +64,14 @@
 		55B8B1772917673500339479 /* AuthorizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeView.swift; sourceTree = "<group>"; };
 		55C14EAF2954367B00579342 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		55F9D91329190A9E0062CFA9 /* TootManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootManager.swift; sourceTree = "<group>"; };
+		7800246F2BD5F0EC004BB968 /* UIKitAttribStringRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitAttribStringRenderer.swift; sourceTree = "<group>"; };
+		780024702BD5F0EC004BB968 /* AppKitAttribStringRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppKitAttribStringRenderer.swift; sourceTree = "<group>"; };
+		780024712BD5F0EC004BB968 /* TootHTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TootHTML.swift; sourceTree = "<group>"; };
+		780024722BD5F0EC004BB968 /* UniversalRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalRenderer.swift; sourceTree = "<group>"; };
+		780024782BD5F1A4004BB968 /* TootContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TootContent.swift; sourceTree = "<group>"; };
+		7800247A2BD5F3C7004BB968 /* UIFont+Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Traits.swift"; sourceTree = "<group>"; };
+		7800247B2BD5F3C7004BB968 /* NSAttributedString+helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+helpers.swift"; sourceTree = "<group>"; };
+		7800247C2BD5F3C7004BB968 /* NSFont+Traits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFont+Traits.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +103,9 @@
 		55539B232984CA7500B2029D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7800247B2BD5F3C7004BB968 /* NSAttributedString+helpers.swift */,
+				7800247C2BD5F3C7004BB968 /* NSFont+Traits.swift */,
+				7800247A2BD5F3C7004BB968 /* UIFont+Traits.swift */,
 				55539B212984CA6F00B2029D /* Array+RemoteEmoji.swift */,
 			);
 			path = Extensions;
@@ -124,6 +143,7 @@
 		55ACC1DE2917618F0046363F /* TootSDK-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				780024772BD5F0F8004BB968 /* HTMLRenderer */,
 				55539B232984CA7500B2029D /* Extensions */,
 				55ACC1DF2917618F0046363F /* TootSDK_DemoApp.swift */,
 				55F9D91329190A9E0062CFA9 /* TootManager.swift */,
@@ -172,6 +192,18 @@
 				00116A4529996CBF008EBC21 /* SearchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		780024772BD5F0F8004BB968 /* HTMLRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				780024782BD5F1A4004BB968 /* TootContent.swift */,
+				780024702BD5F0EC004BB968 /* AppKitAttribStringRenderer.swift */,
+				780024712BD5F0EC004BB968 /* TootHTML.swift */,
+				7800246F2BD5F0EC004BB968 /* UIKitAttribStringRenderer.swift */,
+				780024722BD5F0EC004BB968 /* UniversalRenderer.swift */,
+			);
+			path = HTMLRenderer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,18 +290,26 @@
 			files = (
 				55B8B1782917673500339479 /* AuthorizeView.swift in Sources */,
 				55F9D91429190A9E0062CFA9 /* TootManager.swift in Sources */,
+				7800247E2BD5F3C7004BB968 /* NSAttributedString+helpers.swift in Sources */,
 				550CF6662931E3AC00D07EA0 /* PostOperationsView.swift in Sources */,
 				552BFB0129409AB300FB46D3 /* ScheduledPostOperationsView.swift in Sources */,
+				7800247F2BD5F3C7004BB968 /* NSFont+Traits.swift in Sources */,
+				780024752BD5F0EC004BB968 /* TootHTML.swift in Sources */,
 				55C14EB02954367B00579342 /* PostView.swift in Sources */,
 				557DD954297DF58E003C964C /* FeedViewModel.swift in Sources */,
+				7800247D2BD5F3C7004BB968 /* UIFont+Traits.swift in Sources */,
+				780024792BD5F1A4004BB968 /* TootContent.swift in Sources */,
+				780024732BD5F0EC004BB968 /* UIKitAttribStringRenderer.swift in Sources */,
 				00116A4629996CBF008EBC21 /* SearchView.swift in Sources */,
 				553CFB392952B99700F3EB69 /* AccountView.swift in Sources */,
 				55B8B1742917627D00339479 /* FeedView.swift in Sources */,
 				553CFB3B2952BD0200F3EB69 /* ButtonView.swift in Sources */,
 				550CF66E2931F9A000D07EA0 /* UserAccountView.swift in Sources */,
+				780024742BD5F0EC004BB968 /* AppKitAttribStringRenderer.swift in Sources */,
 				559A90F2299CDD6300959E12 /* FeedSelectionView.swift in Sources */,
 				55B8B1722917620C00339479 /* MakePostView.swift in Sources */,
 				55539B222984CA6F00B2029D /* Array+RemoteEmoji.swift in Sources */,
+				780024762BD5F0EC004BB968 /* UniversalRenderer.swift in Sources */,
 				553CFB402952C26000F3EB69 /* AccountItemView.swift in Sources */,
 				553CFB3E2952C23A00F3EB69 /* RelationshipView.swift in Sources */,
 				55ACC1E02917618F0046363F /* TootSDK_DemoApp.swift in Sources */,
@@ -402,10 +442,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TootSDK-Demo/Preview Content\"";
-				DEVELOPMENT_TEAM = MS6MBBXCFJ;
+				DEVELOPMENT_TEAM = 48LYU3H3DB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftUI-Toot-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -415,7 +456,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lightbeamapps.TootSDK-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.technicat.TootSDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -431,10 +472,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TootSDK-Demo/Preview Content\"";
-				DEVELOPMENT_TEAM = MS6MBBXCFJ;
+				DEVELOPMENT_TEAM = 48LYU3H3DB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftUI-Toot-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -444,7 +486,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lightbeamapps.TootSDK-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.technicat.TootSDK-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
