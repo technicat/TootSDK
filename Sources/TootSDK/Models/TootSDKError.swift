@@ -14,7 +14,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case invalidStatusCode(data: Data, response: HTTPURLResponse)
     case requiredURLNotSet
     case missingParameter(parameterName: String)
-    case invalidParameter(parameterName: String)
     case unexpectedError(_ description: String)
     /// The remote instance did not respond with the expected payload during authorization
     case clientAuthorizationFailed
@@ -22,6 +21,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case internalError(_ description: String)
     /// A specific error message was returned from the server
     case serverError(_ message: String)
+      /// post can't be scheduled less than five minutes from now
+    case scheduledTooSoon(_ date: Date)
 
     public var errorDescription: String? {
         switch self {
@@ -37,8 +38,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "[TootSDK bug] HTTPRequestBuilder was used without setting a url."
         case .missingParameter(let parameterName):
             return "A required parameter is not provided: \(parameterName)."
-        case .invalidParameter(let parameterName):
-            return "A parameter has an illegal value: \(parameterName)."
         case .unexpectedError(let description):
             return "Unexpected error: \(description)"
         case .clientAuthorizationFailed:
@@ -47,6 +46,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "[TootSDK bug] " + description + "."
         case .serverError(let message):
             return message
+        case .scheduledTooSoon(_):
+           return "Scheduled publish date is too soon."
         }
     }
 }

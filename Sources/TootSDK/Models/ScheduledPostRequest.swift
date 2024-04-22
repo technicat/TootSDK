@@ -55,7 +55,7 @@ extension ScheduledPostRequest {
         if scheduledAtDate < Date().addingTimeInterval(TimeInterval(5.0 * 60.0)) {
             // scheduled_at must be at least 5 mins into the future
             // https://github.com/mastodon/mastodon/pull/9706
-            throw TootSDKError.invalidParameter(parameterName: "scheduledAt")
+            throw TootSDKError.scheduledTooSoon(scheduledAtDate)
         }
 
         self = ScheduledPostRequest(

@@ -23,7 +23,7 @@ final class ScheduledPostTests: XCTestCase {
 
         // act
         XCTAssertThrowsError(try ScheduledPostRequest(from: params)) { error in
-            XCTAssertEqual(error as? TootSDKError, TootSDKError.invalidParameter(parameterName: "scheduledAt"))
+            XCTAssertEqual(error as? TootSDKError, TootSDKError.scheduledTooSoon(params.scheduledAt!))
         }
     }
 
