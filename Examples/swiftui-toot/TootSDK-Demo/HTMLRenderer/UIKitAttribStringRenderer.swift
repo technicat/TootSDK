@@ -7,7 +7,7 @@
     import WebURL
     import WebURLFoundationExtras
     import SwiftSoup
-import TootSDK
+    import TootSDK
 
     public class UIKitAttribStringRenderer {
 

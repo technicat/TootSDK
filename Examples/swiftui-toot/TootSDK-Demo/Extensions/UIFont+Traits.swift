@@ -7,7 +7,7 @@
     import CoreText
     import class UIKit.UIFont
     import class UIKit.UIFontDescriptor
-import TootSDK
+    import TootSDK
 
     extension UIFont {
 
