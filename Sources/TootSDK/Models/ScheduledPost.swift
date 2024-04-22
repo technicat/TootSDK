@@ -22,6 +22,8 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         let postParams = try container.decode(ScheduledPostParams.self, forKey: .params)
         self.params = postParams
         // pleroma/akkoma doesn't return attachments
+        // maybe should make mediaAttachments optional
+        // to distinguish unsupplied attachment from no attachments
         let attachments = (try? container.decode([MediaAttachment].self, forKey: .mediaAttachments)) ?? []
 
         if let mediaIds = params.mediaIds {
