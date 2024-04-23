@@ -24,7 +24,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         // pleroma/akkoma doesn't return attachments
         // maybe should make mediaAttachments optional
         // to distinguish unsupplied attachment from no attachments
-        let attachments = (try? container.decode([MediaAttachment].self, forKey: .mediaAttachments)) ?? []
+        let attachments = (try? container.decodeIfPresent([MediaAttachment].self, forKey: .mediaAttachments)) ?? []
 
         if let mediaIds = params.mediaIds {
             // sort attachments in the order of mediaIds
