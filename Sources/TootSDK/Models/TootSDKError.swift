@@ -30,8 +30,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "Unable to complete authorization: the client id, client secret and authorization code must be set."
         case .nonHTTPURLResponse:
             return "Unexpected response."
-        case .invalidStatusCode(_, let response):
-            return "Invalid HTTP status code: \(response.statusCode)."
+        case .invalidStatusCode(let data, let response):
+            return "HTTP \(response.statusCode) \(HTTPURLResponse.localizedString(forStatusCode: response.statusCode)) \(data.prettyPrintedJSONString ??  "Undecodable")"
         case .requiredURLNotSet:
             return "[TootSDK bug] HTTPRequestBuilder was used without setting a url."
         case .missingParameter(let parameterName):
