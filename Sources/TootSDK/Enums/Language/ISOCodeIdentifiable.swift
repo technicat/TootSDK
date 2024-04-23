@@ -1,7 +1,7 @@
 import Foundation
 
 extension ISOCode: Identifiable {
-  public var id: String {
-    self.rawValue
-  }
+    public var id: String {
+        self.rawValue
+    }
 }

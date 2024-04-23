@@ -31,7 +31,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
         case .nonHTTPURLResponse:
             return "Unexpected response."
         case .invalidStatusCode(let data, let response):
-            return "HTTP \(response.statusCode) \(HTTPURLResponse.localizedString(forStatusCode: response.statusCode)) \(data.prettyPrintedJSONString ??  "Undecodable")"
+            return
+                "HTTP \(response.statusCode) \(HTTPURLResponse.localizedString(forStatusCode: response.statusCode)) \(data.prettyPrintedJSONString ??  "Undecodable")"
         case .requiredURLNotSet:
             return "[TootSDK bug] HTTPRequestBuilder was used without setting a url."
         case .missingParameter(let parameterName):
