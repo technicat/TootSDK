@@ -1,2 +1,0 @@
-extension ScheduledPost: Pageable {
-}
