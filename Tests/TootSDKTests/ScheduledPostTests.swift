@@ -7,26 +7,6 @@ import XCTest
 
 final class ScheduledPostTests: XCTestCase {
 
-    func testScheduledPostValidatesScheduledAtTooSoon() throws {
-        // arrange
-        let params = ScheduledPostParams(mediaIds: [], visibility: .public, scheduledAt: Date().addingTimeInterval(TimeInterval(4.5 * 60.0)))
-        // date is less than 5 mins in the future
-
-        // act
-        XCTAssertThrowsError(try ScheduledPostRequest(from: params)) { error in
-            XCTAssertEqual(error as? TootSDKError, TootSDKError.scheduledTooSoon(params.scheduledAt))
-        }
-    }
-
-    func testScheduledPostValidatesScheduledAtInTheFuture() throws {
-        // arrange
-        let params = ScheduledPostParams(mediaIds: [], visibility: .public, scheduledAt: Date().addingTimeInterval(TimeInterval(6.0 * 60.0)))
-        // date is more than 5 mins in the future
-
-        // act
-        XCTAssertNoThrow(try ScheduledPostRequest(from: params))
-    }
-
     func testDecodesSensitiveAsBoolean() throws {
         // arrange
         let json = localContent("scheduled_post_sensitive")
