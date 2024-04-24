@@ -1,8 +1,8 @@
-//import TootSDK
-//
-//extension Post {
-//
-//  public var hasContext: Bool {
-//    isReply || hasReplies
-//  }
-//}
+import TootSDK
+
+extension Post {
+
+  public var hasContext: Bool {
+    isReply || hasReplies
+  }
+}
