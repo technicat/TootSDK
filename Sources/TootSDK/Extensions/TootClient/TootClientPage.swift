@@ -1,5 +1,3 @@
-import TootSDK
-
 extension TootClient {
 
     // doesn't need to be in TootClient, really

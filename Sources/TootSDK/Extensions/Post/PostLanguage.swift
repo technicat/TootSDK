@@ -1,5 +1,4 @@
 import Foundation
-import TootSDK
 
 extension Post {
 

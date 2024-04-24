@@ -1,5 +1,3 @@
-import TootSDK
-
 extension Post {
 
     /// totally public
