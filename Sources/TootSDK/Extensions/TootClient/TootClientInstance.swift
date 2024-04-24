@@ -1,5 +1,3 @@
-import TootSDK
-
 extension TootClient {
 
     /// call this instead of getInstanceInfo

@@ -1,5 +1,3 @@
-import TootSDK
-
 extension TootClient {
 
     public var debug: Bool {

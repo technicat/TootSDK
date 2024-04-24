@@ -1,5 +1,3 @@
-import TootSDK
-
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/announcements/#put-reactions

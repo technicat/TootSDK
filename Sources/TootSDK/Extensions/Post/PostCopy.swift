@@ -1,5 +1,3 @@
-import TootSDK
-
 extension Post {
 
     public convenience init(from post: Post) {

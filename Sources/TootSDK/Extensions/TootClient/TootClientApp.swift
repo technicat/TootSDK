@@ -1,5 +1,3 @@
-import TootSDK
-
 // should we rename to appName, appSecret, etc.?
 /// https://docs.joinmastodon.org/entities/Application/
 extension TootClient {

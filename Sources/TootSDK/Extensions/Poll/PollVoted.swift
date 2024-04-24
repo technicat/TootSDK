@@ -1,5 +1,3 @@
-import TootSDK
-
 extension Poll {
 
     public var isVotable: Bool {

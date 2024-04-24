@@ -1,5 +1,3 @@
-import TootSDK
-
 extension TootClient {
     /// doesn't necessarily dismiss, acts more like mark as read
     /// https://docs.joinmastodon.org/methods/announcements/#dismiss
