@@ -2,6 +2,7 @@ import Foundation
 
 extension TootClient {
 
+    @available(iOS 16.0, *)
     @available(macOS 13.0, *)
     public func upload(_ data: Data, type: MIMEType, text: String?, wait: Int = 0) async throws
         -> UploadedMediaAttachment
