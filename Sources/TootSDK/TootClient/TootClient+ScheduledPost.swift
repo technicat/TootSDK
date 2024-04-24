@@ -81,7 +81,7 @@ extension TootClient {
     /// - Parameter id: the ID of the post to be changed
     /// - Parameter params: the updated content (publish date) of the post to be posted
     /// - Returns: the post after the update
-    public func updateScheduledPostDate(id: String, _ params: ScheduledPostUpdateParams) async throws -> ScheduledPost? {
+    public func updateScheduledPostDate(id: String, _ params: ScheduledPostUpdateParams) async throws -> ScheduledPost {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "scheduled_statuses", id])
             $0.method = .put

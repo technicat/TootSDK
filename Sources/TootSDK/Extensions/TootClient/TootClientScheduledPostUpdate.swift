@@ -3,10 +3,11 @@ import Foundation
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/scheduled_statuses/#update
+    @discardableResult
     public func update(
         _ post: ScheduledPost,
         date: Date
-    ) async throws -> ScheduledPost? {
+    ) async throws -> ScheduledPost {
         try await updateScheduledPostDate(
             id: post.id,
             ScheduledPostUpdateParams(
