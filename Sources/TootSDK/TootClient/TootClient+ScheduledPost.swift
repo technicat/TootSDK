@@ -80,14 +80,13 @@ extension TootClient {
 
     /// Edit a given post to change its text, sensitivity, media attachments, or poll. Note that editing a poll’s options will reset the votes.
     /// - Parameter id: the ID of the post to be changed
-    /// - Parameter params: the updated content of the post to be posted
+    /// - Parameter params: the updated content (publish date) of the post to be posted
     /// - Returns: the post after the update
-    public func updateScheduledPostDate(id: String, _ params: ScheduledPostParams) async throws -> ScheduledPost? {
-        let requestParams = try ScheduledPostRequest(from: params)
+    public func updateScheduledPostDate(id: String, _ params: ScheduledPostUpdateParams) async throws -> ScheduledPost? {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "scheduled_statuses", id])
             $0.method = .put
-            $0.body = try .multipart(requestParams, boundary: UUID().uuidString)
+            $0.body = try .json(params, encoder: self.encoder)
         }
 
         return try await fetch(ScheduledPost.self, req)
