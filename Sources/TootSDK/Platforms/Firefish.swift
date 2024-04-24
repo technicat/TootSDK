@@ -3,7 +3,7 @@ open class Firefish: MastoAPI {
     open override var name: String { "Firefish" }
 
     open override var reportCats: [ReportCategory] { [] }
-    open override var suggestionSources: Suggestions {
+    open override var suggestionSources: SuggestionSources {
         [
             .global
         ]
@@ -30,7 +30,7 @@ open class Firefish: MastoAPI {
     open override var supportsTranslationLanguages: Bool { false }
     open override var supportsTrendingTags: Bool { false }
 
-    open override var notificationTypes: Notifications {
+    open override var notificationTypes: NotificationTypes {
         [.follow, .mention, .repost, .favourite, .poll, .followRequest]
     }
 }

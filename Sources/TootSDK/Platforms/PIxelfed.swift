@@ -39,7 +39,7 @@ open class Pixelfed: MastoAPI {
     open override var supportsTrendingPosts: Bool { false }
     open override var supportsTrendingTags: Bool { false }
 
-    open override var notificationTypes: Notifications {
+    open override var notificationTypes: NotificationTypes {
         []
     }
 
@@ -65,6 +65,6 @@ open class Pixelfed: MastoAPI {
     }
 
     // doesn't support suggestions
-    open override var suggestionSources: Suggestions { [] }
+    open override var suggestionSources: SuggestionSources { [] }
 
 }

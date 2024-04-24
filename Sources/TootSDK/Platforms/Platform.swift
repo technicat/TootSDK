@@ -5,13 +5,13 @@ public protocol Platform {
     /// post languages (maybe rename)
     var languages: [ISOCode] { get }
     ///
-    var notificationTypes: Notifications { get }
+    var notificationTypes: NotificationTypes { get }
     /// post visibilities
     var postVis: [Post.Visibility] { get }
     /// (problem) report categories
     var reportCats: [ReportCategory] { get }
     /// suggestion sources
-    var suggestionSources: Suggestions { get }
+    var suggestionSources: SuggestionSources { get }
 
     var supportsAnnouncements: Bool { get }
     /// mark announcement as read
@@ -118,5 +118,5 @@ extension Platform {
 
 }
 
-public typealias Notifications = Set<TootNotification.NotificationType>
-public typealias Suggestions = Set<Suggestion.Source>
+public typealias NotificationTypes = Set<TootNotification.NotificationType>
+public typealias SuggestionSources = Set<Suggestion.Source>

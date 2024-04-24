@@ -116,8 +116,8 @@ open class MastoAPI: Platform {
 
     // todo - add admin types
     /// https://docs.joinmastodon.org/methods/notifications/#get
-    open var notificationTypes: Notifications {
-        var types: Notifications = [
+    open var notificationTypes: NotificationTypes {
+        var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite, .poll, .followRequest, .post, .update,
         ]
         if version >= Version(3, 1) {
@@ -129,9 +129,9 @@ open class MastoAPI: Platform {
         return types
     }
 
-    let noteTypes31: Notifications = [.followRequest]
+    let noteTypes31: NotificationTypes = [.followRequest]
 
-    let noteTypes33: Notifications = [.post]
+    let noteTypes33: NotificationTypes = [.post]
 
     open var postVis: [Post.Visibility] {
         [.public, .unlisted, .private, .direct]
@@ -160,7 +160,7 @@ open class MastoAPI: Platform {
     }
 
     // v2
-    open var suggestionSources: Suggestions {
+    open var suggestionSources: SuggestionSources {
         version >= Version(3, 4, 0)
             ? [
                 .staff,

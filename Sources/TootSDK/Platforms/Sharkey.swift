@@ -23,13 +23,13 @@ open class Sharkey: MastoAPI {
     open override var supportsTagStats: Bool { false }
     open override var supportsTagTimeline: Bool { false }  // bug
 
-    open override var suggestionSources: Suggestions {
+    open override var suggestionSources: SuggestionSources {
         [
             .global
         ]
     }
 
-    open override var notificationTypes: Notifications {
+    open override var notificationTypes: NotificationTypes {
         []
     }
 
