@@ -1,4 +1,4 @@
-//import TootSDK
-//
-//extension Post: Pageable {
-//}
+import TootSDK
+
+extension Post: Pageable {
+}
