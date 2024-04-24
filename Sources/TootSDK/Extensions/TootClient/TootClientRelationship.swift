@@ -1,6 +1,7 @@
 // https://docs.joinmastodon.org/methods/accounts/#relationships
 extension TootClient {
 
+    @discardableResult
     public func getRelationship(with account: Account, withSuspended: Bool? = nil) async throws
         -> Relationship?
     {

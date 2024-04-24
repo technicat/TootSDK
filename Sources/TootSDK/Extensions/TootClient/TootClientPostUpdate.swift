@@ -3,6 +3,7 @@ extension TootClient {
     /// todo - add mediaAttributes
     /// todo - add poll
     /// https://docs.joinmastodon.org/methods/statuses/#edit
+    @discardableResult
     public func update(
         _ post: Post, text: String, spoiler: String? = nil, sensitive: Bool? = nil,
         language: String? = nil,
