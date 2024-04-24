@@ -1,0 +1,2 @@
+extension Announcement: Pageable {
+}
