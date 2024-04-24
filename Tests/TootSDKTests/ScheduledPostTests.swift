@@ -21,7 +21,7 @@ final class ScheduledPostTests: XCTestCase {
     func testScheduledPostValidatesScheduledAtInTheFuture() throws {
         // arrange
         let params = ScheduledPostParams(mediaIds: [], visibility: .public, scheduledAt: Date().addingTimeInterval(TimeInterval(6.0 * 60.0)))
-       // date is more than 5 mins in the future
+        // date is more than 5 mins in the future
 
         // act
         XCTAssertNoThrow(try ScheduledPostRequest(from: params))
