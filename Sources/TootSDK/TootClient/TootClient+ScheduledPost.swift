@@ -10,11 +10,11 @@ extension TootClient {
     ///   - ScheduledPostParams: post components to be published
     /// - Returns: the ScheduledPost, if successful, throws an error if not
     public func schedulePost(_ params: ScheduledPostParams) async throws -> ScheduledPost {
-        let requestParams = try ScheduledPostRequest(from: params)
+     //   let requestParams = try ScheduledPostRequest(from: params)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses"])
             $0.method = .post
-            $0.body = try .multipart(requestParams, boundary: UUID().uuidString)
+            $0.body = try .multipart(params, boundary: UUID().uuidString)
         }
 
         return try await fetch(ScheduledPost.self, req)

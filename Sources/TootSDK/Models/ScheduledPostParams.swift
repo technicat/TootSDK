@@ -9,7 +9,7 @@
 
 /// Parameters to post a new scheduled post. This is converted to a ScheduledPostRequest for encoding.
 public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
-
+    
     ///  Creates parameters to create a new scheduled post
     /// - Parameters:
     ///   - text: The text content of the post. If mediaIds is provided, this becomes optional. Attaching a poll is optional while post is provided.
@@ -28,21 +28,21 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
         language: String? = nil, scheduledAt: Date, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
         contentType: String? = nil, inReplyToConversationId: String? = nil
     ) {
-
+        
         self.text = text
         self.mediaIds = mediaIds
         self.sensitive = sensitive
         self.spoilerText = spoilerText
         self.visibility = visibility
         self.language = language
-        self.scheduledAt = scheduledAt
+        self.scheduledAt = TootEncoder.dateFormatter.string(from: scheduledAt)
         self.poll = poll
         self.idempotency = idempotency
         self.inReplyToId = inReplyToId
         self.contentType = contentType
         self.inReplyToConversationId = inReplyToConversationId
     }
-
+    
     /// The text content of the post. If media_ids is provided, this becomes optional. Attaching a poll is optional while post is provided.
     public var text: String?
     ///  Include Attachment IDs to be attached as media. If provided, post becomes optional, and poll cannot be used.
@@ -56,7 +56,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     /// ISO 639 language code for this post.
     public var language: String?
     /// UTC Datetime at which to schedule a post.
-    public var scheduledAt: Date
+    public var scheduledAt: String
     /// Poll options
     public let poll: CreatePoll?
     /// Unique post to prevent double posting
@@ -67,42 +67,19 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     public var contentType: String?
     /// (Pleroma) Will reply to a given conversation, addressing only the people who are part of the recipient set of that conversation. Sets the visibility to direct.
     public var inReplyToConversationId: String?
-
+    
     enum CodingKeys: String, CodingKey {
-        case text
-        case mediaIds
+        case text = "status"
+        case mediaIds = "media_ids"
         case poll
-        case inReplyToId
+        case inReplyToId = "in_reply_to_id"
         case sensitive
-        case spoilerText
+        case spoilerText = "spoiler_text"
         case visibility
         case language
         case idempotency
-        case scheduledAt
-        case contentType
-        case inReplyToConversationId
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.text = try? container.decodeIfPresent(String.self, forKey: .text)
-        self.mediaIds = try? container.decodeIfPresent([String].self, forKey: .mediaIds)
-        self.poll = try? container.decodeIfPresent(CreatePoll.self, forKey: .poll)
-        // Int in Mastodon but String in Pleroma, so try one then the other
-        self.inReplyToId = try? container.decodeIfPresent(String.self, forKey: .inReplyToId)
-        if self.inReplyToId == nil {
-            if let int = try? container.decodeIfPresent(Int.self, forKey: .inReplyToId) {
-                self.inReplyToId = String(int)
-            }
-        }
-        // Mastodon incorrectly returns sensitive as a string
-        self.sensitive = try? container.decodeBoolFromString(forKey: .sensitive)
-        self.spoilerText = try? container.decodeIfPresent(String.self, forKey: .spoilerText)
-        self.visibility = try container.decode(Post.Visibility.self, forKey: .visibility)
-        self.language = try? container.decodeIfPresent(String.self, forKey: .language)
-        self.idempotency = try? container.decodeIfPresent(String.self, forKey: .idempotency)
-        self.scheduledAt = try container.decode(Date.self, forKey: .scheduledAt)
-        self.contentType = try? container.decodeIfPresent(String.self, forKey: .contentType)
-        self.inReplyToConversationId = try? container.decodeIfPresent(String.self, forKey: .inReplyToConversationId)
+        case scheduledAt = "scheduled_at"
+        case contentType = "content_type"
+        case inReplyToConversationId = "in_reply_to_conversation_id"
     }
 }
