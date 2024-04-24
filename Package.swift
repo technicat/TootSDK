@@ -9,20 +9,22 @@ let package = Package(
         .macOS(.v12),
         .iOS(.v14),
         .watchOS(.v7),
-        .tvOS(.v14)
+        .tvOS(.v14),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "MultipartKitTootSDK",
-                 targets: ["MultipartKitTootSDK"]),
-        .library(name: "TootSDK",
-                 targets: ["TootSDK"])
+        .library(
+            name: "MultipartKitTootSDK",
+            targets: ["MultipartKitTootSDK"]),
+        .library(
+            name: "TootSDK",
+            targets: ["TootSDK"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.2.0"),
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.2"),
         .package(url: "https://github.com/karwa/swift-url.git", from: "0.4.1"),
-        .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0" ..< "4.0.0"),
+        .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0"..<"4.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -32,7 +34,7 @@ let package = Package(
             dependencies: [
                 .product(name: "NIO", package: "swift-nio"),
                 .product(name: "NIOHTTP1", package: "swift-nio"),
-                .product(name: "Collections", package: "swift-collections")
+                .product(name: "Collections", package: "swift-collections"),
             ]),
         .target(
             name: "TootSDK",
