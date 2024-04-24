@@ -18,8 +18,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case clientAuthorizationFailed
     /// A specific error message was returned from the server
     case serverError(_ message: String)
-    /// post can't be scheduled less than five minutes from now
-    case scheduledTooSoon(_ date: Date)
 
     public var errorDescription: String? {
         switch self {
@@ -40,8 +38,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "The remote instance did not respond with the expected payload during authorization."
         case .serverError(let message):
             return message
-        case .scheduledTooSoon(_):
-            return "Scheduled publish date is too soon."
         }
     }
 }
