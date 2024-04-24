@@ -1,7 +1,7 @@
 import TootSDK
 
 extension Post.Visibility: Identifiable {
-  public var id: String {
-    rawValue
-  }
+    public var id: String {
+        rawValue
+    }
 }

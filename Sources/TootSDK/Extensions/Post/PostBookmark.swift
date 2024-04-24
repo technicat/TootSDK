@@ -2,7 +2,7 @@ import TootSDK
 
 extension Post {
 
-  public var isBooked: Bool {
-    bookmarked ?? false
-  }
+    public var isBooked: Bool {
+        bookmarked ?? false
+    }
 }

@@ -2,7 +2,7 @@ import TootSDK
 
 extension Post {
 
-  public var isPinned: Bool {
-    pinned ?? false
-  }
+    public var isPinned: Bool {
+        pinned ?? false
+    }
 }

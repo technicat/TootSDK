@@ -2,11 +2,11 @@ import TootSDK
 
 extension Poll {
 
-  public var isMultipleChoice: Bool {
-    multiple
-  }
+    public var isMultipleChoice: Bool {
+        multiple
+    }
 
-  public var isSingleChoice: Bool {
-    !isMultipleChoice
-  }
+    public var isSingleChoice: Bool {
+        !isMultipleChoice
+    }
 }

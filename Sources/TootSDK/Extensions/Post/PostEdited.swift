@@ -1,8 +1,6 @@
-
-
 extension Post {
 
-  public var isEdited: Bool {
-    editedAt != nil
-  }
+    public var isEdited: Bool {
+        editedAt != nil
+    }
 }
