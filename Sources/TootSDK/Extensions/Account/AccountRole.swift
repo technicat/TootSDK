@@ -1,8 +1,6 @@
-
-
 extension Account {
 
-  public var hasRole: Bool {
-    role != nil
-  }
+    public var hasRole: Bool {
+        role != nil
+    }
 }

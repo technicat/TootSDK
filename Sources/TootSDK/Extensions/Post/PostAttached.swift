@@ -1,8 +1,6 @@
-
-
 extension Post: Attached {
 
-  public var attachments: [MediaAttachment] {
-    mediaAttachments
-  }
+    public var attachments: [MediaAttachment] {
+        mediaAttachments
+    }
 }

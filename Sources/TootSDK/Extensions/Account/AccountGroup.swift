@@ -1,9 +1,7 @@
-
-
 extension Account {
 
-  public var isGroup: Bool {
-    group ?? false
-  }
+    public var isGroup: Bool {
+        group ?? false
+    }
 
 }

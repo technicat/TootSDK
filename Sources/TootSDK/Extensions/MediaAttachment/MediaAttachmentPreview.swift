@@ -1,6 +1,6 @@
 extension MediaAttachment {
 
-  public var hasPreview: Bool {
-    previewUrl != nil
-  }
+    public var hasPreview: Bool {
+        previewUrl != nil
+    }
 }

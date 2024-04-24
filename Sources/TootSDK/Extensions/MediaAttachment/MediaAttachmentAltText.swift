@@ -1,6 +1,6 @@
 extension MediaAttachment {
 
-  public var hasAltText: Bool {
-    description != nil  // should check whitespace
-  }
+    public var hasAltText: Bool {
+        description != nil  // should check whitespace
+    }
 }

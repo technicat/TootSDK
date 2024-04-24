@@ -1,16 +1,14 @@
-
-
 extension Account {
 
-  public var atName: String {
-    acct.atName
-  }
+    public var atName: String {
+        acct.atName
+    }
 
-  public var name: String {
-    displayName ?? userName
-  }
+    public var name: String {
+        displayName ?? userName
+    }
 
-  public var userName: String {
-    username ?? ""
-  }
+    public var userName: String {
+        username ?? ""
+    }
 }

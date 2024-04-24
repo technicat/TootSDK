@@ -1,8 +1,6 @@
-
-
 extension Account {
 
-  public var hasFields: Bool {
-    !fields.isEmpty
-  }
+    public var hasFields: Bool {
+        !fields.isEmpty
+    }
 }

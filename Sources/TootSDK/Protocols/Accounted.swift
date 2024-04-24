@@ -4,5 +4,5 @@ import TootSDK
 /// maybe this should be an array of accounts
 public protocol Accounted {
 
-  var account: Account { get }
+    var account: Account { get }
 }

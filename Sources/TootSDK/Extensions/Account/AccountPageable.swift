@@ -1,4 +1,2 @@
-
-
 extension Account: Pageable {
 }

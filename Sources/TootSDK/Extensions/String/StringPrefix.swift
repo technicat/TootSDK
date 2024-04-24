@@ -1,10 +1,10 @@
 extension String {
 
-  public var hashName: String {
-    "#\(self)"
-  }
+    public var hashName: String {
+        "#\(self)"
+    }
 
-  public var atName: String {
-    "@\(self)"
-  }
+    public var atName: String {
+        "@\(self)"
+    }
 }
