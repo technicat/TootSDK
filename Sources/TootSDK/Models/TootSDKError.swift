@@ -13,7 +13,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case nonHTTPURLResponse(data: Data, response: URLResponse)
     case invalidStatusCode(data: Data, response: HTTPURLResponse)
     case requiredURLNotSet
-    case missingParameter(parameterName: String)
     case unexpectedError(_ description: String)
     /// The remote instance did not respond with the expected payload during authorization
     case clientAuthorizationFailed
@@ -35,8 +34,6 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
                 "HTTP \(response.statusCode) \(HTTPURLResponse.localizedString(forStatusCode: response.statusCode)) \(data.prettyPrintedJSONString ??  "Undecodable")"
         case .requiredURLNotSet:
             return "[TootSDK bug] HTTPRequestBuilder was used without setting a url."
-        case .missingParameter(let parameterName):
-            return "A required parameter is not provided: \(parameterName)."
         case .unexpectedError(let description):
             return "Unexpected error: \(description)"
         case .clientAuthorizationFailed:

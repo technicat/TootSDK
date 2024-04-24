@@ -6,31 +6,22 @@ import XCTest
 @testable import TootSDK
 
 final class ScheduledPostTests: XCTestCase {
-    func testScheduledPostValidatesScheduledAtRequired() throws {
-        // arrange
-        let params = ScheduledPostParams(mediaIds: [], visibility: .public)
-
-        // act
-        XCTAssertThrowsError(try ScheduledPostRequest(from: params)) { error in
-            XCTAssertEqual(error as? TootSDKError, TootSDKError.missingParameter(parameterName: "scheduledAt"))
-        }
-    }
 
     func testScheduledPostValidatesScheduledAtTooSoon() throws {
         // arrange
-        var params = ScheduledPostParams(mediaIds: [], visibility: .public)
-        params.scheduledAt = Date().addingTimeInterval(TimeInterval(4.5 * 60.0))  // date is only 5 mins in the future
+        let params = ScheduledPostParams(mediaIds: [], visibility: .public, scheduledAt: Date().addingTimeInterval(TimeInterval(4.5 * 60.0)))
+        // date is less than 5 mins in the future
 
         // act
         XCTAssertThrowsError(try ScheduledPostRequest(from: params)) { error in
-            XCTAssertEqual(error as? TootSDKError, TootSDKError.scheduledTooSoon(params.scheduledAt!))
+            XCTAssertEqual(error as? TootSDKError, TootSDKError.scheduledTooSoon(params.scheduledAt))
         }
     }
 
     func testScheduledPostValidatesScheduledAtInTheFuture() throws {
         // arrange
-        var params = ScheduledPostParams(mediaIds: [], visibility: .public)
-        params.scheduledAt = Date().addingTimeInterval(TimeInterval(6.0 * 60.0))  // date is only 5 mins in the future
+        let params = ScheduledPostParams(mediaIds: [], visibility: .public, scheduledAt: Date().addingTimeInterval(TimeInterval(6.0 * 60.0)))
+       // date is more than 5 mins in the future
 
         // act
         XCTAssertNoThrow(try ScheduledPostRequest(from: params))

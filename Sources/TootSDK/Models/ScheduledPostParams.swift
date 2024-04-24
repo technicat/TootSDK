@@ -25,7 +25,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     ///   - inReplyToConversationId:(Pleroma) Will reply to a given conversation, addressing only the people who are part of the recipient set of that conversation. Sets the visibility to direct.
     public init(
         text: String? = nil, mediaIds: [String]? = nil, sensitive: Bool? = nil, spoilerText: String? = nil, visibility: Post.Visibility,
-        language: String? = nil, scheduledAt: Date? = nil, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
+        language: String? = nil, scheduledAt: Date, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
         contentType: String? = nil, inReplyToConversationId: String? = nil
     ) {
 
@@ -56,7 +56,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     /// ISO 639 language code for this post.
     public var language: String?
     /// UTC Datetime at which to schedule a post.
-    public var scheduledAt: Date?
+    public var scheduledAt: Date
     /// Poll options
     public let poll: CreatePoll?
     /// Unique post to prevent double posting
@@ -101,7 +101,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
         self.visibility = try container.decode(Post.Visibility.self, forKey: .visibility)
         self.language = try? container.decodeIfPresent(String.self, forKey: .language)
         self.idempotency = try? container.decodeIfPresent(String.self, forKey: .idempotency)
-        self.scheduledAt = try? container.decodeIfPresent(Date.self, forKey: .scheduledAt)
+        self.scheduledAt = try container.decode(Date.self, forKey: .scheduledAt)
         self.contentType = try? container.decodeIfPresent(String.self, forKey: .contentType)
         self.inReplyToConversationId = try? container.decodeIfPresent(String.self, forKey: .inReplyToConversationId)
     }

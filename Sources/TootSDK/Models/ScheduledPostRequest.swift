@@ -48,10 +48,7 @@ internal struct ScheduledPostRequest: Codable {
 
 extension ScheduledPostRequest {
     init(from: ScheduledPostParams) throws {
-        guard let scheduledAtDate = from.scheduledAt else {
-            throw TootSDKError.missingParameter(parameterName: "scheduledAt")
-        }
-
+        let scheduledAtDate = from.scheduledAt
         if scheduledAtDate < Date().addingTimeInterval(TimeInterval(5.0 * 60.0)) {
             // scheduled_at must be at least 5 mins into the future
             // https://github.com/mastodon/mastodon/pull/9706
