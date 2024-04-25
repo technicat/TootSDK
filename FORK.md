@@ -2,8 +2,7 @@ Differences from the parent repo
 
 ## Platform
 
-- Added Platform as a replacement for TootFeature and (eventually/potentially) TootSDKFlavour
-- `instance.platform` returns a platform descriptor with feature support queries like `platform.supportsAnnouncements` based on the detected Mastodon API version. This avoids having to query `TootClient.flavour` and `TootClient.supportsFeature`, and new platforms can be added without messing with TootSDK. The descriptors have inheritance hierarchies that mirror forking relationships, e.g. `Hometown` is a subclass of `Mastodon`.
+- `instance.platform` returns a Platform descriptor with feature support queries like `platform.supportsAnnouncements` based on the detected Mastodon API version. This avoids having to query `TootClient.flavour` and `TootClient.supportsFeature`, and new platforms can be added without modifying TootFeature lists. The descriptors have inheritance hierarchies that mirror forking relationships, e.g. `Hometown` is a subclass of `Mastodon`.
 - Removed TootFeature
 - Removed flavour checks (let callers do the checking) and flavour-specific lists (provided in Platform)
 
