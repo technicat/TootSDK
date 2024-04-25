@@ -1,9 +1,5 @@
 extension Account {
 
-    public var atName: String {
-        acct.atName
-    }
-
     public var name: String {
         displayName ?? userName
     }
@@ -12,3 +8,7 @@ extension Account {
         username ?? ""
     }
 }
+
+extension Account: Accted {
+}
+

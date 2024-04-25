@@ -1,6 +1,2 @@
-extension Mention {
-
-  public var atName: String {
-      acct.atName
-  }
+extension Mention: Accted {
 }
