@@ -1,0 +1,2 @@
+extension Card: HTMLable {
+}
