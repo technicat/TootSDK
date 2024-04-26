@@ -1,3 +1,4 @@
+/// anything that (potentially) has HTML content
 public protocol HTMLable {
     var html: String? { get }
 }
