@@ -39,4 +39,29 @@ public struct PostEdit: Codable, Hashable, Sendable {
         self.emojis = emojis
     }
 
+    /// The current state of the poll options at this revision. Note that edits changing the poll options will be collapsed together into one edit, since this action resets the poll.
+    public struct Poll: Codable, Hashable, Sendable {
+        public init(
+            options: [Poll.Option]
+        ) {
+            self.options = options
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.options = try container.decode([Option].self, forKey: .options)
+        }
+        /// The poll options at this revision.
+        public var options: [Option]
+
+        public struct Option: Codable, Hashable, Sendable {
+            public init(title: String, votesCount: Int) {
+                self.title = title
+            }
+
+            /// The text for a poll option.
+            public var title: String
+        }
+    }
+
 }
