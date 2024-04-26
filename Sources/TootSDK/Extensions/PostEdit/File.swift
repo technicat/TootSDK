@@ -1,4 +1,4 @@
-extension Post: Sensible {
+extension PostEdit: Sensible {
 
     public var isSensitive: Bool {
         sensitive
