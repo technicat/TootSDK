@@ -1,4 +1,4 @@
-Differences from the parent repo
+This fork is geared toward supporting Fedicat, so expect instability and divergence from the official repo. These are the changes:
 
 ## Platform
 
