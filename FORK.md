@@ -34,6 +34,10 @@ Differences from the parent repo
 
 - Replaced poll property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
 
+## Protocols
+
+- Define common interfaces among objects
+
 ## Cleanup
 
 - Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
