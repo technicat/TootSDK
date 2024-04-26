@@ -30,6 +30,10 @@ Differences from the parent repo
 - Removed throws for missing date (no longer optional in ScheduledPostParams) and scheduled too soon (handle enforcement at the calling level)
 - Updating a ScheduledPost no longer returns an optional
 
+## PostEdit
+
+- Replaced poll property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
+
 ## Cleanup
 
 - Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
