@@ -5,10 +5,6 @@ public protocol HTMLable {
 
 extension HTMLable {
     public var hasHTML: Bool {
-        guard let html else {
-            return false
-        }
-        // check for whitespace?
-        return !html.isEmpty
+        html != nil
     }
 }
