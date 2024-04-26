@@ -11,4 +11,3 @@ extension Account {
 
 extension Account: Accted {
 }
-
