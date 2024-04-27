@@ -1,0 +1,2 @@
+extension TrendingLink: HTML {
+}
