@@ -32,6 +32,7 @@ extension TootClient {
     }
 
     /// https://docs.joinmastodon.org/methods/lists/#update
+    @discardableResult
     public func update(
         _ list: List,
         name: String? = nil,

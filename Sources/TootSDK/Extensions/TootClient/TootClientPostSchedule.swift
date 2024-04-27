@@ -7,6 +7,7 @@ extension TootClient {
     /// todo - handle idempotency
     /// todo - option to enforce minimum delay (mastodon is five minutes)
     /// https://docs.joinmastodon.org/methods/statuses/#create
+    @discardableResult
     public func schedule(
         text: String,
         replyTo: Post? = nil,

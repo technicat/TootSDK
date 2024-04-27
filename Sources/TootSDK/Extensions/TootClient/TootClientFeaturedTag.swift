@@ -6,15 +6,18 @@ extension TootClient {
     }
 
     /// https://docs.joinmastodon.org/methods/featured_tags/#feature
+    @discardableResult
     public func feature(_ tag: Tag) async throws -> FeaturedTag {
         try await feature(tag: tag.name)
     }
 
+    @discardableResult
     public func feature(tag name: String) async throws -> FeaturedTag {
         try await featureTag(name: name)
     }
 
     /// https://docs.joinmastodon.org/methods/featured_tags/#unfeature
+    @discardableResult
     public func unFeature(_ tag: FeaturedTag) async throws {
         try await unfeatureTag(id: tag.id)
     }

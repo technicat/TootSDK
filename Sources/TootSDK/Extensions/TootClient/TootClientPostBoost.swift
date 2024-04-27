@@ -1,11 +1,13 @@
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/statuses/#boost
+    @discardableResult
     public func boost(_ post: Post) async throws -> Post {
         try await boostPost(id: post.id)
     }
 
     /// https://docs.joinmastodon.org/methods/statuses/#unboost
+    @discardableResult
     public func unBoost(_ post: Post) async throws -> Post {
         try await unboostPost(id: post.id)
     }

@@ -2,6 +2,7 @@ extension TootClient {
 
     /// todo - handle pleroma params (contentType and replyToConversationId)
     /// https://docs.joinmastodon.org/methods/statuses/#create
+    @discardableResult
     public func publish(
         text: String,
         replyTo: Post? = nil,

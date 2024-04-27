@@ -3,6 +3,7 @@ import Foundation
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/statuses/#delete
+    @discardableResult
     public func delete(_ post: Post) async throws -> Post {
         do {
             let post = try await deletePost(id: post.id)

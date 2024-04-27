@@ -8,6 +8,7 @@ extension TootClient {
     }
 
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
+    @discardableResult
     public func updateAccountSettings(
         locked: Bool? = nil,
         bot: Bool? = nil,
@@ -38,6 +39,7 @@ extension TootClient {
         return try await updateCredentials(params: params)
     }
 
+    @discardableResult
     public func updateProfile(
         displayName: String? = nil,
         note: String? = nil,

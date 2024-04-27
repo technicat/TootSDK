@@ -1,11 +1,13 @@
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/statuses/#favourite
+    @discardableResult
     public func fave(_ post: Post) async throws -> Post {
         try await favouritePost(id: post.id)
     }
 
     /// https://docs.joinmastodon.org/methods/statuses/#unfavourite
+    @discardableResult
     public func unFave(_ post: Post) async throws -> Post {
         try await unfavouritePost(id: post.id)
     }

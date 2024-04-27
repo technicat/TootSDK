@@ -1,6 +1,7 @@
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/accounts/#follow
+    @discardableResult
     public func follow(
         _ account: Account,
         includeBoosts: Bool = true,

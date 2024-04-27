@@ -4,11 +4,13 @@
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/accounts/#pin
+    @discardableResult
     public func endorse(_ account: Account) async throws -> Relationship {
         try await pinAccount(by: account.id)
     }
 
     /// https://docs.joinmastodon.org/methods/accounts/#unpin
+    @discardableResult
     public func unEndorse(_ account: Account) async throws -> Relationship {
         try await unpinAccount(by: account.id)
     }
