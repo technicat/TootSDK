@@ -8,6 +8,9 @@ public protocol Spoilable {
 extension Spoilable {
 
     public var hasSpoiler: Bool {
-        spoiler != nil
+        guard let spoiler else {
+            return false
+        }
+        return !spoiler.isBlank
     }
 }
