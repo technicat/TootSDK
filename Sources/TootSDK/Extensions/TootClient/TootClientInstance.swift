@@ -5,6 +5,7 @@ extension TootClient {
     public func getInstance() async throws -> Instance {
         let instance = try await getInstanceInfo()
         flavour = instance.flavour
+        self.instance = instance
         return instance
     }
 }
