@@ -4,7 +4,7 @@ extension Post: HTMLable {
             return nil
         }
         // should check for whitespace
-        guard !html.isEmpty else {
+        guard !html.isBlank else {
             return nil
         }
         return html

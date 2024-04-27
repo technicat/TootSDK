@@ -8,8 +8,6 @@ extension HTMLable {
         guard let html else {
             return false
         }
-        // ideally all implementors would convert empty html to nil
-        // todo - check for whitespace
-        return !html.isEmpty
+        return !html.isBlank
     }
 }
