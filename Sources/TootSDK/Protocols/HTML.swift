@@ -1,9 +1,9 @@
 /// anything that (potentially) has HTML content
-public protocol HTMLable {
+public protocol HTML {
     var html: String? { get }
 }
 
-extension HTMLable {
+extension HTML {
     public var hasHTML: Bool {
         guard let html else {
             return false

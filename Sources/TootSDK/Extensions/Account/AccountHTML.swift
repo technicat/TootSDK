@@ -1,5 +1,5 @@
 /// questionable, but why not
-extension Account: HTMLable {
+extension Account: HTML {
 
     public var html: String? {
         note.notBlank
