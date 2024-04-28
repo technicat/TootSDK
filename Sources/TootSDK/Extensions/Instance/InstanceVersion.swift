@@ -17,7 +17,9 @@ extension Instance {
         if let match = version.firstMatch(of: regex) {
             return Version(Int(match.1) ?? 0, Int(match.2) ?? 0, Int(match.3) ?? 0)
         } else {
-            return Version(0, 0)
+            // if we can't find the version, make up something big
+            // give all features a chance
+            return Version(100, 0) 
         }
     }
 }
