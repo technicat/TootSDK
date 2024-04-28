@@ -40,9 +40,9 @@ public protocol Platform {
     var supportsHideCollections: Bool { get }
     /// turn post searchability on/off
     var supportsIndexable: Bool { get }
-    
+
     var supportsInstanceExtendedDescription: Bool { get }
-    
+
     /// a kludge for some platforms (Sharkey) not setting boosted after boosting
     var supportsIsBoosted: Bool { get }
 
