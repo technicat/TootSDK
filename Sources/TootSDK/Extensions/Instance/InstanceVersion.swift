@@ -19,7 +19,7 @@ extension Instance {
         } else {
             // if we can't find the version, make up something big
             // give all features a chance
-            return Version(100, 0) 
+            return Version(100, 0)
         }
     }
 }
