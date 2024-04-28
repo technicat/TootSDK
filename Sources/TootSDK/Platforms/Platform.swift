@@ -27,8 +27,6 @@ public protocol Platform {
     /// block domains
     var supportsDomainBlocks: Bool { get }
 
-    var supportsExtendedDescription: Bool { get }
-
     var supportsFamiliarFollowers: Bool { get }
     var supportsFaveTimeline: Bool { get }
     var supportsFeaturedTags: Bool { get }
@@ -42,6 +40,9 @@ public protocol Platform {
     var supportsHideCollections: Bool { get }
     /// turn post searchability on/off
     var supportsIndexable: Bool { get }
+    
+    var supportsInstanceExtendedDescription: Bool { get }
+    
     /// a kludge for some platforms (Sharkey) not setting boosted after boosting
     var supportsIsBoosted: Bool { get }
 

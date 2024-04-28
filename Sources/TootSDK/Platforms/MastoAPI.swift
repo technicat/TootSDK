@@ -22,8 +22,6 @@ open class MastoAPI: Platform {
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
     open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
 
-    open var supportsExtendedDescription: Bool { version >= Version(4, 0) }
-
     open var supportsFamiliarFollowers: Bool { version >= Version(3, 5) }
     open var supportsFaveTimeline: Bool { true }
     open var supportsFeaturedTags: Bool { version >= Version(3, 0) }
@@ -41,6 +39,7 @@ open class MastoAPI: Platform {
     open var supportsInstance: Bool { version >= Version(1, 1) }
     open var supportsInstanceConfig: Bool { version >= Version(3, 4, 2) }
     open var supportsInstanceConfigAccount: Bool { version >= Version(4, 0) }
+    open var supportsInstanceExtendedDescription: Bool { version >= Version(4, 0) }
     open var supportsInstanceInvites: Bool { version >= Version(3, 1, 4) }
     open var supportsInstanceRules: Bool { version >= Version(3, 4) }
 
