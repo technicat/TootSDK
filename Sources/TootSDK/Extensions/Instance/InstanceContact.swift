@@ -1,5 +1,6 @@
 extension Instance {
-    public var hasContactAccount: Bool {
-        contactAccount != nil
+
+    public var hasContact: Bool {
+        hasContactAccount || hasContactEmail
     }
 }
