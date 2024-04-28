@@ -38,6 +38,12 @@ extension Instance {
         if version.lowercased().contains("snac") {
             return Snac(apiVersion)
         }
+        // kludge - GotoSocial version string is missing GotoSocial name
+        // and Mastodon API version
+        // so let's just say it's the latest and see what happens
+        if version.lowercased().contains("git") {
+            return GotoSocial(Version(4,3,0))
+        }
         return Mastodon(apiVersion)
     }
 }
