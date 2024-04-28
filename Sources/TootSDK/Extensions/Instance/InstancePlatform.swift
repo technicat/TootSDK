@@ -42,7 +42,7 @@ extension Instance {
         // and Mastodon API version
         // so let's just say it's the latest and see what happens
         if version.lowercased().contains("git") {
-            return GotoSocial(Version(4,3,0))
+            return GotoSocial(Version(4, 3, 0))
         }
         return Mastodon(apiVersion)
     }
