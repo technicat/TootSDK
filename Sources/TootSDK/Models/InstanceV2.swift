@@ -13,8 +13,6 @@ public struct InstanceV2: Codable, Hashable {
         registrations: Bool? = nil,
         approvalRequired: Bool? = nil,
         invitesEnabled: Bool? = nil,
-        urls: Instance.InstanceURLs,
-        stats: Instance.Stats,
         thumbnail: String? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
@@ -30,11 +28,8 @@ public struct InstanceV2: Codable, Hashable {
         self.registrations = registrations
         self.approvalRequired = approvalRequired
         self.invitesEnabled = invitesEnabled
-        self.urls = urls
-        self.stats = stats
         self.thumbnail = thumbnail
         self.configuration = configuration
-        self.contactAccount = contactAccount
         self.rules = rules
     }
 
@@ -58,38 +53,12 @@ public struct InstanceV2: Codable, Hashable {
     public var approvalRequired: Bool?
     /// Whether invites are enabled.
     public var invitesEnabled: Bool?
-    /// URLs of interest for clients apps.
-    public var urls: InstanceURLs?
-    /// Statistics about how much information the instance contains.
-    public var stats: Stats
     /// Banner image for the website.
     public var thumbnail: String?
     /// Configured values and limits for this instance.
     public var configuration: Configuration?
-    /// A user that can be contacted, as an alternative to email.
-    public var contactAccount: Account?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
-
-    public struct InstanceURLs: Codable, Hashable {
-        /// Websockets address for push streaming. String (URL).
-        public var streamingApi: String?
-    }
-
-    public struct Stats: Codable, Hashable {
-        /// Users registered on this instance. Number.
-        public var userCount: Int?
-        /// Posts authored by users on instance. Number.
-        public var postCount: Int?
-        /// Domains federated with this instance. Number.
-        public var domainCount: Int?
-
-        enum CodingKeys: String, CodingKey {
-            case userCount
-            case postCount = "statusCount"
-            case domainCount
-        }
-    }
 
     public struct Configuration: Codable, Hashable {
         /// Limits related to accounts.
@@ -162,74 +131,8 @@ public struct InstanceV2: Codable, Hashable {
         self.registrations = try? container.decodeIfPresent(Bool.self, forKey: .registrations)
         self.approvalRequired = try? container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
         self.invitesEnabled = try? container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
-        self.urls = try? container.decodeIfPresent(Instance.InstanceURLs.self, forKey: .urls)
-        self.stats = try container.decode(Stats.self, forKey: .stats)
         self.thumbnail = try? container.decodeIfPresent(String.self, forKey: .thumbnail)
         self.configuration = try? container.decodeIfPresent(Configuration.self, forKey: .configuration)
-        // also handles some friendica instances returning []
-        self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try? container.decodeIfPresent([InstanceRule].self, forKey: .rules)
-    }
-}
-
-extension InstanceV2 {
-    public var majorVersion: Int? {
-        guard let majorVersionString = version.split(separator: ".").first else { return nil }
-
-        return Int(majorVersionString)
-    }
-
-    public var minorVersion: Int? {
-        let versionComponents = version.split(separator: ".")
-
-        guard versionComponents.count > 1 else { return nil }
-
-        return Int(versionComponents[1])
-    }
-
-    public var patchVersion: String? {
-        let versionComponents = version.split(separator: ".")
-
-        guard versionComponents.count > 2 else { return nil }
-
-        return String(versionComponents[2])
-    }
-
-    public var canShowProfileDirectory: Bool {
-        guard let majorVersion = majorVersion else { return false }
-
-        return majorVersion >= 3
-    }
-}
-
-extension InstanceV2 {
-    public var flavour: TootSDKFlavour {
-        // 2.7.2 (compatible; Pleroma 2.5.0)
-        if version.lowercased().contains("pleroma") {
-            return .pleroma
-        }
-        // 2.7.2 (compatible; Pixelfed 0.11.9)
-        if version.lowercased().contains("pixelfed") {
-            return .pixelfed
-        }
-        // 2.8.0 (compatible; Friendica 2023.05)
-        if version.lowercased().contains("friendica") {
-            return .friendica
-        }
-        // 2.7.2 (compatible; Akkoma 3.10.4-0-gebfb617)
-        if version.lowercased().contains("akkoma") {
-            return .akkoma
-        }
-        // 3.0.0 (compatible; Firefish 1.0.4-dev5)
-        // 4.2.1 (compatible; Iceshrimp 2023.12-pre3)
-        // 4.2.1 (compatible; Catodon 24.01-dev)
-        if version.lowercased().contains("firefish") || version.lowercased().contains("catodon") || version.lowercased().contains("iceshrimp") {
-            return .firefish
-        }
-        // 3.0.0 (compatible; Sharkey 2023.12.0.beta3)
-        if version.lowercased().contains("sharkey") {
-            return .sharkey
-        }
-        return .mastodon
     }
 }

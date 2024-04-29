@@ -23,7 +23,7 @@ extension TootClient {
             $0.url = getURL(["api", "v2", "instance"])
             $0.method = .get
         }
-        return try await fetch(Instance.self, req)
+        return try await fetch(InstanceV2.self, req)
     }
 
     public func getInstanceRules() async throws -> [InstanceRule] {
