@@ -42,7 +42,8 @@ extension Instance {
         // and Mastodon API version
         // so let's just say it's the latest and see what happens
         if version.lowercased().contains("git") {
-            return GotoSocial(Version(4, 3, 0))
+            // instanceMastodonVersion in internalfrontend.go
+            return GotoSocial(Version(3, 5, 3))
         }
         return Mastodon(apiVersion)
     }
