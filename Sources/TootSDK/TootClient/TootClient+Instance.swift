@@ -16,7 +16,7 @@ extension TootClient {
         }
         return try await fetch(Instance.self, req)
     }
-    
+
     /// Obtain general information about the server
     public func getInstanceV2() async throws -> InstanceV2 {
         let req = HTTPRequestBuilder {
