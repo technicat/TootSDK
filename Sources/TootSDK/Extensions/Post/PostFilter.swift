@@ -1,10 +1,9 @@
 extension Post {
 
     public var isFiltered: Bool {
-        if let filters = filtered {
-            return !filters.isEmpty
-        } else {
+        guard let filtered else {
             return false
         }
+        return !filtered.isEmpty
     }
 }
