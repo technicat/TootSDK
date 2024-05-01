@@ -118,6 +118,3 @@ extension Platform {
     }
 
 }
-
-public typealias NotificationTypes = Set<TootNotification.NotificationType>
-public typealias SuggestionSources = Set<Suggestion.Source>
