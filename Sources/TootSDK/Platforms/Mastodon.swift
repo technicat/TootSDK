@@ -1,5 +1,3 @@
-import Foundation
-
 // possibly could have classes for different versions
 open class Mastodon: MastoAPI {
 
