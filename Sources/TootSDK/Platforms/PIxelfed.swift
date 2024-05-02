@@ -1,3 +1,4 @@
+// https://docs.pixelfed.org/technical-documentation/api/#differences-with-mastodon-api
 open class Pixelfed: MastoAPI {
 
     open override var name: String { "Pixelfed" }
