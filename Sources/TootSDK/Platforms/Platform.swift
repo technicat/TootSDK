@@ -43,9 +43,6 @@ public protocol Platform {
 
     var supportsInstanceExtendedDescription: Bool { get }
 
-    /// a kludge for some platforms (Sharkey) not setting boosted after boosting
-    var supportsIsBoosted: Bool { get }
-
     var supportsList: Bool { get }
     var supportsListReplyPolicy: Bool { get }
     var supportsListExclusive: Bool { get }
