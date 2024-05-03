@@ -113,6 +113,7 @@ open class MastoAPI: Platform {
     open var languages: [ISOCode] { [] }
     
     // harcoded in Mastodon
+    // same for firefish and forks
     // todo - check other platforms
     open var maxAltText: Int { 1500 }
 
