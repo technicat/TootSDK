@@ -2,8 +2,14 @@ public protocol Platform {
 
     /// platform name, e.g. Mastodon, Pleroma...
     var name: String { get }
+
     /// post languages (maybe rename)
     var languages: [ISOCode] { get }
+
+    // limits
+
+    ///
+    var boosterPageLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
     ///
@@ -40,7 +46,7 @@ public protocol Platform {
 
     /// hide followers/followees
     var supportsHideCollections: Bool { get }
-    
+
     /// turn post searchability on/off
     var supportsIndexable: Bool { get }
     var supportsInstanceExtendedDescription: Bool { get }

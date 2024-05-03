@@ -111,7 +111,10 @@ open class MastoAPI: Platform {
     open var supportsSearchAccounts: Bool { true }
 
     open var languages: [ISOCode] { [] }
-    
+
+    ///
+    open var boosterPageLimit: Int { 80 }
+
     // harcoded in Mastodon
     // same for firefish and forks
     // todo - check other platforms

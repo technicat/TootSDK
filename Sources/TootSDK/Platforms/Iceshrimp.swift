@@ -4,7 +4,7 @@
 open class Iceshrimp: Firefish {
 
     open override var name: String { "Iceshrimp" }
-    
+
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsFilter: Bool { false }
     open override var supportsFollowTag: Bool { false }
