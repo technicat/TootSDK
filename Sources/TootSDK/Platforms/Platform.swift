@@ -4,6 +4,8 @@ public protocol Platform {
     var name: String { get }
     /// post languages (maybe rename)
     var languages: [ISOCode] { get }
+    /// alt text char limit
+    var maxAltText: Int { get }
     ///
     var notificationTypes: NotificationTypes { get }
     /// post visibilities
@@ -38,10 +40,12 @@ public protocol Platform {
 
     /// hide followers/followees
     var supportsHideCollections: Bool { get }
+    
     /// turn post searchability on/off
     var supportsIndexable: Bool { get }
-
     var supportsInstanceExtendedDescription: Bool { get }
+    // only need this because it's broken on Firefish and Sharkey
+    var supportsIsBoosted: Bool { get }
 
     var supportsList: Bool { get }
     var supportsListReplyPolicy: Bool { get }

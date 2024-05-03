@@ -4,6 +4,8 @@ open class Sharkey: MastoAPI {
 
     open override var supportsFaveTimeline: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
+    
+    open override var supportsIsBoosted: Bool { false }
 
     open override var supportsMutePost: Bool { false }
 

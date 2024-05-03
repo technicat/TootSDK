@@ -44,6 +44,7 @@ open class MastoAPI: Platform {
     open var supportsInstanceRules: Bool { version >= Version(3, 4) }
 
     open var supportsInstanceV2: Bool { version >= Version(4, 0) }
+    open var supportsIsBoosted: Bool { true }
 
     open var supportsList: Bool { version >= Version(2, 1) }
     open var supportsListReplyPolicy: Bool { version >= Version(3, 3) }
@@ -107,11 +108,13 @@ open class MastoAPI: Platform {
 
     open var supportsUpdateAccount: Bool { version >= Version(1, 4, 1) }
 
-    open var supportsIsBoosted: Bool { true }
-
     open var supportsSearchAccounts: Bool { true }
 
     open var languages: [ISOCode] { [] }
+    
+    // harcoded in Mastodon
+    // todo - check other platforms
+    open var maxAltText: Int { 1500 }
 
     // todo - add admin types
     /// https://docs.joinmastodon.org/methods/notifications/#get
