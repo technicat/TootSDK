@@ -6,14 +6,20 @@ public protocol Platform {
     /// post languages (maybe rename)
     var languages: [ISOCode] { get }
 
-    // limits
-
+    // query limits
     ///
     var boosterPageLimit: Int { get }
     ///
     var blockedAccountsLimit: Int { get }
     ///
+    var conversationsPageLimit: Int { get }
+    ///
+    var followersPageLimit: Int { get }
+    ///
     var mutedAccountsLimit: Int { get }
+    ///
+    var suggestionsLimit: Int { get }
+    
     /// alt text char limit
     var maxAltText: Int { get }
     ///

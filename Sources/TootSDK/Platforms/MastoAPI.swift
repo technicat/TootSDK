@@ -117,7 +117,13 @@ open class MastoAPI: Platform {
     ///
     open var blockedAccountsLimit: Int { 80 }
     ///
+    open var followersPageLimit: Int { 40 }
+    ///
+    open var conversationsPageLimit: Int { 40 }
+    ///
     open var mutedAccountsLimit: Int { 80 }
+    ///
+    open var suggestionsLimit: Int { 80 }
 
     // harcoded in Mastodon
     // same for firefish and forks
