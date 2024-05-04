@@ -8,7 +8,7 @@ public protocol Platform {
     var supportsAnnouncementMark: Bool { get }
 
     /// bookmark posts
-    var supportsBookmark: Bool { get }
+    //var supportsBookmark: Bool { get }
     ///  specify account is a bot
     var supportsBot: Bool { get }
 
@@ -77,7 +77,6 @@ public protocol Platform {
     var supportsSearchPosts: Bool { get }
 
     var supportsTagStats: Bool { get }
-    var supportsTagTimeline: Bool { get }
 
     var supportsTranslate: Bool { get }
     var supportsTranslationLanguages: Bool { get }

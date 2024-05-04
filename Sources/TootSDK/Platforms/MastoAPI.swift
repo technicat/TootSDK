@@ -14,7 +14,7 @@ open class MastoAPI: Platform {
     open var supportsAnnouncements: Bool { version >= Version(3, 1) }
     open var supportsAnnouncementMark: Bool { version >= Version(3, 1) }
 
-    open var supportsBookmark: Bool { version >= Version(3, 1) }
+    //open var supportsBookmark: Bool { version >= Version(3, 1) }
     open var supportsBot: Bool { version >= Version(2, 4) }
 
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
@@ -93,7 +93,6 @@ open class MastoAPI: Platform {
     open var supportsSearchPosts: Bool { version >= Version(2, 4, 1) }
 
     open var supportsTagStats: Bool { version >= Version(2, 4, 1) }
-    open var supportsTagTimeline: Bool { true }
 
     open var supportsTranslate: Bool { version >= Version(4, 0) }
     open var supportsTranslationLanguages: Bool { version >= Version(4, 2) }
@@ -131,7 +130,12 @@ open class MastoAPI: Platform {
     }
 
     open func getLimit(for timeline: Timeline) -> Int {
+        switch timeline {
+        case .bookmarks:
+            version >= Version(3, 1) ? 40 : 0
+        default:
             40
+        }
     }
 
     ///
