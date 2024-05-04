@@ -73,7 +73,6 @@ public protocol Platform {
     var supportsReportRules: Bool { get }
     var supportsRevoke: Bool { get }
 
-    var supportsSchedule: Bool { get } // todo - base this on page limit?
     var supportsScheduleUpdate: Bool { get }
     var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
@@ -116,7 +115,7 @@ public protocol Platform {
     var trendingTagsLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
-    /// 
+    ///
     func getTimelineLimit(_ timeline: Timeline) -> Int
 
     // lists
@@ -143,7 +142,7 @@ extension Platform {
     public var hasNotificationTypes: Bool {
         !notificationTypes.isEmpty
     }
-    
+
     public var hasReportCategories: Bool {
         !reportCats.isEmpty
     }
@@ -155,7 +154,11 @@ extension Platform {
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
     }
-    
+
+    var supportsSchedule: Bool {
+        scheduledPageLimit > 0
+    }
+
     public var supportsTrendingPosts: Bool {
         trendingPostsLimit > 0
     }

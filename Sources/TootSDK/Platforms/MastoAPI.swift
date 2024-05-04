@@ -89,7 +89,6 @@ open class MastoAPI: Platform {
 
     open var supportsRevoke: Bool { true }
 
-    open var supportsSchedule: Bool { version >= Version(2, 7) }
     open var supportsScheduleUpdate: Bool { version >= Version(2, 7) }
 
     open var supportsSearchPosts: Bool { version >= Version(2, 4, 1) }
@@ -103,8 +102,9 @@ open class MastoAPI: Platform {
     open var supportsUpdateAccount: Bool { version >= Version(1, 4, 1) }
 
     open var supportsSearchAccounts: Bool { true }
-    
+
     // limits
+    // zero indicates the feature is not supported
 
     ///
     open var boosterPageLimit: Int { 80 }
@@ -130,11 +130,11 @@ open class MastoAPI: Platform {
     open var trendingTagsLimit: Int {
         version >= Version(3, 5) ? 20 : 0
     }
-    
+
     open func getTimelineLimit(_ timeline: Timeline) -> Int {
         return 40
     }
-    
+
     ///
     open var conversationsPageLimit: Int {
         version >= Version(2, 6) ? 40 : 0
@@ -144,15 +144,17 @@ open class MastoAPI: Platform {
     ///
     open var notificationsPageLimit: Int { 30 }
     ///
-    open var scheduledPageLimit: Int { 40 }
+    open var scheduledPageLimit: Int {
+        version >= Version(2, 7) ? 40 : 0
+    }
 
     // harcoded in Mastodon
     // same for firefish and forks
     // todo - check other platforms
     open var maxAltText: Int { 1500 }
-    
+
     // lists
-    
+
     open var languages: [ISOCode] { [] }
 
     // todo - add admin types

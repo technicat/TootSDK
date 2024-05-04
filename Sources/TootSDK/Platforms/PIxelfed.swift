@@ -30,7 +30,7 @@ open class Pixelfed: MastoAPI {
 
     open override var supportsRevoke: Bool { false }
 
-    open override var supportsSchedule: Bool { false }
+    // open override var supportsSchedule: Bool { false }
     open override var supportsSearchAccounts: Bool { false }
     open override var supportsSearchPosts: Bool { false }
 
@@ -41,6 +41,8 @@ open class Pixelfed: MastoAPI {
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
+
+    open override var scheduledPageLimit: Int { 0 }
 
     /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }

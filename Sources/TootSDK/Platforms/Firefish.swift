@@ -1,4 +1,4 @@
-open class Firefish: MastoAPI {
+open class Firefish: MisskeyFork {
 
     open override var name: String { "Firefish" }
 
@@ -10,24 +10,14 @@ open class Firefish: MastoAPI {
     }
 
     open override var supportsDomainBlocks: Bool { false }
-    open override var supportsFeaturedTags: Bool { false }
-
-    open override var supportsIsBoosted: Bool { false }
 
     open override var supportsNote: Bool { false }
-    open override var supportsNotificationDelete: Bool { false }
-    open override var supportsNotificationDeleteAll: Bool { false }
 
-    open override var supportsPostDefaultLanguage: Bool { false }
-    open override var supportsPostDefaultSensitive: Bool { false }
-    open override var supportsPostDefaultVisibility: Bool { false }
     open override var supportsPublicTimeline: Bool { false }
 
-    open override var supportsRevoke: Bool { false }
-
-    open override var supportsSchedule: Bool { false }
     open override var supportsSearchAccounts: Bool { false }
 
+    // move to misskeyfork?
     open override var supportsTranslate: Bool { false }
     open override var supportsTranslationLanguages: Bool { false }
 
