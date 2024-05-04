@@ -87,6 +87,8 @@ public protocol Platform {
     var supportsUpdateAccount: Bool { get }
 
     // limits
+    // maybe should be nil when unsupported
+    
     ///
     var boosterPageLimit: Int { get }
     ///
