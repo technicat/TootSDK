@@ -95,6 +95,8 @@ public protocol Platform {
     ///
     var conversationsPageLimit: Int { get }
     ///
+    var faversPageLimit: Int { get }
+    ///
     var followersPageLimit: Int { get }
     ///
     var mutedAccountsLimit: Int { get }

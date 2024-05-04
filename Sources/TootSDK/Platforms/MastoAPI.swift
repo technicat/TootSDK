@@ -111,6 +111,8 @@ open class MastoAPI: Platform {
     ///
     open var blockedAccountsLimit: Int { 80 }
     ///
+    open var faversPageLimit: Int { 80 }
+    ///
     open var followersPageLimit: Int { 40 }
     ///
     open var conversationsPageLimit: Int {
