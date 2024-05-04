@@ -18,7 +18,6 @@ public protocol Platform {
     var supportsDomainBlocks: Bool { get }
 
     var supportsFamiliarFollowers: Bool { get }
-    var supportsFaveTimeline: Bool { get }
     var supportsFeaturedTags: Bool { get }
     var supportsFilter: Bool { get }
 
@@ -118,7 +117,7 @@ public protocol Platform {
     /// alt text char limit
     var maxAltText: Int { get }
     ///
-    func getTimelineLimit(_ timeline: Timeline) -> Int
+    func getLimit(for timeline: Timeline) -> Int
 
     // lists
 
@@ -171,6 +170,10 @@ extension Platform {
 
     public var supportsTrendingLinks: Bool {
         trendingLinksLimit > 0
+    }
+    
+    public func supports(_ timeline: Timeline) -> Bool {
+        getLimit(for: timeline) > 0
     }
 
 }
