@@ -2,7 +2,6 @@ open class Firefish: MisskeyFork {
 
     open override var name: String { "Firefish" }
 
-    open override var reportCats: [ReportCategory] { [] }
     open override var suggestionSources: SuggestionSources {
         [
             .global

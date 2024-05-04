@@ -155,7 +155,7 @@ extension Platform {
         conversationsPageLimit > 0
     }
 
-    var supportsSchedule: Bool {
+    public var supportsSchedule: Bool {
         scheduledPageLimit > 0
     }
 
