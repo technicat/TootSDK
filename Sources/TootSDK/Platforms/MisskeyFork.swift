@@ -2,10 +2,14 @@ open class MisskeyFork: MastoAPI {
 
     open override var name: String { "MisskeyFork" }
 
+    open override var supportsDomainBlocks: Bool { false }
+    
     open override var supportsFeaturedTags: Bool { false }
 
     open override var supportsIsBoosted: Bool { false }
 
+    open override var supportsNote: Bool { false }
+    
     open override var supportsNotificationDelete: Bool { false }
     open override var supportsNotificationDeleteAll: Bool { false }
 
@@ -26,5 +30,13 @@ open class MisskeyFork: MastoAPI {
     
     /// report categories not supported
     open override var reportCats: [ReportCategory] { [] }
+    
+    ///
+    open override var suggestionSources: SuggestionSources {
+        [
+            .global
+        ]
+    }
+
 
 }

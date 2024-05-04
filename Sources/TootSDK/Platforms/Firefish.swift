@@ -2,16 +2,6 @@ open class Firefish: MisskeyFork {
 
     open override var name: String { "Firefish" }
 
-    open override var suggestionSources: SuggestionSources {
-        [
-            .global
-        ]
-    }
-
-    open override var supportsDomainBlocks: Bool { false }
-
-    open override var supportsNote: Bool { false }
-
     open override var supportsPublicTimeline: Bool { false }
 
     open override var supportsSearchAccounts: Bool { false }

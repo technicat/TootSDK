@@ -9,12 +9,6 @@ open class Sharkey: MisskeyFork {
     open override var supportsTagStats: Bool { false }
     open override var supportsTagTimeline: Bool { false }  // bug
 
-    open override var suggestionSources: SuggestionSources {
-        [
-            .global
-        ]
-    }
-
     /// lists
 
     open override var notificationTypes: NotificationTypes {
