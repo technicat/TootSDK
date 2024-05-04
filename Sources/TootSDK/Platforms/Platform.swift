@@ -73,7 +73,7 @@ public protocol Platform {
     var supportsReportRules: Bool { get }
     var supportsRevoke: Bool { get }
 
-    var supportsSchedule: Bool { get }
+    var supportsSchedule: Bool { get } // todo - base this on page limit?
     var supportsScheduleUpdate: Bool { get }
     var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
@@ -104,6 +104,8 @@ public protocol Platform {
     var followersPageLimit: Int { get }
     ///
     var notificationsPageLimit: Int { get }
+    ///
+    var scheduledPageLimit: Int { get }
     ///
     var suggestionsLimit: Int { get }
     ///

@@ -143,6 +143,8 @@ open class MastoAPI: Platform {
     open var followersPageLimit: Int { 40 }
     ///
     open var notificationsPageLimit: Int { 30 }
+    ///
+    open var scheduledPageLimit: Int { 40 }
 
     // harcoded in Mastodon
     // same for firefish and forks
