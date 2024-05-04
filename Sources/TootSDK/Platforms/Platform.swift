@@ -108,6 +108,8 @@ public protocol Platform {
     var trendingTagsLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
+    ///
+    func getTimelineLimit(_ timeline: Timeline) -> Int
 
     // lists
 

@@ -103,8 +103,8 @@ open class MastoAPI: Platform {
     open var supportsUpdateAccount: Bool { version >= Version(1, 4, 1) }
 
     open var supportsSearchAccounts: Bool { true }
-
-    open var languages: [ISOCode] { [] }
+    
+    // limits
 
     ///
     open var boosterPageLimit: Int { 80 }
@@ -132,11 +132,19 @@ open class MastoAPI: Platform {
     open var trendingTagsLimit: Int {
         version >= Version(3, 5) ? 20 : 0
     }
+    
+    open func getTimelineLimit(_ timeline: Timeline) -> Int {
+        return 40
+    }
 
     // harcoded in Mastodon
     // same for firefish and forks
     // todo - check other platforms
     open var maxAltText: Int { 1500 }
+    
+    // lists
+    
+    open var languages: [ISOCode] { [] }
 
     // todo - add admin types
     /// https://docs.joinmastodon.org/methods/notifications/#get
