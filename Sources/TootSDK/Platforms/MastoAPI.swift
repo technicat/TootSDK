@@ -117,12 +117,6 @@ open class MastoAPI: Platform {
     ///
     open var directoryLimit: Int { 80 }
     ///
-    open var followersPageLimit: Int { 40 }
-    ///
-    open var conversationsPageLimit: Int {
-        version >= Version(2, 6) ? 40 : 0
-    }
-    ///
     open var suggestionsLimit: Int { 80 }
     ///
     open var trendingLinksLimit: Int {
@@ -140,6 +134,15 @@ open class MastoAPI: Platform {
     open func getTimelineLimit(_ timeline: Timeline) -> Int {
         return 40
     }
+    
+    ///
+    open var conversationsPageLimit: Int {
+        version >= Version(2, 6) ? 40 : 0
+    }
+    ///
+    open var followersPageLimit: Int { 40 }
+    ///
+    open var notificationsPageLimit: Int { 30 }
 
     // harcoded in Mastodon
     // same for firefish and forks

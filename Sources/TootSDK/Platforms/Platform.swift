@@ -103,6 +103,8 @@ public protocol Platform {
     ///
     var followersPageLimit: Int { get }
     ///
+    var notificationsPageLimit: Int { get }
+    ///
     var suggestionsLimit: Int { get }
     ///
     var trendingLinksLimit: Int { get }
@@ -139,6 +141,10 @@ extension Platform {
     public var hasNotificationTypes: Bool {
         !notificationTypes.isEmpty
     }
+    
+    public var hasReportCategories: Bool {
+        !reportCats.isEmpty
+    }
 
     public var hasSuggestions: Bool {
         !suggestionSources.isEmpty
@@ -147,7 +153,7 @@ extension Platform {
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
     }
-
+    
     public var supportsTrendingPosts: Bool {
         trendingPostsLimit > 0
     }
