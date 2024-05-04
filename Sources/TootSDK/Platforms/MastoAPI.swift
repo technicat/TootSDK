@@ -100,10 +100,6 @@ open class MastoAPI: Platform {
     open var supportsTranslate: Bool { version >= Version(4, 0) }
     open var supportsTranslationLanguages: Bool { version >= Version(4, 2) }
 
-    open var supportsTrendingLinks: Bool { version >= Version(3, 5) }
-    open var supportsTrendingPosts: Bool { version >= Version(3, 5) }
-    open var supportsTrendingTags: Bool { version >= Version(3, 0) }
-
     open var supportsUpdateAccount: Bool { version >= Version(1, 4, 1) }
 
     open var supportsSearchAccounts: Bool { true }
@@ -125,11 +121,17 @@ open class MastoAPI: Platform {
     ///
     open var suggestionsLimit: Int { 80 }
     ///
-    open var trendingLinksLimit: Int { 20 }
+    open var trendingLinksLimit: Int {
+        version >= Version(3, 5) ? 20 : 0
+    }
     ///
-    open var trendingPostsLimit: Int { 40 }
+    open var trendingPostsLimit: Int {
+        version >= Version(3, 5) ? 40 : 0
+    }
     ///
-    open var trendingTagsLimit: Int { 20 }
+    open var trendingTagsLimit: Int {
+        version >= Version(3, 5) ? 20 : 0
+    }
 
     // harcoded in Mastodon
     // same for firefish and forks

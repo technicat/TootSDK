@@ -29,6 +29,8 @@ open class Sharkey: MastoAPI {
         ]
     }
 
+    /// lists
+
     open override var notificationTypes: NotificationTypes {
         []
     }

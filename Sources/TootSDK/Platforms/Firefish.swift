@@ -30,7 +30,12 @@ open class Firefish: MastoAPI {
 
     open override var supportsTranslate: Bool { false }
     open override var supportsTranslationLanguages: Bool { false }
-    open override var supportsTrendingTags: Bool { false }
+
+    /// limits
+    ///
+    open override var trendingTagsLimit: Int { 0 }
+
+    /// lists
 
     open override var notificationTypes: NotificationTypes {
         [.follow, .mention, .repost, .favourite, .poll, .followRequest]

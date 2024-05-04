@@ -36,12 +36,16 @@ open class Pixelfed: MastoAPI {
 
     open override var supportsTagStats: Bool { false }
 
-    open override var supportsTrendingLinks: Bool { false }
-    open override var supportsTrendingPosts: Bool { false }
-    open override var supportsTrendingTags: Bool { false }
+    // limits
 
-    // default, this is on pixelfed.social
+    open override var trendingLinksLimit: Int { 0 }
+    open override var trendingPostsLimit: Int { 0 }
+    open override var trendingTagsLimit: Int { 0 }
+
+    /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }
+
+    // lists
 
     open override var notificationTypes: NotificationTypes {
         []

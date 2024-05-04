@@ -3,40 +3,6 @@ public protocol Platform {
     /// platform name, e.g. Mastodon, Pleroma...
     var name: String { get }
 
-    /// post languages (maybe rename)
-    var languages: [ISOCode] { get }
-
-    // query limits
-    ///
-    var boosterPageLimit: Int { get }
-    ///
-    var blockedAccountsLimit: Int { get }
-    ///
-    var conversationsPageLimit: Int { get }
-    ///
-    var followersPageLimit: Int { get }
-    ///
-    var mutedAccountsLimit: Int { get }
-    ///
-    var suggestionsLimit: Int { get }
-    ///
-    var trendingLinksLimit: Int { get }
-    ///
-    var trendingPostsLimit: Int { get }
-    ///
-    var trendingTagsLimit: Int { get }
-
-    /// alt text char limit
-    var maxAltText: Int { get }
-    ///
-    var notificationTypes: NotificationTypes { get }
-    /// post visibilities
-    var postVis: [Post.Visibility] { get }
-    /// (problem) report categories
-    var reportCats: [ReportCategory] { get }
-    /// suggestion sources
-    var suggestionSources: SuggestionSources { get }
-
     var supportsAnnouncements: Bool { get }
     /// mark announcement as read
     var supportsAnnouncementMark: Bool { get }
@@ -118,12 +84,44 @@ public protocol Platform {
     var supportsTranslate: Bool { get }
     var supportsTranslationLanguages: Bool { get }
 
-    var supportsTrendingPosts: Bool { get }
-    var supportsTrendingTags: Bool { get }
-    var supportsTrendingLinks: Bool { get }
-
     // rename to supportAccountUpdate
     var supportsUpdateAccount: Bool { get }
+
+    // limits
+    ///
+    var boosterPageLimit: Int { get }
+    ///
+    var blockedAccountsLimit: Int { get }
+    ///
+    var conversationsPageLimit: Int { get }
+    ///
+    var followersPageLimit: Int { get }
+    ///
+    var mutedAccountsLimit: Int { get }
+    ///
+    var suggestionsLimit: Int { get }
+    ///
+    var trendingLinksLimit: Int { get }
+    ///
+    var trendingPostsLimit: Int { get }
+    ///
+    var trendingTagsLimit: Int { get }
+    /// alt text char limit
+    var maxAltText: Int { get }
+
+    // lists
+
+    /// post languages (maybe rename)
+    var languages: [ISOCode] { get }
+    ///
+    var notificationTypes: NotificationTypes { get }
+    /// post visibilities
+    var postVis: [Post.Visibility] { get }
+    /// (problem) report categories
+    var reportCats: [ReportCategory] { get }
+    /// suggestion sources
+    var suggestionSources: SuggestionSources { get }
+
 }
 
 extension Platform {
@@ -142,6 +140,18 @@ extension Platform {
 
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
+    }
+
+    public var supportsTrendingPosts: Bool {
+        trendingPostsLimit > 0
+    }
+
+    public var supportsTrendingTags: Bool {
+        trendingTagsLimit > 0
+    }
+
+    public var supportsTrendingLinks: Bool {
+        trendingLinksLimit > 0
     }
 
 }
