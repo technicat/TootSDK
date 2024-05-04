@@ -14,6 +14,9 @@ open class MisskeyFork: MastoAPI {
     open override var supportsPostDefaultVisibility: Bool { false }
 
     open override var supportsRevoke: Bool { false }
+    
+    open override var supportsTranslate: Bool { false }
+    open override var supportsTranslationLanguages: Bool { false }
 
     // limits
     ///

@@ -17,10 +17,6 @@ open class Firefish: MisskeyFork {
 
     open override var supportsSearchAccounts: Bool { false }
 
-    // move to misskeyfork?
-    open override var supportsTranslate: Bool { false }
-    open override var supportsTranslationLanguages: Bool { false }
-
     /// limits
     ///
     open override var trendingTagsLimit: Int { 0 }
