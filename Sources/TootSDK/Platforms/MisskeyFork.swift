@@ -19,9 +19,12 @@ open class MisskeyFork: MastoAPI {
     open override var supportsTranslationLanguages: Bool { false }
 
     // limits
-    ///
-    open override var scheduledPageLimit: Int {
-        0
-    }
+    /// scheduled posts not supported
+    open override var scheduledPageLimit: Int { 0 }
+    
+    // lists
+    
+    /// report categories not supported
+    open override var reportCats: [ReportCategory] { [] }
 
 }
