@@ -10,6 +10,10 @@ public protocol Platform {
 
     ///
     var boosterPageLimit: Int { get }
+    ///
+    var blockedAccountsLimit: Int { get }
+    ///
+    var mutedAccountsLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
     ///
