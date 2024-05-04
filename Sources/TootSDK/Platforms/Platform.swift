@@ -170,7 +170,7 @@ extension Platform {
     public var supportsTrendingLinks: Bool {
         trendingLinksLimit > 0
     }
-    
+
     public func supports(_ timeline: Timeline) -> Bool {
         getLimit(for: timeline) > 0
     }
