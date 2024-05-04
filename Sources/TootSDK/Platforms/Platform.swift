@@ -88,7 +88,7 @@ public protocol Platform {
 
     // limits
     // maybe should be nil when unsupported
-    
+    // but handy to treat nil as default
     ///
     var boosterPageLimit: Int { get }
     ///
