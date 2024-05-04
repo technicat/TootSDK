@@ -1,7 +1,7 @@
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/statuses/#translate
-    public func getTranslation(of post: Post, in language: ISOCode? = nil) async throws
+    public func getTranslation(of post: Post, to language: ISOCode? = nil) async throws
         -> Translation
     {
         if let language {
