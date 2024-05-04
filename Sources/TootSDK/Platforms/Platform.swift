@@ -19,7 +19,13 @@ public protocol Platform {
     var mutedAccountsLimit: Int { get }
     ///
     var suggestionsLimit: Int { get }
-    
+    ///
+    var trendingLinksLimit: Int { get }
+    ///
+    var trendingPostsLimit: Int { get }
+    ///
+    var trendingTagsLimit: Int { get }
+
     /// alt text char limit
     var maxAltText: Int { get }
     ///
@@ -132,6 +138,10 @@ extension Platform {
 
     public var hasSuggestions: Bool {
         !suggestionSources.isEmpty
+    }
+
+    public var supportsConversations: Bool {
+        conversationsPageLimit > 0
     }
 
 }

@@ -17,8 +17,6 @@ open class MastoAPI: Platform {
     open var supportsBookmark: Bool { version >= Version(3, 1) }
     open var supportsBot: Bool { version >= Version(2, 4) }
 
-    open var supportsConversation: Bool { version >= Version(2, 6) }
-
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
     open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
 
@@ -119,11 +117,19 @@ open class MastoAPI: Platform {
     ///
     open var followersPageLimit: Int { 40 }
     ///
-    open var conversationsPageLimit: Int { 40 }
+    open var conversationsPageLimit: Int {
+        version >= Version(2, 6) ? 40 : 0
+    }
     ///
     open var mutedAccountsLimit: Int { 80 }
     ///
     open var suggestionsLimit: Int { 80 }
+    ///
+    open var trendingLinksLimit: Int { 20 }
+    ///
+    open var trendingPostsLimit: Int { 40 }
+    ///
+    open var trendingTagsLimit: Int { 20 }
 
     // harcoded in Mastodon
     // same for firefish and forks
