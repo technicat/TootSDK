@@ -91,15 +91,17 @@ public protocol Platform {
     ///
     var boosterPageLimit: Int { get }
     ///
+    var faversPageLimit: Int { get }
+    ///
     var blockedAccountsLimit: Int { get }
+    ///
+    var mutedAccountsLimit: Int { get }
+    ///
+    var directoryLimit: Int { get }
     ///
     var conversationsPageLimit: Int { get }
     ///
-    var faversPageLimit: Int { get }
-    ///
     var followersPageLimit: Int { get }
-    ///
-    var mutedAccountsLimit: Int { get }
     ///
     var suggestionsLimit: Int { get }
     ///
@@ -110,7 +112,7 @@ public protocol Platform {
     var trendingTagsLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
-    ///
+    /// 
     func getTimelineLimit(_ timeline: Timeline) -> Int
 
     // lists

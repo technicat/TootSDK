@@ -109,17 +109,19 @@ open class MastoAPI: Platform {
     ///
     open var boosterPageLimit: Int { 80 }
     ///
+    open var faversPageLimit: Int { 80 }
+    ///
     open var blockedAccountsLimit: Int { 80 }
     ///
-    open var faversPageLimit: Int { 80 }
+    open var mutedAccountsLimit: Int { 80 }
+    ///
+    open var directoryLimit: Int { 80 }
     ///
     open var followersPageLimit: Int { 40 }
     ///
     open var conversationsPageLimit: Int {
         version >= Version(2, 6) ? 40 : 0
     }
-    ///
-    open var mutedAccountsLimit: Int { 80 }
     ///
     open var suggestionsLimit: Int { 80 }
     ///
