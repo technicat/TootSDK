@@ -18,7 +18,7 @@ open class MastoAPI: Platform {
     open var supportsBot: Bool { version >= Version(2, 4) }
 
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
-   // open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
+    // open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
 
     open var supportsFamiliarFollowers: Bool { version >= Version(3, 5) }
     open var supportsFeaturedTags: Bool { version >= Version(3, 0) }
@@ -43,7 +43,7 @@ open class MastoAPI: Platform {
     open var supportsInstanceV2: Bool { version >= Version(4, 0) }
     open var supportsIsBoosted: Bool { true }
 
-    open var supportsList: Bool { version >= Version(2, 1) }
+    // open var supportsList: Bool { version >= Version(2, 1) }
     open var supportsListReplyPolicy: Bool { version >= Version(3, 3) }
     open var supportsListExclusive: Bool { version >= Version(4, 2) }
 
@@ -105,13 +105,17 @@ open class MastoAPI: Platform {
     // zero indicates the feature is not supported
 
     ///
-    open var blockedDomainsLimit: Int { 
+    open var blockedDomainsLimit: Int {
         version >= Version(0, 4) ? 200 : 0
     }
     ///
     open var boosterPageLimit: Int { 80 }
     ///
     open var faversPageLimit: Int { 80 }
+    ///
+    open var listAccountsPageLimit: Int {
+        version >= Version(2, 1) ? 80 : 0
+    }
     ///
     open var blockedAccountsLimit: Int { 80 }
     ///

@@ -7,15 +7,11 @@ public protocol Platform {
     /// mark announcement as read
     var supportsAnnouncementMark: Bool { get }
 
-    /// bookmark posts
-    //var supportsBookmark: Bool { get }
     ///  specify account is a bot
     var supportsBot: Bool { get }
 
     /// listed in instance profile directory
     var supportsDiscoverable: Bool { get }
-    /// block domains
-  //  var supportsDomainBlocks: Bool { get }
 
     var supportsFamiliarFollowers: Bool { get }
     var supportsFeaturedTags: Bool { get }
@@ -34,7 +30,7 @@ public protocol Platform {
     // only need this because it's broken on Firefish and Sharkey
     var supportsIsBoosted: Bool { get }
 
-    var supportsList: Bool { get }
+    // var supportsList: Bool { get }
     var supportsListReplyPolicy: Bool { get }
     var supportsListExclusive: Bool { get }
 
@@ -104,6 +100,8 @@ public protocol Platform {
     ///
     var followersPageLimit: Int { get }
     ///
+    var listAccountsPageLimit: Int { get }
+    ///
     var notificationsPageLimit: Int { get }
     ///
     var scheduledPageLimit: Int { get }
@@ -156,9 +154,13 @@ extension Platform {
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
     }
-    
-    public var supportsDomainBlocks: Bool { 
+
+    public var supportsDomainBlocks: Bool {
         blockedDomainsLimit > 0
+    }
+
+    public var supportsList: Bool {
+        listAccountsPageLimit > 0
     }
 
     public var supportsSchedule: Bool {
