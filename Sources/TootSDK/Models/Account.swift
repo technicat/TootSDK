@@ -6,7 +6,7 @@ import Foundation
 /// Represents a user  and their associated profile.
 public class Account: Codable, Identifiable, @unchecked Sendable {
     public init(
-        id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String,
+        id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String? = nil,
         avatarStatic: String? = nil, header: String, headerStatic: String, locked: Bool, emojis: [Emoji], discoverable: Bool? = nil,
         indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
         lastPostAt: Date? = nil, postsCount: Int, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
@@ -52,7 +52,7 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.url = try container.decode(String.self, forKey: .url)
         self.displayName = try? container.decodeIfPresent(String.self, forKey: .displayName)
         self.note = try container.decode(String.self, forKey: .note)
-        self.avatar = try container.decode(String.self, forKey: .avatar)
+        self.avatar = try? container.decodeIfPresent(String.self, forKey: .avatar)
         self.avatarStatic = try? container.decodeIfPresent(String.self, forKey: .avatarStatic)
         // pixelfed doesn't include headers in block/mute lists
         self.header = (try? container.decodeIfPresent(String.self, forKey: .header)) ?? ""
@@ -94,7 +94,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// The profile's bio / description
     public let note: String
     /// An image icon that is shown next to posts and in the profile
-    public let avatar: String
+    /// Non-optional in Mastodon spec but can be missing in Mitra
+    public let avatar: String?
     /// A static version of the avatar.
     public let avatarStatic: String?
     /// An image banner that is shown above the profile and in profile cards
