@@ -18,7 +18,7 @@ open class MastoAPI: Platform {
     open var supportsBot: Bool { version >= Version(2, 4) }
 
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
-    open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
+   // open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
 
     open var supportsFamiliarFollowers: Bool { version >= Version(3, 5) }
     open var supportsFeaturedTags: Bool { version >= Version(3, 0) }
@@ -104,6 +104,10 @@ open class MastoAPI: Platform {
     // limits
     // zero indicates the feature is not supported
 
+    ///
+    open var blockedDomainsLimit: Int { 
+        version >= Version(0, 4) ? 200 : 0
+    }
     ///
     open var boosterPageLimit: Int { 80 }
     ///

@@ -15,7 +15,7 @@ public protocol Platform {
     /// listed in instance profile directory
     var supportsDiscoverable: Bool { get }
     /// block domains
-    var supportsDomainBlocks: Bool { get }
+  //  var supportsDomainBlocks: Bool { get }
 
     var supportsFamiliarFollowers: Bool { get }
     var supportsFeaturedTags: Bool { get }
@@ -88,6 +88,8 @@ public protocol Platform {
     // maybe should be nil when unsupported
     // but handy to treat nil as default
     ///
+    var blockedDomainsLimit: Int { get }
+    ///
     var boosterPageLimit: Int { get }
     ///
     var faversPageLimit: Int { get }
@@ -153,6 +155,10 @@ extension Platform {
 
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
+    }
+    
+    public var supportsDomainBlocks: Bool { 
+        blockedDomainsLimit > 0
     }
 
     public var supportsSchedule: Bool {
