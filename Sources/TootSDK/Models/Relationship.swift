@@ -17,7 +17,7 @@ public struct Relationship: Codable, Hashable, Identifiable, Sendable {
         mutingNotifications: Bool? = nil,
         showingReposts: Bool? = nil,
         notifying: Bool? = nil,
-        blocking: Bool,
+        blocking: Bool? = nil,
         domainBlocking: Bool?,
         blockedBy: Bool? = nil,
         note: String? = nil
@@ -56,7 +56,8 @@ public struct Relationship: Codable, Hashable, Identifiable, Sendable {
     /// Have you enabled notifications for this user?
     public let notifying: Bool?
     /// Are you blocking this user?
-    public let blocking: Bool
+    /// Can be null in Mitra
+    public let blocking: Bool?
     /// Are you blocking this user's domain?
     public let domainBlocking: Bool?
     /// Is this user blocking you?
