@@ -30,7 +30,6 @@ public protocol Platform {
     // only need this because it's broken on Firefish and Sharkey
     var supportsIsBoosted: Bool { get }
 
-    // var supportsList: Bool { get }
     var supportsListReplyPolicy: Bool { get }
     var supportsListExclusive: Bool { get }
 

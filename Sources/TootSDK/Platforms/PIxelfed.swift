@@ -5,8 +5,6 @@ open class Pixelfed: MastoAPI {
 
     open override var supportsBot: Bool { false }
 
-    open override var supportsList: Bool { false }
-
     open override var supportsFeaturedTags: Bool { false }
     open override var supportsFollowTag: Bool { true }
 
@@ -42,6 +40,7 @@ open class Pixelfed: MastoAPI {
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
 
+    open override var listAccountsPageLimit: Int { 0 }
     open override var scheduledPageLimit: Int { 0 }
 
     /// default, this is on pixelfed.social

@@ -2,8 +2,6 @@ open class MisskeyFork: MastoAPI {
 
     open override var name: String { "MisskeyFork" }
 
-    //  open override var supportsDomainBlocks: Bool { false }
-
     open override var supportsFeaturedTags: Bool { false }
 
     open override var supportsIsBoosted: Bool { false }
