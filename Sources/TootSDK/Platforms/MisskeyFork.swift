@@ -2,7 +2,7 @@ open class MisskeyFork: MastoAPI {
 
     open override var name: String { "MisskeyFork" }
 
-  //  open override var supportsDomainBlocks: Bool { false }
+    //  open override var supportsDomainBlocks: Bool { false }
 
     open override var supportsFeaturedTags: Bool { false }
 
@@ -23,7 +23,7 @@ open class MisskeyFork: MastoAPI {
     open override var supportsTranslationLanguages: Bool { false }
 
     // limits
-    
+
     /// domain blocking not supported
     open override var blockedDomainsLimit: Int { 0 }
     /// scheduled posts not supported
