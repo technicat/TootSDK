@@ -26,6 +26,9 @@ extension Instance {
         if version.lowercased().contains("iceshrimp") {
             return Iceshrimp(apiVersion)
         }
+        if version.lowercased().contains("mitra") {
+            return Mitra(apiVersion)
+        }
         if version.lowercased().contains("pixelfed") {
             return Pixelfed(apiVersion)
         }
@@ -40,6 +43,9 @@ extension Instance {
         }
         // kludge - GotoSocial version string is missing GotoSocial name
         // and Mastodon API version
+        // (except when it's set to display the Mastodon version
+        // and doesn't display any GotoSocial info)
+        // just a git version
         // so let's just say it's the latest and see what happens
         if version.lowercased().contains("git") {
             // instanceMastodonVersion in internalfrontend.go
