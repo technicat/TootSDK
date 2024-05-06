@@ -2,10 +2,19 @@ open class Mitra: MastoAPI {
     open override var name: String { "Mitra" }
     
     open override var supportsFeaturedTags: Bool { false }
+    open override var supportsFilter: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
+    open override var supportsNote: Bool { false }
     open override var supportsTranslate: Bool { false }
     
     // limits
+    
+    // blocking accounts not supported
+    open override var blockedAccountsLimit: Int { 0 }
+    // blocking accounts not supported
+    open override var mutedAccountsLimit: Int { 0 }
+    // blocking domains not supported
+    open override var blockedDomainsLimit: Int { 0 }
 
     /// trends not supported
     open override var trendingLinksLimit: Int { 0 }

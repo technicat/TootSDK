@@ -149,13 +149,21 @@ extension Platform {
     public var hasSuggestions: Bool {
         !suggestionSources.isEmpty
     }
+    
+    public var supportsBlockedAccounts: Bool {
+        blockedAccountsLimit > 0
+    }
+    
+    public var supportsMutedAccounts: Bool {
+        mutedAccountsLimit > 0
+    }
+    
+    public var supportsBlockedDomains: Bool {
+        blockedDomainsLimit > 0
+    }
 
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
-    }
-
-    public var supportsDomainBlocks: Bool {
-        blockedDomainsLimit > 0
     }
 
     public var supportsList: Bool {
