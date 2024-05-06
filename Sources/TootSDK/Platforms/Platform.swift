@@ -56,7 +56,6 @@ public protocol Platform {
     var supportsPostSource: Bool { get }
 
     var supportsProfileFields: Bool { get }
-    var supportsProfileDirectory: Bool { get }
     var supportsProfileHeader: Bool { get }
     var supportsProfileImageDelete: Bool { get }
 
@@ -164,6 +163,10 @@ extension Platform {
 
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
+    }
+    
+    public var supportsDirectory: Bool {
+        directoryLimit > 0
     }
 
     public var supportsList: Bool {

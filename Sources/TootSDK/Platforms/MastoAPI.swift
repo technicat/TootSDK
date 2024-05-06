@@ -65,7 +65,6 @@ open class MastoAPI: Platform {
     open var supportsPostHistory: Bool { version >= Version(3, 5) }
 
     open var supportsProfileFields: Bool { version >= Version(2, 4) }
-    open var supportsProfileDirectory: Bool { version >= Version(4, 0) }
     open var supportsProfileHeader: Bool { true }
     open var supportsProfileImageDelete: Bool { version >= Version(4, 2) }
 
@@ -118,7 +117,9 @@ open class MastoAPI: Platform {
     ///
     open var mutedAccountsLimit: Int { 80 }
     ///
-    open var directoryLimit: Int { 80 }
+    open var directoryLimit: Int { 
+        version >= Version(4, 0) ? 80 : 0
+    }
     ///
     open var suggestionsLimit: Int { 80 }
     ///
