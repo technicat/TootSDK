@@ -14,11 +14,9 @@ open class MastoAPI: Platform {
     open var supportsAnnouncements: Bool { version >= Version(3, 1) }
     open var supportsAnnouncementMark: Bool { version >= Version(3, 1) }
 
-    //open var supportsBookmark: Bool { version >= Version(3, 1) }
     open var supportsBot: Bool { version >= Version(2, 4) }
 
     open var supportsDiscoverable: Bool { version >= Version(4, 2) }
-    // open var supportsDomainBlocks: Bool { version >= Version(0, 4) }
 
     open var supportsFamiliarFollowers: Bool { version >= Version(3, 5) }
     open var supportsFeaturedTags: Bool { version >= Version(3, 0) }
