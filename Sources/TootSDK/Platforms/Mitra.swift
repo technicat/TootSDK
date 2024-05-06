@@ -17,7 +17,8 @@ open class Mitra: MastoAPI {
 
     open override func getLimit(for timeline: Timeline) -> Int {
         switch timeline {
-        case .bookmarks: return 0 // bookmarks not supported
+        case .bookmarks: return 0 // not supported
+        case .favourites: return 0 // not supported
         default: return super.getLimit(for: timeline)
         }
     }
