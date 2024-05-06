@@ -169,7 +169,7 @@ extension Platform {
     public var supportsDirectory: Bool {
         directoryLimit > 0
     }
-    
+
     public var supportsFollowTag: Bool {
         followedTagsPageLimit > 0
     }
