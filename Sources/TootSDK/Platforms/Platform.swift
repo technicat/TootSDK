@@ -148,15 +148,15 @@ extension Platform {
     public var hasSuggestions: Bool {
         !suggestionSources.isEmpty
     }
-    
+
     public var supportsBlockedAccounts: Bool {
         blockedAccountsLimit > 0
     }
-    
+
     public var supportsMutedAccounts: Bool {
         mutedAccountsLimit > 0
     }
-    
+
     public var supportsBlockedDomains: Bool {
         blockedDomainsLimit > 0
     }
@@ -164,7 +164,7 @@ extension Platform {
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
     }
-    
+
     public var supportsDirectory: Bool {
         directoryLimit > 0
     }

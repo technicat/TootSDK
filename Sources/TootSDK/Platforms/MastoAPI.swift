@@ -117,7 +117,7 @@ open class MastoAPI: Platform {
     ///
     open var mutedAccountsLimit: Int { 80 }
     ///
-    open var directoryLimit: Int { 
+    open var directoryLimit: Int {
         version >= Version(4, 0) ? 80 : 0
     }
     ///
