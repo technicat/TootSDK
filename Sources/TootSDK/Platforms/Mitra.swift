@@ -7,7 +7,15 @@ open class Mitra: MastoAPI {
     
     // limits
 
+    /// trends not supported
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
+
+    open override func getLimit(for timeline: Timeline) -> Int {
+        switch timeline {
+        case .bookmarks: return 0 // bookmarks not supported
+        default: return super.getLimit(for: timeline)
+        }
+    }
 }
