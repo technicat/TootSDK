@@ -6,7 +6,7 @@ open class Pixelfed: MastoAPI {
     open override var supportsBot: Bool { false }
 
     open override var supportsFeaturedTags: Bool { false }
-    open override var supportsFollowTag: Bool { true }
+   // open override var supportsFollowTag: Bool { true }
 
     open override var supportsNote: Bool { false }
     open override var supportsNotificationDelete: Bool { false }
@@ -42,6 +42,8 @@ open class Pixelfed: MastoAPI {
 
     /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }
+    /// followed tags not supported
+    open override var followedTagsPageLimit: Int { 0 }
     /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
 

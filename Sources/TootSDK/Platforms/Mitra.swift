@@ -17,6 +17,8 @@ open class Mitra: MastoAPI {
     open override var mutedAccountsLimit: Int { 0 }
     // blocking domains not supported
     open override var blockedDomainsLimit: Int { 0 }
+    // followed tags not supported
+    open override var followedTagsPageLimit: Int { 0 }
 
     /// trends not supported
     open override var trendingLinksLimit: Int { 0 }

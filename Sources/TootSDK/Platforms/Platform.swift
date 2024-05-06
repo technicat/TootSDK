@@ -19,7 +19,6 @@ public protocol Platform {
 
     var supportsFollowLanguages: Bool { get }
     var supportsFollowNotify: Bool { get }
-    var supportsFollowTag: Bool { get }
 
     /// hide followers/followees
     var supportsHideCollections: Bool { get }
@@ -98,6 +97,8 @@ public protocol Platform {
     ///
     var followersPageLimit: Int { get }
     ///
+    var followedTagsPageLimit: Int { get }
+    ///
     var listAccountsPageLimit: Int { get }
     ///
     var notificationsPageLimit: Int { get }
@@ -167,6 +168,10 @@ extension Platform {
 
     public var supportsDirectory: Bool {
         directoryLimit > 0
+    }
+    
+    public var supportsFollowTag: Bool {
+        followedTagsPageLimit > 0
     }
 
     public var supportsList: Bool {
