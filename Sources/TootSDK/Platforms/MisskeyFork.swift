@@ -24,6 +24,8 @@ open class MisskeyFork: MastoAPI {
 
     /// domain blocking not supported
     open override var blockedDomainsLimit: Int { 0 }
+    /// profile directories not supported
+    open override var directoryLimit: Int { 0 }
     /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
 
