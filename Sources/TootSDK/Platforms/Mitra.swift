@@ -31,4 +31,8 @@ open class Mitra: MastoAPI {
         default: return super.getLimit(for: timeline)
         }
     }
+    
+    open override var notificationTypes: NotificationTypes {
+        []
+    }
 }
