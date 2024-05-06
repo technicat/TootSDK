@@ -35,11 +35,14 @@ open class Pixelfed: MastoAPI {
 
     // limits
 
+    /// trends not supported
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
 
+    /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }
+    /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
 
     /// default, this is on pixelfed.social
