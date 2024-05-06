@@ -1,6 +1,7 @@
 open class Mitra: MastoAPI {
     open override var name: String { "Mitra" }
     
+    open override var supportsFamiliarFollowers: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
     open override var supportsFilter: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
