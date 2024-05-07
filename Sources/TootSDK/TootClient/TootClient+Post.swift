@@ -74,6 +74,7 @@ extension TootClient {
 
     /// Deletes a single post
     /// This version is for platforms that don't return the deleted Post
+    ///  (friendica, mitra, sharkey, firefish)
     /// - Parameter id: the ID of the post to be deleted
     public func deletePostNoReturn(id: String) async throws {
         let req = HTTPRequestBuilder {
@@ -198,9 +199,7 @@ extension TootClient {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "reblogged_by"])
             $0.method = .get
-            if flavour == .mastodon {
-                $0.query = getQueryParams(pageInfo, limit: limit)
-            }
+            $0.query = getQueryParams(pageInfo, limit: limit)
         }
         return try await fetchPagedResult(req)
     }
@@ -210,9 +209,7 @@ extension TootClient {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "favourited_by"])
             $0.method = .get
-            if flavour == .mastodon {
-                $0.query = getQueryParams(pageInfo, limit: limit)
-            }
+            $0.query = getQueryParams(pageInfo, limit: limit)
         }
 
         return try await fetchPagedResult(req)
