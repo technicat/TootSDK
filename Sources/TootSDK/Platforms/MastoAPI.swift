@@ -80,6 +80,8 @@ open class MastoAPI: Platform {
 
     open var supportsRelationshipWithSuspended: Bool { version >= Version(4, 3) }
     open var supportsRemoveFollower: Bool { version >= Version(3, 5) }
+
+    open var supportsReport: Bool { version >= Version(1, 1) }
     open var supportsReportRules: Bool { version >= Version(4, 0) }
 
     open var supportsRevoke: Bool { true }
@@ -139,9 +141,10 @@ open class MastoAPI: Platform {
         switch timeline {
         case .bookmarks:
             version >= Version(3, 1) ? 40 : 0
-        case .direct: 0
-        default:  // should make this 0
+        case .home, .favourites, .local, .federated, .hashtag, .list, .user:
             40
+        default:
+            0
         }
     }
 

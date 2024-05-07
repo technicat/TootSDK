@@ -62,7 +62,10 @@ public protocol Platform {
 
     var supportsRelationshipWithSuspended: Bool { get }
     var supportsRemoveFollower: Bool { get }
+
+    var supportsReport: Bool { get }
     var supportsReportRules: Bool { get }
+
     var supportsRevoke: Bool { get }
 
     var supportsScheduleUpdate: Bool { get }
