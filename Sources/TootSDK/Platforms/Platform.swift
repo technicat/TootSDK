@@ -161,11 +161,11 @@ extension Platform {
     public var supportsBlockedDomains: Bool {
         blockedDomainsLimit > 0
     }
-    
+
     public var supportsBoosters: Bool {
         boosterPageLimit > 0
     }
-    
+
     public var supportsFavers: Bool {
         faversPageLimit > 0
     }

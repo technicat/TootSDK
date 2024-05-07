@@ -26,7 +26,6 @@ open class Mitra: MastoAPI {
     /// querying favers not supported
     open override var faversPageLimit: Int { 0 }
 
-
     /// trends not supported
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }

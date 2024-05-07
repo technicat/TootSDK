@@ -18,7 +18,7 @@ extension TootClient {
             $0.method = .post
             // Mitra and Sharkey expect json
             $0.body = try .json(params, encoder: self.encoder)
-          //  $0.body = try .multipart(params, boundary: UUID().uuidString)
+            //  $0.body = try .multipart(params, boundary: UUID().uuidString)
         }
         return try await fetch(Post.self, req)
     }
