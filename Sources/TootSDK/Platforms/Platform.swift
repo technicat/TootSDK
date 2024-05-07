@@ -69,8 +69,11 @@ public protocol Platform {
     var supportsRevoke: Bool { get }
 
     var supportsScheduleUpdate: Bool { get }
+    
     var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
+    
+    var supportsSpoiler: Bool { get }
 
     var supportsTagStats: Bool { get }
 

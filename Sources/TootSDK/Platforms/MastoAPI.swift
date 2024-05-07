@@ -1,4 +1,6 @@
 // maybe should be a protocol
+// not everything here is in Platform
+// include as needed
 open class MastoAPI: Platform {
 
     open var version: Version
@@ -87,8 +89,9 @@ open class MastoAPI: Platform {
     open var supportsRevoke: Bool { true }
 
     open var supportsScheduleUpdate: Bool { version >= Version(2, 7) }
-
+    open var supportsSensitive: Bool { version >= Version(0, 9, 9) }
     open var supportsSearchPosts: Bool { version >= Version(2, 4, 1) }
+    open var supportsSpoiler: Bool { version >= Version(1, 0) }
 
     open var supportsTagStats: Bool { version >= Version(2, 4, 1) }
 
