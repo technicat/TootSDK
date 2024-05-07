@@ -18,7 +18,6 @@ extension TootClient {
             $0.method = .post
             // Mitra and Sharkey expect json
             $0.body = try .json(params, encoder: self.encoder)
-            //  $0.body = try .multipart(params, boundary: UUID().uuidString)
         }
         return try await fetch(Post.self, req)
     }
@@ -33,7 +32,6 @@ extension TootClient {
             $0.method = .put
             // Mitra and Sharkey expect json
             $0.body = try .json(params, encoder: self.encoder)
-         //   $0.body = try .multipart(params, boundary: UUID().uuidString)
         }
         return try await fetch(Post.self, req)
     }
@@ -72,6 +70,17 @@ extension TootClient {
             $0.method = .delete
         }
         return try await fetch(Post.self, req)
+    }
+
+    /// Deletes a single post
+    /// This version is for platforms that don't return the deleted Post
+    /// - Parameter id: the ID of the post to be deleted
+    public func deletePostNoReturn(id: String) async throws {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "statuses", id])
+            $0.method = .delete
+        }
+        _ = try await fetch(req: req)
     }
 
 }

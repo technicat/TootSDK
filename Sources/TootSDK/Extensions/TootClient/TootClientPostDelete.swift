@@ -1,18 +1,16 @@
 import Foundation
 
+/// https://docs.joinmastodon.org/methods/statuses/#delete
 extension TootClient {
 
-    /// https://docs.joinmastodon.org/methods/statuses/#delete
     @discardableResult
     public func delete(_ post: Post) async throws -> Post {
-        do {
-            let post = try await deletePost(id: post.id)
-            return post
-        } catch is DecodingError {  // friendica returns []
-            let post = Post(from: post)
-            post.content = nil  // should clear other stuff?
-            return post
-        }
+        try await deletePost(id: post.id)
+    }
+
+    @discardableResult
+    public func delete(withoutReturn post: Post) async throws {
+        try await deletePostNoReturn(id: post.id)
     }
 
 }
