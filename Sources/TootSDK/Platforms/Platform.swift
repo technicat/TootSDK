@@ -161,6 +161,14 @@ extension Platform {
     public var supportsBlockedDomains: Bool {
         blockedDomainsLimit > 0
     }
+    
+    public var supportsBoosters: Bool {
+        boosterPageLimit > 0
+    }
+    
+    public var supportsFavers: Bool {
+        faversPageLimit > 0
+    }
 
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
@@ -194,6 +202,7 @@ extension Platform {
         trendingLinksLimit > 0
     }
 
+    // maybe supports(timeline:)
     public func supports(_ timeline: Timeline) -> Bool {
         getLimit(for: timeline) > 0
     }

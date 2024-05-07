@@ -21,6 +21,10 @@ open class Mitra: MastoAPI {
     open override var followedTagsPageLimit: Int { 0 }
     // scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
+    /// querying boosters not supported
+    open override var boosterPageLimit: Int { 0 }
+    /// querying favers not supported
+    open override var faversPageLimit: Int { 0 }
 
 
     /// trends not supported
