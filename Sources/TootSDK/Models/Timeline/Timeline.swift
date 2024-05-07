@@ -15,6 +15,10 @@ public enum Timeline: Hashable, Sendable {
     /// The user's federated timeline
     case federated(FederatedTimelineQuery = FederatedTimelineQuery())
 
+    /// Only direct (private mention) posts
+    /// Supported by Mitra
+    case direct
+
     /// The user's favourite posts
     case favourites
 

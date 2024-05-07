@@ -123,7 +123,7 @@ public protocol Platform {
     var languages: [ISOCode] { get }
     ///
     var notificationTypes: NotificationTypes { get }
-    /// post visibilities
+    /// supported post visibilities
     var postVis: [Post.Visibility] { get }
     /// (problem) report categories
     var reportCats: [ReportCategory] { get }

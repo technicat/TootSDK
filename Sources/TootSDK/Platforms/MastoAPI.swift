@@ -139,7 +139,8 @@ open class MastoAPI: Platform {
         switch timeline {
         case .bookmarks:
             version >= Version(3, 1) ? 40 : 0
-        default:
+        case .direct: 0
+        default:  // should make this 0
             40
         }
     }

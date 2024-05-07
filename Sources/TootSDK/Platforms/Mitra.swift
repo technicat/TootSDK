@@ -39,6 +39,7 @@ open class Mitra: MastoAPI {
         switch timeline {
         case .bookmarks: return 0  // not supported
         case .favourites: return 0  // not supported
+        case .direct: return 40  // supported
         default: return super.getLimit(for: timeline)
         }
     }

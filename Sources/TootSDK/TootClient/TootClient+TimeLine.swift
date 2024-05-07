@@ -15,10 +15,11 @@ extension TootClient {
         switch timeline {
         case .home:
             return ["api", "v1", "timelines", "home"]
-        case .local:
+        case .local, .federated:
             return ["api", "v1", "timelines", "public"]
-        case .federated:
-            return ["api", "v1", "timelines", "public"]
+        // for mitra
+        case .direct:
+            return ["api", "v1", "timelines", "direct"]
         case .favourites:
             return ["api", "v1", "favourites"]
         case .bookmarks:
@@ -42,10 +43,10 @@ extension TootClient {
             return federatedTimelineQuery
         case .hashtag(let hashtagTimelineQuery):
             return hashtagTimelineQuery
-        case .home, .favourites, .bookmarks, .list:
-            return nil
         case .user(let query):
             return query
+        default:
+            return nil
         }
     }
 
