@@ -5,10 +5,13 @@ open class Firefish: MisskeyFork {
     open override var supportsPublicTimeline: Bool { false }
 
     open override var supportsSearchAccounts: Bool { false }
-
+    
     /// limits
-    ///
+    
+    // only support trending posts
     open override var trendingTagsLimit: Int { 0 }
+    open override var trendingLinksLimit: Int { 0 }
+    open override var trendingPostsLimit: Int { 40 } // check this
 
     /// lists
 
