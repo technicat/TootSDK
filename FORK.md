@@ -1,6 +1,6 @@
 This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Here's a summary of the changes:
 
-## Platform
+## Platform, Features, and Flavours
 
 - `instance.platform` returns a Platform descriptor with feature support queries like `platform.supportsAnnouncements` based on the detected Mastodon API version. This avoids having to query `TootClient.flavour` and `TootClient.supportsFeature`, and new platforms can be added without modifying TootFeature lists. The descriptors have inheritance hierarchies that mirror forking relationships, e.g. `Hometown` is a subclass of `Mastodon`. Ideally the platform determination should also check nodeinfo and instance v2.
 - Removed TootFeature
