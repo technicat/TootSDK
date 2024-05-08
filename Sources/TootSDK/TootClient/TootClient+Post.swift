@@ -64,7 +64,7 @@ extension TootClient {
     /// Deletes a single post
     /// - Parameter id: the ID of the post to be deleted
     /// - Returns: the post deleted (for delete and redraft), if successful, throws an error if not
-    public func deletePost(id: String) async throws -> Post {
+    public func deleteAndEditPost(id: String) async throws -> Post {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id])
             $0.method = .delete
@@ -74,9 +74,10 @@ extension TootClient {
 
     /// Deletes a single post
     /// This version is for platforms that don't return the deleted Post
-    ///  (friendica, mitra, sharkey, firefish)
+    /// (friendica, mitra, sharkey, firefish)
+    /// but might as well call this if you don't care about the returned post
     /// - Parameter id: the ID of the post to be deleted
-    public func deletePostNoReturn(id: String) async throws {
+    public func deletePost(id: String) async throws {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id])
             $0.method = .delete
