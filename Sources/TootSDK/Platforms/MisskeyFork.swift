@@ -10,6 +10,8 @@ open class MisskeyFork: MastoAPI {
 
     open override var supportsNotificationDelete: Bool { false }
     open override var supportsNotificationDeleteAll: Bool { false }
+    
+    open override var supportsPostDeleteAndEdit: Bool { false }
 
     open override var supportsPostDefaultLanguage: Bool { false }
     open override var supportsPostDefaultSensitive: Bool { false }

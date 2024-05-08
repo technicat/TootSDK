@@ -60,6 +60,7 @@ open class MastoAPI: Platform {
 
     open var supportsPollVote: Bool { version >= Version(2, 8) }  // supportsPoll
 
+    open var supportsPostDeleteAndEdit: Bool { version >= Version(2, 9) }
     // https://docs.joinmastodon.org/methods/statuses/#edit
     open var supportsPostEdit: Bool { version >= Version(3, 5) }
     open var supportsPostEditLanguage: Bool { version >= Version(4, 0) }

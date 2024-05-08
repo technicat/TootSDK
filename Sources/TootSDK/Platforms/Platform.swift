@@ -49,6 +49,7 @@ public protocol Platform {
     var supportsPostDefaultSensitive: Bool { get }
     var supportsPostDefaultVisibility: Bool { get }
 
+    var supportsPostDeleteAndEdit: Bool { get }
     var supportsPostEdit: Bool { get }
     var supportsPostEditLanguage: Bool { get }
     var supportsPostHistory: Bool { get }
