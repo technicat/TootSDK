@@ -1,4 +1,4 @@
-This fork is geared toward supporting Fedicat, so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). These are the changes:
+This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Here's a summary of the changes:
 
 ## Platform
 
