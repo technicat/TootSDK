@@ -39,6 +39,14 @@ This fork is geared toward supporting Fedicat, so expect instability and diverge
 
 - Replaced poll property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
 
+## Account
+
+- avatarUrl is optional to accomodate Mitra accounts that have no avatar set (makes sense in general, better nil than an invalid or empty url string).
+
+## Relationship
+
+- blocking is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in Relationship, anyway.
+
 ## Timeline
 
 - Add direct timeline for Mitra
