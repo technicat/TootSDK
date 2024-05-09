@@ -1,6 +1,7 @@
 // maybe should be a protocol
 // not everything here is in Platform
 // include as needed
+// https://docs.joinmastodon.org/
 open class MastoAPI: Platform {
 
     open var version: Version
@@ -28,7 +29,7 @@ open class MastoAPI: Platform {
     // open var supportsFollowTag: Bool { version >= Version(4, 0) }
 
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
-    open var supportsHideCollections: Bool { version >= Version(4, 2) }
+    open var supportsHideCollections: Bool { version >= Version(4, 1) }
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
     open var supportsIndexable: Bool { version >= Version(4, 2) }
 
