@@ -1,3 +1,4 @@
+/// https://codeberg.org/silverpill/mitra/src/branch/main/docs/openapi.yaml
 open class Mitra: MastoAPI {
     open override var name: String { "Mitra" }
 
