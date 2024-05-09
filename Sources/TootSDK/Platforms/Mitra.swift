@@ -8,6 +8,7 @@ open class Mitra: MastoAPI {
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsNote: Bool { false }
     open override var supportsProfileFields: Bool { false }
+    open override var supportsPublicDirectory: Bool { false }
     open override var supportsPublicTimeline: Bool { false }
     open override var supportsReport: Bool { false }
     open override var supportsSpoiler: Bool { false }

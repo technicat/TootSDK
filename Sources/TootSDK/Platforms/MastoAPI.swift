@@ -71,6 +71,7 @@ open class MastoAPI: Platform {
     open var supportsProfileHeader: Bool { true }
     open var supportsProfileImageDelete: Bool { version >= Version(4, 2) }
 
+    open var supportsPublicDirectory: Bool { true }
     // private public timeline supported with 3.0.90
     open var supportsPublicTimeline: Bool { true }
 

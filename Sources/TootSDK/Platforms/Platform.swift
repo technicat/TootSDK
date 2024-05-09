@@ -59,6 +59,7 @@ public protocol Platform {
     var supportsProfileHeader: Bool { get }
     var supportsProfileImageDelete: Bool { get }
 
+    var supportsPublicDirectory: Bool { get }
     var supportsPublicTimeline: Bool { get }
 
     var supportsRelationshipWithSuspended: Bool { get }
@@ -70,10 +71,10 @@ public protocol Platform {
     var supportsRevoke: Bool { get }
 
     var supportsScheduleUpdate: Bool { get }
-    
+
     var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
-    
+
     var supportsSpoiler: Bool { get }
 
     var supportsTagStats: Bool { get }
@@ -179,7 +180,7 @@ extension Platform {
     public var supportsDirectory: Bool {
         directoryLimit > 0
     }
-    
+
     public var supportsFavers: Bool {
         faversPageLimit > 0
     }
@@ -195,7 +196,7 @@ extension Platform {
     public var supportsSchedule: Bool {
         scheduledPageLimit > 0
     }
-    
+
     public var supportsTrendingLinks: Bool {
         trendingLinksLimit > 0
     }

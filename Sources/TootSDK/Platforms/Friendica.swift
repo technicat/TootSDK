@@ -1,7 +1,7 @@
 open class Friendica: MastoAPI {
 
     open override var name: String { "Friendica" }
-    
+
     open override var supportsPostDeleteAndEdit: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
     // open override var supportsFollowTag: Bool { true }

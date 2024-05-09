@@ -1,6 +1,6 @@
 extension ExtendedDescription {
 
-  var isEmpty: Bool {
-    content.isBlank
-  }
+    var isEmpty: Bool {
+        content.isBlank
+    }
 }
