@@ -1,3 +1,4 @@
+/// https://github.com/superseriousbusiness/gotosocial/blob/main/docs/api/swagger.yaml
 open class GotoSocial: MastoAPI {
     open override var name: String { "GotoSocial" }
 
