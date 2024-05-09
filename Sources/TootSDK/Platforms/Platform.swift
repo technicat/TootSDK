@@ -172,17 +172,16 @@ extension Platform {
     public var supportsBoosters: Bool {
         boosterPageLimit > 0
     }
-
-    public var supportsFavers: Bool {
-        faversPageLimit > 0
-    }
-
     public var supportsConversations: Bool {
         conversationsPageLimit > 0
     }
 
     public var supportsDirectory: Bool {
         directoryLimit > 0
+    }
+    
+    public var supportsFavers: Bool {
+        faversPageLimit > 0
     }
 
     public var supportsFollowTag: Bool {
@@ -196,6 +195,10 @@ extension Platform {
     public var supportsSchedule: Bool {
         scheduledPageLimit > 0
     }
+    
+    public var supportsTrendingLinks: Bool {
+        trendingLinksLimit > 0
+    }
 
     public var supportsTrendingPosts: Bool {
         trendingPostsLimit > 0
@@ -203,10 +206,6 @@ extension Platform {
 
     public var supportsTrendingTags: Bool {
         trendingTagsLimit > 0
-    }
-
-    public var supportsTrendingLinks: Bool {
-        trendingLinksLimit > 0
     }
 
     // maybe supports(timeline:)
