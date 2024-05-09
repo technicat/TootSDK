@@ -27,6 +27,8 @@ open class Mitra: MastoAPI {
     open override var scheduledPageLimit: Int { 0 }
     /// querying boosters not supported
     open override var boosterPageLimit: Int { 0 }
+    /// conversations not supported
+    open override var conversationsPageLimit: Int { 0 }
     /// querying favers not supported
     open override var faversPageLimit: Int { 0 }
 
