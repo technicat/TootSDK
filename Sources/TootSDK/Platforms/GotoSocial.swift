@@ -2,7 +2,12 @@
 open class GotoSocial: MastoAPI {
     open override var name: String { "GotoSocial" }
 
+    // supports
+    
+    /// doesn't support public (no auth) timeline
     open override var supportsPublicTimeline: Bool { false }
+    /// doesn't support oauth revoke revoke
+    open override var supportsRevoke: Bool { false }
 
     /// conversations not supported
     open override var conversationsPageLimit: Int { 0 }

@@ -97,6 +97,7 @@ open class MastoAPI: Platform {
     open var supportsReport: Bool { api >= Version(1, 1) }
     open var supportsReportRules: Bool { api >= Version(4, 0) }
 
+    /// https://docs.joinmastodon.org/methods/oauth/#revoke
     open var supportsRevoke: Bool { true }
 
     open var supportsScheduleUpdate: Bool { api >= Version(2, 7) }
