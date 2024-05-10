@@ -48,6 +48,8 @@ open class Pixelfed: MastoAPI {
 
     /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }
+    ///
+    open override var minAttachments: Int { 1 }
 
     // lists
 

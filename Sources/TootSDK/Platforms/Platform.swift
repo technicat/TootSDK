@@ -122,6 +122,8 @@ public protocol Platform {
     var trendingTagsLimit: Int { get }
     /// alt text char limit
     var maxAltText: Int { get }
+    /// here because pixelfed requires at least one, but could be true of other image-oriented platforms
+    var minAttachments: Int { get }
     ///
     func getLimit(for timeline: Timeline) -> Int
 

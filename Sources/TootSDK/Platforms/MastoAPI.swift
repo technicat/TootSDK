@@ -175,6 +175,8 @@ open class MastoAPI: Platform {
     // same for firefish and forks
     // todo - check other platforms
     open var maxAltText: Int { 1500 }
+    //
+    open var minAttachments: Int { 0 }
 
     // lists
 
