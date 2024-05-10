@@ -4,6 +4,8 @@ open class GotoSocial: MastoAPI {
 
     // supports
     
+    /// doesn't support deleting a notifitation
+    open override var supportsNotificationDelete: Bool { false }
     /// doesn't support public (no auth) timeline
     open override var supportsPublicTimeline: Bool { false }
     /// doesn't support oauth revoke revoke
