@@ -61,17 +61,17 @@ open class Mastodon: MastoAPI {
 
     open override var languages: [ISOCode] {
         var all = langs
-        if version >= Version(4, 0) {
+        if api >= Version(4, 0) {
             all = all + langs40
         }
-        if version >= Version(4, 1) {
+        if api >= Version(4, 1) {
             all = all + langs41
         }
-        if version >= Version(4, 2) {
+        if api >= Version(4, 2) {
             all = all.filter { $0 != .kmr }
             all = all + langs42
         }
-        if version >= Version(4, 3) {
+        if api >= Version(4, 3) {
             all = all + langs43
         }
         return all

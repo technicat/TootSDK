@@ -2,6 +2,15 @@ public protocol Platform {
 
     /// platform name, e.g. Mastodon, Pleroma...
     var name: String { get }
+    
+    // require
+    
+    // these are for pixelfed
+    // and any others that require a post refresh to look right
+    var requiresRefreshAfterBoost: Bool { get }
+    var requiresRefreshAfterFave: Bool { get }
+    
+    // supports
 
     var supportsAnnouncements: Bool { get }
     /// mark announcement as read

@@ -2,6 +2,13 @@
 open class Pixelfed: MastoAPI {
 
     open override var name: String { "Pixelfed" }
+    
+    // requires
+    
+    open override var requiresRefreshAfterBoost: Bool { true }
+    open override var requiresRefreshAfterFave: Bool { true }
+    
+    // supports
 
     open override var supportsBot: Bool { false }
 

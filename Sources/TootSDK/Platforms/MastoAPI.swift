@@ -4,104 +4,110 @@
 // https://docs.joinmastodon.org/
 open class MastoAPI: Platform {
 
-    open var version: Version
+    var api: Version
 
-    public init(_ version: Version) {
-        self.version = version
+    public init(_ api: Version) {
+        self.api = api
     }
 
     open var name: String { "Mastodon API" }
 
-    open var requiresInstanceAuth: Bool { version >= Version(3, 0) }
+    // requires
+    
+    open var requiresInstanceAuth: Bool { api >= Version(3, 0) }
+    open var requiresRefreshAfterBoost: Bool { false }
+    open var requiresRefreshAfterFave: Bool { false }
+    
+    // supports
 
-    open var supportsAnnouncements: Bool { version >= Version(3, 1) }
-    open var supportsAnnouncementMark: Bool { version >= Version(3, 1) }
+    open var supportsAnnouncements: Bool { api >= Version(3, 1) }
+    open var supportsAnnouncementMark: Bool { api >= Version(3, 1) }
 
-    open var supportsBot: Bool { version >= Version(2, 4) }
+    open var supportsBot: Bool { api >= Version(2, 4) }
 
-    open var supportsDiscoverable: Bool { version >= Version(4, 2) }
+    open var supportsDiscoverable: Bool { api >= Version(4, 2) }
 
-    open var supportsFamiliarFollowers: Bool { version >= Version(3, 5) }
-    open var supportsFeaturedTags: Bool { version >= Version(3, 0) }
-    open var supportsFilter: Bool { version >= Version(4, 0) }
-    open var supportsFollowLanguages: Bool { version >= Version(4, 0) }
-    open var supportsFollowNotify: Bool { version >= Version(3, 3) }
-    // open var supportsFollowTag: Bool { version >= Version(4, 0) }
+    open var supportsFamiliarFollowers: Bool { api >= Version(3, 5) }
+    open var supportsFeaturedTags: Bool { api >= Version(3, 0) }
+    open var supportsFilter: Bool { api >= Version(4, 0) }
+    open var supportsFollowLanguages: Bool { api >= Version(4, 0) }
+    open var supportsFollowNotify: Bool { api >= Version(3, 3) }
+    // open var supportsFollowTag: Bool { api >= Version(4, 0) }
 
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
-    open var supportsHideCollections: Bool { version >= Version(4, 1) }
+    open var supportsHideCollections: Bool { api >= Version(4, 1) }
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
-    open var supportsIndexable: Bool { version >= Version(4, 2) }
+    open var supportsIndexable: Bool { api >= Version(4, 2) }
 
     /// V1 instance
-    open var supportsInstance: Bool { version >= Version(1, 1) }
-    open var supportsInstanceConfig: Bool { version >= Version(3, 4, 2) }
-    open var supportsInstanceConfigAccount: Bool { version >= Version(4, 0) }
-    open var supportsInstanceExtendedDescription: Bool { version >= Version(4, 0) }
-    open var supportsInstanceInvites: Bool { version >= Version(3, 1, 4) }
-    open var supportsInstanceRules: Bool { version >= Version(3, 4) }
+    open var supportsInstance: Bool { api >= Version(1, 1) }
+    open var supportsInstanceConfig: Bool { api >= Version(3, 4, 2) }
+    open var supportsInstanceConfigAccount: Bool { api >= Version(4, 0) }
+    open var supportsInstanceExtendedDescription: Bool { api >= Version(4, 0) }
+    open var supportsInstanceInvites: Bool { api >= Version(3, 1, 4) }
+    open var supportsInstanceRules: Bool { api >= Version(3, 4) }
 
-    open var supportsInstanceV2: Bool { version >= Version(4, 0) }
+    open var supportsInstanceV2: Bool { api >= Version(4, 0) }
     open var supportsIsBoosted: Bool { true }
 
-    open var supportsListReplyPolicy: Bool { version >= Version(3, 3) }
-    open var supportsListExclusive: Bool { version >= Version(4, 2) }
+    open var supportsListReplyPolicy: Bool { api >= Version(3, 3) }
+    open var supportsListExclusive: Bool { api >= Version(4, 2) }
 
-    open var supportsMarkers: Bool { version >= Version(3, 0) }
-    open var supportsMutePost: Bool { version >= Version(1, 4, 2) }
+    open var supportsMarkers: Bool { api >= Version(3, 0) }
+    open var supportsMutePost: Bool { api >= Version(1, 4, 2) }
 
     // https://docs.joinmastodon.org/methods/accounts/#note
-    open var supportsNote: Bool { version >= Version(3, 2) }
+    open var supportsNote: Bool { api >= Version(3, 2) }
 
-    open var supportsNotificationDelete: Bool { version >= Version(1, 3) }
+    open var supportsNotificationDelete: Bool { api >= Version(1, 3) }
     open var supportsNotificationDeleteAll: Bool { true }
 
     // https://docs.joinmastodon.org/methods/accounts/#statuses
-    open var supportsPins: Bool { version >= Version(1, 6) }
+    open var supportsPins: Bool { api >= Version(1, 6) }
 
-    open var supportsPollVote: Bool { version >= Version(2, 8) }  // supportsPoll
+    open var supportsPollVote: Bool { api >= Version(2, 8) }  // supportsPoll
 
-    open var supportsPostDeleteAndEdit: Bool { version >= Version(2, 9) }
+    open var supportsPostDeleteAndEdit: Bool { api >= Version(2, 9) }
     // https://docs.joinmastodon.org/methods/statuses/#edit
-    open var supportsPostEdit: Bool { version >= Version(3, 5) }
-    open var supportsPostEditLanguage: Bool { version >= Version(4, 0) }
+    open var supportsPostEdit: Bool { api >= Version(3, 5) }
+    open var supportsPostEditLanguage: Bool { api >= Version(4, 0) }
     // https://docs.joinmastodon.org/methods/statuses/#history
-    open var supportsPostHistory: Bool { version >= Version(3, 5) }
+    open var supportsPostHistory: Bool { api >= Version(3, 5) }
 
-    open var supportsProfileFields: Bool { version >= Version(2, 4) }
+    open var supportsProfileFields: Bool { api >= Version(2, 4) }
     open var supportsProfileHeader: Bool { true }
-    open var supportsProfileImageDelete: Bool { version >= Version(4, 2) }
+    open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
     open var supportsPublicDirectory: Bool { true }
     // private public timeline supported with 3.0.90
     open var supportsPublicTimeline: Bool { true }
 
-    open var supportsPostDefaultLanguage: Bool { version >= Version(2, 4, 2) }
-    open var supportsPostDefaultSensitive: Bool { version >= Version(2, 4) }
-    open var supportsPostDefaultVisibility: Bool { version >= Version(2, 4) }
+    open var supportsPostDefaultLanguage: Bool { api >= Version(2, 4, 2) }
+    open var supportsPostDefaultSensitive: Bool { api >= Version(2, 4) }
+    open var supportsPostDefaultVisibility: Bool { api >= Version(2, 4) }
 
     // https://docs.joinmastodon.org/methods/statuses/#source
-    open var supportsPostSource: Bool { version >= Version(3, 5) }
+    open var supportsPostSource: Bool { api >= Version(3, 5) }
 
-    open var supportsRelationshipWithSuspended: Bool { version >= Version(4, 3) }
-    open var supportsRemoveFollower: Bool { version >= Version(3, 5) }
+    open var supportsRelationshipWithSuspended: Bool { api >= Version(4, 3) }
+    open var supportsRemoveFollower: Bool { api >= Version(3, 5) }
 
-    open var supportsReport: Bool { version >= Version(1, 1) }
-    open var supportsReportRules: Bool { version >= Version(4, 0) }
+    open var supportsReport: Bool { api >= Version(1, 1) }
+    open var supportsReportRules: Bool { api >= Version(4, 0) }
 
     open var supportsRevoke: Bool { true }
 
-    open var supportsScheduleUpdate: Bool { version >= Version(2, 7) }
-    open var supportsSensitive: Bool { version >= Version(0, 9, 9) }
-    open var supportsSearchPosts: Bool { version >= Version(2, 4, 1) }
-    open var supportsSpoiler: Bool { version >= Version(1, 0) }
+    open var supportsScheduleUpdate: Bool { api >= Version(2, 7) }
+    open var supportsSensitive: Bool { api >= Version(0, 9, 9) }
+    open var supportsSearchPosts: Bool { api >= Version(2, 4, 1) }
+    open var supportsSpoiler: Bool { api >= Version(1, 0) }
 
-    open var supportsTagStats: Bool { version >= Version(2, 4, 1) }
+    open var supportsTagStats: Bool { api >= Version(2, 4, 1) }
 
-    open var supportsTranslate: Bool { version >= Version(4, 0) }
-    open var supportsTranslationLanguages: Bool { version >= Version(4, 2) }
+    open var supportsTranslate: Bool { api >= Version(4, 0) }
+    open var supportsTranslationLanguages: Bool { api >= Version(4, 2) }
 
-    open var supportsUpdateAccount: Bool { version >= Version(1, 4, 1) }
+    open var supportsUpdateAccount: Bool { api >= Version(1, 4, 1) }
 
     open var supportsSearchAccounts: Bool { true }
 
@@ -110,7 +116,7 @@ open class MastoAPI: Platform {
 
     ///
     open var blockedDomainsLimit: Int {
-        version >= Version(0, 4) ? 200 : 0
+        api >= Version(0, 4) ? 200 : 0
     }
     ///
     open var boosterPageLimit: Int { 80 }
@@ -118,7 +124,7 @@ open class MastoAPI: Platform {
     open var faversPageLimit: Int { 80 }
     ///
     open var listAccountsPageLimit: Int {
-        version >= Version(2, 1) ? 80 : 0
+        api >= Version(2, 1) ? 80 : 0
     }
     ///
     open var blockedAccountsLimit: Int { 80 }
@@ -126,27 +132,27 @@ open class MastoAPI: Platform {
     open var mutedAccountsLimit: Int { 80 }
     ///
     open var directoryLimit: Int {
-        version >= Version(4, 0) ? 80 : 0
+        api >= Version(4, 0) ? 80 : 0
     }
     ///
     open var suggestionsLimit: Int { 80 }
     ///
     open var trendingLinksLimit: Int {
-        version >= Version(3, 5) ? 20 : 0
+        api >= Version(3, 5) ? 20 : 0
     }
     ///
     open var trendingPostsLimit: Int {
-        version >= Version(3, 5) ? 40 : 0
+        api >= Version(3, 5) ? 40 : 0
     }
     ///
     open var trendingTagsLimit: Int {
-        version >= Version(3, 5) ? 20 : 0
+        api >= Version(3, 5) ? 20 : 0
     }
 
     open func getLimit(for timeline: Timeline) -> Int {
         switch timeline {
         case .bookmarks:
-            version >= Version(3, 1) ? 40 : 0
+            api >= Version(3, 1) ? 40 : 0
         case .home, .favourites, .local, .federated, .hashtag, .list, .user:
             40
         default:
@@ -156,19 +162,19 @@ open class MastoAPI: Platform {
 
     ///
     open var conversationsPageLimit: Int {
-        version >= Version(2, 6) ? 40 : 0
+        api >= Version(2, 6) ? 40 : 0
     }
     ///
     open var followersPageLimit: Int { 40 }
     //
     open var followedTagsPageLimit: Int {
-        version >= Version(4, 0) ? 200 : 0
+        api >= Version(4, 0) ? 200 : 0
     }
     ///
     open var notificationsPageLimit: Int { 30 }
     ///
     open var scheduledPageLimit: Int {
-        version >= Version(2, 7) ? 40 : 0
+        api >= Version(2, 7) ? 40 : 0
     }
 
     // harcoded in Mastodon
@@ -188,10 +194,10 @@ open class MastoAPI: Platform {
         var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite, .poll, .followRequest, .post, .update,
         ]
-        if version >= Version(3, 1) {
+        if api >= Version(3, 1) {
             types = types.union(noteTypes31)
         }
-        if version >= Version(3, 3) {
+        if api >= Version(3, 3) {
             types = types.union(noteTypes33)
         }
         return types
@@ -217,10 +223,10 @@ open class MastoAPI: Platform {
 
     open var reportCats: [ReportCategory] {
         var cats: [ReportCategory] = []
-        if version >= Version(3, 5) {
+        if api >= Version(3, 5) {
             cats = cats + reportCats35
         }
-        if version >= Version(4, 2) {
+        if api >= Version(4, 2) {
             cats = reportCats42 + cats
             return cats
         }
@@ -229,7 +235,7 @@ open class MastoAPI: Platform {
 
     // v2
     open var suggestionSources: SuggestionSources {
-        version >= Version(3, 4, 0)
+        api >= Version(3, 4, 0)
             ? [
                 .staff,
                 .pastInteractions,
