@@ -13,6 +13,9 @@ open class GotoSocial: MastoAPI {
 
     /// conversations not supported
     open override var conversationsPageLimit: Int { 0 }
+    
+    /// muted accounts not supported
+    open override var mutedAccountsLimit: Int { 0 }
 
     /// trends not supported
     open override var trendingLinksLimit: Int { 0 }
