@@ -1,6 +1,6 @@
 extension TootClient {
 
-  public var domain: String {
-    instanceURL.host ?? instanceURL.absoluteString
-  }
+    public var domain: String {
+        instanceURL.host ?? instanceURL.absoluteString
+    }
 }
