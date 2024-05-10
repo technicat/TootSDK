@@ -8,6 +8,9 @@ open class Mitra: MastoAPI {
     open override var supportsFilter: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsNote: Bool { false }
+    /// doesn't support deleting a notifitations
+    open override var supportsNotificationDelete: Bool { false }
+    /// doesn't support deleting all notifications
     open override var supportsNotificationDeleteAll: Bool { false }
     open override var supportsProfileFields: Bool { false }
     open override var supportsPublicDirectory: Bool { false }
