@@ -6,6 +6,13 @@ extension TootClient {
         try await boostPost(id: post.id)
     }
 
+    @discardableResult
+    public func boost(_ post: Post, visibility: Post.Visibility) async throws -> Post {
+        try await boostPost(
+            id: post.id,
+            params: BoostPostParams(visibility: visibility))
+    }
+
     /// https://docs.joinmastodon.org/methods/statuses/#unboost
     @discardableResult
     public func unBoost(_ post: Post) async throws -> Post {
