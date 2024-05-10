@@ -110,7 +110,16 @@ extension TootClient {
 extension TootClient {
 
     /// Reshare a post on your own profile.
-    public func boostPost(id: String, params: BoostPostParams? = nil) async throws -> Post {
+    public func boostPost(id: String) async throws -> Post {
+        let req = try HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "statuses", id, "reblog"])
+            $0.method = .post
+        }
+        return try await fetch(Post.self, req)
+    }
+    
+    /// experimental support for platforms that can boost with different visibility
+    public func boostPost(id: String, params: BoostPostParams) async throws -> Post {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "statuses", id, "reblog"])
             $0.method = .post
