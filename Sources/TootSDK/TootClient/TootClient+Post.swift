@@ -117,7 +117,7 @@ extension TootClient {
         }
         return try await fetch(Post.self, req)
     }
-    
+
     /// experimental support for platforms that can boost with different visibility
     public func boostPost(id: String, params: BoostPostParams) async throws -> Post {
         let req = try HTTPRequestBuilder {
