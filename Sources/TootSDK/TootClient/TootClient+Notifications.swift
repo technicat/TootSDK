@@ -106,16 +106,14 @@ extension TootClient {
         var queryParameters = [URLQueryItem]()
 
         if let types = params.types, !types.isEmpty {
-            let name: String
-            switch flavour {
-            case .pleroma, .akkoma: name = "include_types[]"
-            default: name = "types[]"
-            }
-            queryParameters.append(contentsOf: types.map({ .init(name: name, value: $0.rawValue) }))
+            queryParameters.append(contentsOf: types.map({ .init(name: "types[]", value: $0.rawValue) }))
         }
 
         if let types = params.excludeTypes, !types.isEmpty {
             queryParameters.append(contentsOf: types.map({ .init(name: "exclude_types[]", value: $0.rawValue) }))
+        }
+        if let types = params.includeTypes, !types.isEmpty {
+            queryParameters.append(contentsOf: types.map({ .init(name: "include_types[]", value: $0.rawValue) }))
         }
 
         return queryParameters

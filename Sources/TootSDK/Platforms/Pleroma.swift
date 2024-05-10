@@ -1,3 +1,4 @@
+///https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
 open class Pleroma: MastoAPI {
 
     open override var name: String { "Pleroma" }

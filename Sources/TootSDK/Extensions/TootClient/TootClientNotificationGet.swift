@@ -1,7 +1,8 @@
 extension TootClient {
 
     public func getNotifications(
-        with types: NotificationTypes? = nil,
+        types: NotificationTypes? = nil,
+        with include: NotificationTypes? = nil, // pleroma, akkoma
         without exclude: NotificationTypes? = nil,
         _ page: PagedInfo? = nil,
         limit: Int? = nil
@@ -10,7 +11,8 @@ extension TootClient {
             params:
                 TootNotificationParams(
                     excludeTypes: exclude,
-                    types: types),
+                    types: types,
+                    includeTypes: include),
             page,
             limit: limit)
     }
