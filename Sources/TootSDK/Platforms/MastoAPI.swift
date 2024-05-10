@@ -195,7 +195,7 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/notifications/#get
     open var notificationTypes: NotificationTypes {
         var types: NotificationTypes = [
-            .follow, .mention, .repost, .favourite, .poll, .followRequest, .post, .update,
+            .follow, .mention, .repost, .favourite, .poll, .update,
         ]
         if api >= Version(3, 1) {
             types = types.union(noteTypes31)
