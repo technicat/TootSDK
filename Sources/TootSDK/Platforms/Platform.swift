@@ -1,3 +1,5 @@
+// consider this
+// https://codeberg.org/fediverse/fep/src/branch/main/fep/9fde/fep-9fde.md
 public protocol Platform {
 
     /// platform name, e.g. Mastodon, Pleroma...

@@ -56,22 +56,24 @@ open class MastoAPI: Platform {
     open var supportsMarkers: Bool { api >= Version(3, 0) }
     open var supportsMutePost: Bool { api >= Version(1, 4, 2) }
 
-    // https://docs.joinmastodon.org/methods/accounts/#note
+    /// https://docs.joinmastodon.org/methods/accounts/#note
     open var supportsNote: Bool { api >= Version(3, 2) }
 
+    /// https://docs.joinmastodon.org/methods/notifications/#dismiss
     open var supportsNotificationDelete: Bool { api >= Version(1, 3) }
+    /// https://docs.joinmastodon.org/methods/notifications/#clear
     open var supportsNotificationDeleteAll: Bool { true }
 
-    // https://docs.joinmastodon.org/methods/accounts/#statuses
+    /// https://docs.joinmastodon.org/methods/accounts/#statuses
     open var supportsPins: Bool { api >= Version(1, 6) }
 
     open var supportsPollVote: Bool { api >= Version(2, 8) }  // supportsPoll
 
     open var supportsPostDeleteAndEdit: Bool { api >= Version(2, 9) }
-    // https://docs.joinmastodon.org/methods/statuses/#edit
+    /// https://docs.joinmastodon.org/methods/statuses/#edit
     open var supportsPostEdit: Bool { api >= Version(3, 5) }
     open var supportsPostEditLanguage: Bool { api >= Version(4, 0) }
-    // https://docs.joinmastodon.org/methods/statuses/#history
+    /// https://docs.joinmastodon.org/methods/statuses/#history
     open var supportsPostHistory: Bool { api >= Version(3, 5) }
 
     open var supportsProfileFields: Bool { api >= Version(2, 4) }
