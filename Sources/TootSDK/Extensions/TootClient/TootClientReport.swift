@@ -1,7 +1,7 @@
 extension TootClient {
 
     public func report(
-        account: Account,
+        _ account: Account,
         comment: String?,
         forward: Bool?,
         category: ReportCategory,
@@ -15,6 +15,34 @@ extension TootClient {
             comment: comment,
             forward: forward,
             ruleIds: category == .violation ? rules.map { Int($0.id) ?? 0 } : [])
+        try await report(params)
+    }
+
+    public func reportPixelfed(
+        _ account: Account,
+        comment: String?,
+        category: ReportCategory
+    ) async throws {
+        let params = PixelfedReportParams(
+            objectType: .user,
+            objectId: account.id,
+            type: category,
+            msg: comment
+        )
+        try await report(params)
+    }
+
+    public func reportPixelfed(
+        _ post: Post,
+        comment: String?,
+        category: ReportCategory
+    ) async throws {
+        let params = PixelfedReportParams(
+            objectType: .post,
+            objectId: post.id,
+            type: category,
+            msg: comment
+        )
         try await report(params)
     }
 }

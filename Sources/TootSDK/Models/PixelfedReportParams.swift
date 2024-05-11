@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct PixelfedReportParams: Codable {
+public struct PixelfedReportParams: Codable {
     var objectType: ObjectType
     var objectId: String
     var type: ReportCategory
+    var msg: String?
 
     enum ObjectType: String, Codable {
         case post
@@ -21,5 +22,6 @@ struct PixelfedReportParams: Codable {
         case objectType = "object_type"
         case objectId = "object_id"
         case type = "report_type"
+        case msg = "msg"
     }
 }
