@@ -67,7 +67,6 @@ public protocol Platform {
     var supportsPostSource: Bool { get }
 
     var supportsProfileFields: Bool { get }
-    var supportsProfileHeader: Bool { get }
     var supportsProfileImageDelete: Bool { get }
 
     var supportsPublicDirectory: Bool { get }

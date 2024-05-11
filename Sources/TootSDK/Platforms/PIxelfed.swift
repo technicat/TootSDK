@@ -28,7 +28,6 @@ open class Pixelfed: MastoAPI {
     open override var supportsPostSource: Bool { false }
 
     open override var supportsProfileFields: Bool { false }
-    open override var supportsProfileHeader: Bool { false }
 
     open override var supportsPublicTimeline: Bool { false }
 

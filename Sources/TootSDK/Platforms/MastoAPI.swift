@@ -77,7 +77,6 @@ open class MastoAPI: Platform {
     open var supportsPostHistory: Bool { api >= Version(3, 5) }
 
     open var supportsProfileFields: Bool { api >= Version(2, 4) }
-    open var supportsProfileHeader: Bool { true }
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
     open var supportsPublicDirectory: Bool { true }
