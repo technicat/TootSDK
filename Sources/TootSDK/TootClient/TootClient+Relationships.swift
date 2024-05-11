@@ -20,18 +20,18 @@ extension TootClient {
     /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
     /// - Returns: your relationship with that account after following
     public func followAccountURI(by uri: String) async throws -> Relationship {
-        if self.flavour == .pleroma {
+        // if self.flavour == .pleroma {
 
-            // On Pleroma, we get to follow by URI, but it doesn't return a relationship, it returns an account
-            // So we use that to then retrieve the relationship
-            let account = try await pleromaFollowAccountURI(by: uri)
+        //     // On Pleroma, we get to follow by URI, but it doesn't return a relationship, it returns an account
+        //     // So we use that to then retrieve the relationship
+        //     let account = try await pleromaFollowAccountURI(by: uri)
 
-            if let relationship = try await getRelationships(by: [account.id]).first {
-                return relationship
-            } else {
-                throw TootSDKError.unexpectedError("Unable to retrieve relationship")
-            }
-        }
+        //     if let relationship = try await getRelationships(by: [account.id]).first {
+        //         return relationship
+        //     } else {
+        //         throw TootSDKError.unexpectedError("Unable to retrieve relationship")
+        //     }
+        // }
 
         // Do the webfinger lookup first, then go and follow by account afterwards
         let accountLookup = try await lookupAccount(uri: uri)
