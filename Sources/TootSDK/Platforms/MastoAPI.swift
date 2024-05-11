@@ -13,11 +13,11 @@ open class MastoAPI: Platform {
     open var name: String { "Mastodon API" }
 
     // requires
-    
+
     open var requiresInstanceAuth: Bool { api >= Version(3, 0) }
     open var requiresRefreshAfterBoost: Bool { false }
     open var requiresRefreshAfterFave: Bool { false }
-    
+
     // supports
 
     open var supportsAnnouncements: Bool { api >= Version(3, 1) }

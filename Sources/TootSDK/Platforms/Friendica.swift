@@ -13,12 +13,12 @@ open class Friendica: MastoAPI {
     // lists
 
     open override var languages: [ISOCode] { ISOCode.allCases }
-    
+
     open override var notificationTypes: NotificationTypes {
         // setting this to empty (unsupported)
         // because excluded_types doesn't properly exclude reblogs
         return [
-           // .follow, .mention, .repost, .favourite, .poll, .followRequest, .post, .update,
+            // .follow, .mention, .repost, .favourite, .poll, .followRequest, .post, .update,
         ]
     }
 

@@ -3,7 +3,7 @@ open class GotoSocial: MastoAPI {
     open override var name: String { "GotoSocial" }
 
     // supports
-    
+
     /// doesn't support deleting a notifitation
     open override var supportsNotificationDelete: Bool { false }
     /// doesn't support public (no auth) timeline
@@ -13,7 +13,7 @@ open class GotoSocial: MastoAPI {
 
     /// conversations not supported
     open override var conversationsPageLimit: Int { 0 }
-    
+
     /// muted accounts not supported
     open override var mutedAccountsLimit: Int { 0 }
 
