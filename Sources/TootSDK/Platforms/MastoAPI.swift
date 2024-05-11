@@ -88,10 +88,11 @@ open class MastoAPI: Platform {
     open var supportsPostDefaultSensitive: Bool { api >= Version(2, 4) }
     open var supportsPostDefaultVisibility: Bool { api >= Version(2, 4) }
 
-    // https://docs.joinmastodon.org/methods/statuses/#source
+    /// https://docs.joinmastodon.org/methods/statuses/#source
     open var supportsPostSource: Bool { api >= Version(3, 5) }
 
     open var supportsRelationshipWithSuspended: Bool { api >= Version(4, 3) }
+///https://docs.joinmastodon.org/methods/accounts/#remove_from_followers
     open var supportsRemoveFollower: Bool { api >= Version(3, 5) }
 
     open var supportsReport: Bool { api >= Version(1, 1) }
@@ -175,7 +176,7 @@ open class MastoAPI: Platform {
     }
     ///
     open var notificationsPageLimit: Int { 30 }
-    ///
+    /// https://docs.joinmastodon.org/methods/scheduled_statuses/
     open var scheduledPageLimit: Int {
         api >= Version(2, 7) ? 40 : 0
     }
