@@ -48,8 +48,8 @@ extension TootClient {
         }
 
         let (data, response) = try await fetch(req: req)
-
-        if flavour == .mastodon && response.statusCode == 206 {
+        // for mastodon
+        if response.statusCode == 206 {
             return nil
         }
 
