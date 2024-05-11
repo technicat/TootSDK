@@ -15,7 +15,6 @@ public struct PixelfedUpdateCredentialsParams: Codable {
     public var note: String?
     /// Avatar image encoded using multipart/form-data
     public var avatar: Data?
-    public var avatarMimeType: String?
     /// Whether manual approval of follow requests is required.
     public var locked: Bool?
     /// Whether the account has a bot flag.
@@ -30,22 +29,8 @@ public struct PixelfedUpdateCredentialsParams: Codable {
         self.displayName = displayName
         self.note = note
         self.avatar = avatar
-        self.avatarMimeType = avatarMimeType
         self.locked = locked
         self.source = source
-    }
-
-    /// Represents a profile field as a name-value pair
-    public struct Field: Codable, Hashable, Sendable {
-        public init(name: String, value: String) {
-            self.name = name
-            self.value = value
-        }
-
-        /// The key of a given field's key-value pair.
-        public var name: String
-        /// The value associated with the name key.
-        public var value: String
     }
 
     public struct Source: Codable, Hashable, Sendable {

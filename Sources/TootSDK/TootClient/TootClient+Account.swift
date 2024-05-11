@@ -154,15 +154,6 @@ extension TootClient {
             $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
             $0.method = .post
             var parts = [MultipartPart]()
-            if let data = params.avatar,
-                let mimeType = params.avatarMimeType
-            {
-                parts.append(
-                    MultipartPart(
-                        file: "avatar",
-                        mimeType: mimeType,
-                        body: data))
-            }
             if let name = params.displayName {
                 parts.append(
                     MultipartPart(name: "display_name", body: name))

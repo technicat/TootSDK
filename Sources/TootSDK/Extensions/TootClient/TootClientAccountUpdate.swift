@@ -61,17 +61,15 @@ extension TootClient {
     }
 
     @discardableResult
-    public func updateProfilePixelfed(
+    public func updatePixelfedProfile(
         displayName: String? = nil,
         note: String? = nil,
-        avatar: Data? = nil,
-        avatarMimeType: MIMEType? = nil
+        avatar: Data? = nil
     ) async throws -> Account {
         let params = PixelfedUpdateCredentialsParams(
             displayName: displayName,
             note: note,
-            avatar: avatar,
-            avatarMimeType: avatarMimeType?.rawValue)
+            avatar: avatar)
         return try await updateCredentials(params: params)
     }
 
