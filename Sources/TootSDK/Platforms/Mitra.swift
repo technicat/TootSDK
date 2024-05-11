@@ -19,6 +19,8 @@ open class Mitra: MastoAPI {
     open override var supportsPublicTimeline: Bool { false }
     open override var supportsReport: Bool { false }
     open override var supportsSpoiler: Bool { false }
+    /// doesn't support tag statistics
+    open override var supportsTagStats: Bool { false }
     open override var supportsTranslate: Bool { false }
 
     // limits
