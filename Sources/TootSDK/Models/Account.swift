@@ -11,7 +11,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
         lastPostAt: Date? = nil, postsCount: Int, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
         suspended: Bool? = nil,
-        limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil, source: TootSource? = nil, role: TootRole? = nil, website: String? = nil
+        limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil, source: TootSource? = nil, role: TootRole? = nil,
+        website: String? = nil
     ) {
         self.id = id
         self.username = username
