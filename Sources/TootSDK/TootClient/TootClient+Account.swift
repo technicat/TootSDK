@@ -146,7 +146,7 @@ extension TootClient {
         }
         return parts
     }
-    
+
     // https://github.com/pixelfed/pixelfed/issues/4250#issuecomment-1483798056
     // todo - add website
     public func updateCredentials(params: PixelfedUpdateCredentialsParams) async throws -> Account {
@@ -182,7 +182,7 @@ extension TootClient {
         }
         return try await fetch(Account.self, req)
     }
-    
+
     func getSourceParts(_ params: PixelfedUpdateCredentialsParams) -> [MultipartPart] {
         var parts = [MultipartPart]()
         if let language = params.source?.language {
