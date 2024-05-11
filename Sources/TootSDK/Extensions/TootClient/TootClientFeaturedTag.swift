@@ -17,7 +17,6 @@ extension TootClient {
     }
 
     /// https://docs.joinmastodon.org/methods/featured_tags/#unfeature
-    @discardableResult
     public func unFeature(_ tag: FeaturedTag) async throws {
         try await unfeatureTag(id: tag.id)
     }
