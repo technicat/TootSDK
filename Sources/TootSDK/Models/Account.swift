@@ -7,7 +7,7 @@ import Foundation
 public class Account: Codable, Identifiable, @unchecked Sendable {
     public init(
         id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String? = nil,
-        avatarStatic: String? = nil, header: String, headerStatic: String, locked: Bool, emojis: [Emoji], discoverable: Bool? = nil,
+        avatarStatic: String? = nil, header: String? = nil, headerStatic: String? = nil, locked: Bool, emojis: [Emoji], discoverable: Bool? = nil,
         indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
         lastPostAt: Date? = nil, postsCount: Int, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
         suspended: Bool? = nil,
@@ -55,9 +55,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.note = try container.decode(String.self, forKey: .note)
         self.avatar = try? container.decodeIfPresent(String.self, forKey: .avatar)
         self.avatarStatic = try? container.decodeIfPresent(String.self, forKey: .avatarStatic)
-        // pixelfed doesn't include headers in block/mute lists
-        self.header = (try? container.decodeIfPresent(String.self, forKey: .header)) ?? ""
-        self.headerStatic = (try? container.decodeIfPresent(String.self, forKey: .headerStatic)) ?? ""
+        self.header = try container.decodeIfPresent(String.self, forKey: .header)
+        self.headerStatic = try container.decodeIfPresent(String.self, forKey: .headerStatic)
         self.locked = try container.decode(Bool.self, forKey: .locked)
         // pixelfed doesn't include emojis in block/mute lists
         self.emojis = (try? container.decodeIfPresent([Emoji].self, forKey: .emojis)) ?? []
@@ -101,9 +100,9 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// A static version of the avatar.
     public let avatarStatic: String?
     /// An image banner that is shown above the profile and in profile cards
-    public let header: String
+    public let header: String? // not supported by pixelfed
     /// A static version of the header
-    public let headerStatic: String
+    public let headerStatic: String?
     /// Whether the account manually approves follow requests
     public let locked: Bool
     /// Custom emoji entities to be used when rendering the profile. If none, an empty array will be returned
