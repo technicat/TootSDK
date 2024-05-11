@@ -60,6 +60,21 @@ extension TootClient {
         return try await updateCredentials(params: params)
     }
 
+    @discardableResult
+    public func updateProfilePixelfed(
+        displayName: String? = nil,
+        note: String? = nil,
+        avatar: Data? = nil,
+        avatarMimeType: MIMEType? = nil
+    ) async throws -> Account {
+        let params = PixelfedUpdateCredentialsParams(
+            displayName: displayName,
+            note: note,
+            avatar: avatar,
+            avatarMimeType: avatarMimeType?.rawValue)
+        return try await updateCredentials(params: params)
+    }
+
     /// https://docs.joinmastodon.org/methods/profile/#delete-profile-avatar
     public func deleteAvatar() async throws -> Account {
         try await deleteProfileAvatar()

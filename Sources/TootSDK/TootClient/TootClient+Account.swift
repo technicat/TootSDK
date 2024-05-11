@@ -42,12 +42,7 @@ extension TootClient {
     public func updateCredentials(params: UpdateCredentialsParams) async throws -> Account {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
-            if self.flavour == .pixelfed {
-                // https://github.com/pixelfed/pixelfed/issues/4250#issuecomment-1483798056
-                $0.method = .post
-            } else {
-                $0.method = .patch
-            }
+            $0.method = .patch
             var parts = [MultipartPart]()
             if let data = params.avatar,
                 let mimeType = params.avatarMimeType
@@ -143,6 +138,53 @@ extension TootClient {
                     name: "source[sensitive]",
                     body: String(sensitive)))
         }
+        if let language = params.source?.language {
+            parts.append(
+                MultipartPart(
+                    name: "source[language]",
+                    body: language))
+        }
+        return parts
+    }
+    
+    // https://github.com/pixelfed/pixelfed/issues/4250#issuecomment-1483798056
+    // todo - add website
+    public func updateCredentials(params: PixelfedUpdateCredentialsParams) async throws -> Account {
+        let req = try HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
+            $0.method = .post
+            var parts = [MultipartPart]()
+            if let data = params.avatar,
+                let mimeType = params.avatarMimeType
+            {
+                parts.append(
+                    MultipartPart(
+                        file: "avatar",
+                        mimeType: mimeType,
+                        body: data))
+            }
+            if let name = params.displayName {
+                parts.append(
+                    MultipartPart(name: "display_name", body: name))
+            }
+            if let note = params.note {
+                parts.append(
+                    MultipartPart(name: "note", body: note))
+            }
+            if let locked = params.locked {
+                parts.append(
+                    MultipartPart(
+                        name: "locked",
+                        body: String(locked)))
+            }
+            parts.append(contentsOf: getSourceParts(params))
+            $0.body = try .multipart(parts, boundary: UUID().uuidString)
+        }
+        return try await fetch(Account.self, req)
+    }
+    
+    func getSourceParts(_ params: PixelfedUpdateCredentialsParams) -> [MultipartPart] {
+        var parts = [MultipartPart]()
         if let language = params.source?.language {
             parts.append(
                 MultipartPart(
