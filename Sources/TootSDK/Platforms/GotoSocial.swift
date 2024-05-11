@@ -20,7 +20,7 @@ open class GotoSocial: MastoAPI {
     open override var supportsTagStats: Bool { false }
     /// doesn't support post translations
     open override var supportsTranslate: Bool { false }
-    
+
     // limits
 
     /// conversations not supported
@@ -28,7 +28,7 @@ open class GotoSocial: MastoAPI {
 
     /// muted accounts not supported
     open override var mutedAccountsLimit: Int { 0 }
-    
+
     // scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
 

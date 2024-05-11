@@ -92,7 +92,7 @@ open class MastoAPI: Platform {
     open var supportsPostSource: Bool { api >= Version(3, 5) }
 
     open var supportsRelationshipWithSuspended: Bool { api >= Version(4, 3) }
-///https://docs.joinmastodon.org/methods/accounts/#remove_from_followers
+    ///https://docs.joinmastodon.org/methods/accounts/#remove_from_followers
     open var supportsRemoveFollower: Bool { api >= Version(3, 5) }
 
     open var supportsReport: Bool { api >= Version(1, 1) }
