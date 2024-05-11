@@ -25,6 +25,16 @@ extension TootClient {
         return try await updateCredentials(params: params)
     }
 
+    /// check ApiV1Controller.php
+    @discardableResult
+    public func updatePixelfedAccountSettings(
+        locked: Bool? = nil
+    ) async throws -> Account {
+        let params = PixelfedUpdateCredentialsParams(
+            locked: locked)
+        return try await updateCredentials(params: params)
+    }
+
     public func updatePostDefaults(
         privacy: Post.Visibility? = nil,
         sensitive: Bool? = nil,
