@@ -42,7 +42,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.group = group
         self.source = source
         self.role = role
-        self.website = website
     }
 
     required public init(from decoder: Decoder) throws {
@@ -79,7 +78,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.group = try? container.decodeIfPresent(Bool.self, forKey: .group)
         self.source = try? container.decodeIfPresent(TootSource.self, forKey: .source)
         self.role = try? container.decodeIfPresent(TootRole.self, forKey: .role)
-        self.website = try container.decodeIfPresent(String.self, forKey: .website)
     }
 
     /// The account id.
@@ -100,8 +98,10 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// A static version of the avatar.
     public let avatarStatic: String?
     /// An image banner that is shown above the profile and in profile cards
-    public let header: String? // not supported by pixelfed
+    /// Pixelfed stubs with missing.png or leaves nil
+    public let header: String?
     /// A static version of the header
+    /// /// Pixelfed stubs with missing.png or leaves nil
     public let headerStatic: String?
     /// Whether the account manually approves follow requests
     public let locked: Bool
@@ -144,8 +144,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let source: TootSource?
     /// The role assigned to the currently authorized user.
     public let role: TootRole?
-    /// pixelfed
-    public let website: String?
 }
 
 extension Account {
@@ -179,7 +177,6 @@ extension Account {
         case group
         case source
         case role
-        case website
     }
 }
 
@@ -215,7 +212,6 @@ extension Account: Hashable {
         hasher.combine(group)
         hasher.combine(source)
         hasher.combine(role)
-        hasher.combine(website)
     }
 
     public static func == (lhs: Account, rhs: Account) -> Bool {
