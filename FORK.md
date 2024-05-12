@@ -41,8 +41,8 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## Account
 
-- avatar is optional to accomodate Mitra
-- header is optional to accomodate Pixelfed
+- avatar is optional to accomodate Mitra (when user hasn't selected an avatar)
+- header is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 
 ## Relationship
 
