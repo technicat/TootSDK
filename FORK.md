@@ -54,7 +54,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## Notifications
 
-- TootClient.getNotifications() takes an optional with include_types parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying types seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case)
+- TootClient.getNotifications() takes an optional with include_types parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying types (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
 
 ## Cleanup
 
