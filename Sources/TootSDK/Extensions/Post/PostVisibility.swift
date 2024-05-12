@@ -9,11 +9,16 @@ extension Post {
     public var isUnlisted: Bool {
         visibility == .unlisted
     }
+    
+    /// local-only
+    public var isLocal: Bool {
+        visibility == .local
+    }
 
     /// publicly accessible, i.e. not followers-only or more limited
     /// required for boosting, and translation
     public var isVisible: Bool {
-        isPublic || isUnlisted
+        isPublic || isUnlisted || isLocal
     }
 
 }

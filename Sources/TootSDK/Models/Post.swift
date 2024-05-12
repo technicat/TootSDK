@@ -145,6 +145,10 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
         case `private`
         /// Visible only to mentioned users.
         case direct
+        /// Pleroma
+        //case list
+        /// Pleroma/Akkoma - local-only
+        case local
     }
 
     enum CodingKeys: String, CodingKey {
