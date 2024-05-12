@@ -1,4 +1,4 @@
-This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Here's a summary of the changes:
+This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Not much effort is made to maintain the admin and demo apps. Here's a summary of the changes:
 
 ## Platform, Features, and Flavours
 
@@ -20,41 +20,45 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## HTTP
 - For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
-- Removed extra setting of content-type to application/json (should happen appropriately when query is created)
+- Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
 
 ## Post
 
-- Changed deletePost to deletePostAndEdit (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
-- Changed the form type in publishPost and editPost to application/json instead of multipart/form-data to accomodate Mitra and Sharkey.
-- Moved Pixelfed-specific behavior in updateCredentials to pixelfedUpdateCredentials.
+- Changed `deletePost` to `deletePostAndEdit` (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
+- Changed the form type in `publishPost` and `editPost` to `application/json` instead of `multipart/form-data` to accomodate Mitra and Sharkey.
+- Moved Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
 
 ## ScheduledPost
 
-- Added ScheduledPost.Params so ScheduledPostParams can be used solely for requests, no longer need to translate to ScheduledPostRequest
-- Handle nil/missing ScheduledPost.mediaAttachments from Pleroma/Akkoma
-- Removed throws for missing date (no longer optional in ScheduledPostParams) and scheduled too soon (handle enforcement at the calling level)
-- Updating a ScheduledPost no longer returns an optional
+- Added `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
+- Handle nil/missing `ScheduledPost.mediaAttachments` from Pleroma/Akkoma
+- Removed throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
+- Updating a `ScheduledPost` no longer returns an optional
 
 ## PostEdit
 
-- Replaced poll property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
+- Replaced `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
 
 ## Account
 
-- avatar is optional to accomodate Mitra (when user hasn't selected an avatar)
-- header is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
+- `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
+- `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 
 ## Relationship
 
-- blocking is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in Relationship, anyway.
+- `blocking` is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in `Relationship`, anyway.
+
+## Reports
+
+- Reporting accounts/posts on Pixelfed is moved to a separate function that takes `PixelfedReportParams`
 
 ## Timeline
 
-- Add direct timeline for Mitra
+- Add `direct` timeline for Mitra
 
 ## Notifications
 
-- TootClient.getNotifications() takes an optional with include_types parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying types (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
+- `TootClient.getNotifications()` takes an optional with `include_types` parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying `types` (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
 
 ## Cleanup
 
