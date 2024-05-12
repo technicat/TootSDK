@@ -43,9 +43,9 @@ extension TootClient {
     /// - Returns: the looked up account, or an error if unable to retrieve
     public func lookupAccount(uri: String) async throws -> Account {
 
-        if flavour == .pleroma || flavour == .akkoma {
-            return try await getAccount(by: uri)
-        }
+//        if flavour == .pleroma || flavour == .akkoma {
+//            return try await getAccount(by: uri)
+//        }
 
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "lookup"])

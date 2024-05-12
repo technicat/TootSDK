@@ -38,7 +38,7 @@ extension TootClient {
 
     /// Retrieve the details of a media attachment that corresponds to the given identifier.
     ///
-    /// Requests to Mastodon API flavour return `nil` until the attachment has finished processing.
+    /// Requests return `nil` until the attachment has finished processing.
     /// - Parameter id: The local ID of the attachment.
     /// - Returns: `Attachment` with a `url` to the media if available. `nil` otherwise.
     public func getMedia(id: String) async throws -> MediaAttachment? {

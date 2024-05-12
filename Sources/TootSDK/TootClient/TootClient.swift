@@ -21,8 +21,6 @@ public class TootClient: @unchecked Sendable {
     public var debugResponses: Bool = false
     /// Set this to `true` to see a `print()` for instance information.
     public var debugInstance: Bool = false
-    /// The preferred fediverse server flavour to use for API calls
-    public var flavour: TootSDKFlavour = .mastodon
     /// The authorization scopes the client was initialized with
     public let scopes: [String]
     /// Data streams that the client can subscribe to
@@ -44,7 +42,6 @@ public class TootClient: @unchecked Sendable {
 
     /// Initialize a new instance of `TootClient` by optionally providing an access token for authentication.
     ///
-    /// After initializing, you need to manually call ``TootClient/connect()`` in order to obtain the correct flavour of the server.
     /// - Parameters:
     ///   - clientName: Name of the client to be used in outgoing HTTP requests. Defaults to `TootSDK`
     ///   - session: the URLSession being used internally, defaults to shared
@@ -67,27 +64,25 @@ public class TootClient: @unchecked Sendable {
 
     /// Initialize and connect a new instance of `TootClient`.
     ///
-    /// The initializer calls ``TootClient/connect()`` internally in order to detect the server flavour.
     /// - Parameters:
     ///   - instanceURL: the instance you are connecting to
     ///   - clientName: Name of the client to be used in outgoing HTTP requests. Defaults to `TootSDK`
     ///   - session: the URLSession being used internally, defaults to shared
     ///   - accessToken: the existing access token; if you already have one
     ///   - scopes: An array of authentication scopes, defaults to `"read", "write", "follow", "push"`
-    public init(
-        connect instanceURL: URL,
-        clientName: String = "TootSDK",
-        session: URLSession = URLSession.shared,
-        accessToken: String? = nil,
-        scopes: [String] = ["read", "write", "follow", "push"]
-    ) async throws {
-        self.session = session
-        self.instanceURL = instanceURL
-        self.accessToken = accessToken
-        self.scopes = scopes
-        self.clientName = clientName
-        try await connect()
-    }
+    // public init(
+    //     connect instanceURL: URL,
+    //     clientName: String = "TootSDK",
+    //     session: URLSession = URLSession.shared,
+    //     accessToken: String? = nil,
+    //     scopes: [String] = ["read", "write", "follow", "push"]
+    // ) {
+    //     self.session = session
+    //     self.instanceURL = instanceURL
+    //     self.accessToken = accessToken
+    //     self.scopes = scopes
+    //     self.clientName = clientName
+    // }
 
     /// Prints extra debug details like outgoing requests and responses
     public func debugOn() {
@@ -191,7 +186,6 @@ extension TootClient {
 
     internal func dataTask(_ request: URLRequest) async throws -> (Data, HTTPURLResponse) {
         if debugRequests {
-            print("➡️ flavour: \(self.flavour)")
             print("➡️ 🌏 \(request.httpMethod ?? "-") \(request.url?.absoluteString ?? "-")")
             for (k, v) in request.allHTTPHeaderFields ?? [:] {
                 print("➡️ 🏷️ '\(k)': '\(v)'")
@@ -338,14 +332,14 @@ extension TootClient {
 
 extension TootClient {
     /// Uses the currently available credentials to connect to an instance and detect the most compatible server flavour.
-    @discardableResult
-    public func connect() async throws -> Instance {
-        let instance = try await getInstance()
-        if debugInstance {
-            print("🎨 Detected fediverse instance flavour: \(instance.flavour), version: \(instance.version)")
-        }
-        return instance
-    }
+    // @discardableResult
+    // public func connect() async throws -> Instance {
+    //     let instance = try await getInstance()
+    //     if debugInstance {
+    //         print("🎨 Detected fediverse instance flavour: \(instance.flavour), version: \(instance.version)")
+    //     }
+    //     return instance
+    // }
 
     /// Returns `true` if this instance of `TootClient` has no `accessToken`.
     public var isAnonymous: Bool {

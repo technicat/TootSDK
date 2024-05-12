@@ -1,10 +1,9 @@
 extension TootClient {
 
-    /// call this instead of getInstanceInfo
-    /// ensures that client flavour is updated
+    /// just a rename
+    /// to do, replace the other
     public func getInstance() async throws -> Instance {
         let instance = try await getInstanceInfo()
-        flavour = instance.flavour
         return instance
     }
 }
