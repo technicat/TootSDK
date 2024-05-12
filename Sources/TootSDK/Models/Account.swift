@@ -9,7 +9,7 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String? = nil,
         avatarStatic: String? = nil, header: String? = nil, headerStatic: String? = nil, locked: Bool, emojis: [Emoji], discoverable: Bool? = nil,
         indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
-        lastPostAt: Date? = nil, postsCount: Int, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
+        lastPostAt: Date? = nil, postsCount: Int? = nil, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
         suspended: Bool? = nil,
         limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil, source: TootSource? = nil, role: TootRole? = nil,
         website: String? = nil
@@ -63,8 +63,7 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.discoverable = try? container.decodeIfPresent(Bool.self, forKey: .discoverable)
         self.createdAt = try container.decode(Date.self, forKey: .createdAt)
         self.lastPostAt = try? container.decodeIfPresent(Date.self, forKey: .lastPostAt)
-        // firefish doesn't return this in reblog info
-        self.postsCount = (try? container.decodeIfPresent(Int.self, forKey: .postsCount)) ?? 0
+        self.postsCount = try container.decodeIfPresent(Int.self, forKey: .postsCount)
         self.followersCount = try container.decode(Int.self, forKey: .followersCount)
         self.followingCount = try container.decode(Int.self, forKey: .followingCount)
         self.noindex = try? container.decodeIfPresent(Bool.self, forKey: .noindex)
@@ -119,7 +118,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// When the most recent post was posted
     public let lastPostAt: Date?
     /// How many posts are attached to this account.
-    public let postsCount: Int
+    /// Firefish doesn't return this in a post this is reposting
+    public let postsCount: Int?
     /// The reported followers of this profile
     public let followersCount: Int
     /// The reported follows of this profile
