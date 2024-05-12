@@ -147,44 +147,6 @@ extension TootClient {
         return parts
     }
 
-    // https://github.com/pixelfed/pixelfed/issues/4250#issuecomment-1483798056
-    // todo - add website
-    public func updateCredentials(params: PixelfedUpdateCredentialsParams) async throws -> Account {
-        let req = try HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
-            $0.method = .post
-            var parts = [MultipartPart]()
-            if let name = params.displayName {
-                parts.append(
-                    MultipartPart(name: "display_name", body: name))
-            }
-            if let note = params.note {
-                parts.append(
-                    MultipartPart(name: "note", body: note))
-            }
-            if let locked = params.locked {
-                parts.append(
-                    MultipartPart(
-                        name: "locked",
-                        body: String(locked)))
-            }
-            parts.append(contentsOf: getSourceParts(params))
-            $0.body = try .multipart(parts, boundary: UUID().uuidString)
-        }
-        return try await fetch(Account.self, req)
-    }
-
-    func getSourceParts(_ params: PixelfedUpdateCredentialsParams) -> [MultipartPart] {
-        var parts = [MultipartPart]()
-        if let language = params.source?.language {
-            parts.append(
-                MultipartPart(
-                    name: "source[language]",
-                    body: language))
-        }
-        return parts
-    }
-
     /// View information about a profile.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
