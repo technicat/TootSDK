@@ -14,7 +14,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Simplified arguments, try to accomodate most common cases and avoid having to fill out parameter structs, e.g. call `client.updateProfile()`, `client.updateAccountSettings()`, and `client.updatePostDefaults()` with the relevant individual parameters instead of calling `client.updateCredentials` with a filled-out parameter struct.
 - `fave` instead of `favourite` (avoids British vs. American spelling and it's shorter) e.g. `client.fave(post)`, `client.unFave(post)`, and `post.isFaved`.
 - An `ISOCode` enum listing the language codes supported by the various platforms instead of passing strings, e.g. `client.getTranslation(of: post, in: .en)`.
-- `client.getInstance()` is a more precise name than `client.getInstanceInfo()` and it ensures that `client.flavour` is updated.
 - Define common interfaces among objects
 - Random other conveniences.
 
@@ -22,11 +21,16 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
 - Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
 
+## Instance
+
+- Retrieve with `getInstance` instead of `getInstanceInfo`
+
 ## Post
 
 - Changed `deletePost` to `deletePostAndEdit` (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
 - Changed the form type in `publishPost` and `editPost` to `application/json` instead of `multipart/form-data` to accomodate Mitra and Sharkey.
 - Moved Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
+- Added `local` visibility for Pleroma and Akkoma.
 
 ## ScheduledPost
 
@@ -55,7 +59,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## Timeline
 
-- Add `direct` timeline for Mitra
+- Add `direct` timeline for Mitra, Pleroma, and Akkoma
 
 ## Notifications
 
