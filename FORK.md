@@ -43,6 +43,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 - `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
 - `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
+- `postsCount` is optional to accomodate Firefish (nil in boosts)
 
 ## Relationship
 
