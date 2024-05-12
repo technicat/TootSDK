@@ -21,11 +21,13 @@ struct AccountView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                LazyImage(url: URL(string: account.avatar))
-                    .frame(width: 80, height: 80, alignment: .topLeading)
+            if let avatar = account.avatar {
+                HStack {
+                    LazyImage(url: URL(string: avatar))
+                        .frame(width: 80, height: 80, alignment: .topLeading)
 
-                Spacer()
+                    Spacer()
+                }
             }
 
             AccountItemView(description: "displayName") {

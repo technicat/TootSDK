@@ -41,12 +41,14 @@ struct FeedPostView: View {
             }
 
             HStack(alignment: .top) {
-                LazyImage(url: URL(string: post.tootPost.displayPost.account.avatar))
+                if let avatar = post.tootPost.displayPost.account.avatar {
+                    LazyImage(url: URL(string: avatar))
 
-                    .frame(width: 80, height: 80)
-                    .onLongPressGesture {
-                        self.path.append(post.tootPost.displayPost.account)
-                    }
+                        .frame(width: 80, height: 80)
+                        .onLongPressGesture {
+                            self.path.append(post.tootPost.displayPost.account)
+                        }
+                }
 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
