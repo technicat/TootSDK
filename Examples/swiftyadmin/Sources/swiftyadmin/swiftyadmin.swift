@@ -22,7 +22,6 @@ struct SwiftyAdmin: AsyncParsableCommand {
             FollowByURI.self,
             Unfollow.self,
             GetPost.self,
-            GetFlavour.self,
             RegisterAccount.self,
             GetFeaturedTags.self,
             GetTrendingTags.self,

@@ -10,7 +10,7 @@ struct GetFollowers: AsyncParsableCommand {
     var token: String
 
     mutating func run() async throws {
-        let client = try await TootClient(connect: URL(string: url)!, accessToken: token)
+        let client = TootClient(instanceURL: URL(string: url)!, accessToken: token)
         let account = try await client.verifyCredentials()
 
         var pagedInfo: PagedInfo? = nil

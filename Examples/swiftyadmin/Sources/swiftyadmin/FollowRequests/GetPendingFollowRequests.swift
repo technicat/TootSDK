@@ -13,7 +13,7 @@ struct GetPendingFollowRequests: AsyncParsableCommand {
     @OptionGroup var auth: AuthOptions
 
     mutating func run() async throws {
-        let client = try await TootClient(connect: auth.url, accessToken: auth.token)
+        let client = TootClient(instanceURL: auth.url, accessToken: auth.token)
         if auth.verbose {
             client.debugOn()
         }
