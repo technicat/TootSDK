@@ -2,9 +2,9 @@
 open class Pleroma: MastoAPI {
 
     open override var name: String { "Pleroma" }
-    
+
     // supports
-    
+
     open override var supportsFeaturedTags: Bool { false }
 
     open override var supportsScheduleUpdate: Bool { false }
@@ -13,9 +13,9 @@ open class Pleroma: MastoAPI {
     open override var supportsPostDefaultSensitive: Bool { false }
 
     open override var supportsRevoke: Bool { false }
-    
+
     // limits
-    
+
     open override func getLimit(for timeline: Timeline) -> Int {
         switch timeline {
         case .direct: return 40  // todo - check limit
