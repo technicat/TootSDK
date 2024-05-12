@@ -52,6 +52,10 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 - Add direct timeline for Mitra
 
+## Notifications
+
+- TootClient.getNotifications() takes an optional with include_types parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying types seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case)
+
 ## Cleanup
 
 - Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
