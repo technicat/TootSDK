@@ -331,15 +331,6 @@ extension TootClient {
 }
 
 extension TootClient {
-    /// Uses the currently available credentials to connect to an instance and detect the most compatible server flavour.
-    // @discardableResult
-    // public func connect() async throws -> Instance {
-    //     let instance = try await getInstance()
-    //     if debugInstance {
-    //         print("🎨 Detected fediverse instance flavour: \(instance.flavour), version: \(instance.version)")
-    //     }
-    //     return instance
-    // }
 
     /// Returns `true` if this instance of `TootClient` has no `accessToken`.
     public var isAnonymous: Bool {
