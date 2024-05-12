@@ -67,7 +67,7 @@ struct RelationshipView: View {
         showingReblogs = value.showingReposts ?? false
         notifying = value.notifying ?? false
         muting = value.muting
-        blocking = value.blocking
+        blocking = value.blocking ?? false
     }
 
     @ViewBuilder func buttons() -> some View {
