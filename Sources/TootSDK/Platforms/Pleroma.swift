@@ -13,6 +13,12 @@ open class Pleroma: MastoAPI {
     open override var supportsPostDefaultSensitive: Bool { false }
 
     open override var supportsRevoke: Bool { false }
+    
+    // lists
+    
+    open override var postVis: [Post.Visibility] {
+        super.postVis + [.local]
+    }
 
     // limits
 
