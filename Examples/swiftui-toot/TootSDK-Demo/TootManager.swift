@@ -30,14 +30,11 @@ public class TootManager: ObservableObject, @unchecked Sendable {
             self.currentClient = TootClient(instanceURL: instanceURL, accessToken: accessToken)
             self.currentClient?.debugOn()
             self.authenticated = true
-            Task {
-                try await self.currentClient.connect()
-            }
         }
     }
 
     @MainActor public func createClientAndPresentSignIn(_ url: URL) async throws {
-        self.currentClient = try await TootClient(connect: url)
+        self.currentClient = TootClient(instanceURL: url)
 
         if let accessToken = try await currentClient?.presentSignIn(callbackURI: callbackURI) {
             if let instanceURL = currentClient?.instanceURL {
@@ -49,7 +46,7 @@ public class TootManager: ObservableObject, @unchecked Sendable {
     }
 
     @MainActor public func createClientAndAuthorizeURL(_ url: URL) async throws -> URL? {
-        self.currentClient = try await TootClient(connect: url)
+        self.currentClient = TootClient(instanceURL: url)
 
         return try await self.currentClient?.createAuthorizeURL(server: url, callbackURI: callbackURI)
     }
