@@ -3,8 +3,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 ## Platform, Features, and Flavours
 
 - `instance.platform` returns a Platform descriptor with feature support queries like `platform.supportsAnnouncements` based on the detected Mastodon API version. This avoids having to query `TootClient.flavour` and `TootClient.supportsFeature`, and new platforms can be added without modifying TootFeature lists. The descriptors have inheritance hierarchies that mirror forking relationships, e.g. `Hometown` is a subclass of `Mastodon`. Ideally the platform determination should also check nodeinfo and instance v2.
-- Removed TootFeature
-- Remove flavour checks within TootClient (in progress). Idea is to let callers do the checking and provide platform-specific alternative calls and additional enums where appropriate.
+- Removed `TootFeature` and `TootSDKFlavour`. Platform determination has to be made at the UI level, anyway, so avoid branching at the low level.
 
 ## TootClient extensions
 
@@ -25,8 +24,9 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## Post
 
-- Change deletePost to deletePostAndEdit (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
-- Change the form type in publishPost and editPost to application/json instead of multipart/form-data to accomodate Mitra and Sharkey.
+- Changed deletePost to deletePostAndEdit (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
+- Changed the form type in publishPost and editPost to application/json instead of multipart/form-data to accomodate Mitra and Sharkey.
+- Moved Pixelfed-specific behavior in updateCredentials to pixelfedUpdateCredentials.
 
 ## ScheduledPost
 
@@ -41,7 +41,8 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 ## Account
 
-- avatarUrl is optional to accomodate Mitra accounts that have no avatar set (makes sense in general, better nil than an invalid or empty url string).
+- avatar is optional to accomodate Mitra
+- header is optional to accomodate Pixelfed
 
 ## Relationship
 
