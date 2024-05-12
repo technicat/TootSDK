@@ -19,15 +19,6 @@ extension TootClient {
 
         _ = try await fetch(req: req)
     }
-
-    public func report(_ params: PixelfedReportParams) async throws {
-        let req = try HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1.1", "report"])
-            $0.method = .post
-            $0.body = try .json(params)
-        }
-        _ = try await fetch(req: req)
-    }
 }
 
 extension TootClient {
