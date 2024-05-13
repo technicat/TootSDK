@@ -5,6 +5,6 @@ extension Account {
         guard let header else {
             return false
         }
-        return !header.isBlank && !header.hasSuffix("missing.png")
+        return !header.isBlank && !header.isBlankImage
     }
 }

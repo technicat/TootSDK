@@ -6,4 +6,10 @@ extension String {
     public var notBlank: String? {
         isBlank ? nil : self
     }
+
+    public var isBlankImage: Bool {
+        hasSuffix("missing.png")  // mastodon, pixelfed
+            || hasSuffix("transparent.png")  // catodon
+            || hasSuffix("banner.png")  // pleroma
+    }
 }
