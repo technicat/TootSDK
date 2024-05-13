@@ -20,18 +20,6 @@ extension TootClient {
     /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
     /// - Returns: your relationship with that account after following
     public func followAccountURI(by uri: String) async throws -> Relationship {
-        // if self.flavour == .pleroma {
-
-        //     // On Pleroma, we get to follow by URI, but it doesn't return a relationship, it returns an account
-        //     // So we use that to then retrieve the relationship
-        //     let account = try await pleromaFollowAccountURI(by: uri)
-
-        //     if let relationship = try await getRelationships(by: [account.id]).first {
-        //         return relationship
-        //     } else {
-        //         throw TootSDKError.unexpectedError("Unable to retrieve relationship")
-        //     }
-        // }
 
         // Do the webfinger lookup first, then go and follow by account afterwards
         let accountLookup = try await lookupAccount(uri: uri)
@@ -43,10 +31,6 @@ extension TootClient {
     /// - Returns: the looked up account, or an error if unable to retrieve
     public func lookupAccount(uri: String) async throws -> Account {
 
-//        if flavour == .pleroma || flavour == .akkoma {
-//            return try await getAccount(by: uri)
-//        }
-
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "lookup"])
             $0.method = .get
@@ -54,21 +38,6 @@ extension TootClient {
         }
 
         return try await fetch(Account.self, req)
-    }
-
-    /// Pleroma Specific. This follows an account by URI and returns the account being followed
-    /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
-    /// - Returns: the Account being followed
-    private func pleromaFollowAccountURI(by uri: String) async throws -> Relationship {
-
-        let params = PleromaFollowByURIParams(uri: uri)
-
-        let req = try HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "follows"])
-            $0.method = .post
-            $0.body = try .json(params)
-        }
-        return try await fetch(Relationship.self, req)
     }
 
     /// Unfollow the given account.
