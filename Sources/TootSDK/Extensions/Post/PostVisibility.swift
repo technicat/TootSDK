@@ -9,7 +9,7 @@ extension Post {
     public var isUnlisted: Bool {
         visibility == .unlisted
     }
-    
+
     /// local-only
     public var isLocal: Bool {
         visibility == .local

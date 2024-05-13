@@ -269,5 +269,19 @@ extension TootClient {
         return try await fetch(Account.self, req)
     }
 
+    /// Looks up an account based on it's account name or URI, and returns a payload that contains the instance's account id
+    /// - Parameter uri: account name on the instance you're on or a users URI (e.g test@instance.test)
+    /// - Returns: the looked up account, or an error if unable to retrieve
+    public func lookupAccount(uri: String) async throws -> Account {
+
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "accounts", "lookup"])
+            $0.method = .get
+            $0.addQueryParameter(name: "acct", value: uri)
+        }
+
+        return try await fetch(Account.self, req)
+    }
+
     // TODO: - Lookup account ID from Webfinger address
 }
