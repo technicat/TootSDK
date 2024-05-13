@@ -229,7 +229,7 @@ for posts in try await client.data.stream(HashtagTimelineQuery(tag: "iOSDev") {
 - Get instance information and determine the sign up requirements. Some instances may not be open for registration while others may require additional verification.
 
 ```swift
-let instance = try await client.getInstanceInfo()
+let instance = try await client.getInstance()
 if instance.registrations == false {
   // instance not open for registration
   return
