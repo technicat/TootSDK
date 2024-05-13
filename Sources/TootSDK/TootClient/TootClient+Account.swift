@@ -282,6 +282,4 @@ extension TootClient {
 
         return try await fetch(Account.self, req)
     }
-
-    // TODO: - Lookup account ID from Webfinger address
 }

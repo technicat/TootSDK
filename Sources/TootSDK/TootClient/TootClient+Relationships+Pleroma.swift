@@ -8,7 +8,7 @@ extension TootClient {
     /// Pleroma Specific. This follows an account by URI and returns the account relationship being followed
     /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
     /// - Returns: the Relationship being followed
-    public func followAccountURI(params: PleromaFollowByURIParams) async throws -> Relationship {
+    public func followAccount(params: PleromaFollowByURIParams) async throws -> Relationship {
 
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "follows"])
