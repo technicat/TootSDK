@@ -52,6 +52,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 ## Relationship
 
 - `blocking` is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in `Relationship`, anyway.
+- Pleroma follow by URI moved to a separate file (also renamed and takes a param struct)
 
 ## Reports
 
@@ -70,5 +71,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
 - Removed unused TootSDKError enums
 - Removed obsolete tests
+- Misc code and comment cleanup
 
 
