@@ -173,8 +173,12 @@ open class MastoAPI: Platform {
     open var followedTagsPageLimit: Int {
         api >= Version(4, 0) ? 200 : 0
     }
-    ///
-    open var notificationsPageLimit: Int { 30 }
+
+    ///https://docs.joinmastodon.org/methods/notifications/
+    open var notificationsPageLimit: Int {
+        api >= Version(4, 1) ? 80 : 30
+    }
+
     /// https://docs.joinmastodon.org/methods/scheduled_statuses/
     open var scheduledPageLimit: Int {
         api >= Version(2, 7) ? 40 : 0
