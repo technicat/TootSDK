@@ -53,6 +53,8 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 - `blocking` is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in `Relationship`, anyway.
 - Pleroma follow by URI moved to a separate file (also renamed and takes a param struct)
+- `followAccountURI` moved to `Extensions` and renamed, along with a convenience function `pleromaLookupAccount`.
+- `lookupAccount` moved to `TootClient+Account.swift`
 
 ## Reports
 
