@@ -68,8 +68,6 @@ open class Pixelfed: MastoAPI {
         [.public, .unlisted, .private]
     }
 
-    // subset of accepted types
-    // matching the ones displayed by the pixelfed.social web ui
     open override var reportCats: [ReportCategory] {
         [
             .spam,
