@@ -22,39 +22,6 @@ extension TootClient {
     }
 
     /// Gets scheduled posts
-    /// - Parameters:
-    ///   - minId: Return results immediately newer than ID.
-    ///   - maxId: Return results older than ID
-    ///   - sinceId: Return results newer than ID
-    ///   - limit: Maximum number of results to return. Defaults to 20. Max 40
-    /// - Returns: array of scheduled posts (empty if none), an error if any issue
-    @available(*, deprecated, renamed: "getScheduledPosts")
-    public func getScheduledPost(minId: String?, maxId: String?, sinceId: String?, limit: Int?) async throws -> [ScheduledPost] {
-        let req = HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "scheduled_statuses"])
-            $0.method = .get
-
-            if let minId {
-                $0.addQueryParameter(name: "min_id", value: minId)
-            }
-
-            if let maxId {
-                $0.addQueryParameter(name: "max_id", value: maxId)
-            }
-
-            if let sinceId {
-                $0.addQueryParameter(name: "since_id", value: sinceId)
-            }
-
-            if let limit {
-                $0.addQueryParameter(name: "limit", value: String(limit))
-            }
-        }
-
-        return try await fetch([ScheduledPost].self, req)
-    }
-
-    /// Gets scheduled posts
     /// - Returns: the scheduled posts requested, or an error if unable to retrieve
     public func getScheduledPosts(_ pageInfo: PagedInfo? = nil, limit: Int? = nil) async throws -> PagedResult<[ScheduledPost]> {
         let req = HTTPRequestBuilder {
