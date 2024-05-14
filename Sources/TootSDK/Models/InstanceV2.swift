@@ -3,13 +3,13 @@ import Foundation
 /// General information about an instance
 /// https://docs.joinmastodon.org/entities/Instance/
 /// todo - fill in
-public struct InstanceV2: Codable, Hashable {
+public struct InstanceV2: Instance, Codable, Hashable {
     public init(
         domain: String,
         title: String,
         version: String,
         sourceUrl: String,
-        description: String,
+        description: String? = nil,
         languages: [String]? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
@@ -34,7 +34,7 @@ public struct InstanceV2: Codable, Hashable {
     /// The URL for the source code of the software running on this instance, in keeping with AGPL license requirements..
     public var sourceUrl: String
     /// Admin-defined description of the Fediverse site.
-    public var description: String
+    public var description: String?
     /// Primary languages of the website and its staff.
     public var languages: [String]?
     public var configuration: Configuration?

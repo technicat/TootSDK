@@ -4,7 +4,7 @@
 import Foundation
 
 /// General information about an instance
-public struct InstanceV1: Codable, Hashable {
+public struct InstanceV1: Instance, Codable, Hashable {
     public init(
         uri: String? = nil,
         title: String? = nil,
