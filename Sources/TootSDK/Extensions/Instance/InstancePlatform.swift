@@ -2,8 +2,6 @@ extension Instance {
 
     // todo - should use regex to capture all the version info
     // including both the api and build info
-    @available(macOS 13.0, *)
-    @available(iOS 16.0, *)
     public var platform: Platform {
         if version.lowercased().contains("akkoma") {
             return Akkoma(apiVersion)
