@@ -77,5 +77,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Removed obsolete tests
 - Remove deprecated code (not trying to support anyone)
 - Misc code and comment cleanup
+- Decoders should first match the spec, then add optionals as necessary, try to avoid try? or at least comment what error it's covering up
+- Add spec links to API functions and entities for convenient reference
 
 
