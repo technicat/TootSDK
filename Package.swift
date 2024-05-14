@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "TootSDK",
     platforms: [
-        .macOS(.v12),
-        .iOS(.v14),
+        .macOS(.v13),
+        .iOS(.v16),
         .watchOS(.v7),
         .tvOS(.v14),
     ],

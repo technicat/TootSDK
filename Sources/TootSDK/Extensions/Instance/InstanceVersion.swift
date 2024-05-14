@@ -4,8 +4,6 @@ import RegexBuilder
 // e.g. hometown uses + instead of () to separate from the API version
 extension Instance {
 
-    @available(macOS 13.0, *)
-    @available(iOS 16.0, *)
     public var apiVersion: Version {
         let regex = Regex {
             Capture(OneOrMore(.digit))
