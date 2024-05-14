@@ -37,6 +37,7 @@ public protocol Platform {
     /// turn post searchability on/off
     var supportsIndexable: Bool { get }
     var supportsInstanceExtendedDescription: Bool { get }
+    var supportsInstanceV2: Bool { get }
     // only need this because it's broken on Firefish and Sharkey
     var supportsIsBoosted: Bool { get }
 
