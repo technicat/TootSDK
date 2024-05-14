@@ -78,9 +78,9 @@ open class Pixelfed: MastoAPI {
             .sensitive,
             .abusive,
             .underage,
-            //    .violence,
-            //    .scam,
-            //     .terrorism,
+            .violence,
+            .scam,
+            .terrorism,
         ]
     }
 
