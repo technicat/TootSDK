@@ -15,6 +15,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Simplified arguments, try to accomodate most common cases and avoid having to fill out parameter structs, e.g. call `client.updateProfile()`, `client.updateAccountSettings()`, and `client.updatePostDefaults()` with the relevant individual parameters instead of calling `client.updateCredentials` with a filled-out parameter struct.
 - `fave` instead of `favourite` (avoids British vs. American spelling and it's shorter) e.g. `client.fave(post)`, `client.unFave(post)`, and `post.isFaved`.
 - An `ISOCode` enum listing the language codes supported by the various platforms instead of passing strings, e.g. `client.getTranslation(of: post, in: .en)`.
+- Functions composed of a sequence of queries, e.g. `followAccount(uri:)` calls `lookupAccount` and then `follow(account)`
 - Define common interfaces among objects
 - Random other conveniences.
 
