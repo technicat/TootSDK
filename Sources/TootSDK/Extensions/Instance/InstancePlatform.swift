@@ -1,4 +1,4 @@
-extension Instance {
+extension InstanceV1 {
 
     // todo - should use regex to capture all the version info
     // including both the api and build info

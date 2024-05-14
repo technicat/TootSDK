@@ -4,7 +4,7 @@
 import Foundation
 
 /// General information about an instance
-public struct Instance: Codable, Hashable {
+public struct InstanceV1: Codable, Hashable {
     public init(
         uri: String? = nil,
         title: String? = nil,
@@ -16,8 +16,8 @@ public struct Instance: Codable, Hashable {
         registrations: Bool? = nil,
         approvalRequired: Bool? = nil,
         invitesEnabled: Bool? = nil,
-        urls: Instance.InstanceURLs,
-        stats: Instance.Stats,
+        urls: InstanceURLs,
+        stats: Stats,
         thumbnail: String? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
@@ -165,7 +165,7 @@ public struct Instance: Codable, Hashable {
         self.registrations = try? container.decodeIfPresent(Bool.self, forKey: .registrations)
         self.approvalRequired = try? container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
         self.invitesEnabled = try? container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
-        self.urls = try? container.decodeIfPresent(Instance.InstanceURLs.self, forKey: .urls)
+        self.urls = try? container.decodeIfPresent(InstanceURLs.self, forKey: .urls)
         self.stats = try container.decode(Stats.self, forKey: .stats)
         self.thumbnail = try? container.decodeIfPresent(String.self, forKey: .thumbnail)
         self.configuration = try? container.decodeIfPresent(Configuration.self, forKey: .configuration)
