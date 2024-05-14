@@ -3,7 +3,7 @@ import Foundation
 /// General information about an instance
 /// https://docs.joinmastodon.org/entities/Instance/
 /// todo - fill in
-public struct InstanceV2: Instance, Codable, Hashable {
+public struct InstanceV2: Codable, Hashable {
     public init(
         domain: String,
         title: String,
