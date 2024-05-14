@@ -2,6 +2,9 @@
 public protocol Instance {
     
     var description: String? { get }
+    var title: String? { get }
+    var version: String { get }
+    var rules: [InstanceRule]? { get }
 }
 
 extension Instance {

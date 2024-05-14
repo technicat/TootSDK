@@ -1,4 +1,4 @@
-extension InstanceV1 {
+extension Instance {
 
     public var hasRules: Bool {
         guard let rules else {

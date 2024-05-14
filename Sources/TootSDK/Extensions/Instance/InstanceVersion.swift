@@ -2,7 +2,7 @@ import RegexBuilder
 
 // platform-specific portion has to be parsed on a platform-specific basis
 // e.g. hometown uses + instead of () to separate from the API version
-extension InstanceV1 {
+extension Instance {
 
     public var apiVersion: Version {
         let regex = Regex {

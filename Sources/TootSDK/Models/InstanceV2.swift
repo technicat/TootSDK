@@ -6,7 +6,7 @@ import Foundation
 public struct InstanceV2: Codable, Hashable {
     public init(
         domain: String,
-        title: String,
+        title: String? = nil,
         version: String,
         sourceUrl: String,
         description: String? = nil,
@@ -28,7 +28,7 @@ public struct InstanceV2: Codable, Hashable {
     /// The domain name of the instance.
     public var domain: String
     /// The title of the website.
-    public var title: String
+    public var title: String?
     /// The version of  the server installed on the instance.
     public var version: String
     /// The URL for the source code of the software running on this instance, in keeping with AGPL license requirements..
