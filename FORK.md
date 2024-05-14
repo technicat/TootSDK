@@ -75,6 +75,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
 - Removed unused TootSDKError enums
 - Removed obsolete tests
+- Remove deprecated code (not trying to support anyone)
 - Misc code and comment cleanup
 
 
