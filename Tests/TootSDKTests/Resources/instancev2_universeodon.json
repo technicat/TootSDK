@@ -1,0 +1,167 @@
+{
+  "description" : "Be one with the #fediverse. Join millions of humans building, creating, and collaborating on Mastodon Social Network.",
+  "languages" : [
+    "en"
+  ],
+  "rules" : [
+    {
+      "id" : "16",
+      "text" : "Sexually explicit or violent media must be marked as sensitive & content warned when posting"
+    },
+    {
+      "id" : "17",
+      "text" : "Be respectful. Racism, sexism, homophobia, transphobia (including targeted misgendering, deadnaming, or promotion of so-called \"conversion therapy\"), xenophobia, and other forms of hate and discrimination are not welcome. Your behaviour elsewhere may also be considered if brought to our attention. "
+    },
+    {
+      "id" : "18",
+      "text" : "No incitement of violence or promotion of discriminatory or violent ideologies"
+    },
+    {
+      "id" : "19",
+      "text" : "No spam, harrassment, dogpiling or doxxing of other users, this includes mass and spam reporting"
+    },
+    {
+      "id" : "20",
+      "text" : "No content illegal in The United Kingdom"
+    },
+    {
+      "id" : "21",
+      "text" : "No intentionally false or misleading information. By extension, do not pose as persons of interest. "
+    },
+    {
+      "id" : "22",
+      "text" : "Controversial, reactionary, NSFW, and satirical or similar content may be removed if not obviously Content Warned where appropriate."
+    },
+    {
+      "id" : "23",
+      "text" : "No promotion of gambling, Crypto, NFTs, anti-vaccination, self-harm, terrorism, illegal activities, Abuse/exploitation, or Violence."
+    },
+    {
+      "id" : "24",
+      "text" : "The sites staff team will ultimately have the final say on any and all moderation actions."
+    }
+  ],
+  "version" : "4.2.7",
+  "usage" : {
+    "users" : {
+      "active_month" : 6132
+    }
+  },
+  "contact" : {
+    "email" : "support@mastodonapp.uk",
+    "account" : {
+      "acct" : "wild1145",
+      "bot" : false,
+      "locked" : false,
+      "avatar_static" : "https://media.universeodon.com/accounts/avatars/110/805/086/186/438/462/original/19251a6e90e64abd.png",
+      "statuses_count" : 320,
+      "url" : "https://universeodon.com/@wild1145",
+      "following_count" : 8,
+      "emojis" : [
+
+      ],
+      "discoverable" : true,
+      "last_status_at" : "2024-05-13",
+      "group" : false,
+      "uri" : "https://universeodon.com/users/wild1145",
+      "id" : "110805086186438462",
+      "roles" : [
+        {
+          "id" : "3",
+          "name" : "Owner",
+          "color" : ""
+        }
+      ],
+      "header_static" : "https://media.universeodon.com/accounts/headers/110/805/086/186/438/462/original/f298cf11364e1ab9.jpg",
+      "followers_count" : 335,
+      "note" : "<p>I look after Universeodon now and founded and run MastodonApp.UK</p><p>This account is primarily used as an administrator account here on Universeodon. You can follow my Primary Account <span class=\"h-card\" translate=\"no\"><a href=\"https://mastodonapp.uk/@wild1145\" class=\"u-url mention\">@<span>wild1145</span></a></span> for regular content.</p>",
+      "avatar" : "https://media.universeodon.com/accounts/avatars/110/805/086/186/438/462/original/19251a6e90e64abd.png",
+      "display_name" : "Ryan Wild",
+      "header" : "https://media.universeodon.com/accounts/headers/110/805/086/186/438/462/original/f298cf11364e1ab9.jpg",
+      "created_at" : "2023-07-30T00:00:00.000Z",
+      "noindex" : false,
+      "fields" : [
+
+      ],
+      "username" : "wild1145"
+    }
+  },
+  "domain" : "universeodon.com",
+  "configuration" : {
+    "statuses" : {
+      "max_media_attachments" : 4,
+      "characters_reserved_per_url" : 23,
+      "max_characters" : 1000
+    },
+    "translation" : {
+      "enabled" : true
+    },
+    "polls" : {
+      "max_expiration" : 2629746,
+      "min_expiration" : 300,
+      "max_characters_per_option" : 50,
+      "max_options" : 4
+    },
+    "urls" : {
+      "status" : "https://status.atlas-media.co.uk",
+      "streaming" : "wss://universeodon.com"
+    },
+    "accounts" : {
+      "max_featured_tags" : 10
+    },
+    "media_attachments" : {
+      "image_matrix_limit" : 70000000,
+      "supported_mime_types" : [
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "image/heic",
+        "image/heif",
+        "image/webp",
+        "image/avif",
+        "video/webm",
+        "video/mp4",
+        "video/quicktime",
+        "video/ogg",
+        "audio/wave",
+        "audio/wav",
+        "audio/x-wav",
+        "audio/x-pn-wave",
+        "audio/vnd.wave",
+        "audio/ogg",
+        "audio/vorbis",
+        "audio/mpeg",
+        "audio/mp3",
+        "audio/webm",
+        "audio/flac",
+        "audio/aac",
+        "audio/m4a",
+        "audio/x-m4a",
+        "audio/mp4",
+        "audio/3gpp",
+        "video/x-ms-asf"
+      ],
+      "video_frame_rate_limit" : 120,
+      "video_size_limit" : 103809024,
+      "video_matrix_limit" : 8294400,
+      "image_size_limit" : 103809024
+    }
+  },
+  "title" : "Universeodon Social Media",
+  "source_url" : "https://github.com/Universeodon-com/mastodon",
+  "max_post_chars" : 1000,
+  "thumbnail" : {
+    "url" : "https://media.universeodon.com/site_uploads/files/000/000/004/@1x/3352474678e559db.png",
+    "blurhash" : "UJFhPBInVrI:%h,-xDae0L$x%Ms,XUjDWYs:",
+    "versions" : {
+      "@1x" : "https://media.universeodon.com/site_uploads/files/000/000/004/@1x/3352474678e559db.png",
+      "@2x" : "https://media.universeodon.com/site_uploads/files/000/000/004/@2x/3352474678e559db.png"
+    }
+  },
+  "registrations" : {
+    "approval_required" : false,
+    "enabled" : true,
+    "message" : null,
+    "url" : null
+  }
+}
