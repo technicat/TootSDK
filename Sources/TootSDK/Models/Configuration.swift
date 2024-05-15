@@ -39,7 +39,7 @@ public struct Configuration: Codable, Hashable {
         public var maxFeaturedTags: Int?
         // v2
         /// The maximum number of pinned statuses for each account.
-        public var maxPinnedStatuses: Int? // todo - rename to posts
+        public var maxPinnedStatuses: Int?  // todo - rename to posts
     }
 
     public struct Posts: Codable, Hashable {
@@ -76,18 +76,18 @@ public struct Configuration: Codable, Hashable {
         /// The longest allowed poll duration, in seconds.
         public var maxExpiration: Int?
     }
-    
+
     /// v2
     public struct Translation: Codable, Hashable {
         /// Whether the Translations API is available on this instance.
         public var enabled: Bool
     }
-    
+
     public struct URLs: Codable, Hashable {
         /// The Websockets URL for connecting to the streaming API.
         public var streaming: String
     }
-    
+
     public struct Vapid: Codable, Hashable {
         /// The instances VAPID public key, used for push notifications, the same as WebPushSubscription#server_key.
         public var publicKey: String

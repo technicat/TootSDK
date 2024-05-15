@@ -13,7 +13,8 @@ public struct InstanceV2: Codable, Hashable {
         languages: [String]? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
-        rules: [InstanceRule]? = nil
+        rules: [InstanceRule]? = nil,
+        thumbnail: Thumbnail
     ) {
         self.domain = domain
         self.title = title
@@ -23,6 +24,7 @@ public struct InstanceV2: Codable, Hashable {
         self.languages = languages
         self.configuration = configuration
         self.rules = rules
+        self.thumbnail = thumbnail
     }
 
     /// The domain name of the instance.
@@ -40,4 +42,11 @@ public struct InstanceV2: Codable, Hashable {
     public var configuration: Configuration?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
+    /// An image used to represent this instance.
+    public var thumbnail: Thumbnail
+
+    public struct Thumbnail: Codable, Hashable {
+        /// The URL for the thumbnail image.
+        public var url: String?
+    }
 }
