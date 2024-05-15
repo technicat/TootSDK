@@ -7,6 +7,7 @@
 
 /// Configured values and limits for this website (instance)
 /// https://docs.joinmastodon.org/entities/Instance/#configuration
+/// todo - add translation for V2
 public struct Configuration: Codable, Hashable {
     /// Limits related to accounts.
     public var accounts: Accounts?
@@ -16,12 +17,16 @@ public struct Configuration: Codable, Hashable {
     public var mediaAttachments: MediaAttachments?
     /// Limits related to polls.
     public var polls: Polls?
+    // v2
+    /// Hints related to translation.
+    public var translation: Translation?
 
     enum CodingKeys: String, CodingKey {
         case accounts
         case posts = "statuses"
         case mediaAttachments
         case polls
+        case translation
     }
 
     public struct Accounts: Codable, Hashable {
@@ -62,6 +67,12 @@ public struct Configuration: Codable, Hashable {
         public var minExpiration: Int?
         /// The longest allowed poll duration, in seconds.
         public var maxExpiration: Int?
+    }
+    
+    /// v2
+    public struct Translation: Codable, Hashable {
+        /// Whether the Translations API is available on this instance.
+        public var enabled: Bool
     }
 
 }
