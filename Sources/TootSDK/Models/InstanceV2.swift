@@ -14,7 +14,8 @@ public struct InstanceV2: Codable, Hashable {
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
         rules: [InstanceRule]? = nil,
-        thumbnail: Thumbnail? = nil
+        thumbnail: Thumbnail? = nil,
+        registrations: Registrations? = nil
     ) {
         self.domain = domain
         self.title = title
@@ -45,11 +46,20 @@ public struct InstanceV2: Codable, Hashable {
     /// An image used to represent this instance.
     /// Not optional in spec but missing in Mitra
     public var thumbnail: Thumbnail?
+    /// Information about registering for this website.
+    public var registrations: Registrations?
 
     public struct Thumbnail: Codable, Hashable {
         /// The URL for the thumbnail image.
         public var url: String
         /// A hash computed by the BlurHash algorithm, for generating colorful preview thumbnails when media has not been downloaded yet.
       //  public var blurhash: String? // causing crashes?
+    }
+    
+    public struct Registrations: Codable, Hashable {
+        /// Whether registrations are enabled.
+        public var enabled: Bool
+        /// Whether registrations require moderator approval.
+        public var approvalRequired: Bool
     }
 }
