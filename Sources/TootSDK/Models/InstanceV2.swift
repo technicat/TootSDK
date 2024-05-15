@@ -14,7 +14,7 @@ public struct InstanceV2: Codable, Hashable {
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
         rules: [InstanceRule]? = nil,
-        thumbnail: Thumbnail
+        thumbnail: Thumbnail? = nil
     ) {
         self.domain = domain
         self.title = title
@@ -43,7 +43,8 @@ public struct InstanceV2: Codable, Hashable {
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
     /// An image used to represent this instance.
-    public var thumbnail: Thumbnail
+    /// Not optional in spec but missing in Mitra
+    public var thumbnail: Thumbnail?
 
     public struct Thumbnail: Codable, Hashable {
         /// The URL for the thumbnail image.
