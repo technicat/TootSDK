@@ -7,7 +7,6 @@
 
 /// Configured values and limits for this website (instance)
 /// https://docs.joinmastodon.org/entities/Instance/#configuration
-/// todo - add translation for V2
 public struct Configuration: Codable, Hashable {
     /// Limits related to accounts.
     public var accounts: Accounts?
@@ -38,6 +37,9 @@ public struct Configuration: Codable, Hashable {
     public struct Accounts: Codable, Hashable {
         /// The maximum number of featured tags allowed for each account.
         public var maxFeaturedTags: Int?
+        // v2
+        /// The maximum number of pinned statuses for each account.
+        public var maxPinnedStatuses: Int? // todo - rename to posts
     }
 
     public struct Posts: Codable, Hashable {
