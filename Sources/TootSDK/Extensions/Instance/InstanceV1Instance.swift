@@ -1,6 +1,14 @@
 import Foundation
 
 extension InstanceV1: Instance {
+    public var registrationEnabled: Bool? {
+        registrations
+    }
+    
+    public var registrationApprovalRequired: Bool? {
+        approvalRequired
+    }
+    
     public var domain: String {
         // some platforms (Friendica) return whole URL
         // maybe just remove https:// with hasPrefix, dropFirsts

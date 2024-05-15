@@ -9,6 +9,8 @@ public protocol Instance {
     var rules: [InstanceRule]? { get }
     var configuration: Configuration? { get }
     var streaming: String? { get }
+    var registrationEnabled: Bool? { get }
+    var registrationApprovalRequired: Bool? { get }
     //  var contactAccount: Account? { get }
 }
 
