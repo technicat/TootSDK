@@ -20,6 +20,10 @@ public struct Configuration: Codable, Hashable {
     // v2
     /// Hints related to translation.
     public var translation: Translation?
+    /// URLs of interest for clients apps.
+    public var urls: URLs?
+    ///
+    public var vapid: Vapid?
 
     enum CodingKeys: String, CodingKey {
         case accounts
@@ -27,6 +31,8 @@ public struct Configuration: Codable, Hashable {
         case mediaAttachments
         case polls
         case translation
+        case urls
+        case vapid
     }
 
     public struct Accounts: Codable, Hashable {
@@ -73,6 +79,16 @@ public struct Configuration: Codable, Hashable {
     public struct Translation: Codable, Hashable {
         /// Whether the Translations API is available on this instance.
         public var enabled: Bool
+    }
+    
+    public struct URLs: Codable, Hashable {
+        /// The Websockets URL for connecting to the streaming API.
+        public var streaming: String
+    }
+    
+    public struct Vapid: Codable, Hashable {
+        /// The instances VAPID public key, used for push notifications, the same as WebPushSubscription#server_key.
+        public var publicKey: String
     }
 
 }

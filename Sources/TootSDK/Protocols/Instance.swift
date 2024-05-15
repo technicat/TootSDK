@@ -6,6 +6,7 @@ public protocol Instance {
     var version: String { get }
     var rules: [InstanceRule]? { get }
     var configuration: Configuration? { get }
+    var streaming: String? { get }
     //  var contactAccount: Account? { get }
 }
 
