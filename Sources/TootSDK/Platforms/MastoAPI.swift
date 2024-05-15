@@ -235,7 +235,6 @@ open class MastoAPI: Platform {
         }
         if api >= Version(4, 2) {
             cats = reportCats42 + cats
-            return cats
         }
         return cats
     }
