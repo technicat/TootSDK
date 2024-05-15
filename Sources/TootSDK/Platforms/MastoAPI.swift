@@ -231,7 +231,7 @@ open class MastoAPI: Platform {
     open var reportCats: [ReportCategory] {
         var cats: [ReportCategory] = []
         if api >= Version(3, 5) {
-            cats = cats + reportCats35
+            cats = reportCats35
         }
         if api >= Version(4, 2) {
             cats = reportCats42 + cats
