@@ -4,9 +4,10 @@
 import Foundation
 
 /// General information about an instance
+/// https://docs.joinmastodon.org/entities/V1_Instance/
 public struct InstanceV1: Codable, Hashable {
     public init(
-        uri: String? = nil,
+        uri: String,
         title: String? = nil,
         description: String? = nil,
         shortDescription: String? = nil,
@@ -42,7 +43,7 @@ public struct InstanceV1: Codable, Hashable {
     }
 
     /// The domain name of the instance.
-    public var uri: String?
+    public var uri: String
     /// The title of the website.
     public var title: String?
     /// Admin-defined description of the Fediverse site.
@@ -94,68 +95,9 @@ public struct InstanceV1: Codable, Hashable {
         }
     }
 
-    public struct Configuration: Codable, Hashable {
-        /// Limits related to accounts.
-        public var accounts: Accounts?
-        /// Limits related to authoring posts.
-        public var posts: Posts?
-        /// Hints for which attachments will be accepted.
-        public var mediaAttachments: MediaAttachments?
-        /// Limits related to polls.
-        public var polls: Polls?
-
-        enum CodingKeys: String, CodingKey {
-            case accounts
-            case posts = "statuses"
-            case mediaAttachments
-            case polls
-        }
-
-        public struct Accounts: Codable, Hashable {
-            /// The maximum number of featured tags allowed for each account.
-            public var maxFeaturedTags: Int?
-        }
-
-        public struct Posts: Codable, Hashable {
-            /// The maximum number of allowed characters per post.
-            public var maxCharacters: Int?
-            /// The maximum number of media attachments that can be added to a post.
-            public var maxMediaAttachments: Int?
-            /// Each URL in a post will be assumed to be exactly this many characters.
-            public var charactersReservedPerUrl: Int?
-        }
-
-        public struct MediaAttachments: Codable, Hashable {
-            /// Contains MIME types that can be uploaded.
-            public var supportedMimeTypes: [String]?
-            /// The maximum size of any uploaded image, in bytes.
-            public var imageSizeLimit: Int?
-            /// The maximum number of pixels (width times height) for image uploads.
-            public var imageMatrixLimit: Int?
-            /// The maximum size of any uploaded video, in bytes.
-            public var videoSizeLimit: Int?
-            /// The maximum frame rate for any uploaded video.
-            public var videoFrameRateLimit: Int?
-            /// The maximum number of pixels (width times height) for video uploads.
-            public var videoMatrixLimit: Int?
-        }
-
-        public struct Polls: Codable, Hashable {
-            /// Each poll is allowed to have up to this many options.
-            public var maxOptions: Int?
-            /// Each poll option is allowed to have this many characters.
-            public var maxCharactersPerOption: Int?
-            /// The shortest allowed poll duration, in seconds.
-            public var minExpiration: Int?
-            /// The longest allowed poll duration, in seconds.
-            public var maxExpiration: Int?
-        }
-
-    }
-
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.uri = try? container.decodeIfPresent(String.self, forKey: .uri)
+        self.uri = try container.decode(String.self, forKey: .uri)
         self.title = try? container.decodeIfPresent(String.self, forKey: .title)
         self.description = try? container.decodeIfPresent(String.self, forKey: .description)
         self.shortDescription = try? container.decodeIfPresent(String.self, forKey: .shortDescription)
@@ -173,4 +115,5 @@ public struct InstanceV1: Codable, Hashable {
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try? container.decodeIfPresent([InstanceRule].self, forKey: .rules)
     }
+
 }
