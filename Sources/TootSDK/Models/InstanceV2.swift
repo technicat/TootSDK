@@ -61,5 +61,7 @@ public struct InstanceV2: Codable, Hashable {
         public var enabled: Bool
         /// Whether registrations require moderator approval.
         public var approvalRequired: Bool
+        /// A custom message to be shown when registrations are closed.
+        //public var message: String?
     }
 }
