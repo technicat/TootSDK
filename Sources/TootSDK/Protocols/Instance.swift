@@ -22,4 +22,8 @@ extension Instance {
         }
         return !description.isBlank
     }
+
+    public var hasRegistrations: Bool {
+        registrationEnabled ?? false
+    }
 }

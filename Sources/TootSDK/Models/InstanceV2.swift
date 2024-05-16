@@ -26,6 +26,7 @@ public struct InstanceV2: Codable, Hashable {
         self.configuration = configuration
         self.rules = rules
         self.thumbnail = thumbnail
+        self.registrations = registrations
     }
 
     /// The domain name of the instance.
