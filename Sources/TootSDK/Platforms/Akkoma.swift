@@ -1,3 +1,4 @@
+/// https://docs.akkoma.dev/stable/development/API/differences_in_mastoapi_responses/
 open class Akkoma: Pleroma {
 
     open override var name: String { "Akkoma" }
