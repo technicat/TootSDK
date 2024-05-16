@@ -54,7 +54,7 @@ public struct InstanceV2: Codable, Hashable {
         /// The URL for the thumbnail image.
         public var url: String
         /// A hash computed by the BlurHash algorithm, for generating colorful preview thumbnails when media has not been downloaded yet.
-      //  public var blurhash: String? // causing crashes?
+        public var blurhash: String? // causing crashes?
     }
     
     public struct Registrations: Codable, Hashable {
@@ -63,6 +63,6 @@ public struct InstanceV2: Codable, Hashable {
         /// Whether registrations require moderator approval.
         public var approvalRequired: Bool
         /// A custom message to be shown when registrations are closed.
-        //public var message: String?
+        public var message: String?
     }
 }
