@@ -7,23 +7,10 @@ public protocol Instance {
     var title: String? { get }
     var version: String { get }
     var rules: [InstanceRule]? { get }
+    var languages: [String]? { get }
     var configuration: Configuration? { get }
     var streaming: String? { get }
     var registrationEnabled: Bool? { get }
     var registrationApprovalRequired: Bool? { get }
     //  var contactAccount: Account? { get }
-}
-
-extension Instance {
-
-    public var hasDescription: Bool {
-        guard let description else {
-            return false
-        }
-        return !description.isBlank
-    }
-
-    public var hasRegistrations: Bool {
-        registrationEnabled ?? false
-    }
 }

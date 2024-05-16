@@ -1,4 +1,4 @@
-extension InstanceV1 {
+extension Instance {
 
     public var maxPostChars: Int? {
         configuration?.posts?.maxCharacters

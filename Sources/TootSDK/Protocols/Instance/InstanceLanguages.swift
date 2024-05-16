@@ -1,4 +1,4 @@
-extension InstanceV1 {
+extension Instance {
 
     public var hasLanguages: Bool {
         guard let languages else {
