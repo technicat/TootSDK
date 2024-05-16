@@ -156,6 +156,9 @@ open class MastoAPI: Platform {
         switch timeline {
         case .bookmarks:
             api >= Version(3, 1) ? 40 : 0
+        // removed from mastodon in 3.0
+        case .direct:
+            api < Version(3, 0) ? 40 : 0
         case .home, .favourites, .local, .federated, .hashtag, .list, .user:
             40
         default:

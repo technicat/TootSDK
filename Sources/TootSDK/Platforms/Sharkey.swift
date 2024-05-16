@@ -6,7 +6,9 @@ open class Sharkey: MisskeyFork {
 
     open override var supportsTagStats: Bool { false }
 
-    /// limits
+    // limits
+    
+    /// timelines
     open override func getLimit(for timeline: Timeline) -> Int {
         switch timeline {
         case .favourites: return 0

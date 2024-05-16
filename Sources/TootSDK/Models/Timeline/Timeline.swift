@@ -15,10 +15,6 @@ public enum Timeline: Hashable, Sendable {
     /// The user's federated timeline
     case federated(FederatedTimelineQuery = FederatedTimelineQuery())
 
-    /// Only direct (private mention) posts
-    /// Supported by Mitra, Pleroma, Akkoma
-    case direct
-
     /// The user's favourite posts
     case favourites
 
@@ -33,6 +29,15 @@ public enum Timeline: Hashable, Sendable {
 
     /// Timeline with posts submitted by a single user
     case user(UserTimelineQuery)
+    
+    /// Only direct (private mention) posts
+    /// Supported by Mitra, Pleroma, Akkoma, pre 3.0 Mastodon
+    case direct
+    
+    /// posts from the local instance and 
+    /// a set of closely related instances chosen by the administrator
+    /// Supported by Akkoma
+    case bubble
 
     /// The user's local timeline
     public static var local: Timeline {

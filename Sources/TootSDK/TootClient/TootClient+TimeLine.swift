@@ -17,9 +17,6 @@ extension TootClient {
             return ["api", "v1", "timelines", "home"]
         case .local, .federated:
             return ["api", "v1", "timelines", "public"]
-        // for mitra
-        case .direct:
-            return ["api", "v1", "timelines", "direct"]
         case .favourites:
             return ["api", "v1", "favourites"]
         case .bookmarks:
@@ -30,6 +27,12 @@ extension TootClient {
             return ["api", "v1", "timelines", "list", listID]
         case .user(let query):
             return ["api", "v1", "accounts", query.userId, "statuses"]
+            // for mitra, pleroma, akkoma
+            case .direct:
+                return ["api", "v1", "timelines", "direct"]
+            // for akkoma
+            case .bubble:
+                return ["api", "v1", "timelines", "bubble"]
         }
     }
 
