@@ -198,11 +198,14 @@ open class MastoAPI: Platform {
 
     open var languages: [ISOCode] { [] }
 
-    // todo - add admin types
     /// https://docs.joinmastodon.org/methods/notifications/#get
     open var notificationTypes: NotificationTypes {
+        let noteTypes31: NotificationTypes = [.followRequest]
+        let noteTypes33: NotificationTypes = [.post]
+        let noteTypes35: NotificationTypes = [.update, .adminSignUp]
+        let noteTypes40: NotificationTypes = [.adminReport]
         var types: NotificationTypes = [
-            .follow, .mention, .repost, .favourite, .poll, .update,
+            .follow, .mention, .repost, .favourite, .poll
         ]
         if api >= Version(3, 1) {
             types = types.union(noteTypes31)
@@ -210,12 +213,14 @@ open class MastoAPI: Platform {
         if api >= Version(3, 3) {
             types = types.union(noteTypes33)
         }
+        if api >= Version(3, 5) {
+            types = types.union(noteTypes35)
+        }
+        if api >= Version(4, 0) {
+            types = types.union(noteTypes40)
+        }
         return types
     }
-
-    let noteTypes31: NotificationTypes = [.followRequest]
-
-    let noteTypes33: NotificationTypes = [.post]
 
     open var postVis: [Post.Visibility] {
         [.public, .unlisted, .private, .direct]
