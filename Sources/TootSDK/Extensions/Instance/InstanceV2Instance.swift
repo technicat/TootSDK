@@ -1,10 +1,11 @@
 extension InstanceV2: Instance {
+    
     public var registrationEnabled: Bool? {
-        registrations?.enabled
+        registrations.enabled
     }
 
     public var registrationApprovalRequired: Bool? {
-        registrations?.approvalRequired
+        registrations.approvalRequired
     }
 
     public var header: String? {

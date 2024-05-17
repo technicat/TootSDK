@@ -11,11 +11,11 @@ public struct InstanceV2: Codable, Hashable {
         sourceUrl: String,
         description: String? = nil,
         languages: [String]? = nil,
-        configuration: Configuration? = nil,
-        contactAccount: Account? = nil,
+        configuration: Configuration,
         rules: [InstanceRule]? = nil,
         thumbnail: Thumbnail? = nil,
-        registrations: Registrations? = nil
+        registrations: Registrations,
+        contact: Contact
     ) {
         self.domain = domain
         self.title = title
@@ -27,6 +27,7 @@ public struct InstanceV2: Codable, Hashable {
         self.rules = rules
         self.thumbnail = thumbnail
         self.registrations = registrations
+        self.contact = contact
     }
 
     /// The domain name of the instance.
@@ -41,6 +42,8 @@ public struct InstanceV2: Codable, Hashable {
     public var description: String?
     /// Primary languages of the website and its staff.
     public var languages: [String]?
+    /// Configured values and limits for this website.
+    /// Not optional in spec but consistent with V1
     public var configuration: Configuration?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
@@ -48,13 +51,16 @@ public struct InstanceV2: Codable, Hashable {
     /// Not optional in spec but missing in Mitra
     public var thumbnail: Thumbnail?
     /// Information about registering for this website.
-    public var registrations: Registrations?
+    public var registrations: Registrations
+    /// Hints related to contacting a representative of the website.
+    public var contact: Contact
 
     public struct Thumbnail: Codable, Hashable {
         /// The URL for the thumbnail image.
         public var url: String
         /// A hash computed by the BlurHash algorithm, for generating colorful preview thumbnails when media has not been downloaded yet.
         public var blurhash: String?  // causing crashes?
+        // todo - add 1x/2x
     }
 
     public struct Registrations: Codable, Hashable {
@@ -64,5 +70,12 @@ public struct InstanceV2: Codable, Hashable {
         public var approvalRequired: Bool
         /// A custom message to be shown when registrations are closed.
         public var message: String?
+    }
+    
+    public struct Contact: Codable, Hashable {
+        /// An email address that can be messaged regarding inquiries or issues.
+        public var email: String
+        /// An account that can be contacted natively over the network regarding inquiries or issues.
+        public var account: Account?  // causing crashes?
     }
 }
