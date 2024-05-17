@@ -220,6 +220,10 @@ open class MastoAPI: Platform {
     open var postVis: [Post.Visibility] {
         [.public, .unlisted, .private, .direct]
     }
+    
+    open var boostVis: [Post.Visibility] {
+        api >= Version(2, 8) ? [.public, .unlisted, .private] : []
+    }
 
     let reportCats35: [ReportCategory] = [
         .spam,
