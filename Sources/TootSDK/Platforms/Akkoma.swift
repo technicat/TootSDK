@@ -2,17 +2,17 @@
 open class Akkoma: Pleroma {
 
     open override var name: String { "Akkoma" }
-    
+
     // limits
-    
+
     /// timelines
     open override func getLimit(for timeline: Timeline) -> Int {
         switch timeline {
-        case .bubble: return 40 // todo - check this number
+        case .bubble: return 40  // todo - check this number
         default: return super.getLimit(for: timeline)
         }
     }
-    
+
     // lists
 
     // all the two-letter codes

@@ -61,7 +61,7 @@ public struct TootNotification: Codable, Hashable, Identifiable, Sendable {
         case adminReport = "admin.report"
         /// Some of your follow relationships have been severed as a result of a moderation or block event
         case severedRelationships = "severed_relationships"
-        
+
     }
 
     enum CodingKeys: String, CodingKey {

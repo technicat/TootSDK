@@ -29,12 +29,12 @@ public enum Timeline: Hashable, Sendable {
 
     /// Timeline with posts submitted by a single user
     case user(UserTimelineQuery)
-    
+
     /// Only direct (private mention) posts
     /// Supported by Mitra, Pleroma, Akkoma, pre 3.0 Mastodon
     case direct
-    
-    /// posts from the local instance and 
+
+    /// posts from the local instance and
     /// a set of closely related instances chosen by the administrator
     /// Supported by Akkoma
     case bubble
