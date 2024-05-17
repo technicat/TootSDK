@@ -1,4 +1,4 @@
-extension InstanceV1 {
+extension Instance {
     public var hasContactAccount: Bool {
         contactAccount != nil
     }

@@ -1,10 +1,10 @@
-extension InstanceV1 {
+extension Instance {
 
     public var hasContactEmail: Bool {
-        guard let email else {
+        guard let contactEmail else {
             return false
         }
-        return !email.isBlank
+        return !contactEmail.isBlank
     }
 
 }

@@ -1,4 +1,4 @@
-extension InstanceV1 {
+extension Instance {
 
     public var hasContact: Bool {
         hasContactAccount || hasContactEmail
