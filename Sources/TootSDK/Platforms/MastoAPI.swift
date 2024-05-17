@@ -205,7 +205,7 @@ open class MastoAPI: Platform {
         let noteTypes35: NotificationTypes = [.update, .adminSignUp]
         let noteTypes40: NotificationTypes = [.adminReport]
         var types: NotificationTypes = [
-            .follow, .mention, .repost, .favourite, .poll
+            .follow, .mention, .repost, .favourite, .poll,
         ]
         if api >= Version(3, 1) {
             types = types.union(noteTypes31)
@@ -225,7 +225,7 @@ open class MastoAPI: Platform {
     open var postVis: [Post.Visibility] {
         [.public, .unlisted, .private, .direct]
     }
-    
+
     open var boostVis: [Post.Visibility] {
         api >= Version(2, 8) ? [.public, .unlisted, .private] : []
     }
