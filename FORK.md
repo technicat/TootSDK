@@ -79,5 +79,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Misc code and comment cleanup
 - Decoders should first match the spec, then add optionals as necessary, try to avoid try? or at least comment what error it's covering up
 - Add spec links to API functions and entities for convenient reference
+- Tempted to remove public inits for JSON entities (would remove a big chunk of code) but I do have a Post copy in fedicat so guess I'll leave it alone
 
 
