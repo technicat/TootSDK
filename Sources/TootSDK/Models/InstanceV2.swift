@@ -71,7 +71,7 @@ public struct InstanceV2: Codable, Hashable {
         /// A custom message to be shown when registrations are closed.
         public var message: String?
     }
-    
+
     public struct Contact: Codable, Hashable {
         /// An email address that can be messaged regarding inquiries or issues.
         public var email: String
