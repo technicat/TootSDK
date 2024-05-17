@@ -3,7 +3,6 @@ import Foundation
 /// General information about an instance
 /// fields are listed in order of the spec
 /// https://docs.joinmastodon.org/entities/Instance/
-/// todo - fill in
 public struct InstanceV2: Codable, Hashable {
     public init(
         domain: String,
@@ -78,22 +77,22 @@ public struct InstanceV2: Codable, Hashable {
         public var message: String?
     }
 
+    public struct Usage: Codable, Hashable {
+        /// Usage data related to users on this instance.
+        public var users: Users
+
+        public struct Users: Codable, Hashable {
+            /// The number of active users in the past 4 weeks.
+            public var activeMonth: Int
+
+        }
+    }
+
     public struct Contact: Codable, Hashable {
         /// An email address that can be messaged regarding inquiries or issues.
         public var email: String
         /// An account that can be contacted natively over the network regarding inquiries or issues.
         public var account: Account?  // causing crashes?
     }
-    
-    public struct Usage: Codable, Hashable {
-        /// Usage data related to users on this instance.
-        public var users: Users
-        
-    }
-    
-    public struct Users: Codable, Hashable {
-        /// The number of active users in the past 4 weeks.
-        public var activeMonth: Int
-        
-    }
+
 }
