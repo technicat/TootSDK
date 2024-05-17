@@ -1,12 +1,21 @@
+//
+//  InstanceConfiguration.swift
+//
+//
+//  Created by Phil Chu on 5/14/24.
+//
+
 import Foundation
 
-/// Parameters to boost a post
+/// https://docs.joinmastodon.org/methods/statuses/#form-data-parameters-2
 public struct BoostPostParams: Codable, Sendable {
+    
+    public var visibility: Post.Visibility
 
-    ///  Creates an object to create a new post with
+    /// Parameters to boost a post
     /// - Parameters:
-    ///   - visibility: Sets the visibility of the posted post to public, unlisted, private, direct.
+    ///   - visibility: Any visibility except limited or direct (i.e. public, unlisted, private). Defaults to public. 
     public init(visibility: Post.Visibility = .public) {
-        self.init(visibility: visibility)
+        self.visibility = visibility
     }
 }
