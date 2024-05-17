@@ -1,6 +1,11 @@
 import Foundation
 
 extension InstanceV1: Instance {
+    
+    public var contactEmail: String? {
+        email
+    }
+    
     public var registrationEnabled: Bool? {
         registrations
     }

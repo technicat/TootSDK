@@ -12,5 +12,6 @@ public protocol Instance {
     var streaming: String? { get }
     var registrationEnabled: Bool? { get }
     var registrationApprovalRequired: Bool? { get }
-    //  var contactAccount: Account? { get }
+    var contactEmail: String? { get }
+    var contactAccount: Account? { get }
 }

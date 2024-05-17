@@ -1,4 +1,12 @@
 extension InstanceV2: Instance {
+    public var contactEmail: String? {
+        contact.email
+    }
+    
+    public var contactAccount: Account? {
+        contact.account
+    }
+    
     
     public var registrationEnabled: Bool? {
         registrations.enabled
