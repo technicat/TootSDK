@@ -26,6 +26,9 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 ## Instance
 
 - Retrieve with `getInstance` instead of `getInstanceInfo`
+- Add `InstanceV2` (and `getInstanceV2`)
+- Rename `Instance` to `InstanceV1`
+` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
 
 ## Post
 
