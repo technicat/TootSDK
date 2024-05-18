@@ -145,9 +145,9 @@ public protocol Platform {
     ///
     var notificationTypes: NotificationTypes { get }
     /// supported post visibilities
-    var postVis: [Post.Visibility] { get }
+    var postVis: PostVisibilities { get }
     /// supported boost visibilities
-    var boostVis: [Post.Visibility] { get }
+    var boostVis: PostVisibilities { get }
     /// (problem) report categories
     var reportCats: ReportCats { get }
     /// suggestion sources

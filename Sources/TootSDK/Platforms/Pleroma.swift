@@ -16,8 +16,8 @@ open class Pleroma: MastoAPI {
 
     // lists
 
-    open override var postVis: [Post.Visibility] {
-        super.postVis + [.local]
+    open override var postVis: PostVisibilities {
+        super.postVis.union([.local])
     }
 
     // limits
