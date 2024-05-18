@@ -1,3 +1,3 @@
 import Collections
 
-public typealias ReportCats = OrderedSet<ReportCategory>
+public typealias ReportCats = OrderedSet<Report.Category>
