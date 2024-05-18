@@ -61,9 +61,11 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - `followAccountURI` moved to `Extensions` and renamed, along with a convenience function `pleromaLookupAccount`.
 - `lookupAccount` moved to `TootClient+Account.swift`
 
-## Reports
+## Report
 
 - Reporting accounts/posts on Pixelfed is moved to a separate function that takes `PixelfedReportParams`
+- Moved `ReportCategory` to `Report.Category` (like Post.Visibility)
+- Filled in remaining `Report` fields added with Mastodon 4.0
 
 ## Timeline
 
