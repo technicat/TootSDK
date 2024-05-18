@@ -24,14 +24,14 @@ public struct Report: Codable, Hashable, Identifiable, Sendable {
     public var createdAt: Date?
     /// IDs of statuses that have been attached to this report for additional context.
     public var statusIds: [String]?
-        /// IDs of the rules that have been cited as a violation by this report.
+    /// IDs of the rules that have been cited as a violation by this report.
     public var ruleIds: [String]?
     /// The account that was reported.
     public var targetAccount: Account?
 }
 
 extension Report {
-    
+
     public enum Category: String, CaseIterable, Codable {
         /// Unwanted or repetitive content
         case spam
