@@ -36,7 +36,7 @@ open class MisskeyFork: MastoAPI {
     // lists
 
     /// report categories not supported
-    open override var reportCats: [ReportCategory] { [] }
+    open override var reportCats: ReportCats { [] }
 
     ///
     open override var suggestionSources: SuggestionSources {

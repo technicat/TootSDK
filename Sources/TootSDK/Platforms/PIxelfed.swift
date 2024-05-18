@@ -68,7 +68,7 @@ open class Pixelfed: MastoAPI {
         [.public, .unlisted, .private]
     }
 
-    open override var reportCats: [ReportCategory] {
+    open override var reportCats: ReportCats {
         [
             .spam,
             .copyright,

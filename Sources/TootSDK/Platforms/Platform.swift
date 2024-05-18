@@ -149,7 +149,7 @@ public protocol Platform {
     /// supported boost visibilities
     var boostVis: [Post.Visibility] { get }
     /// (problem) report categories
-    var reportCats: [ReportCategory] { get }
+    var reportCats: ReportCats { get }
     /// suggestion sources
     var suggestionSources: SuggestionSources { get }
 

@@ -230,23 +230,23 @@ open class MastoAPI: Platform {
         api >= Version(2, 8) ? [.public, .unlisted, .private] : []
     }
 
-    let reportCats35: [ReportCategory] = [
+    let reportCats35: ReportCats = [
         .spam,
         .violation,
         .other,
     ]
 
-    let reportCats42: [ReportCategory] = [
+    let reportCats42: ReportCats = [
         .legal
     ]
 
-    open var reportCats: [ReportCategory] {
-        var cats: [ReportCategory] = []
+    open var reportCats: ReportCats {
+        var cats: ReportCats = []
         if api >= Version(3, 5) {
             cats = reportCats35
         }
         if api >= Version(4, 2) {
-            cats = reportCats42 + cats
+            cats = reportCats42.union(cats)
         }
         return cats
     }
