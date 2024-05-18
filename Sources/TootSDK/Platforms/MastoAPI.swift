@@ -196,7 +196,7 @@ open class MastoAPI: Platform {
 
     // lists
 
-    open var languages: [ISOCode] { [] }
+    open var languages: Set<ISOCode> { [] }
 
     /// https://docs.joinmastodon.org/methods/notifications/#get
     open var notificationTypes: NotificationTypes {

@@ -20,9 +20,9 @@ open class Mastodon: MastoAPI {
         .zhTW,
         .zhYUE,
     ]
-    let langs41: [ISOCode] = [.be, .fy, .cnr, .sma, .smj]
-    let langs40: [ISOCode] = [.jbo, .ldn, .lfn, .tok, .zba]
-    let langs: [ISOCode] =
+    let langs41: Set<ISOCode> = [.be, .fy, .cnr, .sma, .smj]
+    let langs40: Set<ISOCode> = [.jbo, .ldn, .lfn, .tok, .zba]
+    let langs: Set<ISOCode> =
         [
             .aa, .ab, .ae, .af, .ak, .am, .an, .ar, .as, .av, .ay, .az,
             .ba,
@@ -59,20 +59,20 @@ open class Mastodon: MastoAPI {
             .zgh,
         ]
 
-    open override var languages: [ISOCode] {
+    open override var languages: Set<ISOCode> {
         var all = langs
         if api >= Version(4, 0) {
-            all = all + langs40
+            all = all.union(langs40)
         }
         if api >= Version(4, 1) {
-            all = all + langs41
+            all = all.union(langs41)
         }
         if api >= Version(4, 2) {
-            all = all.filter { $0 != .kmr }
-            all = all + langs42
+            all.remove(.kmr)
+            all = all.union(langs42)
         }
         if api >= Version(4, 3) {
-            all = all + langs43
+            all = all.union(langs43)
         }
         return all
     }

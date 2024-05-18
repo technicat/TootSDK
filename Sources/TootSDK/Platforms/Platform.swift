@@ -141,7 +141,7 @@ public protocol Platform {
     // lists
 
     /// post languages (maybe rename)
-    var languages: [ISOCode] { get }
+    var languages: Set<ISOCode> { get }
     ///
     var notificationTypes: NotificationTypes { get }
     /// supported post visibilities

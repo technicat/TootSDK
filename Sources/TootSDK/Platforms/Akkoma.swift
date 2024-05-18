@@ -17,7 +17,7 @@ open class Akkoma: Pleroma {
 
     // all the two-letter codes
     // todo - check version 2023.02
-    open override var languages: [ISOCode] {
+    open override var languages: Set<ISOCode> {
         [
             .aa, .ab, .ae, .af, .ak, .am, .an, .ar, .as, .av, .ay, .az,
             .ba, .be, .bg, .bh, .bi, .bm, .bn, .bo, .br, .bs,
