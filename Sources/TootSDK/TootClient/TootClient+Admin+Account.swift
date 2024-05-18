@@ -10,7 +10,7 @@ import MultipartKitTootSDK
 
 extension TootClient {
 
-    /// View all accounts, optionally matching certain criteria for filtering, up to 100 at a time. 
+    /// View all accounts, optionally matching certain criteria for filtering, up to 100 at a time.
     /// https://docs.joinmastodon.org/methods/admin/accounts/#v1
     /// - Parameters
     ///     - pageInfo: PagedInfo object for max/min/since
@@ -28,8 +28,8 @@ extension TootClient {
 
         return try await fetchPagedResult(req)
     }
-    
-    /// View all accounts, optionally matching certain criteria for filtering, up to 100 at a time. 
+
+    /// View all accounts, optionally matching certain criteria for filtering, up to 100 at a time.
     /// https://docs.joinmastodon.org/methods/admin/accounts/#v2
     /// - Parameters
     ///     - pageInfo: PagedInfo object for max/min/since
