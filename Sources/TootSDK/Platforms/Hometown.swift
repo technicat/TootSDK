@@ -3,7 +3,7 @@ open class Hometown: Mastodon {
     open override var name: String { "Hometown" }
 
     // todo - check versions
-    open override var languages: Set<ISOCode> {
+    open override var languages: ISOCodes {
         [
             .aa, .ab, .ae, .af, .ak, .am, .an, .ar, .as, .av, .ay, .az,
             .ba, .be, .bg, .bh, .bi, .bm, .bn, .bo, .br, .bs,

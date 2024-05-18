@@ -8,21 +8,21 @@ open class Mastodon: MastoAPI {
     // 4.3 - add Lower German
     // 4.2 - added Cherokee and Kalmyk, Cantonese, remove kmr
     // 4.1 - added be, fy, cnr, sma, smj
-    let langs43: [ISOCode] = [
+    let langs43: ISOCodes = [
         .moh,
         .nds,
         .pdc,
         .vai,
     ]
-    let langs42: [ISOCode] = [
+    let langs42: ISOCodes = [
         .chr, .xal, .zhCN,
         .zhHK,
         .zhTW,
         .zhYUE,
     ]
-    let langs41: Set<ISOCode> = [.be, .fy, .cnr, .sma, .smj]
-    let langs40: Set<ISOCode> = [.jbo, .ldn, .lfn, .tok, .zba]
-    let langs: Set<ISOCode> =
+    let langs41: ISOCodes = [.be, .fy, .cnr, .sma, .smj]
+    let langs40: ISOCodes = [.jbo, .ldn, .lfn, .tok, .zba]
+    let langs: ISOCodes =
         [
             .aa, .ab, .ae, .af, .ak, .am, .an, .ar, .as, .av, .ay, .az,
             .ba,
@@ -59,7 +59,7 @@ open class Mastodon: MastoAPI {
             .zgh,
         ]
 
-    open override var languages: Set<ISOCode> {
+    open override var languages: ISOCodes {
         var all = langs
         if api >= Version(4, 0) {
             all = all.union(langs40)

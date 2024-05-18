@@ -12,7 +12,7 @@ open class Friendica: MastoAPI {
 
     // lists
 
-    open override var languages: Set<ISOCode> { Set(ISOCode.allCases) }
+    open override var languages: ISOCodes { Set(ISOCode.allCases) }
 
     open override var notificationTypes: NotificationTypes {
         // setting this to empty (unsupported)
