@@ -1,13 +1,5 @@
 /// https://codeberg.org/silverpill/mitra/src/branch/main/docs/openapi.yaml
-open class Mitra: MastoAPI {
-    
-    // todo - move this to a reusable superclass (MastoCompatible?)
-    public init(_ api: Version, _ build: String) {
-        buildVersion = build.version.api
-        super.init(api)
-    }
-    
-    var buildVersion: Version
+open class Mitra: MastoCompatible {
     
     open override var name: String { "Mitra" }
 
@@ -73,3 +65,4 @@ open class Mitra: MastoAPI {
         []
     }
 }
+
