@@ -32,7 +32,7 @@ public struct Report: Codable, Hashable, Identifiable, Sendable {
 
 extension Report {
 
-    public enum Category: String, CaseIterable, Codable {
+    public enum Category: String, CaseIterable, Codable, Sendable {
         /// Unwanted or repetitive content
         case spam
         /// A specific rule was violated
