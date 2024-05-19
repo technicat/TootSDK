@@ -8,7 +8,7 @@ open class Mitra: MastoCompatible {
     open override var supportsFeaturedTags: Bool { false }
     open override var supportsFilter: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
-    open override var supportsInstanceV2: Bool { buildVersion > Version(2, 17) }
+    open override var supportsInstanceV2: Bool { build >= Version(2, 18) }
     open override var supportsNote: Bool { false }
     /// doesn't support deleting a notifications
     open override var supportsNotificationDelete: Bool { false }
@@ -19,6 +19,7 @@ open class Mitra: MastoCompatible {
     open override var supportsProfileFields: Bool { false }
     open override var supportsPublicDirectory: Bool { false }
     open override var supportsPublicTimeline: Bool { false }
+    open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
     open override var supportsSpoiler: Bool { false }
     /// doesn't support tag statistics
@@ -43,6 +44,10 @@ open class Mitra: MastoCompatible {
     open override var conversationsPageLimit: Int { 0 }
     /// querying favers not supported
     open override var faversPageLimit: Int { 0 }
+    ///
+    open override var maxAltText: Int { 
+        build >= Version(2,17,1) ? 3000 : 1500 
+    }
 
     /// trends not supported
     open override var trendingLinksLimit: Int { 0 }

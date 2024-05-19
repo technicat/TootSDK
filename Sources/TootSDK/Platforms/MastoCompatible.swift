@@ -2,9 +2,9 @@
 open class MastoCompatible: MastoAPI {
     
     public init(_ api: Version, _ build: String = "") {
-        buildVersion = build.version.api
+        self.build = build.version.api
         super.init(api)
     }
     
-    var buildVersion: Version
+    var build: Version
 }
