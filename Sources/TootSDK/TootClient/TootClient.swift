@@ -62,28 +62,6 @@ public class TootClient: @unchecked Sendable {
         self.clientName = clientName
     }
 
-    /// Initialize and connect a new instance of `TootClient`.
-    ///
-    /// - Parameters:
-    ///   - instanceURL: the instance you are connecting to
-    ///   - clientName: Name of the client to be used in outgoing HTTP requests. Defaults to `TootSDK`
-    ///   - session: the URLSession being used internally, defaults to shared
-    ///   - accessToken: the existing access token; if you already have one
-    ///   - scopes: An array of authentication scopes, defaults to `"read", "write", "follow", "push"`
-    // public init(
-    //     connect instanceURL: URL,
-    //     clientName: String = "TootSDK",
-    //     session: URLSession = URLSession.shared,
-    //     accessToken: String? = nil,
-    //     scopes: [String] = ["read", "write", "follow", "push"]
-    // ) {
-    //     self.session = session
-    //     self.instanceURL = instanceURL
-    //     self.accessToken = accessToken
-    //     self.scopes = scopes
-    //     self.clientName = clientName
-    // }
-
     /// Prints extra debug details like outgoing requests and responses
     public func debugOn() {
         self.debugRequests = true
