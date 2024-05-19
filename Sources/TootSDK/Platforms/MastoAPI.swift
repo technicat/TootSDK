@@ -226,7 +226,7 @@ open class MastoAPI: Platform {
         [.public, .unlisted, .private, .direct]
     }
 
-    open var boostVis:  PostVisibilities {
+    open var boostVis: PostVisibilities {
         api >= Version(2, 8) ? [.public, .unlisted, .private] : []
     }
 

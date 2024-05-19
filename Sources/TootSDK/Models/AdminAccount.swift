@@ -1,6 +1,6 @@
 //
 //  AdminAccount.swift
-//  
+//
 //
 //  Created by Philip Chu on 5/18/24.
 //
@@ -15,7 +15,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.id = id
         self.account = account
     }
-    
+
     public var id: String
     public var account: Account
 }

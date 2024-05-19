@@ -64,7 +64,7 @@ open class Pixelfed: MastoAPI {
     }
 
     // doesn't support .direct
-    open override var postVis:  PostVisibilities {
+    open override var postVis: PostVisibilities {
         [.public, .unlisted, .private]
     }
 
