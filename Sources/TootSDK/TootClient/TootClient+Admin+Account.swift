@@ -18,7 +18,7 @@ extension TootClient {
     /// - Returns: the accounts requested, or an error if unable to retrieve
     /// todo - add params
     public func getAccountsV1(_ pageInfo: PagedInfo? = nil, limit: Int? = nil)
-        async throws -> PagedResult<[Account]>
+        async throws -> PagedResult<[AdminAccount]>
     {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "admin", "accounts"])
@@ -36,7 +36,7 @@ extension TootClient {
     ///     - limit: Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
     /// - Returns: the accounts requested, or an error if unable to retrieve
     public func getAccountsV2(_ pageInfo: PagedInfo? = nil, limit: Int? = nil)
-        async throws -> PagedResult<[Account]>
+        async throws -> PagedResult<[AdminAccount]>
     {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v2", "admin", "accounts"])
