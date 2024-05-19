@@ -1,5 +1,14 @@
 /// https://codeberg.org/silverpill/mitra/src/branch/main/docs/openapi.yaml
 open class Mitra: MastoAPI {
+    
+    // todo - move this to a reusable superclass (MastoCompatible?)
+    public init(_ api: Version, _ build: String) {
+        buildVersion = build.version.api
+        super.init(api)
+    }
+    
+    var buildVersion: Version
+    
     open override var name: String { "Mitra" }
 
     open override var supportsPostDeleteAndEdit: Bool { false }
@@ -7,6 +16,7 @@ open class Mitra: MastoAPI {
     open override var supportsFeaturedTags: Bool { false }
     open override var supportsFilter: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
+    open override var supportsInstanceV2: Bool { buildVersion > Version(2, 17) }
     open override var supportsNote: Bool { false }
     /// doesn't support deleting a notifications
     open override var supportsNotificationDelete: Bool { false }
@@ -54,7 +64,7 @@ open class Mitra: MastoAPI {
         switch timeline {
         case .bookmarks: return 0  // not supported
         case .favourites: return 0  // not supported
-        case .direct: return 40  // supported
+        case .direct: return 40  // supported, check the number
         default: return super.getLimit(for: timeline)
         }
     }
