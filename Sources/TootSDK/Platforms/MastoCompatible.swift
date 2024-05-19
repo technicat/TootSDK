@@ -6,5 +6,6 @@ open class MastoCompatible: MastoAPI {
         super.init(api)
     }
     
+    // need something different (date-based) for misskey forks
     var build: Version
 }
