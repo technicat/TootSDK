@@ -15,6 +15,16 @@ open class Pleroma: MastoCompatible {
     open override var supportsRevoke: Bool { false }
 
     // lists
+    
+    open override var notificationTypes: NotificationTypes {
+        var types: NotificationTypes = [
+            .follow, .mention, .repost, .favourite
+        ]
+        if build >= Version(2,4,1) {
+            types.insert(.poll)
+        }
+        return types
+    }
 
     open override var postVis: PostVisibilities {
         super.postVis.union([.local])
