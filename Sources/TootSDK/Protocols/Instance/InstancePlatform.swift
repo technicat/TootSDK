@@ -3,42 +3,43 @@ extension Instance {
     // todo - should use regex to capture all the version info
     // including both the api and build info
     public var platform: Platform {
-        let apiVersion = platformVersion.api
+        let api = platformVersion.api
+        let plat = platformVersion.platform
         if version.lowercased().contains("akkoma") {
-            return Akkoma(apiVersion)
+            return Akkoma(api)
         }
         if version.lowercased().contains("catodon") {
-            return Catodon(apiVersion)
+            return Catodon(api)
         }
         if version.lowercased().contains("firefish") {
-            return Firefish(apiVersion)
+            return Firefish(api)
         }
         if version.lowercased().contains("friendica") {
-            return Friendica(apiVersion)
+            return Friendica(api)
         }
         if version.lowercased().contains("glitch") {
-            return Glitch(apiVersion)
+            return Glitch(api)
         }
         if version.lowercased().contains("hometown") {
-            return Hometown(apiVersion)
+            return Hometown(api)
         }
         if version.lowercased().contains("iceshrimp") {
-            return Iceshrimp(apiVersion)
+            return Iceshrimp(api)
         }
         if version.lowercased().contains("mitra") {
-            return Mitra(apiVersion)
+            return Mitra(api)
         }
         if version.lowercased().contains("pixelfed") {
-            return Pixelfed(apiVersion)
+            return Pixelfed(api)
         }
         if version.lowercased().contains("pleroma") {
-            return Pleroma(apiVersion)
+            return Pleroma(api)
         }
         if version.lowercased().contains("sharkey") {
-            return Sharkey(apiVersion)
+            return Sharkey(api)
         }
         if version.lowercased().contains("snac") {
-            return Snac(apiVersion)
+            return Snac(api)
         }
         // kludge - GotoSocial version string is missing GotoSocial name
         // and Mastodon API version
@@ -50,6 +51,6 @@ extension Instance {
             // instanceMastodonVersion in internalfrontend.go
             return GotoSocial(Version(3, 5, 3))
         }
-        return Mastodon(apiVersion)
+        return Mastodon(api)
     }
 }
