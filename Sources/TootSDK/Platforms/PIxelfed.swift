@@ -33,6 +33,9 @@ open class Pixelfed: MastoAPI {
 
     open override var supportsRevoke: Bool { false }
 
+    /// doesn't support search in account
+    open override var supportsSearchAccount: Bool { false }
+
     open override var supportsSearchPosts: Bool { false }
 
     open override var supportsTagStats: Bool { false }
@@ -52,7 +55,7 @@ open class Pixelfed: MastoAPI {
     open override var scheduledPageLimit: Int { 0 }
     /// search for accounts not supported
     open override var findAccountsLimit: Int { 0 }
-
+    
     /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }
     ///
