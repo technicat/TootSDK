@@ -26,8 +26,8 @@ extension TootClient {
     public func followAccount(uri: String) async throws -> Relationship {
 
         // Do the webfinger lookup first, then go and follow by account afterwards
-        let accountLookup = try await lookupAccount(uri: uri)
-        return try await followAccount(by: accountLookup.id)
+        let account = try await lookupAccount(uri: uri)
+        return try await follow(account)
     }
 
     public func pleromaFollowAccount(uri: String) async throws -> Relationship {
