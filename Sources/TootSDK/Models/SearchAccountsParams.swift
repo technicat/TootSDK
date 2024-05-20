@@ -5,6 +5,7 @@
 
 import Foundation
 
+/// https://docs.joinmastodon.org/methods/accounts/#search
 public struct SearchAccountsParams: Sendable {
     /// The search query.
     public var query: String
