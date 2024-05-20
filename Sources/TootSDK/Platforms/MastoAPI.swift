@@ -138,6 +138,8 @@ open class MastoAPI: Platform {
         api >= Version(4, 0) ? 80 : 0
     }
     ///
+    open var searchAccountsLimit: Int { 80 }
+    ///
     open var suggestionsLimit: Int { 80 }
     ///
     open var trendingLinksLimit: Int {

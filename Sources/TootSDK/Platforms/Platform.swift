@@ -124,6 +124,8 @@ public protocol Platform {
     ///
     var scheduledPageLimit: Int { get }
     ///
+    var searchAccountsLimit: Int { get }
+    ///
     var suggestionsLimit: Int { get }
     ///
     var trendingLinksLimit: Int { get }
