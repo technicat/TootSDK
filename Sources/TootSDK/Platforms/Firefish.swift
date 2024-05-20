@@ -12,7 +12,7 @@ open class Firefish: MisskeyFork {
     open override var trendingPostsLimit: Int { 40 }  // check this
 
     // search for accounts not supported
-    open override var searchAccountsLimit: Int { 0 }
+    open override var findAccountsLimit: Int { 0 }
 
     /// lists
 

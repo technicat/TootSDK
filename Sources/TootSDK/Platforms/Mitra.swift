@@ -1,6 +1,6 @@
 /// https://codeberg.org/silverpill/mitra/src/branch/main/docs/openapi.yaml
 open class Mitra: MastoCompatible {
-    
+
     open override var name: String { "Mitra" }
 
     open override var supportsPostDeleteAndEdit: Bool { false }
@@ -21,6 +21,8 @@ open class Mitra: MastoCompatible {
     open override var supportsPublicTimeline: Bool { false }
     open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
+    open override var supportsSearchPosts: Bool { false }
+    open override var supportsSearchTags: Bool { false }
     open override var supportsSpoiler: Bool { false }
     /// doesn't support tag statistics
     open override var supportsTagStats: Bool { false }
@@ -45,8 +47,8 @@ open class Mitra: MastoCompatible {
     /// querying favers not supported
     open override var faversPageLimit: Int { 0 }
     ///
-    open override var maxAltText: Int { 
-        build >= Version(2,17,1) ? 3000 : 1500 
+    open override var maxAltText: Int {
+        build >= Version(2, 17, 1) ? 3000 : 1500
     }
 
     /// trends not supported
@@ -70,4 +72,3 @@ open class Mitra: MastoCompatible {
         []
     }
 }
-

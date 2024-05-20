@@ -83,7 +83,11 @@ public protocol Platform {
 
     var supportsScheduleUpdate: Bool { get }
 
+    var supportsSearchAccount: Bool { get }
+    // could be limits
+    var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
+    var supportsSearchTags: Bool { get }
 
     var supportsSpoiler: Bool { get }
 
@@ -123,7 +127,9 @@ public protocol Platform {
     ///
     var scheduledPageLimit: Int { get }
     ///
-    var searchAccountsLimit: Int { get }
+    var searchLimit: Int { get }
+    ///
+    var findAccountsLimit: Int { get }
     ///
     var suggestionsLimit: Int { get }
     ///
@@ -212,9 +218,9 @@ extension Platform {
     public var supportsSchedule: Bool {
         scheduledPageLimit > 0
     }
-    
-    public var supportsSearchAccounts: Bool { 
-        searchAccountsLimit > 0
+
+    public var supportsFindAccounts: Bool {
+        findAccountsLimit > 0
     }
 
     public var supportsTrendingLinks: Bool {

@@ -51,7 +51,7 @@ open class Pixelfed: MastoAPI {
     /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
     /// search for accounts not supported
-    open override var searchAccountsLimit: Int { 0 }
+    open override var findAccountsLimit: Int { 0 }
 
     /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }

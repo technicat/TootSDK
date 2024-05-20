@@ -102,7 +102,13 @@ open class MastoAPI: Platform {
 
     open var supportsScheduleUpdate: Bool { api >= Version(2, 7) }
     open var supportsSensitive: Bool { api >= Version(0, 9, 9) }
+
+    /// https://docs.joinmastodon.org/methods/search/#v2
+    open var supportsSearchAccount: Bool { api >= Version(2, 8) }
+    open var supportsSearchAccounts: Bool { api >= Version(2, 4, 1) }
     open var supportsSearchPosts: Bool { api >= Version(2, 4, 1) }
+    open var supportsSearchTags: Bool { api >= Version(2, 4, 1) }
+
     open var supportsSpoiler: Bool { api >= Version(1, 0) }
 
     open var supportsTagStats: Bool { api >= Version(2, 4, 1) }
@@ -111,8 +117,6 @@ open class MastoAPI: Platform {
     open var supportsTranslationLanguages: Bool { api >= Version(4, 2) }
 
     open var supportsUpdateAccount: Bool { api >= Version(1, 4, 1) }
-
-    open var supportsSearchAccounts: Bool { true }
 
     // limits
     // zero indicates the feature is not supported
@@ -137,8 +141,10 @@ open class MastoAPI: Platform {
     open var directoryLimit: Int {
         api >= Version(4, 0) ? 80 : 0
     }
-    ///
-    open var searchAccountsLimit: Int { 80 }
+    /// https://docs.joinmastodon.org/methods/search/#v2
+    open var searchLimit: Int { 40 }
+    /// https://docs.joinmastodon.org/methods/accounts/#search
+    open var findAccountsLimit: Int { 80 }
     ///
     open var suggestionsLimit: Int { 80 }
     ///
