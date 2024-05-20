@@ -14,7 +14,8 @@ open class Pixelfed: MastoCompatible {
 
     open override var supportsFeaturedTags: Bool { false }
     
-    open override var supportsIndexable: Bool { build >= Version(0,11,10) }
+    // changelog says it's added but doesn't seem to set
+   // open override var supportsIndexable: Bool { build >= Version(0,11,10) }
 
     open override var supportsNote: Bool { false }
     open override var supportsNotificationDelete: Bool { false }
