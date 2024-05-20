@@ -42,7 +42,7 @@ extension Instance {
         }
         /// 3.0.0 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)
         if build.lowercased().contains("pleroma") {
-            return Pleroma(api)
+            return Pleroma(api, build)
         }
         /// 3.0.0 (compatible; Sharkey 2024.3.3)
         if build.lowercased().contains("sharkey") {
