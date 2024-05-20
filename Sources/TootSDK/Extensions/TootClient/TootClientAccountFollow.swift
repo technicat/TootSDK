@@ -23,10 +23,14 @@ extension TootClient {
     /// Follow the given account; can be be the account name on the instance you're on, or the user's URI
     /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
     /// - Returns: your relationship with that account after following
-    public func followAccount(uri: String) async throws -> Relationship {
+    public func followAccount(uri: String) async throws -> Relationship? {
 
         // Do the webfinger lookup first, then go and follow by account afterwards
-        let account = try await lookupAccount(uri: uri)
+        //
+        guard let account = try await findAccount(uri: uri) else {
+            return nil
+        }
+     //   let account = try await lookupAccount(uri: uri)
         return try await follow(account)
     }
 
