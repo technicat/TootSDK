@@ -21,7 +21,11 @@ open class Mitra: MastoCompatible {
     open override var supportsPublicTimeline: Bool { false }
     open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
+    /// doesn't support search in account
+    open override var supportsSearchAccount: Bool { false }
+    /// doesn't support post results in search (without > prefix)
     open override var supportsSearchPosts: Bool { false }
+    /// doesn't support tag results in search (without # prefix)
     open override var supportsSearchTags: Bool { false }
     open override var supportsSpoiler: Bool { false }
     /// doesn't support tag statistics
