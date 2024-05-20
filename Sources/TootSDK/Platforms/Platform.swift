@@ -83,7 +83,6 @@ public protocol Platform {
 
     var supportsScheduleUpdate: Bool { get }
 
-    var supportsSearchAccounts: Bool { get }
     var supportsSearchPosts: Bool { get }
 
     var supportsSpoiler: Bool { get }
@@ -212,6 +211,10 @@ extension Platform {
 
     public var supportsSchedule: Bool {
         scheduledPageLimit > 0
+    }
+    
+    public var supportsSearchAccounts: Bool { 
+        searchAccountsLimit > 0
     }
 
     public var supportsTrendingLinks: Bool {
