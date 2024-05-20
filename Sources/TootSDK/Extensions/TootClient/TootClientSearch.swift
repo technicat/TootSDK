@@ -26,6 +26,17 @@ extension TootClient {
           type: .posts,
           accountId: account.id))
     }
+    
+    public func findAccount(uri query: String) async throws -> Account? {
+      let results = try await search(
+        params: SearchParams(
+          query: query, // trim?
+          type: .accounts, resolve: true))
+        guard !results.accounts.isEmpty else {
+            return nil
+        }
+        return results.accounts[0]
+    }
 
     /// https://docs.joinmastodon.org/methods/accounts/#search
     public func findAccounts(
