@@ -1,6 +1,22 @@
 extension TootClient {
+    
+    // todo - page
+    public func search(
+      for query: String,
+      following: Bool = false,
+      excludeUnreviewed: Bool = false
+    ) async throws -> Search {
+      let params = SearchParams(
+        query: query, // trim?
+        resolve: false,
+        following: following, 
+        excludeUnreviewed: excludeUnreviewed)
+      return try await search(params: params)
+    }
+    
+/// https://docs.joinmastodon.org/methods/accounts/#search
     public func findAccounts(
-        _ query: String,
+        with query: String,
         offset: Int? = nil,
         limit: Int? = 80,
         order: ProfileDirectoryParams.Order? = nil,
