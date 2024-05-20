@@ -5,7 +5,7 @@ import RegexBuilder
 //extension Instance {
 extension String {
 
-    var version: (api: Version, build: String) {
+    public var version: (api: Version, build: String) {
         let regex = Regex {
             Capture(OneOrMore(.digit))
             "."

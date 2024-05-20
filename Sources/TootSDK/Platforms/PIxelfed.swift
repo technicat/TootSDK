@@ -1,5 +1,5 @@
 // https://docs.pixelfed.org/technical-documentation/api/#differences-with-mastodon-api
-open class Pixelfed: MastoAPI {
+open class Pixelfed: MastoCompatible {
 
     open override var name: String { "Pixelfed" }
 
@@ -13,6 +13,8 @@ open class Pixelfed: MastoAPI {
     open override var supportsBot: Bool { false }
 
     open override var supportsFeaturedTags: Bool { false }
+    
+    open override var supportsIndexable: Bool { build >= Version(0,11,10) }
 
     open override var supportsNote: Bool { false }
     open override var supportsNotificationDelete: Bool { false }
@@ -49,8 +51,10 @@ open class Pixelfed: MastoAPI {
 
     /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }
-    /// followed tags not supported
-    open override var followedTagsPageLimit: Int { 0 }
+    /// followed tags support
+    open override var followedTagsPageLimit: Int { 
+        build >= Version(0,11,7) ? 40 : 0 // check limit
+    }
     /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
     /// search for accounts not supported

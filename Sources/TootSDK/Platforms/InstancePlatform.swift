@@ -38,7 +38,7 @@ extension Instance {
         }
         /// 3.5.3 (compatible; Pixelfed 0.11.13)
         if build.lowercased().contains("pixelfed") {
-            return Pixelfed(api)
+            return Pixelfed(api, build)
         }
         /// 3.0.0 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)
         if build.lowercased().contains("pleroma") {
