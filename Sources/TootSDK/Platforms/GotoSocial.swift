@@ -16,6 +16,8 @@ open class GotoSocial: MastoAPI {
     open override var supportsRemoveFollower: Bool { false }
     /// doesn't support oauth revoke revoke
     open override var supportsRevoke: Bool { false }
+    /// doesn't support search in account
+    open override var supportsSearchAccount: Bool { false }
     /// doesn't support tag statistics
     open override var supportsTagStats: Bool { false }
     /// doesn't support post translations
