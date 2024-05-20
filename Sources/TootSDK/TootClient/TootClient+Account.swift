@@ -220,6 +220,7 @@ extension TootClient {
     }
 
     /// Search for matching accounts by username or display name.
+    /// https://docs.joinmastodon.org/methods/accounts/#search
     ///
     /// - Parameters:
     ///   - params: The search parameters.
