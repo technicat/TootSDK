@@ -4,7 +4,7 @@ open class Firefish: MisskeyFork {
 
     open override var supportsPublicTimeline: Bool { false }
 
-     /// doesn't support search in account
+    /// doesn't support search in account
     open override var supportsSearchAccount: Bool { false }
 
     /// limits

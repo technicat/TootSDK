@@ -13,9 +13,9 @@ open class Pixelfed: MastoCompatible {
     open override var supportsBot: Bool { false }
 
     open override var supportsFeaturedTags: Bool { false }
-    
+
     // changelog says it's added but doesn't seem to set
-   // open override var supportsIndexable: Bool { build >= Version(0,11,10) }
+    // open override var supportsIndexable: Bool { build >= Version(0,11,10) }
 
     open override var supportsNote: Bool { false }
     open override var supportsNotificationDelete: Bool { false }
@@ -53,14 +53,14 @@ open class Pixelfed: MastoCompatible {
     /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }
     /// followed tags support
-    open override var followedTagsPageLimit: Int { 
-        build >= Version(0,11,7) ? 40 : 0 // check limit
+    open override var followedTagsPageLimit: Int {
+        build >= Version(0, 11, 7) ? 40 : 0  // check limit
     }
     /// scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
     /// search for accounts not supported
     open override var findAccountsLimit: Int { 0 }
-    
+
     /// default, this is on pixelfed.social
     open override var maxAltText: Int { 2000 }
     ///
