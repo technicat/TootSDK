@@ -36,6 +36,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Changed the form type in `publishPost` and `editPost` to `application/json` instead of `multipart/form-data` to accomodate Mitra and Sharkey.
 - Moved Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
 - Added `local` visibility for Pleroma and Akkoma.
+- Added `mutualsOnly` visibility for GotoSocial.
 
 ## ScheduledPost
 
@@ -64,7 +65,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 ## Report
 
 - Reporting accounts/posts on Pixelfed is moved to a separate function that takes `PixelfedReportParams`
-- Moved `ReportCategory` to `Report.Category` (like Post.Visibility)
 - Filled in remaining `Report` fields added with Mastodon 4.0
 
 ## Timeline
@@ -85,5 +85,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Decoders should first match the spec, then add optionals as necessary, try to avoid try? or at least comment what error it's covering up
 - Add spec links to API functions and entities for convenient reference
 - Tempted to remove public inits for JSON entities (would remove a big chunk of code) but I do have a Post copy in fedicat so guess I'll leave it alone
+- Move nested enums up to top level
 
 
