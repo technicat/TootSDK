@@ -61,7 +61,7 @@ extension Instance {
         /// 0.15.0+git-1573cd
         if build.lowercased().contains("git") {
             // instanceMastodonVersion in internalfrontend.go
-            return GotoSocial(Version(3, 5, 3))
+            return GotoSocial(Version(3, 5, 3), build)
         }
         return Mastodon(api)
     }

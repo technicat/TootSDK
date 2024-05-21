@@ -1,11 +1,13 @@
 /// https://github.com/superseriousbusiness/gotosocial/blob/main/docs/api/swagger.yaml
-open class GotoSocial: MastoAPI {
+open class GotoSocial: MastoCompatible {
     open override var name: String { "GotoSocial" }
 
     // supports
 
     /// doesn't support featured tags
     open override var supportsFeaturedTags: Bool { false }
+    /// supports Instance V2
+    open override var supportsInstanceV2: Bool { true }
     /// doesn't support deleting a notifitation
     open override var supportsNotificationDelete: Bool { false }
     /// doesn't support post revision history
@@ -18,6 +20,10 @@ open class GotoSocial: MastoAPI {
     open override var supportsRevoke: Bool { false }
     /// doesn't support search in account
     open override var supportsSearchAccount: Bool { false }
+    /// doesn't support post results in search (without > prefix)
+    open override var supportsSearchPosts: Bool { false }
+    /// doesn't support tag results in search (without # prefix)
+    open override var supportsSearchTags: Bool { false }
     /// doesn't support tag statistics
     open override var supportsTagStats: Bool { false }
     /// doesn't support post translations
@@ -38,4 +44,14 @@ open class GotoSocial: MastoAPI {
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
+
+    // lists
+
+    open override var postVis: PostVisibilities {
+        super.postVis.union([.mutualsOnly])
+    }
+
+    open override var notificationTypes: NotificationTypes {
+        []
+    }
 }
