@@ -42,12 +42,6 @@ public struct SearchParams: Sendable {
         self.accountId = accountId
         self.excludeUnreviewed = excludeUnreviewed
     }
-
-    public enum SearchType: String, Sendable {
-        case accounts
-        case hashtags
-        case posts = "statuses"
-    }
 }
 
 extension SearchParams {
