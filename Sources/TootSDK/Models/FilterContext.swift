@@ -15,4 +15,3 @@ public enum FilterContext: String, Codable {
     /// when viewing a profile
     case account
 }
-
