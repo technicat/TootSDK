@@ -11,5 +11,6 @@ extension String {
         hasSuffix("missing.png")  // mastodon, pixelfed
             || hasSuffix("transparent.png")  // catodon
             || hasSuffix("banner.png")  // pleroma
+            || hasSuffix("default_header.png")  // gotosocial
     }
 }
