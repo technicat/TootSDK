@@ -25,7 +25,7 @@ public struct PostParams: Codable, Sendable {
         inReplyToId: String? = nil,
         sensitive: Bool? = nil,
         spoilerText: String? = nil,
-        visibility: Post.Visibility,
+        visibility: PostVisibility,
         language: String? = nil,
         contentType: String? = nil,
         inReplyToConversationId: String? = nil
@@ -42,7 +42,7 @@ public struct PostParams: Codable, Sendable {
         self.inReplyToConversationId = inReplyToConversationId
     }
 
-    public init(post: String, visibility: Post.Visibility, spoilerText: String? = nil) {
+    public init(post: String, visibility: PostVisibility, spoilerText: String? = nil) {
         self.init(
             post: post, mediaIds: [], poll: nil, inReplyToId: nil, sensitive: nil, spoilerText: spoilerText, visibility: visibility, language: nil,
             contentType: nil, inReplyToConversationId: nil)
@@ -61,7 +61,7 @@ public struct PostParams: Codable, Sendable {
     /// Text to be shown as a warning or subject before the actual content. Posts are generally collapsed behind this field.
     public var spoilerText: String?
     /// Sets the visibility of the posted post to public, unlisted, private, direct.
-    public var visibility: Post.Visibility
+    public var visibility: PostVisibility
     /// ISO 639 language code for this post.
     public var language: String?
     /// (Pleroma) The MIME type of the post, it is transformed into HTML by the backend. You can get the list of the supported MIME types with the nodeinfo endpoint.

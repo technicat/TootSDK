@@ -15,7 +15,7 @@ public struct Report: Codable, Hashable, Identifiable, Sendable {
     /// When an action was taken against the report.
     public var actionTakenAt: Date?
     /// The generic reason for the report.
-    public var category: Category?
+    public var category: ReportCategory?
     /// The reason for the report.
     public var comment: String?
     /// Whether the report was forwarded to a remote domain.
@@ -28,27 +28,4 @@ public struct Report: Codable, Hashable, Identifiable, Sendable {
     public var ruleIds: [String]?
     /// The account that was reported.
     public var targetAccount: Account?
-}
-
-extension Report {
-
-    public enum Category: String, CaseIterable, Codable, Sendable {
-        /// Unwanted or repetitive content
-        case spam
-        /// A specific rule was violated
-        case violation
-        /// Some other reason
-        case other
-        /// Content that is illegal in the user's or the instance's country.
-        case legal
-        // pixelfed
-        case sensitive
-        case abusive
-        case underage
-        case violence
-        case copyright
-        case impersonation
-        case scam
-        case terrorism
-    }
 }

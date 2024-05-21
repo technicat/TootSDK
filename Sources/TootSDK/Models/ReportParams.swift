@@ -22,14 +22,14 @@ public struct ReportParams {
     public var forward: Bool?
 
     /// Specify if the report is due to spam, violation of enumerated instance rules, or some other reason. Will be set to `violation` if `ruleIds` is provided (regardless of any category value you provide).
-    public var category: Report.Category
+    public var category: ReportCategory
 
     /// For violation category reports, specify the ID of the exact rules broken.
     public var ruleIds: [Int]
 
     public init(
         accountId: String,
-        category: Report.Category,
+        category: ReportCategory,
         postIds: [String] = [],
         comment: String? = nil,
         forward: Bool? = nil,

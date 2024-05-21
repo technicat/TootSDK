@@ -30,7 +30,7 @@ extension TootClient {
         guard let account = try await findAccount(uri: uri) else {
             return nil
         }
-     //   let account = try await lookupAccount(uri: uri)
+        //   let account = try await lookupAccount(uri: uri)
         return try await follow(account)
     }
 

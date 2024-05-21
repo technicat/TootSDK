@@ -6,7 +6,7 @@ import Foundation
 /// Represents display or publishing preferences of user's own account. Returned as an additional entity when verifying and updated credentials, as an attribute of Account.
 public struct TootSource: Codable, Hashable, Sendable {
     public init(
-        note: String? = nil, fields: [TootField], privacy: Post.Visibility? = nil, sensitive: Bool? = nil, language: String? = nil,
+        note: String? = nil, fields: [TootField], privacy: PostVisibility? = nil, sensitive: Bool? = nil, language: String? = nil,
         followRequestsCount: Int? = nil, indexable: Bool? = nil, hideCollections: Bool? = nil, discoverable: Bool? = nil
     ) {
         self.note = note
@@ -25,7 +25,7 @@ public struct TootSource: Codable, Hashable, Sendable {
     /// Metadata about the account.
     public var fields: [TootField]
     /// The default post privacy to be used for new posts.
-    public var privacy: Post.Visibility?
+    public var privacy: PostVisibility?
     /// Whether new posts should be marked sensitive by default.
     public var sensitive: Bool?
     ///  The default posting language for new posts.

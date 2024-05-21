@@ -4,7 +4,7 @@ extension TootClient {
         _ account: Account,
         comment: String?,
         forward: Bool?,
-        category: Report.Category,
+        category: ReportCategory,
         posts: [Post] = [],
         rules: [InstanceRule] = []
     ) async throws {
@@ -21,7 +21,7 @@ extension TootClient {
     public func reportPixelfed(
         _ account: Account,
         comment: String?,
-        category: Report.Category
+        category: ReportCategory
     ) async throws {
         let params = PixelfedReportParams(
             objectType: .user,
@@ -35,7 +35,7 @@ extension TootClient {
     public func reportPixelfed(
         _ post: Post,
         comment: String?,
-        category: Report.Category
+        category: ReportCategory
     ) async throws {
         let params = PixelfedReportParams(
             objectType: .post,

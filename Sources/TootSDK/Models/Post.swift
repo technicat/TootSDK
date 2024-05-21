@@ -11,7 +11,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
         createdAt: Date,
         account: Account,
         content: String? = nil,
-        visibility: Post.Visibility,
+        visibility: PostVisibility,
         sensitive: Bool,
         spoilerText: String,
         mediaAttachments: [MediaAttachment],
@@ -82,7 +82,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// HTML-encoded post content.
     public var content: String?
     /// Visibility of this post.
-    public var visibility: Visibility
+    public var visibility: PostVisibility
     /// Is this post marked as sensitive content?
     public var sensitive: Bool
     /// Subject or summary line, below which post content is collapsed until expanded.
@@ -136,20 +136,22 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// If the current token has an authorized user: The filter and keywords that matched this post.
     public var filtered: [FilterResult]?
 
-    public enum Visibility: String, Codable, CaseIterable, Sendable {
-        /// Visible to everyone, shown in public timelines.
-        case `public`
-        /// Visible to public, but not included in public timelines.
-        case unlisted
-        /// Visible to followers only, and to any mentioned users.
-        case `private`
-        /// Visible only to mentioned users.
-        case direct
-        /// Pleroma
-        //case list
-        /// Pleroma/Akkoma - local-only
-        case local
-    }
+    //    public enum Visibility: String, Codable, CaseIterable, Sendable {
+    //        /// Visible to everyone, shown in public timelines.
+    //        case `public`
+    //        /// Visible to public, but not included in public timelines.
+    //        case unlisted
+    //        /// Visible to followers only, and to any mentioned users.
+    //        case `private`
+    //        /// Visible only to mentioned users.
+    //        case direct
+    //        /// Pleroma
+    //        //case list
+    //        /// Pleroma/Akkoma - local-only
+    //        case local
+    //        /// gotosocial - mutualsOnly
+    //        case mutualsOnly
+    //    }
 
     enum CodingKeys: String, CodingKey {
         case id

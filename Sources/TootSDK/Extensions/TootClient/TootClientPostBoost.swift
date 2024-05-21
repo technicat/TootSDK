@@ -2,7 +2,7 @@ extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/statuses/#boost
     @discardableResult
-    public func boost(_ post: Post, visibility: Post.Visibility = .public) async throws -> Post {
+    public func boost(_ post: Post, visibility: PostVisibility = .public) async throws -> Post {
         if visibility == .public {
             try await boostPost(
                 id: post.id)

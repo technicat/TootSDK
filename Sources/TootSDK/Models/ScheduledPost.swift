@@ -56,7 +56,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         ///   - contentType: (Pleroma) The MIME type of the post, it is transformed into HTML by the backend. You can get the list of the supported MIME types with the nodeinfo endpoint.
         ///   - inReplyToConversationId:(Pleroma) Will reply to a given conversation, addressing only the people who are part of the recipient set of that conversation. Sets the visibility to direct.
         public init(
-            text: String? = nil, mediaIds: [String]? = nil, sensitive: Bool? = nil, spoilerText: String? = nil, visibility: Post.Visibility,
+            text: String? = nil, mediaIds: [String]? = nil, sensitive: Bool? = nil, spoilerText: String? = nil, visibility: PostVisibility,
             language: String? = nil, scheduledAt: Date? = nil, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
             contentType: String? = nil, inReplyToConversationId: String? = nil
         ) {
@@ -84,7 +84,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         /// Mark post and attached media as sensitive? Defaults to false.
         public var spoilerText: String?
         /// Sets the visibility of the posted post to public, unlisted, private, direct.
-        public var visibility: Post.Visibility
+        public var visibility: PostVisibility
         /// ISO 639 language code for this post.
         public var language: String?
         /// UTC Datetime at which to schedule a post.
@@ -130,7 +130,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
             // Mastodon incorrectly returns sensitive as a string
             self.sensitive = try? container.decodeBoolFromString(forKey: .sensitive)
             self.spoilerText = try? container.decodeIfPresent(String.self, forKey: .spoilerText)
-            self.visibility = try container.decode(Post.Visibility.self, forKey: .visibility)
+            self.visibility = try container.decode(PostVisibility.self, forKey: .visibility)
             self.language = try? container.decodeIfPresent(String.self, forKey: .language)
             self.idempotency = try? container.decodeIfPresent(String.self, forKey: .idempotency)
             self.scheduledAt = try? container.decodeIfPresent(Date.self, forKey: .scheduledAt)

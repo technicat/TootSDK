@@ -11,13 +11,13 @@ extension TootClient {
     /// Get saved timeline positions
     ///
     /// - Parameter timelines: The timeline(s) for which markers should be fetched.
-    public func getMarkers(for timelines: Set<Marker.Timeline>) async throws -> [Marker.Timeline: Marker] {
+    public func getMarkers(for timelines: MarkerTimelines) async throws -> [MarkerTimeline: Marker] {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "markers"])
             $0.method = .get
             $0.query = createQuery(timelines: timelines)
         }
-        return try await fetch([Marker.Timeline: Marker].self, req)
+        return try await fetch([MarkerTimeline: Marker].self, req)
     }
 
     /// Save your position in a timeline
@@ -29,7 +29,7 @@ extension TootClient {
     public func updateMarkers(
         homeLastReadId: String? = nil,
         notificationsLastReadId: String? = nil
-    ) async throws -> [Marker.Timeline: Marker] {
+    ) async throws -> [MarkerTimeline: Marker] {
         var queryItems: [URLQueryItem] = []
         if let homeLastReadId {
             queryItems.append(URLQueryItem(name: "home[last_read_id]", value: homeLastReadId))
@@ -43,10 +43,10 @@ extension TootClient {
             $0.body = try .form(queryItems: queryItems)
         }
 
-        return try await fetch([Marker.Timeline: Marker].self, req)
+        return try await fetch([MarkerTimeline: Marker].self, req)
     }
 
-    private func createQuery(timelines: Set<Marker.Timeline>) -> [URLQueryItem] {
+    private func createQuery(timelines: MarkerTimelines) -> [URLQueryItem] {
         var queryItems: [URLQueryItem] = []
         for timeline in timelines {
             queryItems.append(URLQueryItem(name: "timeline[]", value: timeline.rawValue))

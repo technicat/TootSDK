@@ -18,20 +18,20 @@ extension TootClient {
             limit: limit,
             offset: offset)
     }
-    
+
     public func search(for query: String, in account: Account) async throws -> Search {
-      try await search(
-        params: SearchParams(
-          query: query, // trim?
-          type: .posts,
-          accountId: account.id))
+        try await search(
+            params: SearchParams(
+                query: query,  // trim?
+                type: .posts,
+                accountId: account.id))
     }
-    
+
     public func findAccount(uri query: String) async throws -> Account? {
-      let results = try await search(
-        params: SearchParams(
-          query: query, // trim?
-          type: .accounts, resolve: true))
+        let results = try await search(
+            params: SearchParams(
+                query: query,  // trim?
+                type: .accounts, resolve: true))
         guard !results.accounts.isEmpty else {
             return nil
         }

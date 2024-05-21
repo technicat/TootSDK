@@ -36,7 +36,7 @@ extension TootClient {
     }
 
     public func updatePostDefaults(
-        privacy: Post.Visibility? = nil,
+        privacy: PostVisibility? = nil,
         sensitive: Bool? = nil,
         language: ISOCode? = nil
     ) async throws -> Account {

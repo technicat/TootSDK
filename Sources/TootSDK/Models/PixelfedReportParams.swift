@@ -10,7 +10,7 @@ import Foundation
 public struct PixelfedReportParams: Codable {
     var objectType: ObjectType
     var objectId: String
-    var type: Report.Category
+    var type: ReportCategory
     var msg: String?
 
     enum ObjectType: String, Codable {

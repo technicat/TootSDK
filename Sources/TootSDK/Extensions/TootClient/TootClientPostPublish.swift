@@ -10,7 +10,7 @@ extension TootClient {
         poll: CreatePoll? = nil,
         sensitive: Bool? = nil,
         spoilerText: String? = nil,
-        visibility: Post.Visibility,
+        visibility: PostVisibility,
         language: ISOCode
     ) async throws -> Post {
         try await publishPost(

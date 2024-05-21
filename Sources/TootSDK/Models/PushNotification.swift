@@ -20,7 +20,7 @@ public struct PushNotification: Codable {
     /// The notification id.
     public let notificationId: Int
     /// The type of notification.
-    public let notificationType: TootNotification.NotificationType
+    public let notificationType: NotificationType
     /// The locale in which the user prefers to see notification.
     public let preferredLocale: String
 }

@@ -9,16 +9,16 @@ import Foundation
 
 public struct TootNotificationParams: Codable, Sendable {
 
-    public init(excludeTypes: [TootNotification.NotificationType]? = nil, types: [TootNotification.NotificationType]? = nil) {
+    public init(excludeTypes: [NotificationType]? = nil, types: [NotificationType]? = nil) {
         self.excludeTypes = excludeTypes != nil ? Set(excludeTypes!) : nil
         self.types = types != nil ? Set(types!) : nil
         self.includeTypes = includeTypes != nil ? Set(excludeTypes!) : nil
     }
 
     public init(
-        excludeTypes: Set<TootNotification.NotificationType>? = nil,
-        types: Set<TootNotification.NotificationType>? = nil,
-        includeTypes: Set<TootNotification.NotificationType>? = nil
+        excludeTypes: Set<NotificationType>? = nil,
+        types: Set<NotificationType>? = nil,
+        includeTypes: Set<NotificationType>? = nil
     ) {
         self.excludeTypes = excludeTypes
         self.types = types
@@ -31,11 +31,11 @@ public struct TootNotificationParams: Codable, Sendable {
     }
 
     /// Types of notifications to exclude from the search results
-    public var excludeTypes: Set<TootNotification.NotificationType>?
+    public var excludeTypes: NotificationTypes?
     /// Types of notifications to include in the search results
-    public var types: Set<TootNotification.NotificationType>?
+    public var types: NotificationTypes?
     /// Pleroma, Akkoma
-    public var includeTypes: Set<TootNotification.NotificationType>?
+    public var includeTypes: NotificationTypes?
     // todo - with_muted (Pleroma/Akkoma/Friendica)
     // todo - include_all (Friendica)
     // todo - summary (Friendica)

@@ -1,6 +1,6 @@
 extension Account {
 
-    public var defaultVisibility: Post.Visibility {
+    public var defaultVisibility: PostVisibility {
         source?.privacy ?? .public
     }
 

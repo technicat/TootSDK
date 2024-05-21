@@ -14,7 +14,7 @@ extension TootClient {
         media: [UploadedMediaAttachment]? = nil,
         sensitive: Bool? = nil,
         spoilerText: String? = nil,
-        visibility: Post.Visibility,
+        visibility: PostVisibility,
         language: ISOCode,
         scheduledAt: Date
     ) async throws -> ScheduledPost {

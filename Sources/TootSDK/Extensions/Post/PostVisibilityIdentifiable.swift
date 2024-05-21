@@ -1,4 +1,4 @@
-extension Post.Visibility: Identifiable {
+extension PostVisibility: Identifiable {
     public var id: String {
         rawValue
     }

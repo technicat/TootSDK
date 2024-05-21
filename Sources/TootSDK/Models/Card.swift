@@ -9,7 +9,7 @@ public struct Card: Codable, Hashable {
         url: String,
         title: String,
         description: String,
-        type: Card.CardType,
+        type: CardType,
         authorName: String? = nil,
         authorUrl: String? = nil,
         providerName: String? = nil,
@@ -35,10 +35,6 @@ public struct Card: Codable, Hashable {
         self.image = image
         self.embedUrl = embedUrl
         self.blurhash = blurhash
-    }
-
-    public enum CardType: String, Codable, Hashable {
-        case link, photo, video, rich
     }
 
     /// Location of linked resource.
@@ -69,4 +65,8 @@ public struct Card: Codable, Hashable {
     public var embedUrl: String?
     /// A hash computed by the BlurHash algorithm, for generating colorful preview thumbnails when media has not been downloaded yet.
     public var blurhash: String?
+}
+
+public enum CardType: String, Codable, Hashable {
+    case link, photo, video, rich
 }

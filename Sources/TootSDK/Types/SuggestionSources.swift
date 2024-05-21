@@ -1,1 +1,1 @@
-public typealias SuggestionSources = Set<Suggestion.Source>
+public typealias SuggestionSources = Set<SuggestionSource>

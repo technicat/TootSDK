@@ -1,1 +1,1 @@
-public typealias NotificationTypes = Set<TootNotification.NotificationType>
+public typealias NotificationTypes = Set<NotificationType>
