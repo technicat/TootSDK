@@ -15,7 +15,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
         updatedAt: Date? = nil,
         read: Bool? = nil,
         mentions: [Announcement.Account],
-        statuses: [Announcement.Status],
+        statuses: [Announcement.Post],
         tags: [Tag],
         emojis: [Emoji],
         reactions: [AnnouncementReaction],
@@ -57,8 +57,8 @@ public struct Announcement: Codable, Hashable, Identifiable {
     public let read: Bool?
     /// Accounts mentioned in the announcement text.
     public let mentions: [Announcement.Account]
-    /// Statuses mentioned in the announcement text.
-    public let statuses: [Announcement.Status]
+    /// Posts mentioned in the announcement text.
+    public let statuses: [Announcement.Post]
     /// Tags linked in the announcement text.
     public let tags: [Tag]
     /// Custom emoji used in the announcement text.
@@ -89,15 +89,15 @@ public struct Announcement: Codable, Hashable, Identifiable {
         public var acct: String
     }
 
-    public struct Status: Codable, Hashable, Identifiable {
+    public struct Post: Codable, Hashable, Identifiable {
         public init(id: String, url: String) {
             self.id = id
             self.url = url
         }
 
-        /// The ID of an attached Status in the database.
+        /// The ID of an attached Post in the database.
         public var id: String
-        /// The URL of an attached Status.
+        /// The URL of an attached Post.
         public var url: String
     }
 }
