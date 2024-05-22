@@ -15,7 +15,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
         updatedAt: Date? = nil,
         read: Bool? = nil,
         mentions: [Announcement.Account],
-        statuses: [Announcement.Post],
+        posts: [Announcement.Post],
         tags: [Tag],
         emojis: [Emoji],
         reactions: [AnnouncementReaction],
@@ -31,7 +31,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
         self.updatedAt = updatedAt
         self.read = read
         self.mentions = mentions
-        self.statuses = statuses
+        self.posts = posts
         self.tags = tags
         self.emojis = emojis
         self.reactions = reactions
@@ -58,7 +58,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
     /// Accounts mentioned in the announcement text.
     public let mentions: [Announcement.Account]
     /// Posts mentioned in the announcement text.
-    public let statuses: [Announcement.Post]
+    public let posts: [Announcement.Post]
     /// Tags linked in the announcement text.
     public let tags: [Tag]
     /// Custom emoji used in the announcement text.
@@ -69,6 +69,24 @@ public struct Announcement: Codable, Hashable, Identifiable {
     public let startsAt: Date?
     ///  When the future announcement will end.
     public let endsAt: Date?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case content
+        case publishedAt
+        case published
+        case allDay
+        case createdAt
+        case updatedAt
+        case read
+        case mentions
+        case posts = "statuses"
+        case tags
+        case emojis
+        case reactions
+        case startsAt
+        case endsAt
+    }
 
     public struct Account: Codable, Hashable, Identifiable {
         public init(id: String, username: String, url: String, acct: String) {
