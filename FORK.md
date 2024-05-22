@@ -86,5 +86,6 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Add spec links to API functions and entities for convenient reference
 - Tempted to remove public inits for JSON entities (would remove a big chunk of code) but I do have a Post copy in fedicat so guess I'll leave it alone
 - Move nested enums up to top level
+- Rename `status` to `post`
 
 
