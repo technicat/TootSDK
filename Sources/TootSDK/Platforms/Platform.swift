@@ -168,7 +168,7 @@ extension Platform {
         !languages.isEmpty
     }
 
-    public var hasNotificationTypes: Bool {
+    public var canQueryNotificationTypes: Bool {
         !notificationTypes.isEmpty
     }
 
