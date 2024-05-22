@@ -18,7 +18,7 @@ public struct Filter: Codable, Hashable, Identifiable {
     /// The keywords grouped under this filter.
     public var keywords: [FilterKeyword]
     /// The posts grouped under this filter.
-    public var statuses: [FilterStatus]
+    public var posts: [FilterStatus]
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -27,7 +27,7 @@ public struct Filter: Codable, Hashable, Identifiable {
         case expiresAt
         case filterAction
         case keywords
-        case statuses  // posts = "statuses"
+        case posts = "statuses"
     }
 
     public init(from decoder: Decoder) throws {
@@ -40,6 +40,6 @@ public struct Filter: Codable, Hashable, Identifiable {
         // not returned when part of FilterResult
         self.keywords = (try? container.decodeIfPresent([FilterKeyword].self, forKey: .keywords)) ?? []
         // not returned when part of FilterResult
-        self.statuses = (try? container.decodeIfPresent([FilterStatus].self, forKey: .statuses)) ?? []
+        self.posts = (try? container.decodeIfPresent([FilterStatus].self, forKey: .posts)) ?? []
     }
 }
