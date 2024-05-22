@@ -38,7 +38,7 @@ public struct Configuration: Codable, Hashable {
         /// The maximum number of featured tags allowed for each account.
         public var maxFeaturedTags: Int?
         // v2
-        /// The maximum number of pinned statuses for each account.
+        /// The maximum number of pinned posts for each account.
         public var maxPinnedStatuses: Int?  // todo - rename to posts
     }
 

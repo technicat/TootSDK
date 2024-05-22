@@ -23,7 +23,7 @@ extension TootClient {
     /// Save your position in a timeline
     ///
     /// - Parameters:
-    ///   - homeLastReadId: ID of the last status read in the home timeline.
+    ///   - homeLastReadId: ID of the last post read in the home timeline.
     ///   - notificationsLastReadId: ID of the last notification read.
     @discardableResult
     public func updateMarkers(
