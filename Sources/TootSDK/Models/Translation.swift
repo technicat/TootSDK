@@ -9,15 +9,15 @@ import Foundation
 
 public struct Translation: Codable {
 
-    /// HTML-encoded translated content of the status.
+    /// HTML-encoded translated content of the post.
     public var content: String
-    /// The translated spoiler warning of the status.
+    /// The translated spoiler warning of the post.
     /// The Mastodon spec incorrectly lists this as spoiler_warning.
     public var spoilerText: String
-    /// The translated poll options of the status.
+    /// The translated poll options of the post.
     /// The Mastodon spec incorrectly lists this as an array.
     public var poll: Poll?
-    /// The translated media descriptions of the status
+    /// The translated media descriptions of the post
     public var mediaAttachments: [MediaAttachment]
     /// The language of the source text, as auto-detected by the machine translation provider.
     /// ISO 639 language code
