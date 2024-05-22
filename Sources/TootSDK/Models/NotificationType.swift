@@ -26,5 +26,10 @@ public enum NotificationType: String, Codable, Sendable, CaseIterable {
     case adminReport = "admin.report"
     /// Some of your follow relationships have been severed as a result of a moderation or block event
     case severedRelationships = "severed_relationships"
+    // mitra
+    case subscription
+    case subscriptionExpiration = "subscription_expiration"
+    case move
+    case emojiReaction = "emoji_reaction"
 
 }
