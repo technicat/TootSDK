@@ -149,7 +149,7 @@ public protocol Platform {
 
     /// post languages (maybe rename)
     var languages: ISOCodes { get }
-    ///
+    /// notification types that can be queried (not all that can be received)
     var notificationTypes: NotificationTypes { get }
     /// supported post visibilities
     var postVis: PostVisibilities { get }
