@@ -9,7 +9,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
     public var id: String
     /// The timestamp for when the post will be posted.
     public var scheduledAt: Date?
-    /// The parameters that were used when scheduling the status, to be used when the status is posted.
+    /// The parameters that were used when scheduling the post, to be used when the post is posted.
     public var params: Params
     /// Media that is attached to this post.
     public var mediaAttachments: [MediaAttachment]
