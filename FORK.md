@@ -5,6 +5,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Removed `TootFeature` and `TootSDKFlavour`. Platform determination has to be made at the UI level to expose the appropriate options, anyway, so do all the platform branching outside of TootSDK.
 - A `Platform` protocol and an implementing class hierarchy that mirrors the forking relationship among fediverse platform is provided. For example, `Hometown` is a subclass of `Mastodon`, which is a subclass of `MastodonAPI`. `Platform` exposes feature support queries like `supportsProfileFields`.
 - The appropriate platform is derived via `instance.platform` but ideally the should also check nodeinfo and instance v2.
+- `Platform` should be self-contained (could be a separate package) and is optional. TootClient should be can be used with an alternate platform/feature-checking package or none.
 
 ## TootClient extensions
 
@@ -19,9 +20,11 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Define common interfaces among objects
 - Random other conveniences.
 
-## HTTP
-- For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
-- Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
+## Account
+
+- `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
+- `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
+- `postsCount` is optional to accomodate Firefish (nil in boosts)
 
 ## Instance
 
@@ -29,6 +32,11 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Add `InstanceV2` (and `getInstanceV2`)
 - Rename `Instance` to `InstanceV1`
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
+
+## Notifications
+
+- `TootClient.getNotifications()` takes an optional with `include_types` parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying `types` (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
+- Added Mitra notification types
 
 ## Post
 
@@ -38,22 +46,16 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Added `local` visibility for Pleroma and Akkoma.
 - Added `mutualsOnly` visibility for GotoSocial.
 
+## PostEdit
+
+- Replaced `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
+
 ## ScheduledPost
 
 - Added `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
 - Handle nil/missing `ScheduledPost.mediaAttachments` from Pleroma/Akkoma
 - Removed throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
 - Updating a `ScheduledPost` no longer returns an optional
-
-## PostEdit
-
-- Replaced `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
-
-## Account
-
-- `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
-- `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
-- `postsCount` is optional to accomodate Firefish (nil in boosts)
 
 ## Relationship
 
@@ -71,9 +73,12 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 
 - Add `direct` timeline for Mitra, Pleroma, and Akkoma
 
-## Notifications
+## TootClient
 
-- `TootClient.getNotifications()` takes an optional with `include_types` parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying `types` (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
+### HTTP
+- For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
+- Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
+
 
 ## Cleanup
 
