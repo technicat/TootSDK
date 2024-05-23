@@ -79,6 +79,9 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
 - Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
 
+## Tests (not tests)
+- Added more sample data in Tests, though not necessarily with tests
+
 
 ## Cleanup
 
