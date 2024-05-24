@@ -68,12 +68,3 @@ public struct Translation: Codable {
         }
     }
 }
-
-public struct AkkomaTranslation: Codable {
-
-    /// HTML-encoded translated content of the post.
-    public var text: String
-    /// The target language
-    /// Not in the Mastodon spec, but in the Mastodon code
-    public var detectedLanguage: String
-}
