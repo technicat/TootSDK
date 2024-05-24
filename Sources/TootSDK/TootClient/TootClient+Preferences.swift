@@ -1,6 +1,6 @@
 //
 //  TootClient+Preferences.swift
-//  
+//
 //
 //  Created by Philip Chu on 5/21/24.
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 extension TootClient {
-    
+
     /// Preferences defined by the user in their account settings.
     /// - Returns: Preferences by key and value
     public func getPreferences() async throws -> Preferences {

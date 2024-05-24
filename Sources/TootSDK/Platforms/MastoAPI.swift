@@ -76,19 +76,22 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/statuses/#history
     open var supportsPostHistory: Bool { api >= Version(3, 5) }
 
-    open var supportsProfileFields: Bool { api >= Version(2, 4) }
-    open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
-
-    open var supportsPublicDirectory: Bool { true }
-    // private public timeline supported with 3.0.90
-    open var supportsPublicTimeline: Bool { true }
-
     open var supportsPostDefaultLanguage: Bool { api >= Version(2, 4, 2) }
     open var supportsPostDefaultSensitive: Bool { api >= Version(2, 4) }
     open var supportsPostDefaultVisibility: Bool { api >= Version(2, 4) }
 
     /// https://docs.joinmastodon.org/methods/statuses/#source
     open var supportsPostSource: Bool { api >= Version(3, 5) }
+
+    /// https://docs.joinmastodon.org/methods/preferences/
+    open var supportsPreferences: Bool { api >= Version(2, 8) }
+
+    open var supportsProfileFields: Bool { api >= Version(2, 4) }
+    open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
+
+    open var supportsPublicDirectory: Bool { true }
+    // private public timeline supported with 3.0.90
+    open var supportsPublicTimeline: Bool { true }
 
     open var supportsRelationshipWithSuspended: Bool { api >= Version(4, 3) }
     ///https://docs.joinmastodon.org/methods/accounts/#remove_from_followers
