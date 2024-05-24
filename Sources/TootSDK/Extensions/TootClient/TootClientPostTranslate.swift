@@ -12,5 +12,11 @@ extension TootClient {
             try await getPostTranslation(id: post.id)
         }
     }
+    
+    public func getAkkomaTranslation(of post: Post, to language: ISOCode) async throws
+        -> AkkomaTranslation
+    {
+        try await getAkkomaPostTranslation(id: post.id, language: language.rawValue)
+    }
 
 }
