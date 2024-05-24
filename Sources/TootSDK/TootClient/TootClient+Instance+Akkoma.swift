@@ -4,7 +4,7 @@
 import Foundation
 
 extension TootClient {
-   
+
     /// https://docs.akkoma.dev/stable/development/API/akkoma_api/
     public func getTranslationLanguagesAkkoma() async throws -> TranslationLanguagesAkkoma {
         let req = HTTPRequestBuilder {
@@ -14,4 +14,3 @@ extension TootClient {
         return try await fetch(TranslationLanguagesAkkoma.self, req)
     }
 }
-

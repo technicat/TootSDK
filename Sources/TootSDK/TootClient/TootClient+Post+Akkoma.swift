@@ -8,7 +8,7 @@
 import Foundation
 
 extension TootClient {
-    
+
     /// Translate the post content into some language.
     public func getPostTranslation(id: String, params: PostTranslationParamsAkkoma) async throws -> TranslationAkkoma {
         let req = try HTTPRequestBuilder {
@@ -17,5 +17,5 @@ extension TootClient {
         }
         return try await fetch(TranslationAkkoma.self, req)
     }
-    
+
 }

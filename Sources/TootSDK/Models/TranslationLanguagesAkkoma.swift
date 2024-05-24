@@ -12,7 +12,7 @@ public struct TranslationLanguagesAkkoma: Codable {
 
     public var source: [Language]
     public var target: [Language]
-    
+
     public struct Language: Codable {
         public var code: String
         public var name: String
