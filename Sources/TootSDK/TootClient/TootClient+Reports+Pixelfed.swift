@@ -9,7 +9,7 @@ import Foundation
 
 extension TootClient {
 
-    public func report(_ params: PixelfedReportParams) async throws {
+    public func report(_ params: ReportParamsPixelfed) async throws {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1.1", "report"])
             $0.method = .post

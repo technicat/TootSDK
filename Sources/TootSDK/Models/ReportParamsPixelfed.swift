@@ -1,5 +1,5 @@
 //
-//  PixelfedReportParams.swift
+//  ReportParamsPixelfed.swift
 //
 //
 //  Created by Łukasz Rutkowski on 31/10/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PixelfedReportParams: Codable {
+public struct ReportParamsPixelfed: Codable {
     var objectType: ObjectType
     var objectId: String
     var type: ReportCategory

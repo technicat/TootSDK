@@ -23,7 +23,7 @@ extension TootClient {
         comment: String?,
         category: ReportCategory
     ) async throws {
-        let params = PixelfedReportParams(
+        let params = ReportParamsPixelfed(
             objectType: .user,
             objectId: account.id,
             type: category,
@@ -37,7 +37,7 @@ extension TootClient {
         comment: String?,
         category: ReportCategory
     ) async throws {
-        let params = PixelfedReportParams(
+        let params = ReportParamsPixelfed(
             objectType: .post,
             objectId: post.id,
             type: category,
