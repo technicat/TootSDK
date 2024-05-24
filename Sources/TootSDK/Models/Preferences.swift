@@ -23,13 +23,4 @@ public struct Preferences: Codable, Hashable {
         case readingExpandMedia = "reading:expand:media"
         case readingExpandSpoilers = "reading:expand:spoilers"
     }
-
-    public enum ExpandMedia: String, Codable {
-        /// Hide media marked as sensitive
-        case `default`
-        /// Always show all media by default, regardless of sensitivity
-        case showAll
-        /// Always hide all media by default, regardless of sensitivity
-        case hideAll
-    }
 }
