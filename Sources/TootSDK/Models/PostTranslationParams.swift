@@ -8,6 +8,7 @@
 import Foundation
 
 /// Params to translate a post
+/// https://docs.joinmastodon.org/methods/statuses/#form-data-parameters-1
 public struct PostTranslationParams: Codable {
     /// (ISO 639 language code).
     /// The post content will be translated into this language.

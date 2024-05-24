@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// https://docs.joinmastodon.org/entities/Translation/
 public struct Translation: Codable {
 
     /// HTML-encoded translated content of the post.

@@ -10,9 +10,9 @@ import Foundation
 extension TootClient {
     
     /// Translate the post content into some language.
-    public func getPostTranslationAkkoma(id: String, language: String) async throws -> TranslationAkkoma {
+    public func getPostTranslation(id: String, params: PostTranslationParamsAkkoma) async throws -> TranslationAkkoma {
         let req = try HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "statuses", id, "translations",language])
+            $0.url = getURL(["api", "v1", "statuses", id, "translations", params.language])
             $0.method = .get
         }
         return try await fetch(TranslationAkkoma.self, req)
