@@ -24,16 +24,15 @@ extension TootClient {
     /// - Parameter uri: account name on the instance you're on or a users URI (e.g @test@instance.test)
     /// - Returns: your relationship with that account after following
     public func followAccount(uri: String) async throws -> Relationship? {
-
-        // Do the webfinger lookup first, then go and follow by account afterwards
-        //
+        // lookupAccount doesn't resolve
         guard let account = try await findAccount(uri: uri) else {
             return nil
         }
-        //   let account = try await lookupAccount(uri: uri)
         return try await follow(account)
     }
 
+    /// followAccount seems to work fine on Pleroma
+    /// so this is just here for completeness
     public func pleromaFollowAccount(uri: String) async throws -> Relationship {
         try await followAccount(params: PleromaFollowByURIParams(uri: uri))
     }
