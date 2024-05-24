@@ -269,13 +269,4 @@ extension TootClient {
         }
         return try await fetch(Translation.self, req)
     }
-    
-    /// Translate the post content into some language.
-    public func getPostTranslationAkkoma(id: String, language: String) async throws -> TranslationAkkoma {
-        let req = try HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "statuses", id, "translations",language])
-            $0.method = .get
-        }
-        return try await fetch(TranslationAkkoma.self, req)
-    }
 }
