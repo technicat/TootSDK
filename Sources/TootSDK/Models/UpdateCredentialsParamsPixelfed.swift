@@ -1,5 +1,5 @@
 //
-//  PixelfedUpdateCredentialsParams.swift
+//  UpdateCredentialsParamsPixelfed.swift
 //
 //
 //  Created by Philip Chu on 5/11/26.
@@ -8,7 +8,7 @@
 import Foundation
 
 // todo - add website
-public struct PixelfedUpdateCredentialsParams: Codable {
+public struct UpdateCredentialsParamsPixelfed: Codable {
     /// The display name to use for the profile.
     public var displayName: String?
     /// The account bio.
