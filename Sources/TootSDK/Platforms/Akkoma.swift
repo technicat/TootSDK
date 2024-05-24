@@ -2,6 +2,11 @@
 open class Akkoma: Pleroma {
 
     open override var name: String { "Akkoma" }
+    
+    // supports
+    
+    /// akkoma has its own translate api
+    open override var supportsTranslate: Bool { true }
 
     // limits
 
