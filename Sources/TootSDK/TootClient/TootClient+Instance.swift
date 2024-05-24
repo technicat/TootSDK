@@ -52,3 +52,4 @@ extension TootClient {
         return try await fetch([String: [String]].self, req)
     }
 }
+
