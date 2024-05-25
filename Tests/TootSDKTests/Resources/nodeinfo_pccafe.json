@@ -1,0 +1,1 @@
+{"version":"2.0","software":{"name":"mastodon","version":"4.2.8"},"protocols":["activitypub"],"services":{"outbound":[],"inbound":[]},"usage":{"users":{"total":2,"activeMonth":2,"activeHalfyear":2},"localPosts":4},"openRegistrations":false,"metadata":{}}
