@@ -33,6 +33,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Rename `Instance` to `InstanceV1`
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
 - Moved `Configuration` up so it  an be shared among the two instance versions
+- `InstanceRule` text is not optional
 
 ## Notifications
 
