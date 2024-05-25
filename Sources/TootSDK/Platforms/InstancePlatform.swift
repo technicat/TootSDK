@@ -6,7 +6,7 @@ extension Instance {
         let build = version.build
         /// 2.7.2  (compatible; Akkoma 3.13.1-0-gc02e343)
         if build.lowercased().contains("akkoma") {
-            return Akkoma(api)
+            return Akkoma(api, build)
         }
         /// 4.2.1 (compatible; Catodon 24.04-dev.2)
         if build.lowercased().contains("catodon") {
