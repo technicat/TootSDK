@@ -66,6 +66,8 @@ let package = Package(
                 .copy("Resources/instance_friendica_nocontact.json"),
                 .copy("Resources/instance_iceshrimp_contact_removed.json"),
                 .copy("Resources/instance_sharkey_contact_removed.json"),
+                .copy("Resources/instancev2_mastodon.json"),
+                .copy("Resources/instancev2_universeodon.json"),
                 .copy("Resources/list.json"),
                 .copy("Resources/post_edited.json"),
                 .copy("Resources/post no emojis.json"),
