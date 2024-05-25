@@ -21,7 +21,7 @@ final class InstanceV1Tests: XCTestCase {
         XCTAssertEqual(result.invitesEnabled, false)
         XCTAssertEqual(result.registrations, true)
     }
-    
+
     func testSharkeyNoContact() throws {
         // arrange
         let json = localContent("instance_sharkey_contact_removed")
@@ -33,7 +33,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testIceshrimpNoContact() throws {
         // arrange
         let json = localContent("instance_iceshrimp_contact_removed")
@@ -45,7 +45,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testFirefishNoContact() throws {
         // arrange
         let json = localContent("instance_firefish_contact_removed")
@@ -57,7 +57,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testCatodonContact() throws {
         // arrange
         let json = localContent("instance_catodon_contact_removed")
@@ -69,7 +69,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testAkkoma() throws {
         // arrange
         let json = localContent("instance_akkoma")
@@ -81,7 +81,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testMastodon() throws {
         // arrange
         let json = localContent("mastodon")
@@ -93,7 +93,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testPixelfed() throws {
         // arrange
         let json = localContent("pixelfed")
@@ -105,7 +105,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testPleroma() throws {
         // arrange
         let json = localContent("pleroma")

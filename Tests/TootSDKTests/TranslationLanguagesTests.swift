@@ -3,7 +3,7 @@ import XCTest
 @testable import TootSDK
 
 final class TranslationLanguagesTests: XCTestCase {
-    
+
     /// translation is not enabled, no languages installed
     func testAkkomaEmpty() throws {
         // arrange
@@ -11,15 +11,16 @@ final class TranslationLanguagesTests: XCTestCase {
         let decoder = TootDecoder()
 
         // act
-        let result = try decoder.decode(TranslationLanguagesAkkoma
-            .self, from: json)
+        let result = try decoder.decode(
+            TranslationLanguagesAkkoma
+                .self, from: json)
 
         // assert
         XCTAssertNotNil(result)
         XCTAssertNil(result.source)
         XCTAssertNil(result.target)
     }
-    
+
     /// sample from Akkoma doc
     func testAkkomaDoc() throws {
         // arrange
@@ -27,8 +28,9 @@ final class TranslationLanguagesTests: XCTestCase {
         let decoder = TootDecoder()
 
         // act
-        let result = try decoder.decode(TranslationLanguagesAkkoma
-            .self, from: json)
+        let result = try decoder.decode(
+            TranslationLanguagesAkkoma
+                .self, from: json)
 
         // assert
         XCTAssertNotNil(result)

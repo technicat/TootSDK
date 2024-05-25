@@ -10,7 +10,7 @@ extension TootClient {
         }
         return translations
     }
-    
+
     /// return Akkoma translation codes in Mastodon's translations source-target format
     public func getTranslationCodesAkkoma() async throws -> Translations {
         let trans = try await getTranslationLanguagesAkkoma()

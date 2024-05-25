@@ -3,7 +3,7 @@ import XCTest
 @testable import TootSDK
 
 final class PreferencesTests: XCTestCase {
-   
+
     func test() throws {
         // arrange
         let json = localContent("preferences")
@@ -15,5 +15,5 @@ final class PreferencesTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
 }

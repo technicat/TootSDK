@@ -20,7 +20,7 @@ open class Pleroma: MastoCompatible {
         var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite,
         ]
-        if build >= Version(2,4,1) {
+        if build >= Version(2, 4, 1) {
             types.insert(.poll)
         }
         return types
