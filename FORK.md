@@ -32,6 +32,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Add `InstanceV2` (and `getInstanceV2`)
 - Rename `Instance` to `InstanceV1`
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
+- Moved `Configuration` up so it  an be shared among the two instance versions
 
 ## Notifications
 
@@ -49,6 +50,10 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 ## PostEdit
 
 - Replaced `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
+
+## Preferences
+
+- Added `TootClient.getPreferences()`
 
 ## ScheduledPost
 
@@ -80,7 +85,7 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - Removed extra setting of content-type to `application/json` (should happen appropriately when query is created)
 
 ## Tests (not tests)
-- Added more sample data in Tests, though not necessarily with tests
+- Added instance and translation decoder tests
 
 
 ## Cleanup
