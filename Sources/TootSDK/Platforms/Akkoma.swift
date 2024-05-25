@@ -7,6 +7,7 @@ open class Akkoma: Pleroma {
     
     /// akkoma has its own translate api
     open override var supportsTranslate: Bool { true }
+    open override var supportsTranslationLanguages: Bool { true }
 
     // limits
 
