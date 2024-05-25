@@ -1,0 +1,11 @@
+{
+  "source": [
+    {"code":"LV", "name":"Latvian"},
+    {"code":"ZH", "name":"Chinese (traditional)"},
+    {"code":"EN-US", "name":"English (American)"}
+  ],
+  "target": [
+    {"code":"EN-GB", "name":"English (British)"},
+    {"code":"JP", "name":"Japanese"}
+  ]
+}

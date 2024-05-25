@@ -82,6 +82,8 @@ let package = Package(
                 .copy("Resources/tag.json"),
                 .copy("Resources/translation_attachment.json"),
                 .copy("Resources/translation_poll.json"),
+                .copy("Resources/translation_languages_akkoma_doc.json"),
+                .copy("Resources/translation_languages_akkoma_empty.json"),
                 .copy("Resources/encrypted_push_notification.base64"),
             ]),
     ]
