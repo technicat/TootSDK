@@ -20,6 +20,10 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         locale: String? = nil,
         inviteRequest: String? = nil,
         role: TootRole? = nil,
+        confirmed: Bool? = nil,
+        approved: Bool? = nil,
+        disabled: Bool? = nil,
+        silenced: Bool,
         account: Account
     ) {
         self.id = id
@@ -31,6 +35,10 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.locale = locale
         self.inviteRequest = inviteRequest
         self.role = role
+        self.confirmed = confirmed
+        self.approved = approved
+        self.disabled = disabled
+        self.silenced = silenced
         self.account = account
     }
 
@@ -56,6 +64,17 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     /// The current role of the account.
     /// spec says non-null but actually sometimes is explicitly null
     public let role: TootRole?
+    /// Whether the account has confirmed their email address.
+    /// spec says non-null but actually sometimes is explicitly null
+    public let confirmed: Bool?
+    /// Whether the account is currently approved.
+    /// spec says non-null but actually sometimes is explicitly null
+    public let approved: Bool?
+   /// Whether the account is currently disabled.
+    /// spec says non-null but actually sometimes is explicitly null
+    public let disabled: Bool?
+    /// Whether the account is currently silenced
+    public let silenced: Bool
     /// User-level information about the account.
     public let account: Account
 }
