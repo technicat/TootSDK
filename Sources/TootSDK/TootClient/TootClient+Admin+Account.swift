@@ -36,13 +36,13 @@ extension TootClient {
     ///     - limit: Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
     /// - Returns: the accounts requested, or an error if unable to retrieve
     /// todo  - add params
-    public func getAdminAccountsV2(_ pageInfo: PagedInfo? = nil, limit: Int? = nil)
+    public func getAdminAccountsV2(params: AdminAccountsV2Params = .init(), _ pageInfo: PagedInfo? = nil, limit: Int? = nil)
         async throws -> PagedResult<[AdminAccount]>
     {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v2", "admin", "accounts"])
             $0.method = .get
-            $0.query = getQueryParams(pageInfo, limit: limit)
+            $0.query = getQueryParams(pageInfo, limit: limit) + params.queryItems
         }
 
         return try await fetchPagedResult(req)

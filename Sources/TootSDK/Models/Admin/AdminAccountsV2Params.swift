@@ -4,7 +4,7 @@
 import Foundation
 
 /// https://docs.joinmastodon.org/methods/admin/accounts/#v2
-public struct AdminAccountV2Params: Sendable {
+public struct AdminAccountsV2Params: Sendable {
     /// Filter for local or remote accounts.
     public var origin: String?
     /// Filter for active, pending, disabled, silenced, or suspended accounts.
@@ -52,7 +52,7 @@ public struct AdminAccountV2Params: Sendable {
     }
 }
 
-extension AdminAccountV2Params {
+extension AdminAccountsV2Params {
     var queryItems: [URLQueryItem] {
         [
             URLQueryItem(name: "origin", value: origin),
