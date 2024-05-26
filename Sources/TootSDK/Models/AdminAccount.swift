@@ -19,6 +19,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         // ips
         locale: String? = nil,
         inviteRequest: String? = nil,
+        role: TootRole? = nil,
         account: Account
     ) {
         self.id = id
@@ -29,6 +30,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.ip = ip
         self.locale = locale
         self.inviteRequest = inviteRequest
+        self.role = role
         self.account = account
     }
 
@@ -51,6 +53,9 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     /// The reason given when requesting an invite
     /// (for instances that require manual approval of registrations)
     public let inviteRequest: String?
+    /// The current role of the account.
+    /// spec says non-null but actually sometimes is explicitly null
+    public let role: TootRole?
     /// User-level information about the account.
     public let account: Account
 }
