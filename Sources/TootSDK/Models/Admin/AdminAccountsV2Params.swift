@@ -6,7 +6,7 @@ import Foundation
 /// https://docs.joinmastodon.org/methods/admin/accounts/#v2
 public struct AdminAccountsV2Params: Sendable {
     /// Filter for local or remote accounts.
-    public var origin: String?
+    public var origin: AdminAccountOrigin?
     /// Filter for active, pending, disabled, silenced, or suspended accounts.
     /// todo - use enums
     public var status: String?
@@ -28,7 +28,7 @@ public struct AdminAccountsV2Params: Sendable {
     public var ip: String?
 
     public init(
-        origin: String? = nil,
+        origin: AdminAccountOrigin? = nil,
         status: String? = nil,
         permissions: String? = nil,
         roleIds: [String]? = nil,
@@ -55,7 +55,7 @@ public struct AdminAccountsV2Params: Sendable {
 extension AdminAccountsV2Params {
     var queryItems: [URLQueryItem] {
         [
-            URLQueryItem(name: "origin", value: origin),
+            URLQueryItem(name: "origin", value: origin?.rawValue),
             URLQueryItem(name: "status", value: status),
             URLQueryItem(name: "permissions", value: permissions),
             URLQueryItem(name: "invited_by", value: invitedBy),
@@ -67,4 +67,9 @@ extension AdminAccountsV2Params {
            
         ].filter { $0.value != nil }
     }
+}
+
+public enum AdminAccountOrigin: String {
+    case local
+    case remote
 }
