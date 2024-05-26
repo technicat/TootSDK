@@ -24,6 +24,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         approved: Bool? = nil,
         disabled: Bool? = nil,
         silenced: Bool,
+        suspended: Bool,
         account: Account
     ) {
         self.id = id
@@ -39,6 +40,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.approved = approved
         self.disabled = disabled
         self.silenced = silenced
+        self.suspended = suspended
         self.account = account
     }
 
@@ -75,6 +77,8 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     public let disabled: Bool?
     /// Whether the account is currently silenced
     public let silenced: Bool
+    /// Whether the account is currently suspended.
+    public let suspended: Bool
     /// User-level information about the account.
     public let account: Account
 }
