@@ -35,6 +35,7 @@ extension TootClient {
     ///     - pageInfo: PagedInfo object for max/min/since
     ///     - limit: Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
     /// - Returns: the accounts requested, or an error if unable to retrieve
+    /// todo  - add params
     public func getAdminAccountsV2(_ pageInfo: PagedInfo? = nil, limit: Int? = nil)
         async throws -> PagedResult<[AdminAccount]>
     {
