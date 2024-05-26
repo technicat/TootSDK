@@ -18,6 +18,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         ip: String? = nil,
         // ips
         locale: String? = nil,
+        inviteRequest: String? = nil,
         account: Account
     ) {
         self.id = id
@@ -27,6 +28,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.email = email
         self.ip = ip
         self.locale = locale
+        self.inviteRequest = inviteRequest
         self.account = account
     }
 
@@ -42,10 +44,13 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     public let email: String?
     /// The IP address last used to login to this account.
     public let ip: String?
-    /// User-level information about the account.
     /// ips
     /// The locale of the account.
     /// /// spec says non-null but actually sometimes is explicitly null
     public let locale: String?
+    /// The reason given when requesting an invite
+    /// (for instances that require manual approval of registrations)
+    public let inviteRequest: String?
+    /// User-level information about the account.
     public let account: Account
 }
