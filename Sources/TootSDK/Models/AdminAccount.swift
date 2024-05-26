@@ -25,7 +25,9 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         disabled: Bool? = nil,
         silenced: Bool,
         suspended: Bool,
-        account: Account
+        account: Account,
+        createdByApplicationId: String? = nil,
+        invitedByAccountId: String? = nil
     ) {
         self.id = id
         self.username = username
@@ -42,6 +44,8 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.silenced = silenced
         self.suspended = suspended
         self.account = account
+        self.createdByApplicationId = createdByApplicationId
+        self.invitedByAccountId = invitedByAccountId
     }
 
     public let id: String
@@ -81,4 +85,8 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     public let suspended: Bool
     /// User-level information about the account.
     public let account: Account
+    /// The ID of the Application that created this account, if applicable.
+    public let createdByApplicationId: String?
+    /// The ID of the Account that invited this user, if applicable.
+    public let invitedByAccountId: String?
 }
