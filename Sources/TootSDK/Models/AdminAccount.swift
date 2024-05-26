@@ -16,7 +16,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         createdAt: Date,
         email: String? = nil,
         ip: String? = nil,
-        // ips
+        ips: [AdminIP]? = nil,
         locale: String? = nil,
         inviteRequest: String? = nil,
         role: TootRole? = nil,
@@ -35,6 +35,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.createdAt = createdAt
         self.email = email
         self.ip = ip
+        self.ips = ips
         self.locale = locale
         self.inviteRequest = inviteRequest
         self.role = role
@@ -48,6 +49,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.invitedByAccountId = invitedByAccountId
     }
 
+    /// The ID of the account in the database.
     public let id: String
     /// The username of the account.
     public let username: String
@@ -60,9 +62,11 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     public let email: String?
     /// The IP address last used to login to this account.
     public let ip: String?
-    /// ips
+    /// All known IP addresses associated with this account.
+    /// spec says non-null but actually sometimes is explicitly null
+    public let ips: [AdminIP]?
     /// The locale of the account.
-    /// /// spec says non-null but actually sometimes is explicitly null
+    /// spec says non-null but actually sometimes is explicitly null
     public let locale: String?
     /// The reason given when requesting an invite
     /// (for instances that require manual approval of registrations)
@@ -89,4 +93,20 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     public let createdByApplicationId: String?
     /// The ID of the Account that invited this user, if applicable.
     public let invitedByAccountId: String?
+}
+
+/// https://docs.joinmastodon.org/entities/Admin_Ip/
+public struct AdminIP: Codable, Hashable {
+    public init(
+        ip: String,
+        usedAt: Date
+    ) {
+        self.ip = ip
+        self.usedAt = usedAt
+    }
+
+    /// The IP address
+    public let ip: String
+    /// The timestamp of when the IP address was last used for this account.
+    public let usedAt: Date
 }
