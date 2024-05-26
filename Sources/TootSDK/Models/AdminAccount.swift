@@ -16,6 +16,8 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         createdAt: Date,
         email: String? = nil,
         ip: String? = nil,
+        // ips
+        locale: String? = nil,
         account: Account
     ) {
         self.id = id
@@ -24,10 +26,11 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
         self.createdAt = createdAt
         self.email = email
         self.ip = ip
+        self.locale = locale
         self.account = account
     }
 
-    public var id: String
+    public let id: String
     /// The username of the account.
     public let username: String
     /// The domain of the account, if it is remote.
@@ -40,5 +43,9 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     /// The IP address last used to login to this account.
     public let ip: String?
     /// User-level information about the account.
-    public var account: Account
+    /// ips
+    /// The locale of the account.
+    /// /// spec says non-null but actually sometimes is explicitly null
+    public let locale: String?
+    public let account: Account
 }
