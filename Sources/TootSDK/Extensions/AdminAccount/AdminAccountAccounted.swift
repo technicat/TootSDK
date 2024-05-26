@@ -1,0 +1,2 @@
+extension AdminAccount: Accounted {
+}

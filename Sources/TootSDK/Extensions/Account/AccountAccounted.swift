@@ -5,6 +5,3 @@ extension Account: Accounted {
     }
 
 }
-
-extension AdminAccount: Accounted {
-}
