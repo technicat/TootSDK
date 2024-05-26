@@ -94,19 +94,3 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     /// The ID of the Account that invited this user, if applicable.
     public let invitedByAccountId: String?
 }
-
-/// https://docs.joinmastodon.org/entities/Admin_Ip/
-public struct AdminIP: Codable, Hashable {
-    public init(
-        ip: String,
-        usedAt: Date
-    ) {
-        self.ip = ip
-        self.usedAt = usedAt
-    }
-
-    /// The IP address
-    public let ip: String
-    /// The timestamp of when the IP address was last used for this account.
-    public let usedAt: Date
-}
