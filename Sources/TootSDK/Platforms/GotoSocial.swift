@@ -1,6 +1,12 @@
 /// https://github.com/superseriousbusiness/gotosocial/blob/main/docs/api/swagger.yaml
 open class GotoSocial: MastoCompatible {
+
     open override var name: String { "GotoSocial" }
+
+    public init(_ build: Version) {
+        // todo - mastodon api should depend on build
+        super.init(Version(3, 5, 3), build)
+    }
 
     // supports
 

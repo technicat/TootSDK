@@ -52,21 +52,19 @@ extension Instance {
         if version.lowercased().contains("snac") {
             return Snac(api)
         }
-        /// Takahe doesn't display the Mastodon api
-        ///  Start with something arbitrary then adjust
+        /// Takahe doesn't display the Mastodon api versio
+        ///  So this is the takahi version
         if version.lowercased().contains("takahe") {
-            return Takahe(Version(3, 5, 3), api)
+            return Takahe(api)
         }
         // kludge - GotoSocial version string is missing GotoSocial name
         // and Mastodon API version
         // (except when it's set to display the Mastodon version
-        // and doesn't display any GotoSocial info)
-        // just a git version
-        // so let's just say it's the latest and see what happens
+        // so just pass the GotoSocial version
         /// 0.15.0+git-1573cd
         if version.lowercased().contains("git") {
             // instanceMastodonVersion in internalfrontend.go
-            return GotoSocial(Version(3, 5, 3), api)
+            return GotoSocial(api)
         }
         return Mastodon(api)
     }

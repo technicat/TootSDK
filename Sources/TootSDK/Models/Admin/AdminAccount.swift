@@ -80,7 +80,7 @@ public struct AdminAccount: Codable, Hashable, Identifiable {
     /// Whether the account is currently approved.
     /// spec says non-null but actually sometimes is explicitly null
     public let approved: Bool?
-   /// Whether the account is currently disabled.
+    /// Whether the account is currently disabled.
     /// spec says non-null but actually sometimes is explicitly null
     public let disabled: Bool?
     /// Whether the account is currently silenced

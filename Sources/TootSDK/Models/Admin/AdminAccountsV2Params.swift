@@ -64,7 +64,7 @@ extension AdminAccountsV2Params {
             URLQueryItem(name: "by_domain", value: byDomain),
             URLQueryItem(name: "email", value: email),
             URLQueryItem(name: "ip", value: ip),
-           
+
         ].filter { $0.value != nil }
     }
 }
