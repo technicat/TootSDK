@@ -26,6 +26,10 @@ This fork is geared toward supporting [Fedicat](https://fedicat.com), so expect 
 - `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 - `postsCount` is optional to accomodate Firefish (nil in boosts)
 
+## Admin Functions
+
+In-progress
+
 ## Instance
 
 - Retrieve with `getInstance` instead of `getInstanceInfo`
