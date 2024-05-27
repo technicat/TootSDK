@@ -4,7 +4,7 @@
 // https://docs.joinmastodon.org/
 open class MastoAPI: Platform {
 
-    var api: Version
+    public var api: Version
 
     public init(_ api: Version) {
         self.api = api
