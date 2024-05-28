@@ -1,8 +1,7 @@
 /// common properties between InstanceV1 and InstanceV2
-public protocol Instance {
+public protocol Instance: Headable {
 
     var domain: String { get }
-    var header: String? { get }  // matches Account
     var description: String? { get }
     var title: String? { get }
     var version: String { get }
