@@ -19,7 +19,7 @@ extension String {
         } else {
             // if we can't find the version, make up something big
             // give all features a chance
-            return (Version(0, 0), "")
+            return (Version(), "")
         }
     }
 }

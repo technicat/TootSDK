@@ -10,6 +10,12 @@ public struct Version {
         self.minor = minor
         self.patch = patch
     }
+    
+    public init() {
+        self.major = 0
+        self.minor = 0
+        self.patch = 0
+    }
 }
 
 extension Version {
