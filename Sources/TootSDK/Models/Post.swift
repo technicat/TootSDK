@@ -136,23 +136,6 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// If the current token has an authorized user: The filter and keywords that matched this post.
     public var filtered: [FilterResult]?
 
-    //    public enum Visibility: String, Codable, CaseIterable, Sendable {
-    //        /// Visible to everyone, shown in public timelines.
-    //        case `public`
-    //        /// Visible to public, but not included in public timelines.
-    //        case unlisted
-    //        /// Visible to followers only, and to any mentioned users.
-    //        case `private`
-    //        /// Visible only to mentioned users.
-    //        case direct
-    //        /// Pleroma
-    //        //case list
-    //        /// Pleroma/Akkoma - local-only
-    //        case local
-    //        /// gotosocial - mutualsOnly
-    //        case mutualsOnly
-    //    }
-
     enum CodingKeys: String, CodingKey {
         case id
         case uri

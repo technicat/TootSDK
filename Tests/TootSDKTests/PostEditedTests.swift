@@ -4,7 +4,7 @@ import XCTest
 
 @testable import TootSDK
 
-final class PostTests: XCTestCase {
+final class PostEditedTests: XCTestCase {
 
     func testPostEdited() throws {
         // arrange

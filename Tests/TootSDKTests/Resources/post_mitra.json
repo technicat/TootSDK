@@ -1,0 +1,71 @@
+  {
+    "account" : {
+      "acct" : "technicat",
+      "bot" : false,
+      "locked" : false,
+      "statuses_count" : 34,
+      "source" : null,
+      "url" : "https://wizard.casa/users/technicat",
+      "actor_id" : "https://wizard.casa/users/technicat",
+      "following_count" : 6,
+      "client_config" : null,
+      "emojis" : [
+
+      ],
+      "identity_proofs" : [
+
+      ],
+      "payment_options" : [
+
+      ],
+      "authentication_methods" : null,
+      "id" : "018f4aca-30b1-eb06-9e90-603171c11dcf",
+      "followers_count" : 3,
+      "note" : "",
+      "avatar" : null,
+      "display_name" : "technicat",
+      "header" : null,
+      "created_at" : "2024-05-05T22:05:15.823023Z",
+      "mention_policy" : "none",
+      "fields" : [
+
+      ],
+      "role" : null,
+      "subscribers_count" : 0,
+      "username" : "technicat"
+    },
+    "reblog" : null,
+    "media_attachments" : [
+
+    ],
+    "url" : null,
+    "spoiler_text" : "",
+    "tags" : [
+
+    ],
+    "sensitive" : false,
+    "replies_count" : 0,
+    "emojis" : [
+
+    ],
+    "mentions" : [
+
+    ],
+    "visibility" : "public",
+    "links" : [
+
+    ],
+    "uri" : "https://wizard.casa/objects/018fc2d8-861a-0e71-53c1-5cedb7b7df42",
+    "edited_at" : null,
+    "id" : "018fc2d8-861a-0e71-53c1-5cedb7b7df42",
+    "reblogs_count" : 0,
+    "favourited" : false,
+    "ipfs_cid" : null,
+    "reblogged" : false,
+    "in_reply_to_account_id" : null,
+    "created_at" : "2024-05-29T05:35:21.114282Z",
+    "in_reply_to_id" : null,
+    "pinned" : false,
+    "favourites_count" : 0,
+    "content" : "<p>test post</p>"
+  }
