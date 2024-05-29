@@ -72,6 +72,7 @@ let package = Package(
                 .copy("Resources/post_edited.json"),
                 .copy("Resources/post_mitra.json"),
                 .copy("Resources/post no emojis.json"),
+                .copy("Resources/post_pleroma.json"),
                 .copy("Resources/post with emojis and attachments.json"),
                 .copy("Resources/post wordle linebreaks.json"),
                 .copy("Resources/mastodon.json"),

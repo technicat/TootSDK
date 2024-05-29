@@ -1,0 +1,151 @@
+  {
+    "account" : {
+      "bot" : false,
+      "avatar_static" : "https://wienermobile.rentals/media/d0092a94e1c873432744e3386914c44bbb57212faf80ccda7e16c58c6aba84e8.avatar",
+      "locked" : false,
+      "source" : {
+        "fields" : [
+          {
+            "name" : "Technicat LLC",
+            "value" : "https://technicat.com"
+          }
+        ],
+        "pleroma" : {
+          "no_rich_text" : false,
+          "actor_type" : "Person",
+          "discoverable" : false,
+          "show_birthday" : false,
+          "show_role" : true
+        },
+        "privacy" : "private",
+        "sensitive" : false,
+        "note" : "Trying everything in the fediverse. "
+      },
+      "statuses_count" : 2,
+      "following_count" : 4,
+      "url" : "https://wienermobile.rentals/users/technicat",
+      "username" : "technicat",
+      "emojis" : [
+
+      ],
+      "pleroma" : {
+        "birthday" : null,
+        "is_suggested" : false,
+        "tags" : [
+
+        ],
+        "also_known_as" : [
+
+        ],
+        "unread_notifications_count" : 2,
+        "background_image" : null,
+        "ap_id" : "https://wienermobile.rentals/users/technicat",
+        "hide_favorites" : true,
+        "hide_followers_count" : false,
+        "is_confirmed" : true,
+        "allow_following_move" : true,
+        "hide_follows" : false,
+        "relationship" : {
+
+        },
+        "skip_thread_containment" : false,
+        "notification_settings" : {
+          "block_from_strangers" : false,
+          "hide_notification_contents" : false
+        },
+        "email" : null,
+        "accepts_chat_messages" : true,
+        "is_admin" : false,
+        "favicon" : null,
+        "hide_follows_count" : false,
+        "is_moderator" : false,
+        "privileges" : [
+
+        ],
+        "hide_followers" : false,
+        "unread_conversation_count" : 0
+      },
+      "last_status_at" : "2024-05-12",
+      "id" : "AZqQrAWsIQZR5NKIPw",
+      "header_static" : "https://wienermobile.rentals/media/7b986123729fc6c93903c912e219fb80953d59429a75136d93987505d5efe9a6.header",
+      "followers_count" : 3,
+      "fqn" : "technicat@wienermobile.rentals",
+      "header" : "https://wienermobile.rentals/media/7b986123729fc6c93903c912e219fb80953d59429a75136d93987505d5efe9a6.header",
+      "avatar" : "https://wienermobile.rentals/media/d0092a94e1c873432744e3386914c44bbb57212faf80ccda7e16c58c6aba84e8.avatar",
+      "display_name" : "technicat",
+      "follow_requests_count" : 0,
+      "created_at" : "2023-09-17T02:52:14.000Z",
+      "fields" : [
+        {
+          "name" : "Technicat LLC",
+          "value" : "<a href=\"https://technicat.com\" rel=\"ugc\">https://technicat.com</a>",
+          "verified_at" : null
+        }
+      ],
+      "note" : "Trying everything in the fediverse. ",
+      "acct" : "technicat"
+    },
+    "application" : null,
+    "media_attachments" : [
+
+    ],
+    "language" : null,
+    "poll" : null,
+    "reblog" : null,
+    "spoiler_text" : "",
+    "card" : null,
+    "sensitive" : false,
+    "replies_count" : 0,
+    "emojis" : [
+
+    ],
+    "pleroma" : {
+      "content" : {
+        "text/plain" : "test pleroma"
+      },
+      "parent_visible" : false,
+      "direct_conversation_id" : null,
+      "emoji_reactions" : [
+
+      ],
+      "context" : "https://wienermobile.rentals/contexts/7dddfdd6-3763-4432-9342-6359fd4c8f37",
+      "expires_at" : null,
+      "thread_muted" : false,
+      "conversation_id" : 446930108,
+      "spoiler_text" : {
+        "text/plain" : ""
+      },
+      "in_reply_to_account_acct" : null,
+      "quote" : null,
+      "local" : true,
+      "pinned_at" : null,
+      "quote_visible" : false,
+      "quotes_count" : 0,
+      "quote_id" : null,
+      "quote_url" : null,
+      "bookmark_folder" : null
+    },
+    "muted" : false,
+    "mentions" : [
+
+    ],
+    "tags" : [
+
+    ],
+    "url" : "https://wienermobile.rentals/notice/AiNFh3S1CDOgqkMiPI",
+    "visibility" : "private",
+    "uri" : "https://wienermobile.rentals/objects/4a19d23c-a420-4a57-bf77-b0bb0d537259",
+    "edited_at" : null,
+    "id" : "AiNFh3S1CDOgqkMiPI",
+    "reblogs_count" : 0,
+    "favourited" : false,
+    "reblogged" : false,
+    "in_reply_to_account_id" : null,
+    "text" : null,
+    "created_at" : "2024-05-29T05:49:26.000Z",
+    "in_reply_to_id" : null,
+    "pinned" : false,
+    "favourites_count" : 0,
+    "bookmarked" : false,
+    "content" : "test pleroma"
+  }

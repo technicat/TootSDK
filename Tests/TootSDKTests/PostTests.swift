@@ -22,4 +22,16 @@ final class PostTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testPleroma() throws {
+        // arrange
+        let json = localContent("post_pleroma")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(Post.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
