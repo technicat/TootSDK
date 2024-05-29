@@ -4,7 +4,9 @@ open class GotoSocial: MastoCompatible {
     open override var name: String { "GotoSocial" }
 
     public init(_ build: Version) {
+        // current hardcoded masto api
         // todo - mastodon api should depend on build
+        // or we could ignore and just say 4,0 for example
         super.init(Version(3, 5, 3), build)
     }
 
@@ -18,6 +20,10 @@ open class GotoSocial: MastoCompatible {
     open override var supportsNotificationDelete: Bool { false }
     /// doesn't support post revision history
     open override var supportsPostHistory: Bool { false }
+    /// supports profile avatar/header delete
+    open override var supportsProfileImageDelete: Bool { 
+        build >= Version(0,15,2) // anticipating
+    }
     /// doesn't support public (no auth) timeline
     open override var supportsPublicTimeline: Bool { false }
     /// doesn't support remove from followers
