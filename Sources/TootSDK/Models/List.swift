@@ -25,12 +25,3 @@ public struct List: Codable, Hashable, Identifiable {
         self.exclusive = exclusive
     }
 }
-
-public enum ListRepliesPolicy: String, Hashable, Codable {
-    /// Show replies to any followed user
-    case followed
-    /// Show replies to members of the list
-    case list
-    /// Show replies to no one
-    case none
-}
