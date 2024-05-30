@@ -163,27 +163,3 @@ public protocol Platform {
 
 }
 
-extension Platform {
-
-    public var hasLanguages: Bool {
-        !languages.isEmpty
-    }
-
-    public var canQueryNotificationTypes: Bool {
-        !notificationTypes.isEmpty
-    }
-
-    public var hasReportCategories: Bool {
-        !reportCats.isEmpty
-    }
-
-    public var hasSuggestions: Bool {
-        !suggestionSources.isEmpty
-    }
-
-    // maybe supports(timeline:)
-    public func supports(_ timeline: Timeline) -> Bool {
-        getLimit(for: timeline) > 0
-    }
-
-}
