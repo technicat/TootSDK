@@ -1,13 +1,5 @@
 This fork is geared toward supporting [Fedicat](https://fedicat.com) and changes daily, so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Not much effort is made to maintain the admin and demo apps. Here's a summary of the changes:
 
-## Platform
-
-A protocol, for use at the app level to check feature support. Should be self-contained (could be a separate package) and is optional. TootClient should be can be used with an alternate platform/feature-checking package or none.
-
-- Implements a class hierarchy that mirrors the forking relationship among fediverse platform is provided. For example, `Hometown` is a subclass of `Mastodon`, which is a subclass of `MastodonAPI`. `Platform` exposes feature support queries like `supportsProfileFields`.
-
-- The appropriate platform can be derived via `instance.platform` (either InstanceV1 or InstanceV2) and probably eventually `nodeinfo`.
-
 ## TootExt
 
 A layer of TootClient extensions that provides a more convenient interface to the app, also could be a separate package.
@@ -18,6 +10,14 @@ A layer of TootClient extensions that provides a more convenient interface to th
 - Enums, like `ISOCode` enum listing the language codes supported by the various platforms, instead of passing strings, e.g. `client.getTranslation(of: post, in: .en)`.
 
 - Protocols that specify common interfaces among TootSDK objects, e.g. `InstanceV1` and `InstanceV2` implement `Instance`.
+
+## Platform
+
+A protocol for use at the app level to check feature support. Depends on TootSDK and TootExt but could be a separate package. Totally optional, you can use TootSDK with another feature checking system or none.
+
+Implements a class hierarchy that mirrors the forking relationship among fediverse platform is provided. For example, `Hometown` is a subclass of `Mastodon`, which is a subclass of `MastodonAPI`. `Platform` exposes feature support queries like `supportsProfileFields`.
+
+An instance getter is provided for deriving platforms from instance version strings, but in practice (at the Fedicat app level), a platform is first derived from a site's nodeinfo if a available and then replaced by a more complete instance-derived one if available.
 
 ## TootSDK
 
@@ -39,6 +39,7 @@ In-progress
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
 - Moved `Configuration` up so it  an be shared among the two instance versions
 - `InstanceRule` text is not optional
+- added `getPeers`
 
 ### Notifications
 
