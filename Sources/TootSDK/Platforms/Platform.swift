@@ -181,10 +181,6 @@ extension Platform {
         !suggestionSources.isEmpty
     }
 
-//    public var supportsSchedule: Bool {
-//        scheduledPageLimit > 0
-//    }
-
     // maybe supports(timeline:)
     public func supports(_ timeline: Timeline) -> Bool {
         getLimit(for: timeline) > 0
