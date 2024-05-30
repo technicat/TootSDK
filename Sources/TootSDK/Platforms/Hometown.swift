@@ -1,3 +1,4 @@
+// todo - change to MastoCompatible (has own version)
 open class Hometown: Mastodon {
 
     open override var name: String { "Hometown" }
