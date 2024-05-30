@@ -1,3 +1,5 @@
+// todo - udpate this to MastoCompatible
+// when we can handle major.minor version
 open class Snac: MastoAPI {
     open override var name: String { "Snac" }
 
