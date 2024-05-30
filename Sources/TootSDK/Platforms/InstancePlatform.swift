@@ -1,13 +1,13 @@
 extension Instance {
 
-    public var platform: Platform {
+    public var platform: Platform? {
         version.platform
     }
 }
 
 extension String {
 
-    public var platform: Platform {
+    public var platform: Platform? {
         let vs = version
         let api = vs.api
         let buildapi = vs.build.version.api
@@ -70,10 +70,10 @@ extension String {
         // (except when it's set to display the Mastodon version
         // so just pass the GotoSocial version
         /// 0.15.0+git-1573cd
-        if lc.lowercased().contains("git") {
-            // instanceMastodonVersion in internalfrontend.go
-            return GotoSocial(api)
-        }
-        return Mastodon(api)
+//        if lc.lowercased().contains("git") {
+//            // instanceMastodonVersion in internalfrontend.go
+//            return GotoSocial(api)
+//        }
+        return nil
     }
 }
