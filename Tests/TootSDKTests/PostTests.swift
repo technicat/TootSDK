@@ -22,7 +22,7 @@ final class PostTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testPleroma() throws {
         // arrange
         let json = localContent("post_pleroma")

@@ -70,10 +70,10 @@ extension String {
         // (except when it's set to display the Mastodon version
         // so just pass the GotoSocial version
         /// 0.15.0+git-1573cd
-//        if lc.lowercased().contains("git") {
-//            // instanceMastodonVersion in internalfrontend.go
-//            return GotoSocial(api)
-//        }
+        //        if lc.lowercased().contains("git") {
+        //            // instanceMastodonVersion in internalfrontend.go
+        //            return GotoSocial(api)
+        //        }
         return nil
     }
 }

@@ -162,4 +162,3 @@ public protocol Platform {
     var suggestionSources: SuggestionSources { get }
 
 }
-

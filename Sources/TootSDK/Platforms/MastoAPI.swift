@@ -14,57 +14,57 @@ open class MastoAPI: Platform {
 
     // requires
 
-    open var requiresInstanceAuth: Bool { api >= Version(3,0) }
+    open var requiresInstanceAuth: Bool { api >= Version(3, 0) }
     open var requiresRefreshAfterBoost: Bool { false }
     open var requiresRefreshAfterFave: Bool { false }
 
     // supports
 
-    open var supportsAnnouncements: Bool { api >= Version(3,1) }
-    open var supportsAnnouncementMark: Bool { api >= Version(3,1) }
+    open var supportsAnnouncements: Bool { api >= Version(3, 1) }
+    open var supportsAnnouncementMark: Bool { api >= Version(3, 1) }
 
-    open var supportsBot: Bool { api >= Version(2,4) }
+    open var supportsBot: Bool { api >= Version(2, 4) }
 
-    open var supportsDiscoverable: Bool { api >= Version(4,2) }
+    open var supportsDiscoverable: Bool { api >= Version(4, 2) }
 
-    open var supportsFamiliarFollowers: Bool { api >= Version(3,5) }
-    open var supportsFeaturedTags: Bool { api >= Version(3,0) }
-    open var supportsFilter: Bool { api >= Version(4,0) }
-    open var supportsFollowLanguages: Bool { api >= Version(4,0) }
-    open var supportsFollowNotify: Bool { api >= Version(3,3) }
+    open var supportsFamiliarFollowers: Bool { api >= Version(3, 5) }
+    open var supportsFeaturedTags: Bool { api >= Version(3, 0) }
+    open var supportsFilter: Bool { api >= Version(4, 0) }
+    open var supportsFollowLanguages: Bool { api >= Version(4, 0) }
+    open var supportsFollowNotify: Bool { api >= Version(3, 3) }
     // open var supportsFollowTag: Bool { api >= Version(4,0) }
 
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
-    open var supportsHideCollections: Bool { api >= Version(4,1) }
+    open var supportsHideCollections: Bool { api >= Version(4, 1) }
     /// https://docs.joinmastodon.org/methods/accounts/#update_credentials
-    open var supportsIndexable: Bool { api >= Version(4,2) }
+    open var supportsIndexable: Bool { api >= Version(4, 2) }
 
     /// V1 instance
-    open var supportsInstance: Bool { api >= Version(1,1) }
-    open var supportsInstanceConfig: Bool { api >= Version(3,4,2) }
-    open var supportsInstanceConfigAccount: Bool { api >= Version(4,0) }
+    open var supportsInstance: Bool { api >= Version(1, 1) }
+    open var supportsInstanceConfig: Bool { api >= Version(3, 4, 2) }
+    open var supportsInstanceConfigAccount: Bool { api >= Version(4, 0) }
     open var supportsInstanceExtendedDescription: Bool {
         api >= Version(4, 0)
     }
-    open var supportsInstanceInvites: Bool { api >= Version(3,1,4) }
+    open var supportsInstanceInvites: Bool { api >= Version(3, 1, 4) }
     /// https://docs.joinmastodon.org/methods/instance/#peers
-    open var supportsInstancePeers: Bool { api >= Version(2,1,2) }
-    open var supportsInstanceRules: Bool { api >= Version(3,4) }
+    open var supportsInstancePeers: Bool { api >= Version(2, 1, 2) }
+    open var supportsInstanceRules: Bool { api >= Version(3, 4) }
 
-    open var supportsInstanceV2: Bool { api >= Version(4,0) }
+    open var supportsInstanceV2: Bool { api >= Version(4, 0) }
     open var supportsIsBoosted: Bool { true }
 
-    open var supportsListReplyPolicy: Bool { api >= Version(3,3) }
-    open var supportsListExclusive: Bool { api >= Version(4,2) }
+    open var supportsListReplyPolicy: Bool { api >= Version(3, 3) }
+    open var supportsListExclusive: Bool { api >= Version(4, 2) }
 
-    open var supportsMarkers: Bool { api >= Version(3,0) }
-    open var supportsMutePost: Bool { api >= Version(1,4,2) }
+    open var supportsMarkers: Bool { api >= Version(3, 0) }
+    open var supportsMutePost: Bool { api >= Version(1, 4, 2) }
 
     /// https://docs.joinmastodon.org/methods/accounts/#note
-    open var supportsNote: Bool { api >= Version(3,2) }
+    open var supportsNote: Bool { api >= Version(3, 2) }
 
     /// https://docs.joinmastodon.org/methods/notifications/#dismiss
-    open var supportsNotificationDelete: Bool { api >= Version(1,3) }
+    open var supportsNotificationDelete: Bool { api >= Version(1, 3) }
     /// https://docs.joinmastodon.org/methods/notifications/#clear
     open var supportsNotificationDeleteAll: Bool { true }
 
