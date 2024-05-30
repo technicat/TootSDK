@@ -25,6 +25,14 @@ extension TootClient {
         }
         return try await fetch(InstanceV2.self, req)
     }
+    
+    public func getInstancePeers() async throws -> [String] {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "instance", "peers"])
+            $0.method = .get
+        }
+        return try await fetch([String].self, req)
+    }
 
     public func getInstanceRules() async throws -> [InstanceRule] {
         let req = HTTPRequestBuilder {
