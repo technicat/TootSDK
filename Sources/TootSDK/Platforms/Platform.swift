@@ -181,60 +181,9 @@ extension Platform {
         !suggestionSources.isEmpty
     }
 
-    public var supportsBlockedAccounts: Bool {
-        blockedAccountsLimit > 0
-    }
-
-    public var supportsMutedAccounts: Bool {
-        mutedAccountsLimit > 0
-    }
-
-    public var supportsBlockedDomains: Bool {
-        blockedDomainsLimit > 0
-    }
-
-    public var supportsBoosters: Bool {
-        boosterPageLimit > 0
-    }
-    public var supportsConversations: Bool {
-        conversationsPageLimit > 0
-    }
-
-    public var supportsDirectory: Bool {
-        directoryLimit > 0
-    }
-
-    public var supportsFavers: Bool {
-        faversPageLimit > 0
-    }
-
-    public var supportsFollowTag: Bool {
-        followedTagsPageLimit > 0
-    }
-
-    public var supportsList: Bool {
-        listAccountsPageLimit > 0
-    }
-
-    public var supportsSchedule: Bool {
-        scheduledPageLimit > 0
-    }
-
-    public var supportsFindAccounts: Bool {
-        findAccountsLimit > 0
-    }
-
-    public var supportsTrendingLinks: Bool {
-        trendingLinksLimit > 0
-    }
-
-    public var supportsTrendingPosts: Bool {
-        trendingPostsLimit > 0
-    }
-
-    public var supportsTrendingTags: Bool {
-        trendingTagsLimit > 0
-    }
+//    public var supportsSchedule: Bool {
+//        scheduledPageLimit > 0
+//    }
 
     // maybe supports(timeline:)
     public func supports(_ timeline: Timeline) -> Bool {

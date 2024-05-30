@@ -6,8 +6,7 @@ open class GotoSocial: MastoCompatible {
     public init(_ build: Version) {
         // current hardcoded masto api
         // todo - mastodon api should depend on build
-        // or we could ignore and just say 4,0 for example
-        super.init(Version(3, 5, 3), build)
+        super.init(Version(3,5,3), build)
     }
 
     // supports
