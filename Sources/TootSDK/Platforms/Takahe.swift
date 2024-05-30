@@ -1,9 +1,8 @@
 open class Takahe: MastoCompatible {
 
     open override var name: String { "Takahe" }
-
-    public init(_ build: Version) {
-        // arbitrary Mastodon api, adjust
-        super.init(Version(3, 5), build)
+    
+    public init(_ api: Version) {
+        super.init(Version(3,5),api)
     }
 }
