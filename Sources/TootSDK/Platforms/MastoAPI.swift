@@ -207,6 +207,8 @@ open class MastoAPI: Platform {
   }
     /// https://docs.joinmastodon.org/methods/accounts/#followers
     open var followersPageLimit: Int { 80 }
+    /// https://docs.joinmastodon.org/methods/follow_requests/#get
+    open var followRequestPageLimit: Int { 80 } 
     //
     open var followedTagsPageLimit: Int {
         api >= Version(4, 0) ? 200 : 0

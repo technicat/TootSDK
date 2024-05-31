@@ -118,6 +118,8 @@ public protocol Platform {
     var conversationsPageLimit: Int { get }
     ///
     var followedAccountsPageLimit: Int { get }
+    /// 
+    var followRequestPageLimit: Int { get } 
     ///
     var followersPageLimit: Int { get }
     ///
