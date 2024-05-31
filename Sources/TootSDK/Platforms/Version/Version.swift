@@ -1,6 +1,9 @@
 import Foundation
 
 public struct Version {
+    
+    public static let zero = Version()
+    
     public var major: Int
     public var minor: Int
     public var patch: Int
@@ -20,4 +23,8 @@ public struct Version {
 
 extension Version {
     public var dot: String { "\(major).\(minor).\(patch)" }
+}
+
+extension Version {
+    public var isZero: Bool { self == Version.zero }
 }
