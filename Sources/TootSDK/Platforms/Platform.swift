@@ -103,19 +103,36 @@ public protocol Platform {
     // limits
     // 0 indicate the feature is not supported
     ///
+    var blockedAccountsLimit: Int { get }
+    ///
     var blockedDomainsLimit: Int { get }
     ///
     var boosterPageLimit: Int { get }
     ///
-    var faversPageLimit: Int { get }
+    var directoryLimit: Int { get }
     ///
-    var blockedAccountsLimit: Int { get }
+    var findAccountsLimit: Int { get }
     ///
     var mutedAccountsLimit: Int { get }
     ///
-    var directoryLimit: Int { get }
+    var searchLimit: Int { get }
+    ///
+    var suggestionsLimit: Int { get }
+    ///
+    var trendingLinksLimit: Int { get }
+    ///
+    var trendingPostsLimit: Int { get }
+    ///
+    var trendingTagsLimit: Int { get }
+    
+    ///
+    var adminAccountsV2PageLimit: Int { get }
     ///
     var conversationsPageLimit: Int { get }
+    ///
+    var endorsementsPageLimit: Int { get }
+    ///
+    var faversPageLimit: Int { get }
     ///
     var followedAccountsPageLimit: Int { get }
     /// 
@@ -130,18 +147,7 @@ public protocol Platform {
     var notificationsPageLimit: Int { get }
     ///
     var scheduledPageLimit: Int { get }
-    ///
-    var searchLimit: Int { get }
-    ///
-    var findAccountsLimit: Int { get }
-    ///
-    var suggestionsLimit: Int { get }
-    ///
-    var trendingLinksLimit: Int { get }
-    ///
-    var trendingPostsLimit: Int { get }
-    ///
-    var trendingTagsLimit: Int { get }
+   
     /// alt text char limit
     var maxAltText: Int { get }
     /// here because pixelfed requires at least one, but could be true of other image-oriented platforms - or we could just have something like isImagePlatform

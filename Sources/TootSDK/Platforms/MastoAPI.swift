@@ -189,11 +189,11 @@ open class MastoAPI: Platform {
         }
     }
 
-    open var adminAccountsV1Limit: Int {
+    open var adminAccountsV1PageLimit: Int {
         api >= Version(2, 9, 1) ? 200 : 0
     }
 
-    open var adminAccountsV2Limit: Int {
+    open var adminAccountsV2PageLimit: Int {
         api >= Version(3, 5) ? 200 : 0
     }
 
@@ -201,6 +201,8 @@ open class MastoAPI: Platform {
     open var conversationsPageLimit: Int {
         api >= Version(2, 6) ? 40 : 0
     }
+    /// https://docs.joinmastodon.org/methods/endorsements/#get
+    open var endorsementsPageLimit: Int { 80 }
     /// https://docs.joinmastodon.org/methods/accounts/#following
     open var followedAccountsPageLimit: Int {
     80
