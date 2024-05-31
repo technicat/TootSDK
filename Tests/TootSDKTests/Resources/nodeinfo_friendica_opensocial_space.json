@@ -1,0 +1,47 @@
+{
+    "version": "2.0",
+    "software": {
+        "name": "friendica",
+        "version": "2024.03-1557"
+    },
+    "protocols": [
+        "dfrn",
+        "activitypub",
+        "diaspora",
+        "ostatus"
+    ],
+    "services": {
+        "inbound": [
+            "bluesky",
+            "gnusocial",
+            "pumpio",
+            "atom1.0",
+            "rss2.0",
+            "imap"
+        ],
+        "outbound": [
+            "bluesky",
+            "gnusocial",
+            "libertree",
+            "pumpio",
+            "smtp",
+            "tumblr",
+            "wordpress",
+            "atom1.0"
+        ]
+    },
+    "usage": {
+        "users": {
+            "total": 558,
+            "activeHalfyear": 216,
+            "activeMonth": 113
+        },
+        "localPosts": 5266,
+        "localComments": 14349
+    },
+    "openRegistrations": true,
+    "metadata": {
+        "nodeName": "Friendica Open Social Space",
+        "explicitContent": false
+    }
+}
