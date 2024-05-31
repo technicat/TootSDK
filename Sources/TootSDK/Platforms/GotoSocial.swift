@@ -21,7 +21,7 @@ open class GotoSocial: MastoCompatible {
     open override var supportsPostHistory: Bool { false }
     /// supports profile avatar/header delete
     open override var supportsProfileImageDelete: Bool {
-        build >= Version(0, 15, 2)  // anticipating
+        build >= Version(0, 15, 0)
     }
     /// doesn't support public (no auth) timeline
     open override var supportsPublicTimeline: Bool { false }
