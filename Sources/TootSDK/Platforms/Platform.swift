@@ -101,8 +101,7 @@ public protocol Platform {
     var supportsUpdateAccount: Bool { get }
 
     // limits
-    // maybe should be nil when unsupported
-    // but handy to treat nil as default
+    // 0 indicate the feature is not supported
     ///
     var blockedDomainsLimit: Int { get }
     ///
