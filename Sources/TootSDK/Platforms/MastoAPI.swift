@@ -23,13 +23,19 @@ open class MastoAPI: Platform {
     open var supportsAnnouncements: Bool { api >= Version(3, 1) }
     open var supportsAnnouncementMark: Bool { api >= Version(3, 1) }
 
+    /// for friendica, does not allow bookmarking of replies
+    open var supportsBookmarkReply: Bool { true }
+    /// specifying account is a bot
     open var supportsBot: Bool { api >= Version(2, 4) }
-
+    /// specify account is discoverable
     open var supportsDiscoverable: Bool { api >= Version(4, 2) }
-
+    /// show familiar followers (followed by you and a followee)
     open var supportsFamiliarFollowers: Bool { api >= Version(3, 5) }
+    /// specify featured tags in your profile
     open var supportsFeaturedTags: Bool { api >= Version(3, 0) }
+    /// supports filtering (v2)
     open var supportsFilter: Bool { api >= Version(4, 0) }
+    /// supports specifying you only want to see posts in a certain language
     open var supportsFollowLanguages: Bool { api >= Version(4, 0) }
     open var supportsFollowNotify: Bool { api >= Version(3, 3) }
     // open var supportsFollowTag: Bool { api >= Version(4,0) }
