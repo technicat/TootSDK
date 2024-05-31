@@ -11,6 +11,8 @@ open class GotoSocial: MastoCompatible {
 
     // supports
 
+    /// blocking domains not supported
+    open override var blockedDomainsLimit: Int { 0 }
     /// doesn't support featured tags
     open override var supportsFeaturedTags: Bool { false }
     /// supports Instance V2
