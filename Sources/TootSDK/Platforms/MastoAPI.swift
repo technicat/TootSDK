@@ -201,8 +201,12 @@ open class MastoAPI: Platform {
     open var conversationsPageLimit: Int {
         api >= Version(2, 6) ? 40 : 0
     }
-    ///
-    open var followersPageLimit: Int { 40 }
+    /// https://docs.joinmastodon.org/methods/accounts/#following
+    open var followedAccountsPageLimit: Int {
+    80
+  }
+    /// https://docs.joinmastodon.org/methods/accounts/#followers
+    open var followersPageLimit: Int { 80 }
     //
     open var followedTagsPageLimit: Int {
         api >= Version(4, 0) ? 200 : 0

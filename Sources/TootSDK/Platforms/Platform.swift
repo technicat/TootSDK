@@ -117,6 +117,8 @@ public protocol Platform {
     ///
     var conversationsPageLimit: Int { get }
     ///
+    var followedAccountsPageLimit: Int { get }
+    ///
     var followersPageLimit: Int { get }
     ///
     var followedTagsPageLimit: Int { get }
