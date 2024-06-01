@@ -5,6 +5,7 @@ open class GotoSocial: MastoCompatible {
 
     public init(_ build: Version) {
         // current hardcoded masto api
+        // instanceMastodonVersion in internalfrontend.go
         // todo - mastodon api should depend on build
         super.init(Version(3, 5, 3), build)
     }
