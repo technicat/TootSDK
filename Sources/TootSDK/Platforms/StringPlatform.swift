@@ -1,6 +1,7 @@
 extension String {
 
     /// derive platform from instance version string
+    /// default to Mastodon if can't see anything else
     public var platform: Platform {
         let vs = version
         let api = vs.api
@@ -28,9 +29,11 @@ extension String {
         if lc.contains("glitch") {
             return Glitch(api)
         }
+        // this will stop working as soon as
+        // someone else has git in their version string
         // 0.15.0+git-1573cd
-        if lc.lowercased().contains("git") {
-          return GotoSocial(api)
+        if lc.contains("git") {
+            return GotoSocial(api)
         }
         // 4.0.15+hometown-1.1.1
         if lc.contains("hometown") {
@@ -65,7 +68,7 @@ extension String {
         }
         // takahe/0.10.1
         if lc.contains("takahe") {
-          return Takahe(api)
+            return Takahe(api)
         }
         //
         return Mastodon(api)

@@ -1,9 +1,9 @@
 import Foundation
 
 public struct Version {
-    
+
     public static let zero = Version()
-    
+
     public var major: Int
     public var minor: Int
     public var patch: Int

@@ -4,7 +4,7 @@ public protocol Platform {
 
     /// platform name, e.g. Mastodon, Pleroma...
     var name: String { get }
-    
+
     var needsUpdate: Bool { get }
 
     // require
@@ -126,7 +126,7 @@ public protocol Platform {
     var trendingPostsLimit: Int { get }
     ///
     var trendingTagsLimit: Int { get }
-    
+
     ///
     var adminAccountsV2PageLimit: Int { get }
     ///
@@ -137,8 +137,8 @@ public protocol Platform {
     var faversPageLimit: Int { get }
     ///
     var followedAccountsPageLimit: Int { get }
-    /// 
-    var followRequestPageLimit: Int { get } 
+    ///
+    var followRequestPageLimit: Int { get }
     ///
     var followersPageLimit: Int { get }
     ///
@@ -149,7 +149,7 @@ public protocol Platform {
     var notificationsPageLimit: Int { get }
     ///
     var scheduledPageLimit: Int { get }
-   
+
     /// alt text char limit
     var maxAltText: Int { get }
     /// here because pixelfed requires at least one, but could be true of other image-oriented platforms - or we could just have something like isImagePlatform

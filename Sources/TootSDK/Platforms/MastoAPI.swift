@@ -11,7 +11,7 @@ open class MastoAPI: Platform {
     }
 
     open var name: String { "Mastodon API" }
-    
+
     open var needsUpdate: Bool { api.isZero }
 
     // requires
@@ -207,12 +207,12 @@ open class MastoAPI: Platform {
     open var endorsementsPageLimit: Int { 80 }
     /// https://docs.joinmastodon.org/methods/accounts/#following
     open var followedAccountsPageLimit: Int {
-    80
-  }
+        80
+    }
     /// https://docs.joinmastodon.org/methods/accounts/#followers
     open var followersPageLimit: Int { 80 }
     /// https://docs.joinmastodon.org/methods/follow_requests/#get
-    open var followRequestPageLimit: Int { 80 } 
+    open var followRequestPageLimit: Int { 80 }
     //
     open var followedTagsPageLimit: Int {
         api >= Version(4, 0) ? 200 : 0
