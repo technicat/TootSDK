@@ -4,6 +4,8 @@ public protocol Platform {
 
     /// platform name, e.g. Mastodon, Pleroma...
     var name: String { get }
+    
+    var needsUpdate: Bool { get }
 
     // require
 

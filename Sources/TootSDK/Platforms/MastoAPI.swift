@@ -11,6 +11,8 @@ open class MastoAPI: Platform {
     }
 
     open var name: String { "Mastodon API" }
+    
+    open var needsUpdate: Bool { api.isZero }
 
     // requires
 
