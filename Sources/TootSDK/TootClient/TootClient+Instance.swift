@@ -9,7 +9,7 @@ import Foundation
 
 extension TootClient {
     /// Obtain general information about the server
-    public func getInstance() async throws -> InstanceV1 {
+    public func getInstanceV1() async throws -> InstanceV1 {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "instance"])
             $0.method = .get
