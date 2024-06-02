@@ -9,12 +9,12 @@ open class GotoSocial: MastoCompatible {
         // instanceMastodonVersion in internalfrontend.go
         super.init(masto: Version(3, 5), platform: platform)
     }
-    
+
     public init(masto: Version) {
         // current hardcoded masto api
         // instanceMastodonVersion in internalfrontend.go
         // todo - mastodon api should depend on build
-        super.init(masto: masto, platform: Version(0,15))
+        super.init(masto: masto, platform: Version(0, 15))
     }
 
     // supports
