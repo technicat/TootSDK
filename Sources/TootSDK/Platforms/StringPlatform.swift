@@ -32,8 +32,9 @@ extension String {
         // this will stop working as soon as
         // someone else has git in their version string
         // 0.15.0+git-1573cd
+        // todo - mastodon api should depend on gotosocial api
         if lc.contains("git") {
-            return GotoSocial(api)
+            return GotoSocial(Version(3,5,3),api)
         }
         // 4.0.15+hometown-1.1.1
         if lc.contains("hometown") {
