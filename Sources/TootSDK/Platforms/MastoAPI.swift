@@ -6,7 +6,7 @@ open class MastoAPI: Platform {
 
     public var api: Version
 
-    public init(_ api: Version) {
+    public init(_ api: Version = Version.zero) {
         self.api = api
     }
 

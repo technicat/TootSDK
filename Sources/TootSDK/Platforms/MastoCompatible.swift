@@ -1,7 +1,7 @@
 /// not Mastodon but with the API (more or less)
 open class MastoCompatible: MastoAPI {
 
-    public init(_ api: Version, _ build: Version) {
+    public init(masto api: Version = Version.zero, platform build: Version = Version.zero) {
         self.build = build
         super.init(api)
     }

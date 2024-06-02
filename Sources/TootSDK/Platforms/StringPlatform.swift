@@ -9,7 +9,7 @@ extension String {
         let lc = lowercased()
         // 2.7.2  (compatible; Akkoma 3.13.1-0-gc02e343)
         if lc.contains("akkoma") {
-            return Akkoma(api, buildapi)
+            return Akkoma(masto: api, platform: buildapi)
         }
         // 4.2.1 (compatible; Catodon 24.04-dev.2)
         // todo - pass catodon version
@@ -32,9 +32,8 @@ extension String {
         // this will stop working as soon as
         // someone else has git in their version string
         // 0.15.0+git-1573cd
-        // todo - mastodon api should depend on gotosocial api
         if lc.contains("git") {
-            return GotoSocial(Version(3,5,3),api)
+            return GotoSocial(platform: api)
         }
         // 4.0.15+hometown-1.1.1
         if lc.contains("hometown") {
@@ -47,15 +46,15 @@ extension String {
         }
         // 4.0.0 (compatible; Mitra 2.18.0)
         if lc.contains("mitra") {
-            return Mitra(api, buildapi)
+            return Mitra(masto: api, platform: buildapi)
         }
         // 3.5.3 (compatible; Pixelfed 0.11.13)
         if lc.contains("pixelfed") {
-            return Pixelfed(api, buildapi)
+            return Pixelfed(masto: api, platform: buildapi)
         }
         // 3.0.0 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)
         if lc.contains("pleroma") {
-            return Pleroma(api, buildapi)
+            return Pleroma(masto: api, platform: buildapi)
         }
         // 3.0.0 (compatible; Sharkey 2024.3.3)
         // todo - pass sharkey version
