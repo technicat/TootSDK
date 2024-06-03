@@ -39,6 +39,12 @@ extension String {
         if lc.contains("hometown") {
             return Hometown(api)
         }
+        // 4.2.1 (compatible; Iceshrimp.NET 2024.1-alpha)
+        // todo - pass iceshrimp version
+        // check this before iceshrimp
+        if lc.contains("iceshrimp.net") {
+            return IceshrimpNET(api)
+        }
         // 4.2.1 (compatible; Iceshrimp 2023.12.7)
         // todo - pass iceshrimp version
         if lc.contains("iceshrimp") {
