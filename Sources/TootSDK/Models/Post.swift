@@ -4,6 +4,7 @@
 import Foundation
 
 /// Represents a post posted by an account.
+/// https://docs.joinmastodon.org/entities/Status/
 public class Post: Codable, Identifiable, @unchecked Sendable {
     public init(
         id: String,
@@ -80,6 +81,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// The account that authored this post.
     public var account: Account
     /// HTML-encoded post content.
+    /// not optional in spec but could be null (e.g. Iceshrimp.NET)
     public var content: String?
     /// Visibility of this post.
     public var visibility: PostVisibility
