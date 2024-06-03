@@ -104,6 +104,7 @@ open class MastoAPI: Platform {
     open var supportsPublicDirectory: Bool { true }
     // private public timeline supported with 3.0.90
     open var supportsPublicTimeline: Bool { true }
+    open var supportsPublicTrends: Bool { true }
 
     open var supportsRelationshipWithSuspended: Bool {
         api >= Version(4, 3)

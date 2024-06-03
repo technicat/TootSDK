@@ -75,6 +75,7 @@ public protocol Platform {
 
     var supportsPublicDirectory: Bool { get }
     var supportsPublicTimeline: Bool { get }
+    var supportsPublicTrends: Bool { get }
 
     var supportsRelationshipWithSuspended: Bool { get }
     var supportsRemoveFollower: Bool { get }
