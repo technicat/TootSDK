@@ -13,9 +13,9 @@ open class Firefish: MisskeyFork {
     }
 
     // only support trending posts
-    open override var trendingTagsLimit: Int { 0 }
-    open override var trendingLinksLimit: Int { 0 }
-    open override var trendingPostsLimit: Int { 40 }  // check this
+    open override func trendingTagsLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingPostsLimit(_ auth: Bool) -> Int { 40 }  // check this
 
     // search for accounts not supported
     open override var findAccountsLimit: Int { 0 }

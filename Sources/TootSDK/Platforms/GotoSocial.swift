@@ -60,9 +60,9 @@ open class GotoSocial: MastoCompatible {
     open override var scheduledPageLimit: Int { 0 }
 
     /// trends not supported
-    open override var trendingLinksLimit: Int { 0 }
-    open override var trendingPostsLimit: Int { 0 }
-    open override var trendingTagsLimit: Int { 0 }
+    open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingPostsLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingTagsLimit(_ auth: Bool) -> Int { 0 }
     
     // public timeline not supported
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {

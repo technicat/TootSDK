@@ -49,9 +49,9 @@ open class Pixelfed: MastoCompatible {
     }
 
     /// trends not supported
-    open override var trendingLinksLimit: Int { 0 }
-    open override var trendingPostsLimit: Int { 0 }
-    open override var trendingTagsLimit: Int { 0 }
+    open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingPostsLimit(_ auth: Bool) -> Int { 0 }
+    open override func trendingTagsLimit(_ auth: Bool) -> Int { 0 }
 
     /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }

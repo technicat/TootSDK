@@ -101,9 +101,6 @@ open class MastoAPI: Platform {
     open var supportsProfileFields: Bool { api >= Version(2, 4) }
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
-    // private public timeline supported with 3.0.90
-    open var supportsPublicTrends: Bool { true }
-
     open var supportsRelationshipWithSuspended: Bool {
         api >= Version(4, 3)
     }
@@ -164,15 +161,15 @@ open class MastoAPI: Platform {
     ///
     open var suggestionsLimit: Int { 80 }
     ///
-    open var trendingLinksLimit: Int {
+    open func trendingLinksLimit(_ auth: Bool) -> Int {
         api >= Version(3, 5) ? 20 : 0
     }
     ///
-    open var trendingPostsLimit: Int {
+    open func trendingPostsLimit(_ auth: Bool) -> Int {
         api >= Version(3, 5) ? 40 : 0
     }
     ///
-    open var trendingTagsLimit: Int {
+    open func trendingTagsLimit(_ auth: Bool) -> Int {
         api >= Version(3, 5) ? 20 : 0
     }
 

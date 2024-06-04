@@ -73,9 +73,6 @@ public protocol Platform {
     /// delete profile avatar/header
     var supportsProfileImageDelete: Bool { get }
 
-    // could combine these with non-public queries, pass in auth
-    var supportsPublicTrends: Bool { get }
-
     var supportsRelationshipWithSuspended: Bool { get }
     var supportsRemoveFollower: Bool { get }
 
@@ -121,11 +118,11 @@ public protocol Platform {
     ///
     var suggestionsLimit: Int { get }
     ///
-    var trendingLinksLimit: Int { get }
+    func trendingLinksLimit(_ auth: Bool) -> Int
     ///
-    var trendingPostsLimit: Int { get }
+    func trendingPostsLimit(_ auth: Bool) -> Int
     ///
-    var trendingTagsLimit: Int { get }
+    func trendingTagsLimit(_ auth: Bool) -> Int
 
     ///
     var adminAccountsV2PageLimit: Int { get }
