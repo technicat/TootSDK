@@ -17,7 +17,6 @@ open class Mitra: MastoCompatible {
     /// doesn't support post revision history
     open override var supportsPostHistory: Bool { false }
     open override var supportsProfileFields: Bool { false }
-    open override var supportsPublicTimeline: Bool { false }
     open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
     /// doesn't support search in account
@@ -67,12 +66,17 @@ open class Mitra: MastoCompatible {
     /// lists not supported
     open override var listAccountsPageLimit: Int { 0 }
 
-    open override func getLimit(for timeline: Timeline) -> Int {
-        switch timeline {
-        case .bookmarks: return 0  // not supported
-        case .favourites: return 0  // not supported
-        case .direct: return 40  // supported, check the number
-        default: return super.getLimit(for: timeline)
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
+        if auth {
+            switch timeline {
+            case .bookmarks: return 0  // not supported
+            case .favourites: return 0  // not supported
+            case .direct: return 40  // supported, check the number
+            default: return super.getLimit(for: timeline, auth)
+            }
+        } else {
+            // public timeline not supported
+            return 0
         }
     }
 

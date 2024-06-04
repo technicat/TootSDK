@@ -32,10 +32,10 @@ open class Pleroma: MastoCompatible {
 
     // limits
 
-    open override func getLimit(for timeline: Timeline) -> Int {
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .direct: return 40  // todo - check limit
-        default: return super.getLimit(for: timeline)
+        default: return super.getLimit(for: timeline, auth)
         }
     }
 }

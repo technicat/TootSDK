@@ -102,7 +102,6 @@ open class MastoAPI: Platform {
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
     // private public timeline supported with 3.0.90
-    open var supportsPublicTimeline: Bool { true }
     open var supportsPublicTrends: Bool { true }
 
     open var supportsRelationshipWithSuspended: Bool {
@@ -177,7 +176,7 @@ open class MastoAPI: Platform {
         api >= Version(3, 5) ? 20 : 0
     }
 
-    open func getLimit(for timeline: Timeline) -> Int {
+    open func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .bookmarks:
             api >= Version(3, 1) ? 40 : 0

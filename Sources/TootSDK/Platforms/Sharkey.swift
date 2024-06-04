@@ -9,11 +9,11 @@ open class Sharkey: MisskeyFork {
     // limits
 
     /// timelines
-    open override func getLimit(for timeline: Timeline) -> Int {
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .favourites: return 0
         case .hashtag: return 0  // bug
-        default: return super.getLimit(for: timeline)
+        default: return super.getLimit(for: timeline, auth)
         }
     }
 

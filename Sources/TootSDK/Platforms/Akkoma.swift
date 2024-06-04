@@ -13,10 +13,10 @@ open class Akkoma: Pleroma {
     // limits
 
     /// timelines
-    open override func getLimit(for timeline: Timeline) -> Int {
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .bubble: return 40  // todo - check this number
-        default: return super.getLimit(for: timeline)
+        default: return super.getLimit(for: timeline, auth)
         }
     }
 

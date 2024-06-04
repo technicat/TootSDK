@@ -2,12 +2,15 @@ open class Firefish: MisskeyFork {
 
     open override var name: String { "Firefish" }
 
-    open override var supportsPublicTimeline: Bool { false }
-
     /// doesn't support search in account
     open override var supportsSearchAccount: Bool { false }
 
     /// limits
+    /// 
+    ///  // public timeline not supported
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
+        auth ? super.getLimit(for: timeline, auth) : 0
+    }
 
     // only support trending posts
     open override var trendingTagsLimit: Int { 0 }

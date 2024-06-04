@@ -74,7 +74,6 @@ public protocol Platform {
     var supportsProfileImageDelete: Bool { get }
 
     // could combine these with non-public queries, pass in auth
-    var supportsPublicTimeline: Bool { get }
     var supportsPublicTrends: Bool { get }
 
     var supportsRelationshipWithSuspended: Bool { get }
@@ -156,7 +155,7 @@ public protocol Platform {
     /// here because pixelfed requires at least one, but could be true of other image-oriented platforms - or we could just have something like isImagePlatform
     var minAttachments: Int { get }
     ///
-    func getLimit(for timeline: Timeline) -> Int
+    func getLimit(for timeline: Timeline, _ auth: Bool) -> Int
 
     // lists
 

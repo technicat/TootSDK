@@ -33,8 +33,6 @@ open class GotoSocial: MastoCompatible {
     open override var supportsProfileImageDelete: Bool {
         build >= Version(0, 15, 0)
     }
-    /// doesn't support public (no auth) timeline
-    open override var supportsPublicTimeline: Bool { false }
     /// doesn't support remove from followers
     open override var supportsRemoveFollower: Bool { false }
     /// doesn't support oauth revoke revoke
@@ -65,6 +63,11 @@ open class GotoSocial: MastoCompatible {
     open override var trendingLinksLimit: Int { 0 }
     open override var trendingPostsLimit: Int { 0 }
     open override var trendingTagsLimit: Int { 0 }
+    
+    // public timeline not supported
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
+        auth ? super.getLimit(for: timeline, auth) : 0
+    }
 
     // lists
 

@@ -28,10 +28,10 @@ open class Friendica: MastoAPI {
     // tag following supported
     open override var followedTagsPageLimit: Int { 200 }  // check this
 
-    open override func getLimit(for timeline: Timeline) -> Int {
+    open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .bookmarks: return 40  // todo - check this
-        default: return super.getLimit(for: timeline)
+        default: return super.getLimit(for: timeline, auth)
         }
     }
 
