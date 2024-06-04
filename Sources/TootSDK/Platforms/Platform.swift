@@ -73,7 +73,7 @@ public protocol Platform {
     /// delete profile avatar/header
     var supportsProfileImageDelete: Bool { get }
 
-    var supportsPublicDirectory: Bool { get }
+    // could combine these with non-public queries, pass in auth
     var supportsPublicTimeline: Bool { get }
     var supportsPublicTrends: Bool { get }
 
@@ -112,7 +112,7 @@ public protocol Platform {
     ///
     var boosterPageLimit: Int { get }
     ///
-    var directoryLimit: Int { get }
+    func directoryLimit(_ auth: Bool) -> Int
     ///
     var findAccountsLimit: Int { get }
     ///

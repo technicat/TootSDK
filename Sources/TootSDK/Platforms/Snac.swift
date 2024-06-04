@@ -5,5 +5,13 @@ open class Snac: MastoAPI {
 
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsInstanceV2: Bool { false }
+    
+    /// profile directory requires auth
+    open override func directoryLimit(_ auth: Bool) -> Int {
+        auth ? super.directoryLimit(auth) : 0
+    }
+    
+    open override var supportsPublicTrends: Bool { false }
+    
     open override var supportsTranslate: Bool { false }
 }

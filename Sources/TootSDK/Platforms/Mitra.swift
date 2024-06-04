@@ -17,7 +17,6 @@ open class Mitra: MastoCompatible {
     /// doesn't support post revision history
     open override var supportsPostHistory: Bool { false }
     open override var supportsProfileFields: Bool { false }
-    open override var supportsPublicDirectory: Bool { false }
     open override var supportsPublicTimeline: Bool { false }
     open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
@@ -53,6 +52,11 @@ open class Mitra: MastoCompatible {
     ///
     open override var maxAltText: Int {
         build >= Version(2, 17, 1) ? 3000 : 1500
+    }
+    
+    /// profile directory requires auth
+    open override func directoryLimit(_ auth: Bool) -> Int {
+        auth ? super.directoryLimit(auth) : 0
     }
 
     /// trends not supported

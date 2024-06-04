@@ -101,7 +101,6 @@ open class MastoAPI: Platform {
     open var supportsProfileFields: Bool { api >= Version(2, 4) }
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
-    open var supportsPublicDirectory: Bool { true }
     // private public timeline supported with 3.0.90
     open var supportsPublicTimeline: Bool { true }
     open var supportsPublicTrends: Bool { true }
@@ -156,7 +155,7 @@ open class MastoAPI: Platform {
     ///
     open var mutedAccountsLimit: Int { 80 }
     ///
-    open var directoryLimit: Int {
+    open func directoryLimit(_ auth: Bool) -> Int {
         api >= Version(4, 0) ? 80 : 0
     }
     /// https://docs.joinmastodon.org/methods/search/#v2
