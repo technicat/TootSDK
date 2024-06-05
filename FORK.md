@@ -40,6 +40,7 @@ In-progress
 - Moved `Configuration` up so it  an be shared among the two instance versions
 - `InstanceRule` text is not optional
 - added `getPeers`
+- make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
 
 ### Notifications
 
