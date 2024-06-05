@@ -69,7 +69,7 @@ extension AdminAccountsV2Params {
     }
 }
 
-public enum AdminAccountOrigin: String {
+public enum AdminAccountOrigin: String, Sendable {
     case local
     case remote
 }
