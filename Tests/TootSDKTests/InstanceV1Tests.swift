@@ -120,7 +120,7 @@ final class InstanceV1Tests: XCTestCase {
     
     func testMicrodotblog() throws {
         // arrange
-        let json = localContent("instancev2_microdotblog")
+        let json = localContent("instancev1_microdotblog")
         let decoder = TootDecoder()
 
         // act
