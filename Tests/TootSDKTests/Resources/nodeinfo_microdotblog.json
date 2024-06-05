@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "software": {
+    "name": "microdotblog",
+    "version": "2.1"
+  },
+  "protocols": [
+    "activitypub"
+  ],
+  "services": {
+    "outbound": [
+
+    ],
+    "inbound": [
+
+    ]
+  },
+  "usage": {
+    "users": {
+      "total": 167066,
+      "activeMonth": 4082,
+      "activeHalfyear": 37040
+    },
+    "localPosts": 7853386,
+    "localComments": 870273
+  },
+  "openRegistrations": true,
+  "metaData": {
+  }
+}
