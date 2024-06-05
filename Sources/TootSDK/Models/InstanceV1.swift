@@ -18,7 +18,7 @@ public struct InstanceV1: Codable, Hashable {
         approvalRequired: Bool? = nil,
         invitesEnabled: Bool? = nil,
         urls: InstanceURLs,
-        stats: Stats,
+        stats: Stats? = nil,
         thumbnail: String? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
@@ -65,7 +65,7 @@ public struct InstanceV1: Codable, Hashable {
     /// URLs of interest for clients apps.
     public var urls: InstanceURLs?
     /// Statistics about how much information the instance contains.
-    public var stats: Stats
+    public var stats: Stats?
     /// Banner image for the website.
     public var thumbnail: String?
     /// Configured values and limits for this instance.
@@ -108,7 +108,7 @@ public struct InstanceV1: Codable, Hashable {
         self.approvalRequired = try? container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
         self.invitesEnabled = try? container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
         self.urls = try? container.decodeIfPresent(InstanceURLs.self, forKey: .urls)
-        self.stats = try container.decode(Stats.self, forKey: .stats)
+        self.stats = try container.decodeIfPresent(Stats.self, forKey: .stats)
         self.thumbnail = try? container.decodeIfPresent(String.self, forKey: .thumbnail)
         self.configuration = try? container.decodeIfPresent(Configuration.self, forKey: .configuration)
         // also handles some friendica instances returning []
