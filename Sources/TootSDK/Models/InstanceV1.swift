@@ -65,6 +65,7 @@ public struct InstanceV1: Codable, Hashable {
     /// URLs of interest for clients apps.
     public var urls: InstanceURLs?
     /// Statistics about how much information the instance contains.
+    /// non-optional in spec but missing in microdotblog
     public var stats: Stats?
     /// Banner image for the website.
     public var thumbnail: String?
