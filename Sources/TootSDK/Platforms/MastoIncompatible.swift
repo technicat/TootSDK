@@ -4,6 +4,8 @@ open class MastoIncompatible: MastoAPI {
         super.init(Version(0,0,1))
     }
     
+    open override var supportsLogin: Bool { false }
+    
     // public timeline not supported
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         auth ? super.getLimit(for: timeline, auth) : 0

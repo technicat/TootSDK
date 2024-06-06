@@ -45,6 +45,8 @@ public protocol Platform {
 
     var supportsListReplyPolicy: Bool { get }
     var supportsListExclusive: Bool { get }
+    
+    var supportsLogin: Bool { get }
 
     var supportsMarkers: Bool { get }
     var supportsMutePost: Bool { get }
