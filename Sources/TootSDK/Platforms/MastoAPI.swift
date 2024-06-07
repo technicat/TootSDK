@@ -244,20 +244,24 @@ open class MastoAPI: Platform {
         let noteTypes33: NotificationTypes = [.post]
         let noteTypes35: NotificationTypes = [.update, .adminSignUp]
         let noteTypes40: NotificationTypes = [.adminReport]
+        let noteTypes43: NotificationTypes = [.severedRelationships]
         var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite, .poll,
         ]
         if api >= Version(3, 1) {
-            types = types.union(noteTypes31)
+            types = types.union([.followRequest])
         }
         if api >= Version(3, 3) {
-            types = types.union(noteTypes33)
+            types = types.union([.post])
         }
         if api >= Version(3, 5) {
-            types = types.union(noteTypes35)
+            types = types.union([.update, .adminSignUp])
         }
         if api >= Version(4, 0) {
-            types = types.union(noteTypes40)
+            types = types.union([.adminReport])
+        }
+        if api >= Version(4, 3) {
+            types = types.union([.severedRelationships])
         }
         return types
     }
