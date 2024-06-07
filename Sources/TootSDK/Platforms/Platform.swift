@@ -16,6 +16,9 @@ public protocol Platform {
 
     // supports
 
+    /// admin functions
+    var supportsAdmin: Bool { get }
+    ///
     var supportsAnnouncements: Bool { get }
     /// mark announcement as read
     var supportsAnnouncementMark: Bool { get }

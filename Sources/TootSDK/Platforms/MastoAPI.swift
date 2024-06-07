@@ -22,6 +22,7 @@ open class MastoAPI: Platform {
 
     // supports
 
+    open var supportsAdmin: Bool { true }
     open var supportsAnnouncements: Bool { api >= Version(3, 1) }
     open var supportsAnnouncementMark: Bool { api >= Version(3, 1) }
 

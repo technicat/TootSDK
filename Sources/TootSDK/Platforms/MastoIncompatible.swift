@@ -4,6 +4,8 @@ open class MastoIncompatible: MastoAPI {
         super.init(Version(0,0,1))
     }
     
+    open override var supportsAdmin: Bool { false }
+    
     open override var supportsLogin: Bool { false }
     
     // public timeline not supported

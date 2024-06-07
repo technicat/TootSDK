@@ -9,4 +9,6 @@ open class MastoCompatible: MastoAPI {
     // need something different (date-based) for misskey forks
     // todo - rename this, it's not a build number
     public var build: Version
+    
+    open override var supportsAdmin: Bool { false }
 }
