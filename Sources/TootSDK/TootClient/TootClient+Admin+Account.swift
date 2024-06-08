@@ -51,10 +51,23 @@ extension TootClient {
     /// View admin-level information about the given account.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
+    /// https://docs.joinmastodon.org/methods/admin/accounts/#get-one
     public func getAdminAccount(by id: String) async throws -> AdminAccount {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "admin", "accounts", id])
             $0.method = .get
+        }
+        return try await fetch(AdminAccount.self, req)
+    }
+    
+    /// Approve the given local account if it is currently pending approval.
+    /// - Parameter id: the ID of the Account in the instance database.
+    /// - Returns: the account requested, or an error if unable to retrieve
+    /// https://docs.joinmastodon.org/methods/admin/accounts/#approve
+    public func approveAccount(by id: String) async throws -> AdminAccount {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "admin", "accounts", id, "approve"])
+            $0.method = .post
         }
         return try await fetch(AdminAccount.self, req)
     }
