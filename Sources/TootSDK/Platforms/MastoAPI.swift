@@ -240,11 +240,6 @@ open class MastoAPI: Platform {
 
     /// https://docs.joinmastodon.org/methods/notifications/#get
     open var notificationTypes: NotificationTypes {
-        let noteTypes31: NotificationTypes = [.followRequest]
-        let noteTypes33: NotificationTypes = [.post]
-        let noteTypes35: NotificationTypes = [.update, .adminSignUp]
-        let noteTypes40: NotificationTypes = [.adminReport]
-        let noteTypes43: NotificationTypes = [.severedRelationships]
         var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite, .poll,
         ]
