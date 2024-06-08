@@ -47,4 +47,15 @@ extension TootClient {
 
         return try await fetchPagedResult(req)
     }
+    
+    /// View admin-level information about the given account.
+    /// - Parameter id: the ID of the Account in the instance database.
+    /// - Returns: the account requested, or an error if unable to retrieve
+    public func getAdminAccount(by id: String) async throws -> AdminAccount {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "admin", "accounts", id])
+            $0.method = .get
+        }
+        return try await fetch(AdminAccount.self, req)
+    }
 }
