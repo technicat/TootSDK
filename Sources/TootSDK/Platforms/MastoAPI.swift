@@ -155,34 +155,36 @@ open class MastoAPI: Platform {
     open var mutedAccountsLimit: Int { 80 }
     ///
     open func directoryLimit(_ auth: Bool) -> Int {
-        api >= Version(4, 0) ? 80 : 0
+        api >= Version(4,0) ? 80 : 0
     }
     /// https://docs.joinmastodon.org/methods/search/#v2
     open var searchLimit: Int { 40 }
     /// https://docs.joinmastodon.org/methods/accounts/#search
     open var findAccountsLimit: Int { 80 }
-    ///
-    open var suggestionsLimit: Int { 80 }
+    /// https://docs.joinmastodon.org/methods/suggestions/#v2
+    open var suggestionsLimit: Int {
+        api >= Version(3,4) ? 80 : 0
+    }
     ///
     open func trendingLinksLimit(_ auth: Bool) -> Int {
-        api >= Version(3, 5) ? 20 : 0
+        api >= Version(3,5) ? 20 : 0
     }
     ///
     open func trendingPostsLimit(_ auth: Bool) -> Int {
-        api >= Version(3, 5) ? 40 : 0
+        api >= Version(3,5) ? 40 : 0
     }
     ///
     open func trendingTagsLimit(_ auth: Bool) -> Int {
-        api >= Version(3, 5) ? 20 : 0
+        api >= Version(3,5) ? 20 : 0
     }
 
     open func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         switch timeline {
         case .bookmarks:
-            api >= Version(3, 1) ? 40 : 0
+            api >= Version(3,1) ? 40 : 0
         // removed from mastodon in 3.0
         case .direct:
-            api < Version(3, 0) ? 40 : 0
+            api < Version(3,0) ? 40 : 0
         case .home, .favourites, .local, .federated, .hashtag, .list, .user:
             40
         default:
@@ -191,16 +193,16 @@ open class MastoAPI: Platform {
     }
 
     open var adminAccountsV1PageLimit: Int {
-        api >= Version(2, 9, 1) ? 200 : 0
+        api >= Version(2,9,1) ? 200 : 0
     }
 
     open var adminAccountsV2PageLimit: Int {
-        api >= Version(3, 5) ? 200 : 0
+        api >= Version(3,5) ? 200 : 0
     }
 
     ///
     open var conversationsPageLimit: Int {
-        api >= Version(2, 6) ? 40 : 0
+        api >= Version(2,6) ? 40 : 0
     }
     /// https://docs.joinmastodon.org/methods/endorsements/#get
     open var endorsementsPageLimit: Int { 80 }
@@ -214,17 +216,17 @@ open class MastoAPI: Platform {
     open var followRequestPageLimit: Int { 80 }
     //
     open var followedTagsPageLimit: Int {
-        api >= Version(4, 0) ? 200 : 0
+        api >= Version(4,0) ? 200 : 0
     }
 
     ///https://docs.joinmastodon.org/methods/notifications/
     open var notificationsPageLimit: Int {
-        api >= Version(4, 1) ? 80 : 30
+        api >= Version(4,1) ? 80 : 30
     }
 
     /// https://docs.joinmastodon.org/methods/scheduled_statuses/
     open var scheduledPageLimit: Int {
-        api >= Version(2, 7) ? 40 : 0
+        api >= Version(2,7) ? 40 : 0
     }
 
     // harcoded in Mastodon
@@ -243,19 +245,19 @@ open class MastoAPI: Platform {
         var types: NotificationTypes = [
             .follow, .mention, .repost, .favourite, .poll,
         ]
-        if api >= Version(3, 1) {
+        if api >= Version(3,1) {
             types = types.union([.followRequest])
         }
-        if api >= Version(3, 3) {
+        if api >= Version(3,3) {
             types = types.union([.post])
         }
-        if api >= Version(3, 5) {
+        if api >= Version(3,5) {
             types = types.union([.update, .adminSignUp])
         }
-        if api >= Version(4, 0) {
+        if api >= Version(4,0) {
             types = types.union([.adminReport])
         }
-        if api >= Version(4, 3) {
+        if api >= Version(4,3) {
             types = types.union([.severedRelationships])
         }
         return types
@@ -266,7 +268,7 @@ open class MastoAPI: Platform {
     }
 
     open var boostVis: PostVisibilities {
-        api >= Version(2, 8) ? [.public, .unlisted, .private] : []
+        api >= Version(2,8) ? [.public, .unlisted, .private] : []
     }
 
     let reportCats35: ReportCats = [

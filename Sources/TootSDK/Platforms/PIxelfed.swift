@@ -95,6 +95,6 @@ open class Pixelfed: MastoCompatible {
     }
 
     // doesn't support suggestions
-    open override var suggestionSources: SuggestionSources { [] }
+    open override var suggestionsLimit: Int { 0 }
 
 }

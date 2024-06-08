@@ -57,6 +57,9 @@ open class Mitra: MastoCompatible {
     open override func directoryLimit(_ auth: Bool) -> Int {
         auth ? super.directoryLimit(auth) : 0
     }
+    
+    // doesn't support suggestions
+    open override var suggestionsLimit: Int { 0 }
 
     /// trends not supported
     open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }
