@@ -59,7 +59,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Approve the given local account if it is currently pending approval.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -71,7 +71,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Reject the given local account if it is currently pending approval.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -83,7 +83,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Permanently delete data for a suspended account.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -95,7 +95,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Re-enable a local account whose login is currently disabled.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -107,7 +107,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Unsilence an account if it is currently silenced.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -119,7 +119,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Unsuspend an account if it is currently suspended.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
@@ -131,7 +131,7 @@ extension TootClient {
         }
         return try await fetch(AdminAccount.self, req)
     }
-    
+
     /// Stops marking an account’s posts as sensitive, if it was previously flagged as sensitive.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve
