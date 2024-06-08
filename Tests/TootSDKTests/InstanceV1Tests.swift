@@ -117,7 +117,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testMicrodotblog() throws {
         // arrange
         let json = localContent("instancev1_microdotblog")

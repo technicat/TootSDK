@@ -52,7 +52,7 @@ open class Mitra: MastoCompatible {
     open override var maxAltText: Int {
         build >= Version(2, 17, 1) ? 3000 : 1500
     }
-    
+
     /// profile directory requires auth
     open override func directoryLimit(_ auth: Bool) -> Int {
         auth ? super.directoryLimit(auth) : 0

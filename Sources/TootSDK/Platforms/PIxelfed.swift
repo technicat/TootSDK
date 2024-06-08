@@ -42,7 +42,7 @@ open class Pixelfed: MastoCompatible {
     open override var supportsTagStats: Bool { false }
 
     // limits
-    
+
     // public timeline not supported
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         auth ? super.getLimit(for: timeline, auth) : 0

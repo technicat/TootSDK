@@ -63,7 +63,7 @@ open class GotoSocial: MastoCompatible {
     open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }
     open override func trendingPostsLimit(_ auth: Bool) -> Int { 0 }
     open override func trendingTagsLimit(_ auth: Bool) -> Int { 0 }
-    
+
     // public timeline not supported
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         auth ? super.getLimit(for: timeline, auth) : 0

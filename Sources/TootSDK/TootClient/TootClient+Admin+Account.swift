@@ -47,7 +47,7 @@ extension TootClient {
 
         return try await fetchPagedResult(req)
     }
-    
+
     /// View admin-level information about the given account.
     /// - Parameter id: the ID of the Account in the instance database.
     /// - Returns: the account requested, or an error if unable to retrieve

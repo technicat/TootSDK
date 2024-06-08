@@ -5,12 +5,12 @@ open class Snac: MastoAPI {
 
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsInstanceV2: Bool { false }
-    
+
     /// profile directory requires auth
     open override func directoryLimit(_ auth: Bool) -> Int {
         auth ? super.directoryLimit(auth) : 0
     }
-    
+
     // public trends not supported
     open override func trendingLinksLimit(_ auth: Bool) -> Int {
         auth ? super.trendingLinksLimit(auth) : 0
@@ -21,6 +21,6 @@ open class Snac: MastoAPI {
     open override func trendingTagsLimit(_ auth: Bool) -> Int {
         auth ? super.trendingTagsLimit(auth) : 0
     }
-    
+
     open override var supportsTranslate: Bool { false }
 }

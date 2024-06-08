@@ -65,7 +65,7 @@ open class MastoAPI: Platform {
 
     open var supportsListReplyPolicy: Bool { api >= Version(3, 3) }
     open var supportsListExclusive: Bool { api >= Version(4, 2) }
-    
+
     open var supportsLogin: Bool { true }
 
     open var supportsMarkers: Bool { api >= Version(3, 0) }
