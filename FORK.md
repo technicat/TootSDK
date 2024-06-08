@@ -1,9 +1,8 @@
 This fork is geared toward supporting [Fedicat](https://fedicat.com) and changes daily, so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Not much effort is made to maintain the admin and demo apps. Here's a summary of the changes:
 
-## TootExt
+## TootOO
 
-A layer of TootClient extensions that provides a more convenient interface to the app, also could be a separate package.
-
+A layer of TootClient extensions that provides an object-oriented interface (this could be a separate package, and was, but bundled here for convenience).
 
 - Operates on TootSDK objects instead of ids (e.g. `client.boost(post)` instead of `client.boostPost(id: post.id)`) and takes individual parameters instead of param structs.
 
