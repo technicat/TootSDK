@@ -10,6 +10,7 @@ import Foundation
 extension TootClient {
 
     /// See all currently active announcements set by admins.
+    /// https://docs.joinmastodon.org/methods/announcements/#get
     public func getAnnouncements(params: AnnouncementParams = .init()) async throws -> [Announcement] {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "announcements"])
