@@ -58,7 +58,7 @@ open class GotoSocial: MastoCompatible {
 
     // scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
-    
+
     // suggestions not supported
     open override var suggestionsLimit: Int { 0 }
 
