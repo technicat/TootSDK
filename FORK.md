@@ -28,7 +28,11 @@ An instance getter is provided for deriving platforms from instance version stri
 
 ### Admin Functions
 
-In-progress
+Added most of the account operations.
+
+### Follow Requests
+
+Consistent with other functions, made `limit` optional in `TootClient.getFollowRequests` and removed the max limit enforcement.
 
 ### Instance
 
