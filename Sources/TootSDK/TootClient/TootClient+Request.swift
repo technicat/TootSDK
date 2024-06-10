@@ -63,7 +63,9 @@ extension TootClient {
         let createAppData = CreateAppRequest(
             clientName: clientName,
             redirectUris: callbackURI,
-            scopes: scopes.joined(separator: " "), website: website)
+            scopes: scopes.joined(separator: " ")
+            //, website: website
+        )
 
         let registerAppReq = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "apps"])
