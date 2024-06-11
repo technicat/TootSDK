@@ -45,6 +45,10 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - added `getPeers`
 - make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
 
+### Login
+
+- Remove `website` from `CreateAppRequest` as it's only relevant for webapps and it breaks iceshrimp.net (which treats a supplied website as indication that this is a webapp).
+
 ### Notifications
 
 - `TootClient.getNotifications()` takes an optional with `include_types` parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying `types` (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
@@ -57,6 +61,7 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - Moved Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
 - Added `local` visibility for Pleroma and Akkoma.
 - Added `mutualsOnly` visibility for GotoSocial.
+- Added `Post.Application` instead of repurposing `TootApplication`.
 
 ### PostEdit
 
