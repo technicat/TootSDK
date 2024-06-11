@@ -10,5 +10,5 @@ struct CreateAppRequest: Hashable, Codable {
     // spec says this is optional
     let scopes: String
     // not a webapp and breaks on iceshrimp.net
-   // let website: String
+    // let website: String
 }

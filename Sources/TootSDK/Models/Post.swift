@@ -241,7 +241,7 @@ extension Post: Hashable {
         hasher.combine(pinned)
         hasher.combine(filtered)
     }
-    
+
     /// https://docs.joinmastodon.org/entities/Status/#application
     public struct Application: Codable, Hashable {
         public init(
