@@ -16,7 +16,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
         sensitive: Bool,
         spoilerText: String,
         mediaAttachments: [MediaAttachment],
-        application: TootApplication?,
+        application: Application?,
         mentions: [Mention],
         tags: [Tag],
         emojis: [Emoji],
@@ -92,7 +92,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// Media that is attached to this post.
     public var mediaAttachments: [MediaAttachment]
     /// The application used to post this post.
-    public var application: TootApplication?
+    public var application: Application?
 
     /// Mentions of users within the post content.
     public var mentions: [Mention]
@@ -241,6 +241,23 @@ extension Post: Hashable {
         hasher.combine(pinned)
         hasher.combine(filtered)
     }
+    
+    /// https://docs.joinmastodon.org/entities/Status/#application
+    public struct Application: Codable, Hashable {
+        public init(
+            name: String,
+            website: String? = nil
+        ) {
+            self.name = name
+            self.website = website
+        }
+
+        /// The name of your application.
+        public var name: String
+        ///  The website associated with your application.
+        public var website: String?
+    }
+
 }
 
 extension Post {

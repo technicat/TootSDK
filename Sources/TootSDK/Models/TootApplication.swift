@@ -4,6 +4,7 @@
 import Foundation
 
 /// Represents an application that interfaces with the REST API to access accounts or posts.
+/// https://docs.joinmastodon.org/entities/Application/
 public struct TootApplication: Codable, Hashable, Identifiable {
     public init(
         name: String,
@@ -28,6 +29,7 @@ public struct TootApplication: Codable, Hashable, Identifiable {
     ///  The website associated with your application.
     public var website: String?
     /// Used for Push Streaming API. Returned with POST /api/v1/apps. Equivalent to PushSubscription#server_key
+    /// deprecated
     public var vapidKey: String?
 
     // MARK: - client attributes
