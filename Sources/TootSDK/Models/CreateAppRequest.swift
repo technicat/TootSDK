@@ -3,10 +3,12 @@
 
 import Foundation
 
+/// https://docs.joinmastodon.org/methods/apps/#create
 struct CreateAppRequest: Hashable, Codable {
     let clientName: String
     let redirectUris: String
+    // spec says this is optional
     let scopes: String
-    // iceshrimp.net
+    // not a webapp and breaks on iceshrimp.net
    // let website: String
 }

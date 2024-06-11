@@ -53,6 +53,7 @@ extension TootClient {
         return queryParameters
     }
 
+    /// https://docs.joinmastodon.org/methods/apps/#create
     internal func getAuthorizationInfo(
         callbackURI: String,
         scopes: [String],
