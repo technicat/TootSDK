@@ -56,7 +56,7 @@ extension TootClient {
     /// https://docs.joinmastodon.org/methods/apps/#create
     internal func getAuthorizationInfo(
         callbackURI: String,
-        scopes: [String], // should default to nil
+        scopes: [String]? = nil, // should default to nil
        website: String? = nil,
         responseType: String = "code"
     ) async throws -> CallbackInfo {
@@ -64,7 +64,7 @@ extension TootClient {
         let createAppData = CreateAppRequest(
             clientName: clientName,
             redirectUris: callbackURI,
-            scopes: scopes.joined(separator: " "),
+            scopes: scopes?.joined(separator: " "),
             website: website
         )
 
@@ -84,7 +84,9 @@ extension TootClient {
             $0.url = getURL(["oauth", "authorize"])
             $0.addQueryParameter(name: "client_id", value: clientId)
             $0.addQueryParameter(name: "redirect_uri", value: callbackURI)
-            $0.addQueryParameter(name: "scope", value: scopes.joined(separator: " "))
+            if let scopes {
+                $0.addQueryParameter(name: "scope", value: scopes.joined(separator: " "))
+            }
             $0.addQueryParameter(name: "response_type", value: responseType)
         }
 
