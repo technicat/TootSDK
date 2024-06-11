@@ -56,16 +56,16 @@ extension TootClient {
     /// https://docs.joinmastodon.org/methods/apps/#create
     internal func getAuthorizationInfo(
         callbackURI: String,
-        scopes: [String],
-        website: String = "",
+        scopes: [String], // should default to nil
+       website: String? = nil,
         responseType: String = "code"
     ) async throws -> CallbackInfo {
 
         let createAppData = CreateAppRequest(
             clientName: clientName,
             redirectUris: callbackURI,
-            scopes: scopes.joined(separator: " ")
-            //, website: website
+            scopes: scopes.joined(separator: " "),
+            website: website
         )
 
         let registerAppReq = try HTTPRequestBuilder {
