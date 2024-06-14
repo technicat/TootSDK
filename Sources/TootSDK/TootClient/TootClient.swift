@@ -53,7 +53,7 @@ public class TootClient: @unchecked Sendable {
         session: URLSession = URLSession.shared,
         instanceURL: URL,
         accessToken: String? = nil,
-        scopes: [String]? = nil //  = ["read", "write", "follow", "push"]
+        scopes: [String]? = nil  //  = ["read", "write", "follow", "push"]
     ) {
         self.session = session
         self.instanceURL = instanceURL

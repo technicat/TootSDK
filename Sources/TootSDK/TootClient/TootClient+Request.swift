@@ -56,8 +56,8 @@ extension TootClient {
     /// https://docs.joinmastodon.org/methods/apps/#create
     internal func getAuthorizationInfo(
         callbackURI: String,
-        scopes: [String]? = nil, // should default to nil
-       website: String? = nil,
+        scopes: [String]? = nil,  // should default to nil
+        website: String? = nil,
         responseType: String = "code"
     ) async throws -> CallbackInfo {
 
@@ -99,7 +99,7 @@ extension TootClient {
 
     internal func getAccessToken(
         code: String?, clientId: String, clientSecret: String, callbackURI: String, grantType: String = "authorization_code",
-        scopes: [String]? = nil //  = ["read", "write", "follow", "push"]
+        scopes: [String]? = nil  //  = ["read", "write", "follow", "push"]
     ) async throws -> AccessToken {
 
         let queryItems: [URLQueryItem] = [
