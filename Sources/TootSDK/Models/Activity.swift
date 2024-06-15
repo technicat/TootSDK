@@ -31,24 +31,13 @@ public struct Activity: Codable, Hashable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        guard let posts = Int(try container.decode(String.self, forKey: .posts)) else {
-            throw TootSDKError.decodingError("posts")
-        }
-        self.posts = posts
+        // spec says these are strings
+        // but Takahe return ints (which makes more sense)
+        self.posts = try container.decodeIntFromString(forKey: .posts)
+        self.logins = try container.decodeIntFromString(forKey: .logins)
+        self.registrations = try container.decodeIntFromString(forKey: .registrations)
 
-        guard let logins = Int(try container.decode(String.self, forKey: .logins)) else {
-            throw TootSDKError.decodingError("logins")
-        }
-        self.logins = logins
-
-        guard let registrations = Int(try container.decode(String.self, forKey: .registrations)) else {
-            throw TootSDKError.decodingError("registrations")
-        }
-        self.registrations = registrations
-
-        guard let weekUnixEpoc = Int(try container.decode(String.self, forKey: .week)) else {
-            throw TootSDKError.decodingError("weekUnixEpoc")
-        }
+        let weekUnixEpoc = try container.decodeIntFromString(forKey: .week)
         self.week = Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
     }
 
