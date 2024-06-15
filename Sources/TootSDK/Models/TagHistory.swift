@@ -7,20 +7,37 @@ extension Tag {
     /// Represents daily usage history of a hashtag.
     public struct History: Codable, Hashable, Sendable {
         public init(
-            day: String,
-            uses: String,
-            accounts: String
+            day: Date,
+            uses: Int,
+            accounts: Int
         ) {
             self.day = day
             self.uses = uses
             self.accounts = accounts
         }
-
+        
         /// UNIX timestamp on midnight of the given day.
-        public let day: String
+        public var day: Date
         /// the counted usage of the hashtag within that day.
-        public let uses: String
+        public var uses: Int
         /// the total of accounts using the hashtag within that day.
-        public let accounts: String
+        public var accounts: Int
+        
+        enum CodingKeys: String, CodingKey {
+            case day
+            case uses
+            case accounts
+        }
+        
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            // spec says these are strings
+            // but Takahe return ints (which makes more sense)
+            self.uses = try container.decodeIntFromString(forKey: .uses)
+            self.accounts = try container.decodeIntFromString(forKey: .accounts)
+            
+            let weekUnixEpoc = try container.decodeIntFromString(forKey: .day)
+            self.day = Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
+        }
     }
 }
