@@ -92,6 +92,10 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - Reporting accounts/posts on Pixelfed is moved to a separate function that takes `PixelfedReportParams`
 - Filled in remaining `Report` fields added with Mastodon 4.0
 
+### Tag
+
+- `Tag.History` has `Date` and `Int` fields instead of `String`
+
 ### Timeline
 
 - Add `direct` timeline for Mitra, Pleroma, and Akkoma
