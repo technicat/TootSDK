@@ -43,7 +43,11 @@ public protocol Platform {
     var supportsIndexable: Bool { get }
     /// instance usage stats
     var supportsInstanceActivity: Bool { get }
+    ///
     var supportsInstanceExtendedDescription: Bool { get }
+    /// query for rules (separate from instance v1/v2)
+    var supportsInstanceRules: Bool { get }
+    /// 
     var supportsInstanceV2: Bool { get }
     // only need this because it's broken on Firefish and Sharkey
     var supportsIsBoosted: Bool { get }
