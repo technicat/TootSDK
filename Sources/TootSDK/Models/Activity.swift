@@ -4,6 +4,7 @@
 import Foundation
 
 /// Represents a weekly bucket of instance activity.
+/// https://docs.joinmastodon.org/methods/instance/#activity
 public struct Activity: Codable, Hashable {
     public init(week: Date, posts: Int, logins: Int, registrations: Int) {
         self.week = week
@@ -13,13 +14,13 @@ public struct Activity: Codable, Hashable {
     }
 
     /// Midnight at the first day of the week.
-    var week: Date
+    public var week: Date
     /// posts created since the week began.
-    var posts: Int
+    public var posts: Int
     /// User logins since the week began.
-    var logins: Int
+    public var logins: Int
     /// User registrations since the week began.
-    var registrations: Int
+    public var registrations: Int
 
     enum CodingKeys: String, CodingKey {
         case week
