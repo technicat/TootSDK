@@ -4,6 +4,8 @@ open class MisskeyFork: MastoAPI {
 
     open override var supportsFeaturedTags: Bool { false }
 
+    open override var supportsInstanceActivity: Bool { false }
+    
     open override var supportsIsBoosted: Bool { false }
 
     open override var supportsNote: Bool { false }
