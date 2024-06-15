@@ -7,6 +7,8 @@ open class Mitra: MastoCompatible {
     open override var supportsFamiliarFollowers: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
     open override var supportsFilter: Bool { false }
+    /// doesn't support instance stats
+    open override var supportsInstanceActivity: Bool { false }
     open override var supportsInstanceExtendedDescription: Bool { false }
     open override var supportsInstanceV2: Bool { build >= Version(2, 18) }
     open override var supportsNote: Bool { false }

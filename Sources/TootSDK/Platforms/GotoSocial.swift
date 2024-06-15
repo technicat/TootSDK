@@ -23,6 +23,8 @@ open class GotoSocial: MastoCompatible {
     open override var blockedDomainsLimit: Int { 0 }
     /// doesn't support featured tags
     open override var supportsFeaturedTags: Bool { false }
+    /// doesn't support instance stats
+    open override var supportsInstanceActivity: Bool { false }
     /// supports Instance V2
     open override var supportsInstanceV2: Bool { true }
     /// doesn't support deleting a notifitation
