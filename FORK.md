@@ -42,8 +42,10 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
 - Moved `Configuration` up so it  an be shared among the two instance versions
 - `InstanceRule` text is not optional
-- added `getPeers`
+- added `TootClient.getInstancePeers`
 - make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
+- added `TootClient.getInstanceActivity`
+- made `Activity` fields public
 
 ### Login
 
