@@ -2,6 +2,13 @@ import Foundation
 
 extension Tag {
 
+    public var hasHistory: Bool {
+        guard let history else {
+            return false
+        }
+        return !history.isEmpty
+    }
+
     public var uses: Int {
         guard let history else {
             return 0
