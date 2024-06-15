@@ -25,7 +25,7 @@ extension TootClient {
         }
         return try await fetch(InstanceV2.self, req)
     }
-    
+
     /// https://docs.joinmastodon.org/methods/instance/#activity
     public func getInstanceActivity() async throws -> [Activity] {
         let req = HTTPRequestBuilder {
@@ -34,7 +34,7 @@ extension TootClient {
         }
         return try await fetch([Activity].self, req)
     }
-    
+
     /// Obtain an extended description of this server
     /// https://docs.joinmastodon.org/methods/instance/#extended_description
     public func getExtendedDescription() async throws -> ExtendedDescription {
