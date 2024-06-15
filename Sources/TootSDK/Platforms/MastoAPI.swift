@@ -50,7 +50,7 @@ open class MastoAPI: Platform {
 
     /// V1 instance
     open var supportsInstance: Bool { api >= Version(1, 1) }
-/// https://docs.joinmastodon.org/methods/instance/#activity
+    /// https://docs.joinmastodon.org/methods/instance/#activity
     open var supportsInstanceActivity: Bool { api >= Version(2, 1, 2) }
     open var supportsInstanceConfig: Bool { api >= Version(3, 4, 2) }
     open var supportsInstanceConfigAccount: Bool { api >= Version(4, 0) }
