@@ -6,6 +6,8 @@ open class Pleroma: MastoCompatible {
     // supports
 
     open override var supportsFeaturedTags: Bool { false }
+    
+    open override var supportsInstanceActivity: Bool { false }
 
     open override var supportsScheduleUpdate: Bool { false }
 

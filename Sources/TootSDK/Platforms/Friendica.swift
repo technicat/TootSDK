@@ -5,6 +5,7 @@ open class Friendica: MastoAPI {
     open override var supportsPostDeleteAndEdit: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
     // open override var supportsFollowTag: Bool { true }
+    open override var supportsInstanceActivity: Bool { false }
     open override var supportsPollVote: Bool { false }
     open override var supportsProfileFields: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
