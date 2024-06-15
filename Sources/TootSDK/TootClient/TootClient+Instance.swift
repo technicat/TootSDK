@@ -25,6 +25,25 @@ extension TootClient {
         }
         return try await fetch(InstanceV2.self, req)
     }
+    
+    /// https://docs.joinmastodon.org/methods/instance/#activity
+    public func getInstanceActivity() async throws -> [Activity] {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "instance", "activity"])
+            $0.method = .get
+        }
+        return try await fetch([Activity].self, req)
+    }
+    
+    /// Obtain an extended description of this server
+    /// https://docs.joinmastodon.org/methods/instance/#extended_description
+    public func getExtendedDescription() async throws -> ExtendedDescription {
+        let req = HTTPRequestBuilder {
+            $0.url = getURL(["api", "v1", "instance", "extended_description"])
+            $0.method = .get
+        }
+        return try await fetch(ExtendedDescription.self, req)
+    }
 
     /// https://docs.joinmastodon.org/methods/instance/#peers
     public func getInstancePeers() async throws -> [String] {
@@ -44,16 +63,8 @@ extension TootClient {
         return try await fetch([InstanceRule].self, req)
     }
 
-    /// Obtain an extended description of this server
-    public func getExtendedDescription() async throws -> ExtendedDescription {
-        let req = HTTPRequestBuilder {
-            $0.url = getURL(["api", "v1", "instance", "extended_description"])
-            $0.method = .get
-        }
-        return try await fetch(ExtendedDescription.self, req)
-    }
-
     /// Translation language pairs supported by the translation engine used by the server.
+    /// https://docs.joinmastodon.org/methods/instance/#translation_languages
     public func getTranslationLanguages() async throws -> [String: [String]] {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "instance", "translation_languages"])
