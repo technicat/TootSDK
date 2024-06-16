@@ -94,6 +94,14 @@ public struct InstanceV1: Codable, Hashable {
             case postCount = "statusCount"
             case domainCount
         }
+        
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            // pixelfed returns postCount as a string
+            self.userCount = try container.decodeIntFromString(forKey: .userCount)
+            self.postCount = try container.decodeIntFromString(forKey: .postCount)
+            self.domainCount = try container.decodeIntFromString(forKey: .domainCount)
+        }
     }
 
     public init(from decoder: Decoder) throws {
