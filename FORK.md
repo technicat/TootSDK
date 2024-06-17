@@ -94,7 +94,8 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 ### Tag
 
-- `Tag.History` has `Date` and `Int` fields instead of `String`
+- Change `Tag.History` to `TagHistory` (shared with `AdminTag`)
+- `TagHistory` has `Date` and `Int` fields instead of `String`
 
 ### Timeline
 
