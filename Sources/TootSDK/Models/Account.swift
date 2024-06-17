@@ -4,6 +4,7 @@
 import Foundation
 
 /// Represents a user  and their associated profile.
+/// Has a recursive reference (moved) so must be a class
 public class Account: Codable, Identifiable, @unchecked Sendable {
     public init(
         id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String? = nil,

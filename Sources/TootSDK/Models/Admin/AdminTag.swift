@@ -1,6 +1,6 @@
 //
 //  AdminTag.swift
-//  
+//
 //
 //  Created by Philip Chu on 6/16/24.
 //
@@ -10,7 +10,10 @@ import Foundation
 /// Represents a hashtag used within the content of a post.
 /// https://docs.joinmastodon.org/entities/Tag/
 public struct AdminTag: Codable, Hashable, Sendable, Identifiable {
-    public init(name: String, url: String, history: [TagHistory]? = nil, following: Bool? = nil, id: String, trendable: Bool, usable: Bool, requiresReview: Bool) {
+    public init(
+        name: String, url: String, history: [TagHistory]? = nil, following: Bool? = nil, id: String, trendable: Bool, usable: Bool,
+        requiresReview: Bool
+    ) {
         self.name = name
         self.url = url
         self.history = history

@@ -16,7 +16,7 @@ open class Pixelfed: MastoCompatible {
 
     // changelog says it's added but doesn't seem to set
     // open override var supportsIndexable: Bool { build >= Version(0,11,10) }
-    
+
     open override var supportsInstanceActivity: Bool { false }
 
     open override var supportsNote: Bool { false }
