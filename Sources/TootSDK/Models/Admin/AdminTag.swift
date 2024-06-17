@@ -8,7 +8,8 @@
 import Foundation
 
 /// Represents a hashtag used within the content of a post.
-public struct AdminTag: Codable, Hashable, Sendable {
+/// https://docs.joinmastodon.org/entities/Tag/
+public struct AdminTag: Codable, Hashable, Sendable, Identifiable {
     public init(name: String, url: String, history: [TagHistory]? = nil, following: Bool? = nil, id: String, trendable: Bool, usable: Bool, requiresReview: Bool) {
         self.name = name
         self.url = url
@@ -28,6 +29,7 @@ public struct AdminTag: Codable, Hashable, Sendable {
     public let history: [TagHistory]?
     /// Are you following this tag?
     public let following: Bool?
+    // admin stuff
     /// The ID of the Tag in the database.
     public let id: String
     /// Whether the hashtag has been approved to trend.
