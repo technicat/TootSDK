@@ -16,7 +16,7 @@ extension Tag {
         return history.reduce(
             0,
             { x, y in
-                x + (Int(y.uses) ?? 0)
+                x + y.uses
             })
     }
 
@@ -27,7 +27,7 @@ extension Tag {
         return history.reduce(
             0,
             { x, y in
-                x + (Int(y.accounts) ?? 0)
+                x + y.accounts
             })
     }
 }
