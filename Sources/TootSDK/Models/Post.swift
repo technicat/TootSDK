@@ -5,6 +5,7 @@ import Foundation
 
 /// Represents a post posted by an account.
 /// https://docs.joinmastodon.org/entities/Status/
+/// note - must be a class because of recursive reference
 public class Post: Codable, Identifiable, @unchecked Sendable {
     public init(
         id: String,

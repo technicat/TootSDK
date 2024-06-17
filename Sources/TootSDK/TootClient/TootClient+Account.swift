@@ -29,17 +29,17 @@ extension TootClient {
 
     /// A test to make sure that the user token works, and retrieves the account information
     /// - Returns: Returns the current authenticated user's account, or throws an error if unable to retrieve
-    public func verifyCredentials() async throws -> Account {
+    public func verifyCredentials() async throws -> CredentialAccount {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "verify_credentials"])
             $0.method = .get
         }
-        return try await fetch(Account.self, req)
+        return try await fetch(CredentialAccount.self, req)
     }
 
     /// Update the user’s display and preferences.
     /// - Returns: The user’s own Account with source attribute
-    public func updateCredentials(params: UpdateCredentialsParams) async throws -> Account {
+    public func updateCredentials(params: UpdateCredentialsParams) async throws -> CredentialAccount {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
             $0.method = .patch
@@ -104,7 +104,7 @@ extension TootClient {
             parts.append(contentsOf: getSourceParts(params))
             $0.body = try .multipart(parts, boundary: UUID().uuidString)
         }
-        return try await fetch(Account.self, req)
+        return try await fetch(CredentialAccount.self, req)
     }
 
     func getFieldParts(_ params: UpdateCredentialsParams) -> [MultipartPart] {
@@ -250,24 +250,24 @@ extension TootClient {
 
     /// Deletes the avatar associated with the user’s profile.
     @discardableResult
-    public func deleteProfileAvatar() async throws -> Account {
+    public func deleteProfileAvatar() async throws -> CredentialAccount {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "profile", "avatar"])
             $0.method = .delete
         }
 
-        return try await fetch(Account.self, req)
+        return try await fetch(CredentialAccount.self, req)
     }
 
     /// Deletes the header image associated with the user’s profile.
     @discardableResult
-    public func deleteProfileHeader() async throws -> Account {
+    public func deleteProfileHeader() async throws -> CredentialAccount {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "profile", "header"])
             $0.method = .delete
         }
 
-        return try await fetch(Account.self, req)
+        return try await fetch(CredentialAccount.self, req)
     }
 
     /// Looks up an account based on it's account name or URI, and returns a payload that contains the instance's account id

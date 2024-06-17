@@ -9,6 +9,7 @@ import Foundation
 
 /// Represents a hashtag used within the content of a post.
 /// https://docs.joinmastodon.org/entities/Tag/
+/// todo - make this a subclass of Tag?
 public struct AdminTag: Codable, Hashable, Sendable, Identifiable {
     public init(
         name: String, url: String, history: [TagHistory]? = nil, following: Bool? = nil, id: String, trendable: Bool, usable: Bool,

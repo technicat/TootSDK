@@ -3,7 +3,7 @@ import Foundation
 extension TootClient {
 
     /// https://docs.joinmastodon.org/methods/accounts/#verify_credentials
-    public func getAccount() async throws -> Account {
+    public func getAccount() async throws -> CredentialAccount {
         try await verifyCredentials()
     }
 
@@ -15,7 +15,7 @@ extension TootClient {
         discoverable: Bool? = nil,
         hideCollections: Bool? = nil,
         indexable: Bool? = nil
-    ) async throws -> Account {
+    ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParams(
             locked: locked,
             bot: bot,
@@ -29,7 +29,7 @@ extension TootClient {
     @discardableResult
     public func updatePixelfedAccountSettings(
         locked: Bool? = nil
-    ) async throws -> Account {
+    ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParamsPixelfed(
             locked: locked)
         return try await updateCredentials(params: params)
@@ -39,7 +39,7 @@ extension TootClient {
         privacy: PostVisibility? = nil,
         sensitive: Bool? = nil,
         language: ISOCode? = nil
-    ) async throws -> Account {
+    ) async throws -> CredentialAccount {
         let source = UpdateCredentialsParams.Source(
             privacy: privacy,
             sensitive: sensitive,
@@ -58,7 +58,7 @@ extension TootClient {
         header: Data? = nil,
         headerMimeType: MIMEType? = nil,
         fields: [String: UpdateCredentialsParams.Field]? = nil
-    ) async throws -> Account {
+    ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParams(
             displayName: displayName,
             note: note,
@@ -75,7 +75,7 @@ extension TootClient {
         displayName: String? = nil,
         note: String? = nil,
         avatar: Data? = nil
-    ) async throws -> Account {
+    ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParamsPixelfed(
             displayName: displayName,
             note: note,
@@ -84,12 +84,12 @@ extension TootClient {
     }
 
     /// https://docs.joinmastodon.org/methods/profile/#delete-profile-avatar
-    public func deleteAvatar() async throws -> Account {
+    public func deleteAvatar() async throws -> CredentialAccount {
         try await deleteProfileAvatar()
     }
 
     /// https://docs.joinmastodon.org/methods/profile/#delete-profile-header
-    public func deleteHeader() async throws -> Account {
+    public func deleteHeader() async throws -> CredentialAccount {
         try await deleteProfileHeader()
     }
 

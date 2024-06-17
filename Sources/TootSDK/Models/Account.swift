@@ -227,3 +227,6 @@ extension Account: CustomDebugStringConvertible {
         return "Account with id: \(id)"
     }
 }
+
+public class CredentialAccount: Account {
+}
