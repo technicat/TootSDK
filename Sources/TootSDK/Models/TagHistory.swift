@@ -3,9 +3,8 @@
 
 import Foundation
 
-extension Tag {
     /// Represents daily usage history of a hashtag.
-    public struct History: Codable, Hashable, Sendable {
+    public struct TagHistory: Codable, Hashable, Sendable {
         public init(
             day: Date,
             uses: Int,
@@ -40,4 +39,3 @@ extension Tag {
             self.day = Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
         }
     }
-}

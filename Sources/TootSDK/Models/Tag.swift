@@ -4,8 +4,9 @@
 import Foundation
 
 /// Represents a hashtag used within the content of a post.
+/// https://docs.joinmastodon.org/entities/Tag/
 public struct Tag: Codable, Hashable, Sendable {
-    public init(name: String, url: String, history: [History]? = nil, following: Bool? = nil) {
+    public init(name: String, url: String, history: [TagHistory]? = nil, following: Bool? = nil) {
         self.name = name
         self.url = url
         self.history = history
@@ -17,7 +18,7 @@ public struct Tag: Codable, Hashable, Sendable {
     /// A link to the hashtag on the instance.
     public let url: String
     /// Usage statistics for given days.
-    public let history: [History]?
+    public let history: [TagHistory]?
     /// Are you following this tag?
     public let following: Bool?
 }
