@@ -98,28 +98,28 @@ public struct InstanceV1: Codable, Hashable {
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             // pixelfed returns postCount as a string
-            self.userCount = try container.decodeIntFromString(forKey: .userCount)
-            self.postCount = try container.decodeIntFromString(forKey: .postCount)
-            self.domainCount = try container.decodeIntFromString(forKey: .domainCount)
+            self.userCount = try container.decodeOptionalIntFromString(forKey: .userCount)
+            self.postCount = try container.decodeOptionalIntFromString(forKey: .postCount)
+            self.domainCount = try container.decodeOptionalIntFromString(forKey: .domainCount)
         }
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.uri = try container.decode(String.self, forKey: .uri)
-        self.title = try? container.decodeIfPresent(String.self, forKey: .title)
-        self.description = try? container.decodeIfPresent(String.self, forKey: .description)
-        self.shortDescription = try? container.decodeIfPresent(String.self, forKey: .shortDescription)
-        self.email = try? container.decodeIfPresent(String.self, forKey: .email)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title)
+        self.description = try container.decodeIfPresent(String.self, forKey: .description)
+        self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
+        self.email = try container.decodeIfPresent(String.self, forKey: .email)
         self.version = try container.decode(String.self, forKey: .version)
-        self.languages = try? container.decodeIfPresent([String].self, forKey: .languages)
-        self.registrations = try? container.decodeIfPresent(Bool.self, forKey: .registrations)
-        self.approvalRequired = try? container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
-        self.invitesEnabled = try? container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
-        self.urls = try? container.decodeIfPresent(InstanceURLs.self, forKey: .urls)
+        self.languages = try container.decodeIfPresent([String].self, forKey: .languages)
+        self.registrations = try container.decodeIfPresent(Bool.self, forKey: .registrations)
+        self.approvalRequired = try container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
+        self.invitesEnabled = try container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
+        self.urls = try container.decodeIfPresent(InstanceURLs.self, forKey: .urls)
         self.stats = try container.decodeIfPresent(Stats.self, forKey: .stats)
-        self.thumbnail = try? container.decodeIfPresent(String.self, forKey: .thumbnail)
-        self.configuration = try? container.decodeIfPresent(Configuration.self, forKey: .configuration)
+        self.thumbnail = try container.decodeIfPresent(String.self, forKey: .thumbnail)
+        self.configuration = try container.decodeIfPresent(Configuration.self, forKey: .configuration)
         // also handles some friendica instances returning []
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
