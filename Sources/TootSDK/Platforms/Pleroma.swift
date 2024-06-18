@@ -8,7 +8,7 @@ open class Pleroma: MastoCompatible {
     open override var supportsFeaturedTags: Bool { false }
 
     open override var supportsInstanceActivity: Bool { false }
-
+    open override var supportsMuteNotifications: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
 
     open override var supportsPostDefaultLanguage: Bool { false }
