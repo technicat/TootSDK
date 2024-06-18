@@ -28,6 +28,7 @@ An instance getter is provided for deriving platforms from instance version stri
 - created `CredentialAccount` and split up the fields accordingly
 - removed the non-decoding initializer
 - return `CredentialAccount` from the appropriate functions, per the spec
+- created `MutedAccount`, returned from `getMutedAccounts`
 
 ### Admin Functions
 
