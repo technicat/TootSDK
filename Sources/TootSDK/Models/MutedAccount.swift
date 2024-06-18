@@ -13,7 +13,6 @@ public class MutedAccount: Account {
     
     /// When a timed mute will expire, if applicable.
     /// Only returned in getMutedAccounts
-    /// Move to MutedAccount? In spec, but not consistent.
     public let muteExpiresAt: Date?
 
     public enum CodingKeys: String, CodingKey {
