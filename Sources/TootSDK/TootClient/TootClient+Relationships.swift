@@ -102,7 +102,7 @@ extension TootClient {
     ///     - pageInfo: PagedInfo object for max/min/since
     ///     - limit: Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.
     /// - Returns: the accounts requested
-    public func getMutedAccounts(_ pageInfo: PagedInfo? = nil, limit: Int? = nil) async throws -> PagedResult<[Account]> {
+    public func getMutedAccounts(_ pageInfo: PagedInfo? = nil, limit: Int? = nil) async throws -> PagedResult<[MutedAccount]> {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "mutes"])
             $0.method = .get
