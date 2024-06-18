@@ -16,9 +16,11 @@ public struct Filter: Codable, Hashable, Identifiable {
     /// The action to be taken when a post matches this filter.
     public var filterAction: FilterAction
     /// The keywords grouped under this filter.
-    public var keywords: [FilterKeyword]
+    /// not returned when part of FilterResult
+    public var keywords: [FilterKeyword]?
     /// The posts grouped under this filter.
-    public var posts: [FilterPost]
+    /// not returned when part of FilterResult
+    public var posts: [FilterPost]?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -38,8 +40,8 @@ public struct Filter: Codable, Hashable, Identifiable {
         self.expiresAt = try? container.decodeIfPresent(Date.self, forKey: .expiresAt)
         self.filterAction = try container.decode(FilterAction.self, forKey: .filterAction)
         // not returned when part of FilterResult
-        self.keywords = (try? container.decodeIfPresent([FilterKeyword].self, forKey: .keywords)) ?? []
+        self.keywords = try container.decodeIfPresent([FilterKeyword].self, forKey: .keywords)
         // not returned when part of FilterResult
-        self.posts = (try? container.decodeIfPresent([FilterPost].self, forKey: .posts)) ?? []
+        self.posts = try container.decodeIfPresent([FilterPost].self, forKey: .posts)
     }
 }
