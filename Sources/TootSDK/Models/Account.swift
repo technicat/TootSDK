@@ -7,38 +7,6 @@ import Foundation
 /// Has a recursive reference (moved) so must be a class
 public class Account: Codable, Identifiable, @unchecked Sendable {
 
-//    required public init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.id = try container.decode(String.self, forKey: .id)
-//        self.username = try? container.decodeIfPresent(String.self, forKey: .username)
-//        self.acct = try container.decode(String.self, forKey: .acct)
-//        self.url = try container.decode(String.self, forKey: .url)
-//        self.displayName = try? container.decodeIfPresent(String.self, forKey: .displayName)
-//        self.note = try container.decode(String.self, forKey: .note)
-//        self.avatar = try? container.decodeIfPresent(String.self, forKey: .avatar)
-//        self.avatarStatic = try? container.decodeIfPresent(String.self, forKey: .avatarStatic)
-//        self.header = try container.decodeIfPresent(String.self, forKey: .header)
-//        self.headerStatic = try container.decodeIfPresent(String.self, forKey: .headerStatic)
-//        self.locked = try container.decode(Bool.self, forKey: .locked)
-//        // pixelfed doesn't include emojis in block/mute lists
-//        self.emojis = try container.decodeIfPresent([Emoji].self, forKey: .emojis)
-//        self.discoverable = try container.decodeIfPresent(Bool.self, forKey: .discoverable)
-//        self.createdAt = try container.decode(Date.self, forKey: .createdAt)
-//        self.lastPostAt = try container.decodeIfPresent(Date.self, forKey: .lastPostAt)
-//        self.postsCount = try container.decodeIfPresent(Int.self, forKey: .postsCount)
-//        self.followersCount = try container.decode(Int.self, forKey: .followersCount)
-//        self.followingCount = try container.decode(Int.self, forKey: .followingCount)
-//        self.noindex = try container.decodeIfPresent(Bool.self, forKey: .noindex)
-//        self.indexable = try container.decodeIfPresent(Bool.self, forKey: .indexable)
-//        self.hideCollections = try? container.decodeIfPresent(Bool.self, forKey: .hideCollections)
-//        self.moved = try container.decodeIfPresent(Account.self, forKey: .moved)
-//        self.suspended = try container.decodeIfPresent(Bool.self, forKey: .suspended)
-//        self.limited = try container.decodeIfPresent(Bool.self, forKey: .limited)
-//        self.fields = try container.decodeIfPresent([TootField].self, forKey: .fields)
-//        self.bot = try container.decodeIfPresent(Bool.self, forKey: .bot)
-//        self.group = try container.decodeIfPresent(Bool.self, forKey: .group)
-//    }
-
     /// The account id.
     public let id: String
     /// The username of the account, not including domain.
