@@ -1,4 +1,4 @@
-extension Account {
+extension CredentialAccount {
 
     public var defaultVisibility: PostVisibility {
         source?.privacy ?? .public

@@ -12,8 +12,7 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
         lastPostAt: Date? = nil, postsCount: Int? = nil, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
         suspended: Bool? = nil,
-        limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil, source: TootSource? = nil, role: TootRole? = nil,
-        website: String? = nil
+        limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil
     ) {
         self.id = id
         self.username = username
@@ -42,8 +41,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.fields = fields
         self.bot = bot
         self.group = group
-        self.source = source
-        self.role = role
     }
 
     required public init(from decoder: Decoder) throws {
@@ -77,8 +74,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.fields = (try? container.decodeIfPresent([TootField].self, forKey: .fields)) ?? []
         self.bot = try? container.decodeIfPresent(Bool.self, forKey: .bot)
         self.group = try? container.decodeIfPresent(Bool.self, forKey: .group)
-        self.source = try? container.decodeIfPresent(TootSource.self, forKey: .source)
-        self.role = try? container.decodeIfPresent(TootRole.self, forKey: .role)
     }
 
     /// The account id.
@@ -140,12 +135,6 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let bot: Bool?
     /// Indicates that the account represents a Group actor.
     public let group: Bool?
-    // the following are in CredentialAccount
-    // https://docs.joinmastodon.org/entities/Account/#CredentialAccount
-    /// An extra entity to be used with API methods to verify credentials and update credentials
-    public let source: TootSource?
-    /// The role assigned to the currently authorized user.
-    public let role: TootRole?
 }
 
 extension Account {
@@ -177,8 +166,6 @@ extension Account {
         case fields
         case bot
         case group
-        case source
-        case role
     }
 }
 
@@ -212,8 +199,6 @@ extension Account: Hashable {
         hasher.combine(fields)
         hasher.combine(bot)
         hasher.combine(group)
-        hasher.combine(source)
-        hasher.combine(role)
     }
 
     public static func == (lhs: Account, rhs: Account) -> Bool {
@@ -229,4 +214,30 @@ extension Account: CustomDebugStringConvertible {
 }
 
 public class CredentialAccount: Account {
+    
+//    public init(source: TootSource? = nil, role: TootRole? = nil) {
+//        self.source = source
+//        self.role = role
+//        super.init()
+//        
+//    }
+//    
+    // the following are in CredentialAccount
+    // https://docs.joinmastodon.org/entities/Account/#CredentialAccount
+    /// An extra entity to be used with API methods to verify credentials and update credentials
+    public let source: TootSource?
+    /// The role assigned to the currently authorized user.
+    public let role: TootRole?
+    
+    public enum CodingKeys: String, CodingKey {
+        case source
+        case role
+    }
+    
+    required public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.source = try? container.decodeIfPresent(TootSource.self, forKey: .source)
+        self.role = try? container.decodeIfPresent(TootRole.self, forKey: .role)
+        try super.init(from: decoder)
+    }
 }

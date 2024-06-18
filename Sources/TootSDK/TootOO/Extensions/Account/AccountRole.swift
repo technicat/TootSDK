@@ -1,4 +1,4 @@
-extension Account {
+extension CredentialAccount {
 
     public var hasRole: Bool {
         role != nil
