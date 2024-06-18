@@ -22,8 +22,8 @@ public class CredentialAccount: Account {
 
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.source = try? container.decodeIfPresent(TootSource.self, forKey: .source)
-        self.role = try? container.decodeIfPresent(TootRole.self, forKey: .role)
+        self.source = try container.decodeIfPresent(TootSource.self, forKey: .source)
+        self.role = try container.decodeIfPresent(TootRole.self, forKey: .role)
         try super.init(from: decoder)
     }
 }
