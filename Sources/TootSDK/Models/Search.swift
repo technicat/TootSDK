@@ -4,6 +4,7 @@
 import Foundation
 
 /// Represents the results of a search.
+/// https://docs.joinmastodon.org/entities/Search/
 public struct Search: Codable, Sendable {
 
     public init(accounts: [Account] = [], posts: [Post] = [], hashtags: [Tag] = []) {
