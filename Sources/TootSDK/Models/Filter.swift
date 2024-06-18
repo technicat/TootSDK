@@ -32,16 +32,16 @@ public struct Filter: Codable, Hashable, Identifiable {
         case posts = "statuses"
     }
 
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.context = try container.decode([FilterContext].self, forKey: .context)
-        self.expiresAt = try? container.decodeIfPresent(Date.self, forKey: .expiresAt)
-        self.filterAction = try container.decode(FilterAction.self, forKey: .filterAction)
-        // not returned when part of FilterResult
-        self.keywords = try container.decodeIfPresent([FilterKeyword].self, forKey: .keywords)
-        // not returned when part of FilterResult
-        self.posts = try container.decodeIfPresent([FilterPost].self, forKey: .posts)
-    }
+//    public init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.id = try container.decode(String.self, forKey: .id)
+//        self.title = try container.decode(String.self, forKey: .title)
+//        self.context = try container.decode([FilterContext].self, forKey: .context)
+//        self.expiresAt = try? container.decodeIfPresent(Date.self, forKey: .expiresAt)
+//        self.filterAction = try container.decode(FilterAction.self, forKey: .filterAction)
+//        // not returned when part of FilterResult
+//        self.keywords = try container.decodeIfPresent([FilterKeyword].self, forKey: .keywords)
+//        // not returned when part of FilterResult
+//        self.posts = try container.decodeIfPresent([FilterPost].self, forKey: .posts)
+//    }
 }
