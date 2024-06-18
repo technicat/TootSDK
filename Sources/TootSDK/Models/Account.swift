@@ -21,23 +21,22 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.headerStatic = try container.decodeIfPresent(String.self, forKey: .headerStatic)
         self.locked = try container.decode(Bool.self, forKey: .locked)
         // pixelfed doesn't include emojis in block/mute lists
-        self.emojis = (try? container.decodeIfPresent([Emoji].self, forKey: .emojis)) ?? []
-        self.discoverable = try? container.decodeIfPresent(Bool.self, forKey: .discoverable)
+        self.emojis = try container.decodeIfPresent([Emoji].self, forKey: .emojis)
+        self.discoverable = try container.decodeIfPresent(Bool.self, forKey: .discoverable)
         self.createdAt = try container.decode(Date.self, forKey: .createdAt)
-        self.lastPostAt = try? container.decodeIfPresent(Date.self, forKey: .lastPostAt)
+        self.lastPostAt = try container.decodeIfPresent(Date.self, forKey: .lastPostAt)
         self.postsCount = try container.decodeIfPresent(Int.self, forKey: .postsCount)
         self.followersCount = try container.decode(Int.self, forKey: .followersCount)
         self.followingCount = try container.decode(Int.self, forKey: .followingCount)
-        self.noindex = try? container.decodeIfPresent(Bool.self, forKey: .noindex)
-        self.indexable = try? container.decodeIfPresent(Bool.self, forKey: .indexable)
+        self.noindex = try container.decodeIfPresent(Bool.self, forKey: .noindex)
+        self.indexable = try container.decodeIfPresent(Bool.self, forKey: .indexable)
         self.hideCollections = try? container.decodeIfPresent(Bool.self, forKey: .hideCollections)
-        self.moved = try? container.decodeIfPresent(Account.self, forKey: .moved)
-        self.suspended = try? container.decodeIfPresent(Bool.self, forKey: .suspended)
-        self.limited = try? container.decodeIfPresent(Bool.self, forKey: .limited)
-        // pixelfed doesn't include fields in block/mute lists
-        self.fields = (try? container.decodeIfPresent([TootField].self, forKey: .fields)) ?? []
-        self.bot = try? container.decodeIfPresent(Bool.self, forKey: .bot)
-        self.group = try? container.decodeIfPresent(Bool.self, forKey: .group)
+        self.moved = try container.decodeIfPresent(Account.self, forKey: .moved)
+        self.suspended = try container.decodeIfPresent(Bool.self, forKey: .suspended)
+        self.limited = try container.decodeIfPresent(Bool.self, forKey: .limited)
+        self.fields = try container.decodeIfPresent([TootField].self, forKey: .fields)
+        self.bot = try container.decodeIfPresent(Bool.self, forKey: .bot)
+        self.group = try container.decodeIfPresent(Bool.self, forKey: .group)
     }
 
     /// The account id.
@@ -66,7 +65,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// Whether the account manually approves follow requests
     public let locked: Bool
     /// Custom emoji entities to be used when rendering the profile. If none, an empty array will be returned
-    public let emojis: [Emoji]
+    /// not in pixelfed
+    public let emojis: [Emoji]?
     /// Whether the account has opted into discovery features such as the profile directory
     public let discoverable: Bool?
     /// Whether to hide followers and followed accounts.
@@ -93,7 +93,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     /// An extra attribute returned only when an account is silenced. If true, indicates that the account should be hidden behing a warning screen.
     public let limited: Bool?
     /// Additional metadata attached to a profile as name-value pairs
-    public let fields: [TootField]
+    /// not present in pixelfed mute/block lists
+    public let fields: [TootField]?
     /// A presentational flag.
     /// Indicates that the account may perform automated actions, may not be monitored, or identifies as a robot
     public let bot: Bool?

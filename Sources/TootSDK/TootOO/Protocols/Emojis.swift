@@ -1,12 +1,12 @@
 public protocol Emojis {
 
-    var emojis: [Emoji] { get }
+    var emojiList: [Emoji] { get }
 
 }
 
 extension Emojis {
 
     public var hasEmoji: Bool {
-        !emojis.isEmpty
+        return !emojiList.isEmpty
     }
 }
