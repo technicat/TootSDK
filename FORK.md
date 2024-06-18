@@ -25,6 +25,9 @@ An instance getter is provided for deriving platforms from instance version stri
 - `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
 - `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 - `postsCount` is optional to accomodate Firefish (nil in boosts)
+- created `CredentialAccount` and split up the fields accordingly
+- removed the non-decoding initializer
+- return `CredentialAccount` from the appropriate functions, per the spec
 
 ### Admin Functions
 
