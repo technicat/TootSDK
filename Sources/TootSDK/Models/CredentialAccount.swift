@@ -1,6 +1,6 @@
 //
 //  CredentialAccount.swift
-//  
+//
 //
 //  Created by Philip Chu on 6/17/24.
 //
@@ -14,12 +14,12 @@ public class CredentialAccount: Account {
     public let source: TootSource?
     /// The role assigned to the currently authorized user.
     public let role: TootRole?
-    
+
     public enum CodingKeys: String, CodingKey {
         case source
         case role
     }
-    
+
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.source = try? container.decodeIfPresent(TootSource.self, forKey: .source)
