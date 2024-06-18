@@ -20,7 +20,7 @@ struct FeedPostView: View {
 
     var body: some View {
         VStack {
-            if post.tootPost.displayingRepost {
+            if post.tootPost.isBoost {
                 HStack {
                     HStack {
                         Spacer()
