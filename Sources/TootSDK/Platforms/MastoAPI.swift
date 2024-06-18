@@ -73,6 +73,7 @@ open class MastoAPI: Platform {
     open var supportsMarkers: Bool { api >= Version(3, 0) }
     open var supportsMutePost: Bool { api >= Version(1, 4, 2) }
     open var supportsMuteExpire: Bool { api >= Version(3, 3) }
+    open var supportsMuteNotifications: Bool { true }
 
     /// https://docs.joinmastodon.org/methods/accounts/#note
     open var supportsNote: Bool { api >= Version(3, 2) }

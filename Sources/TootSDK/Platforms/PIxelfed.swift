@@ -19,6 +19,7 @@ open class Pixelfed: MastoCompatible {
 
     open override var supportsInstanceActivity: Bool { false }
     open override var supportsMuteExpire: Bool { false }
+    open override var supportsMuteNotifications: Bool { false }
 
     open override var supportsNote: Bool { false }
     open override var supportsNotificationDelete: Bool { false }
