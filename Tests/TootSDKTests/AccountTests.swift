@@ -105,7 +105,7 @@ final class AccountTests: XCTestCase {
         let decoder = TootDecoder()
 
         // act
-        let result = try decoder.decode(Account.self, from: json)
+        let result = try decoder.decode(CredentialAccount.self, from: json)
 
         // assert
         XCTAssertNotNil(result)
