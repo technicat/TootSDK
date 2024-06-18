@@ -6,42 +6,6 @@ import Foundation
 /// Represents a user  and their associated profile.
 /// Has a recursive reference (moved) so must be a class
 public class Account: Codable, Identifiable, @unchecked Sendable {
-    public init(
-        id: String, username: String? = nil, acct: String, url: String, displayName: String? = nil, note: String, avatar: String? = nil,
-        avatarStatic: String? = nil, header: String? = nil, headerStatic: String? = nil, locked: Bool, emojis: [Emoji], discoverable: Bool? = nil,
-        indexable: Bool? = nil, hideCollections: Bool? = nil, createdAt: Date,
-        lastPostAt: Date? = nil, postsCount: Int? = nil, followersCount: Int, followingCount: Int, noindex: Bool? = nil, moved: Account? = nil,
-        suspended: Bool? = nil,
-        limited: Bool? = nil, fields: [TootField], bot: Bool? = nil, group: Bool? = nil
-    ) {
-        self.id = id
-        self.username = username
-        self.acct = acct
-        self.url = url
-        self.displayName = displayName
-        self.note = note
-        self.avatar = avatar
-        self.avatarStatic = avatarStatic
-        self.header = header
-        self.headerStatic = headerStatic
-        self.locked = locked
-        self.emojis = emojis
-        self.discoverable = discoverable
-        self.indexable = indexable
-        self.hideCollections = hideCollections
-        self.createdAt = createdAt
-        self.lastPostAt = lastPostAt
-        self.postsCount = postsCount
-        self.followersCount = followersCount
-        self.followingCount = followingCount
-        self.moved = moved
-        self.noindex = noindex
-        self.suspended = suspended
-        self.limited = limited
-        self.fields = fields
-        self.bot = bot
-        self.group = group
-    }
 
     required public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -213,18 +177,10 @@ extension Account: CustomDebugStringConvertible {
     }
 }
 
+// https://docs.joinmastodon.org/entities/Account/#CredentialAccount
+/// An extra entity to be used with API methods to verify credentials and update credentials
 public class CredentialAccount: Account {
-    
-//    public init(source: TootSource? = nil, role: TootRole? = nil) {
-//        self.source = source
-//        self.role = role
-//        super.init()
-//        
-//    }
-//    
-    // the following are in CredentialAccount
-    // https://docs.joinmastodon.org/entities/Account/#CredentialAccount
-    /// An extra entity to be used with API methods to verify credentials and update credentials
+
     public let source: TootSource?
     /// The role assigned to the currently authorized user.
     public let role: TootRole?
