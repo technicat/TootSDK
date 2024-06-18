@@ -59,6 +59,7 @@ public protocol Platform {
 
     var supportsMarkers: Bool { get }
     var supportsMutePost: Bool { get }
+    var supportsMuteExpire: Bool { get }
 
     /// private note for account
     var supportsNote: Bool { get }

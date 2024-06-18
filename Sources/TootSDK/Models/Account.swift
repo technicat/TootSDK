@@ -38,6 +38,7 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
         self.fields = (try? container.decodeIfPresent([TootField].self, forKey: .fields)) ?? []
         self.bot = try? container.decodeIfPresent(Bool.self, forKey: .bot)
         self.group = try? container.decodeIfPresent(Bool.self, forKey: .group)
+        self.muteExpiresAt = try container.decodeIfPresent(Date.self, forKey: .muteExpiresAt)
     }
 
     /// The account id.
@@ -99,6 +100,10 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let bot: Bool?
     /// Indicates that the account represents a Group actor.
     public let group: Bool?
+    /// When a timed mute will expire, if applicable.
+    /// Only returned in getMutedAccounts
+    /// Move to MutedAccount? In spec, but not consistent.
+    public let muteExpiresAt: Date?
 }
 
 extension Account {
@@ -130,6 +135,7 @@ extension Account {
         case fields
         case bot
         case group
+        case muteExpiresAt
     }
 }
 

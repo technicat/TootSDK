@@ -1,0 +1,47 @@
+{
+  "acct" : "fedicat",
+  "bot" : false,
+  "locked" : false,
+  "avatar_static" : "https://cdn.masto.host/pccafe/accounts/avatars/112/582/391/081/322/525/original/9e04bfd5572dba26.png",
+  "statuses_count" : 11,
+  "url" : "https://pc.cafe/@fedicat",
+  "following_count" : 1,
+  "mute_expires_at" : "2024-06-19T05:18:00.302Z",
+  "emojis" : [
+
+  ],
+  "discoverable" : true,
+  "last_status_at" : "2024-06-17",
+  "group" : false,
+  "uri" : "https://pc.cafe/users/fedicat",
+  "id" : "112582391081322525",
+  "roles" : [
+
+  ],
+  "header_static" : "https://cdn.masto.host/pccafe/accounts/headers/112/582/391/081/322/525/original/61915f45bbad771e.jpeg",
+  "followers_count" : 11,
+  "note" : "<p>Official fediverse account for Fedicat</p>",
+  "avatar" : "https://cdn.masto.host/pccafe/accounts/avatars/112/582/391/081/322/525/original/9e04bfd5572dba26.png",
+  "display_name" : "fedicat",
+  "header" : "https://cdn.masto.host/pccafe/accounts/headers/112/582/391/081/322/525/original/61915f45bbad771e.jpeg",
+  "created_at" : "2024-06-08T00:00:00.000Z",
+  "noindex" : false,
+  "fields" : [
+    {
+      "name" : "website",
+      "value" : "<a href=\"https://fedicat.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">fedicat.com/</span><span class=\"invisible\"></span></a>",
+      "verified_at" : "2024-06-09T01:33:38.359+00:00"
+    },
+    {
+      "name" : "TestFlight",
+      "value" : "<a href=\"https://testflight.apple.com/join/b6GatWTY\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">testflight.apple.com/join/b6Ga</span><span class=\"invisible\">tWTY</span></a>",
+      "verified_at" : null
+    },
+    {
+      "name" : "GitHub",
+      "value" : "<a href=\"https://github.com/technicat/fedicat\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"><span class=\"invisible\">https://</span><span class=\"\">github.com/technicat/fedicat</span><span class=\"invisible\"></span></a>",
+      "verified_at" : null
+    }
+  ],
+  "username" : "fedicat"
+}
