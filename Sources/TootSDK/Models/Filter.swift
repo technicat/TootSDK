@@ -22,15 +22,15 @@ public struct Filter: Codable, Hashable, Identifiable {
     /// not returned when part of FilterResult
     public var posts: [FilterPost]?
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case context
-        case expiresAt
-        case filterAction
-        case keywords
-        case posts = "statuses"
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case id
+//        case title
+//        case context
+//        case expiresAt
+//        case filterAction
+//        case keywords
+//        case posts = "statuses"
+//    }
 
 //    public init(from decoder: Decoder) throws {
 //        let container = try decoder.container(keyedBy: CodingKeys.self)
