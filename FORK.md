@@ -67,6 +67,8 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - Added `local` visibility for Pleroma and Akkoma.
 - Added `mutualsOnly` visibility for GotoSocial.
 - Added `Post.Application` instead of repurposing `TootApplication`.
+- Remove `displayingRepost` (replaced by `isBoosted`)
+- Move `displayPost` to TootOO
 
 ### PostEdit
 
