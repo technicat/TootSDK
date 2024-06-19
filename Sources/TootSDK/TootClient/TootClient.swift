@@ -277,7 +277,7 @@ extension TootClient {
             code: code, clientId: clientId,
             clientSecret: clientSecret,
             callbackURI: callbackURI,
-            grantType: TootGrantType.login.rawValue,
+            grantType: .login,
             scopes: scopes)
 
         guard let accessToken = info.accessToken else {
@@ -295,7 +295,7 @@ extension TootClient {
             code: nil, clientId: clientId,
             clientSecret: clientSecret,
             callbackURI: callbackURI,
-            grantType: TootGrantType.register.rawValue,
+            grantType: .register,
             scopes: scopes)
 
         guard let accessToken = info.accessToken else {
