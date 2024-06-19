@@ -57,7 +57,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         ///   - inReplyToConversationId:(Pleroma) Will reply to a given conversation, addressing only the people who are part of the recipient set of that conversation. Sets the visibility to direct.
         public init(
             text: String? = nil, mediaIds: [String]? = nil, sensitive: Bool? = nil, spoilerText: String? = nil, visibility: PostVisibility,
-            language: String? = nil, scheduledAt: Date? = nil, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
+            language: ISOCode? = nil, scheduledAt: Date? = nil, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
             contentType: String? = nil, inReplyToConversationId: String? = nil
         ) {
 
@@ -86,7 +86,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
         /// Sets the visibility of the posted post to public, unlisted, private, direct.
         public var visibility: PostVisibility
         /// ISO 639 language code for this post.
-        public var language: String?
+        public var language: ISOCode?
         /// UTC Datetime at which to schedule a post.
         public var scheduledAt: Date?
         /// Poll options
@@ -131,7 +131,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
             self.sensitive = try? container.decodeBoolFromString(forKey: .sensitive)
             self.spoilerText = try? container.decodeIfPresent(String.self, forKey: .spoilerText)
             self.visibility = try container.decode(PostVisibility.self, forKey: .visibility)
-            self.language = try? container.decodeIfPresent(String.self, forKey: .language)
+            self.language = try? container.decodeIfPresent(ISOCode.self, forKey: .language)
             self.idempotency = try? container.decodeIfPresent(String.self, forKey: .idempotency)
             self.scheduledAt = try? container.decodeIfPresent(Date.self, forKey: .scheduledAt)
             self.contentType = try? container.decodeIfPresent(String.self, forKey: .contentType)
