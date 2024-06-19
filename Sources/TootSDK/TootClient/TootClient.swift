@@ -22,7 +22,7 @@ public class TootClient: @unchecked Sendable {
     /// Set this to `true` to see a `print()` for instance information.
     public var debugInstance: Bool = false
     /// The authorization scopes the client was initialized with
-    public var scopes: [String]? = nil
+    public var scopes: [OAuthScope]? = nil
     /// Data streams that the client can subscribe to
     public lazy var data = TootDataStream(client: self)
     /// The clientName the client was initialized with
@@ -53,7 +53,7 @@ public class TootClient: @unchecked Sendable {
         session: URLSession = URLSession.shared,
         instanceURL: URL,
         accessToken: String? = nil,
-        scopes: [String]? = nil  //  = ["read", "write", "follow", "push"]
+        scopes: [OAuthScope]? = nil
     ) {
         self.session = session
         self.instanceURL = instanceURL
