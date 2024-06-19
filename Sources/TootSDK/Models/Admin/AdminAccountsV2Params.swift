@@ -9,7 +9,7 @@ public struct AdminAccountsV2Params: Sendable {
     public var origin: AdminAccountOrigin?
     /// Filter for active, pending, disabled, silenced, or suspended accounts.
     /// todo - use enums
-    public var status: String?
+    public var status: AdminAccountStatus?
     /// Filter for accounts with staff permissions (users that can manage reports).
     public var permissions: String?
     /// Filter for users with these roles..
@@ -29,7 +29,7 @@ public struct AdminAccountsV2Params: Sendable {
 
     public init(
         origin: AdminAccountOrigin? = nil,
-        status: String? = nil,
+        status: AdminAccountStatus? = nil,
         permissions: String? = nil,
         roleIds: [String]? = nil,
         invitedBy: String? = nil,
@@ -56,7 +56,7 @@ extension AdminAccountsV2Params {
     var queryItems: [URLQueryItem] {
         [
             URLQueryItem(name: "origin", value: origin?.rawValue),
-            URLQueryItem(name: "status", value: status),
+            URLQueryItem(name: "status", value: status?.rawValue),
             URLQueryItem(name: "permissions", value: permissions),
             URLQueryItem(name: "invited_by", value: invitedBy),
             URLQueryItem(name: "username", value: username),
@@ -72,4 +72,12 @@ extension AdminAccountsV2Params {
 public enum AdminAccountOrigin: String, Sendable {
     case local
     case remote
+}
+
+public enum AdminAccountStatus: String, Sendable {
+    case active
+    case pending
+    case disabled
+    case silenced
+    case suspended
 }
