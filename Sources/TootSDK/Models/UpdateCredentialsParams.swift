@@ -69,7 +69,7 @@ public struct UpdateCredentialsParams: Codable {
     }
 
     public struct Source: Codable, Hashable, Sendable {
-        public init(privacy: PostVisibility? = nil, sensitive: Bool? = nil, language: String? = nil) {
+        public init(privacy: PostVisibility? = nil, sensitive: Bool? = nil, language: ISOCode? = nil) {
             self.privacy = privacy
             self.sensitive = sensitive
             self.language = language
@@ -79,6 +79,6 @@ public struct UpdateCredentialsParams: Codable {
         /// Whether new posts should be marked sensitive by default.
         public var sensitive: Bool?
         ///  The default posting language for new posts.
-        public var language: String?
+        public var language: ISOCode?
     }
 }

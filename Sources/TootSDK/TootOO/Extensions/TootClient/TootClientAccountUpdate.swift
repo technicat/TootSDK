@@ -43,7 +43,7 @@ extension TootClient {
         let source = UpdateCredentialsParams.Source(
             privacy: privacy,
             sensitive: sensitive,
-            language: language?.rawValue)
+            language: language)
         let params = UpdateCredentialsParams(
             source: source)
         return try await updateCredentials(params: params)

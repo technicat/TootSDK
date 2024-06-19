@@ -7,7 +7,6 @@
 
 import Foundation
 
-// todo - add website
 public struct UpdateCredentialsParamsPixelfed: Codable {
     /// The display name to use for the profile.
     public var displayName: String?
@@ -34,10 +33,10 @@ public struct UpdateCredentialsParamsPixelfed: Codable {
     }
 
     public struct Source: Codable, Hashable, Sendable {
-        public init(language: String? = nil) {
+        public init(language: ISOCode? = nil) {
             self.language = language
         }
         ///  The default posting language for new posts.
-        public var language: String?
+        public var language: ISOCode?
     }
 }

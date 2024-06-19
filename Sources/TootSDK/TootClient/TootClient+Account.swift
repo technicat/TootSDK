@@ -142,7 +142,7 @@ extension TootClient {
             parts.append(
                 MultipartPart(
                     name: "source[language]",
-                    body: language))
+                    body: language.rawValue))
         }
         return parts
     }
