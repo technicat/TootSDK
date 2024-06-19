@@ -17,18 +17,17 @@ extension KeyedDecodingContainerProtocol {
             throw error
         }
     }
-    
+
     func decodeOptionalIntFromString(forKey key: Key) throws -> Int? {
         do {
             return try decodeIfPresent(Int.self, forKey: key)
-        } catch { // type mismatch
+        } catch {  // type mismatch
             if let string = try decodeIfPresent(String.self, forKey: key) {
                 return Int(string)
             }
         }
         return nil
     }
-
 
     func decodeBoolFromString(forKey key: Key) throws -> Bool {
         do {

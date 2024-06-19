@@ -13,7 +13,7 @@ open class Mitra: MastoCompatible {
     open override var supportsInstanceV2: Bool { build >= Version(2, 18) }
     open override var supportsMuteExpire: Bool { false }
     open override var supportsMuteNotifications: Bool { false }
-    
+
     open override var supportsNote: Bool { false }
     /// doesn't support deleting a notifications
     open override var supportsNotificationDelete: Bool { false }

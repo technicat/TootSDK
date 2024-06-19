@@ -64,7 +64,7 @@ extension TootClient {
         let createAppData = CreateAppRequest(
             clientName: clientName,
             redirectUris: callbackURI,
-            scopes: scopes?.map{$0.rawValue}.joined(separator: " "),
+            scopes: scopes?.map { $0.rawValue }.joined(separator: " "),
             website: website
         )
 
@@ -85,7 +85,7 @@ extension TootClient {
             $0.addQueryParameter(name: "client_id", value: clientId)
             $0.addQueryParameter(name: "redirect_uri", value: callbackURI)
             if let scopes {
-                $0.addQueryParameter(name: "scope", value: scopes.map{$0.rawValue}.joined(separator: " "))
+                $0.addQueryParameter(name: "scope", value: scopes.map { $0.rawValue }.joined(separator: " "))
             }
             $0.addQueryParameter(name: "response_type", value: responseType)
         }
@@ -106,7 +106,7 @@ extension TootClient {
             .init(name: "client_id", value: clientId),
             .init(name: "client_secret", value: clientSecret),
             .init(name: "grant_type", value: grantType.rawValue),
-            .init(name: "scope", value: scopes?.map{$0.rawValue}.joined(separator: " ")),
+            .init(name: "scope", value: scopes?.map { $0.rawValue }.joined(separator: " ")),
             .init(name: "code", value: code),
             .init(name: "redirect_uri", value: callbackURI),
         ]

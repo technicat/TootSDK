@@ -1,6 +1,6 @@
 //
 //  MutedAccount.swift
-//  
+//
 //
 //  Created by Philip Chu on 6/18/24.
 //
@@ -10,7 +10,7 @@ import Foundation
 // https://docs.joinmastodon.org/entities/Account/#MutedAccount
 /// An extra entity to be used with API methods to verify credentials and update credentials
 public class MutedAccount: Account {
-    
+
     /// When a timed mute will expire, if applicable.
     /// Only returned in getMutedAccounts
     public let muteExpiresAt: Date?
