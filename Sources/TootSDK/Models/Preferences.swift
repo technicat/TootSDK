@@ -10,7 +10,7 @@ public struct Preferences: Codable, Hashable {
     /// Default sensitivity flag for new posts. Equivalent to Source#sensitive.
     public var postingDefaultSensitive: Bool
     /// Default language for new posts. Equivalent to Source#language
-    public var postingDefaultLanguage: String?
+    public var postingDefaultLanguage: ISOCode?
     /// Whether media attachments should be automatically displayed or blurred/hidden.
     public var readingExpandMedia: ExpandMedia
     /// Whether CWs should be expanded by default.

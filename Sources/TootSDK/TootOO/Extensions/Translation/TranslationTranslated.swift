@@ -7,7 +7,7 @@ extension Translation: Translated {
         mediaAttachments
     }
 
-    public var sourceLanguage: String? {
+    public var sourceLanguage: ISOCode? {
         detectedSourceLanguage
     }
 
@@ -15,7 +15,7 @@ extension Translation: Translated {
         provider
     }
 
-    public var targetLanguage: String? {
+    public var targetLanguage: ISOCode? {
         language
     }
 
@@ -38,7 +38,7 @@ extension TranslationAkkoma: Translated {
         []
     }
 
-    public var sourceLanguage: String? {
+    public var sourceLanguage: ISOCode? {
         detectedLanguage
     }
 
@@ -46,7 +46,7 @@ extension TranslationAkkoma: Translated {
         "Akkoma"
     }
 
-    public var targetLanguage: String? {
+    public var targetLanguage: ISOCode? {
         nil
     }
 

@@ -22,12 +22,12 @@ public struct Translation: Codable {
     public var mediaAttachments: [MediaAttachment]
     /// The language of the source text, as auto-detected by the machine translation provider.
     /// ISO 639 language code
-    public var detectedSourceLanguage: String
+    public var detectedSourceLanguage: ISOCode
     /// The service that provided the machine translation.
     public var provider: String
     /// The target language
     /// Not in the Mastodon spec, but in the Mastodon code
-    public var language: String
+    public var language: ISOCode
 
     public struct MediaAttachment: Codable, Hashable, Identifiable, Sendable {
 

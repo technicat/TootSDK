@@ -13,5 +13,5 @@ public struct TranslationAkkoma: Codable {
     /// HTML-encoded translated content of the post.
     public var text: String
     /// The source language
-    public var detectedLanguage: String
+    public var detectedLanguage: ISOCode
 }

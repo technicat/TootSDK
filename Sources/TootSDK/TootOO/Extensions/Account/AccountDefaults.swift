@@ -8,10 +8,8 @@ extension CredentialAccount {
         source?.sensitive ?? false
     }
 
+    // should be optional?
     public var defaultLanguage: ISOCode {
-        guard let lang = source?.language else {
-            return .en
-        }
-        return ISOCode(rawValue: lang) ?? .en
+        source?.language ?? .en
     }
 }
