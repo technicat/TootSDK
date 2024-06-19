@@ -16,7 +16,7 @@ extension Translation: Translated {
     }
 
     public var targetLanguage: String? {
-        targetLanguage
+        language
     }
 
     public var html: String? {
