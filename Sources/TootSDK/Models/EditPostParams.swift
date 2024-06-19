@@ -7,7 +7,7 @@ import Foundation
 public struct EditPostParams: Codable, Sendable {
 
     public init(
-        post: String, spoilerText: String? = nil, sensitive: Bool? = nil, language: String? = nil, mediaIds: [String]? = nil, poll: CreatePoll? = nil
+        post: String, spoilerText: String? = nil, sensitive: Bool? = nil, language: ISOCode? = nil, mediaIds: [String]? = nil, poll: CreatePoll? = nil
     ) {
         self.post = post
         self.spoilerText = spoilerText
@@ -24,7 +24,7 @@ public struct EditPostParams: Codable, Sendable {
     /// Mark post and attached media as sensitive? Defaults to false.
     public var sensitive: Bool?
     /// ISO 639 language code for the post.
-    public var language: String?
+    public var language: ISOCode?
     ///  Include Attachment IDs to be attached as media. If provided, post becomes optional, and poll cannot be used.
     public var mediaIds: [String]?
     /// Poll options. Note that editing a poll’s options will reset the votes.

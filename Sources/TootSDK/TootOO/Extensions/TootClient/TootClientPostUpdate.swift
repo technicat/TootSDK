@@ -6,7 +6,7 @@ extension TootClient {
     @discardableResult
     public func update(
         _ post: Post, text: String, spoiler: String? = nil, sensitive: Bool? = nil,
-        language: String? = nil,
+        language: ISOCode? = nil,
         media: [MediaAttachment]? = nil, poll: CreatePoll? = nil
     ) async throws -> Post {
         let params = EditPostParams(
