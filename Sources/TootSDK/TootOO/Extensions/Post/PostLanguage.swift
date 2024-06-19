@@ -19,7 +19,7 @@ extension Post {
     }
 
     public var languageName: String? {
-        return language?.rawValue.localizedLanguageName
+        return language?.localizedName
     }
 
 }
