@@ -15,17 +15,11 @@ extension Post {
     //  }
 
     public var languageCode: ISOCode {
-        guard let language else {
-            return .und
-        }
-        return ISOCode(rawValue: language) ?? .und  // preprocess string?
+        return language ?? .und
     }
 
     public var languageName: String? {
-        guard let language else {
-            return nil
-        }
-        return language.localizedLanguageName
+        return language?.rawValue.localizedLanguageName
     }
 
 }

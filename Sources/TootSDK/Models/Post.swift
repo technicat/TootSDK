@@ -30,7 +30,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
         repost: Post? = nil,
         poll: Poll? = nil,
         card: Card? = nil,
-        language: String? = nil,
+        language: ISOCode? = nil,
         text: String? = nil,
         editedAt: Date? = nil,
         favourited: Bool? = nil,
@@ -120,7 +120,7 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
     /// Preview card for links included within post content.
     public var card: Card?
     /// Primary language of this post.
-    public var language: String?
+    public var language: ISOCode?
     /// Plain-text source of a post. Returned instead of content when post is deleted so the user
     /// may redraft from the source text without the client having to reverse-engineer the original text from the HTML content.
     public var text: String?
