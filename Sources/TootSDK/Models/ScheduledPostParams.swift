@@ -25,7 +25,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     ///   - inReplyToConversationId:(Pleroma) Will reply to a given conversation, addressing only the people who are part of the recipient set of that conversation. Sets the visibility to direct.
     public init(
         text: String? = nil, mediaIds: [String]? = nil, sensitive: Bool? = nil, spoilerText: String? = nil, visibility: PostVisibility,
-        language: String? = nil, scheduledAt: Date, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
+        language: ISOCode? = nil, scheduledAt: Date, poll: CreatePoll? = nil, idempotency: String? = nil, inReplyToId: String? = nil,
         contentType: String? = nil, inReplyToConversationId: String? = nil
     ) {
 
@@ -54,7 +54,7 @@ public struct ScheduledPostParams: Codable, Equatable, Hashable, Sendable {
     /// Sets the visibility of the posted post to public, unlisted, private, direct.
     public var visibility: PostVisibility
     /// ISO 639 language code for this post.
-    public var language: String?
+    public var language: ISOCode?
     /// UTC Datetime at which to schedule a post.
     public var scheduledAt: String
     /// Poll options

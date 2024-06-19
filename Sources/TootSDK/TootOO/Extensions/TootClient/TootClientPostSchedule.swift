@@ -25,7 +25,7 @@ extension TootClient {
                 sensitive: sensitive,
                 spoilerText: spoilerText,
                 visibility: visibility,
-                language: language.rawValue,
+                language: language,
                 scheduledAt: scheduledAt,
                 inReplyToId: replyTo?.id
             ))
