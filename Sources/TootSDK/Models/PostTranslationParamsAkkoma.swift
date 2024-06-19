@@ -11,9 +11,9 @@ import Foundation
 public struct PostTranslationParamsAkkoma: Codable {
     /// (ISO 639 language code).
     /// The post content will be translated into this language.
-    public var language: String
+    public var language: ISOCode
 
-    public init(language: String) {
+    public init(language: ISOCode) {
         self.language = language
     }
 }
