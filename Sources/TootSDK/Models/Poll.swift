@@ -29,21 +29,6 @@ public struct Poll: Codable, Hashable, Identifiable, Sendable {
         self.emojis = emojis
     }
 
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.expiresAt = try? container.decodeIfPresent(Date.self, forKey: .expiresAt)
-        self.expired = try container.decode(Bool.self, forKey: .expired)
-        self.multiple = try container.decode(Bool.self, forKey: .multiple)
-        self.votesCount = try container.decode(Int.self, forKey: .votesCount)
-        self.votersCount = try? container.decodeIfPresent(Int.self, forKey: .votersCount)
-        self.voted = try? container.decodeIfPresent(Bool.self, forKey: .voted)
-        self.ownVotes = try? container.decodeIfPresent([Int].self, forKey: .ownVotes)
-        self.options = try container.decode([Option].self, forKey: .options)
-        // firefish doesn't always return this
-        self.emojis = (try? container.decode([Emoji].self, forKey: .emojis)) ?? []
-    }
-
     /// The ID of the poll in the database.
     public var id: String
     /// When the poll ends.
@@ -64,7 +49,8 @@ public struct Poll: Codable, Hashable, Identifiable, Sendable {
     /// Possible answers for the poll.
     public var options: [Option]
     /// Custom emoji to be used for rendering poll options.
-    public var emojis: [Emoji]
+    /// firefish doesn't always return this
+    public var emojis: [Emoji]?
 
     public struct Option: Codable, Hashable, Sendable {
         public init(title: String, votesCount: Int) {
