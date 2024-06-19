@@ -26,7 +26,7 @@ public struct PostParams: Codable, Sendable {
         sensitive: Bool? = nil,
         spoilerText: String? = nil,
         visibility: PostVisibility,
-        language: String? = nil,
+        language: ISOCode? = nil,
         contentType: String? = nil,
         inReplyToConversationId: String? = nil
     ) {
@@ -63,7 +63,7 @@ public struct PostParams: Codable, Sendable {
     /// Sets the visibility of the posted post to public, unlisted, private, direct.
     public var visibility: PostVisibility
     /// ISO 639 language code for this post.
-    public var language: String?
+    public var language: ISOCode?
     /// (Pleroma) The MIME type of the post, it is transformed into HTML by the backend. You can get the list of the supported MIME types with the nodeinfo endpoint.
     public var contentType: String?
 
