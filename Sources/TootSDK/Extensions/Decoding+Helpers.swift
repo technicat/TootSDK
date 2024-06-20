@@ -40,7 +40,7 @@ extension KeyedDecodingContainerProtocol {
             throw error
         }
     }
-    
+
     // make this optional?
     func decodeISOCode(forKey key: Key) throws -> ISOCode {
         do {
