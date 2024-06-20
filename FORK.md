@@ -6,8 +6,6 @@ A layer of TootClient extensions that provides an object-oriented interface (thi
 
 - Operates on TootSDK objects instead of ids (e.g. `client.boost(post)` instead of `client.boostPost(id: post.id)`) and takes individual parameters instead of param structs.
 
-- Enums, like `ISOCode` enum listing the language codes supported by the various platforms, instead of passing strings, e.g. `client.getTranslation(of: post, in: .en)`.
-
 - Protocols that specify common interfaces among TootSDK objects, e.g. `InstanceV1` and `InstanceV2` implement `Instance`.
 
 ## Platform
@@ -51,9 +49,15 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - added `TootClient.getInstanceActivity`
 - made `Activity` fields public
 
+### ISOCode
+
+- An enum listing the language codes supported by the various platforms, instead of passing strings, e.g. `client.getTranslation(of: post, to: .en)`.
+
 ### Login
 
 - Remove `website` from `CreateAppRequest` as it's only relevant for webapps and it breaks iceshrimp.net (which treats a supplied website as indication that this is a webapp).
+- Pass `OAuthScope` enums instead of strings.
+- Pass `TootGrantType` all the way down.
 
 ### Notifications
 
