@@ -118,7 +118,7 @@ final class AccountTests: XCTestCase {
         XCTAssertEqual(result.source?.indexable, true)
         XCTAssertEqual(result.source?.privacy, .public)
         XCTAssertEqual(result.source?.hideCollections, true)
-        XCTAssertEqual(result.source?.language, "en")
+        XCTAssertEqual(result.source?.language, .en)
         XCTAssertEqual(result.source?.followRequestsCount, 0)
         XCTAssertEqual(result.source?.discoverable, true)
         XCTAssertNotNil(result.role)

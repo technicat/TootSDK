@@ -14,7 +14,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
         XCTAssertNil(result.contactAccount)
-        XCTAssertEqual(result.languages, ["fr"])
+        XCTAssertEqual(result.languages, [.fr])
         XCTAssertEqual(result.version, "2.8.0 (compatible; Friendica 2023.05)")
         XCTAssertEqual(result.uri, "social.thisworksonmycomputer.local")
         XCTAssertEqual(result.title, "Social")

@@ -29,7 +29,7 @@ final class ScheduledPostTests: XCTestCase {
         XCTAssertNil(result.params.poll)
         XCTAssertNil(result.params.idempotency)
         XCTAssertEqual(result.params.spoilerText, "Warn")
-        XCTAssertEqual(result.params.language, "en")
+        XCTAssertEqual(result.params.language, .en)
         XCTAssertEqual(result.params.visibility, .direct)
     }
 
@@ -55,7 +55,7 @@ final class ScheduledPostTests: XCTestCase {
         XCTAssertNil(result.params.poll)
         XCTAssertNil(result.params.idempotency)
         XCTAssertNil(result.params.spoilerText)
-        XCTAssertEqual(result.params.language, "en")
+        XCTAssertEqual(result.params.language, .en)
         XCTAssertEqual(result.params.visibility, .private)
     }
 
@@ -81,7 +81,7 @@ final class ScheduledPostTests: XCTestCase {
         XCTAssertNil(result.params.poll)
         XCTAssertNil(result.params.idempotency)
         XCTAssertNil(result.params.spoilerText)
-        XCTAssertEqual(result.params.language, "en")
+        XCTAssertEqual(result.params.language, .en)
         XCTAssertEqual(result.params.visibility, .private)
         XCTAssertEqual(result.params.mediaIds, ["111892073708535727", "111892073823106369"])
         XCTAssertEqual(result.params.mediaIds, result.mediaAttachments.map(\.id))
@@ -109,7 +109,7 @@ final class ScheduledPostTests: XCTestCase {
         XCTAssertNil(result.params.poll)
         XCTAssertNil(result.params.idempotency)
         XCTAssertNil(result.params.spoilerText)
-        XCTAssertEqual(result.params.language, "en")
+        XCTAssertEqual(result.params.language, .en)
         XCTAssertEqual(result.params.visibility, .unlisted)
     }
 }

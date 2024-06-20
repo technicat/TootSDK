@@ -41,7 +41,7 @@ final class PostEditedTests: XCTestCase {
         XCTAssertNotNil(result.card)
         XCTAssertNotNil(result.url)
         XCTAssertEqual(result.spoilerText, "")
-        XCTAssertEqual(result.language, "en")
+        XCTAssertEqual(result.language, .en)
         XCTAssertEqual(result.visibility, .public)
         XCTAssertEqual(result.pinned, false)
         XCTAssertEqual(result.muted, false)
