@@ -40,4 +40,15 @@ extension KeyedDecodingContainerProtocol {
             throw error
         }
     }
+    
+    // make this optional?
+    func decodeISOCode(forKey key: Key) throws -> ISOCode {
+        do {
+            return try decode(ISOCode.self, forKey: key)
+        } catch {
+            let string = try decode(String.self, forKey: key)
+            return ISOCode(rawValue: string.lowercased()) ?? .en
+            // todo - mixed case codes
+        }
+    }
 }

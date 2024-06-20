@@ -1,7 +1,7 @@
 // Created by konstantin on 04/12/2022.
 // Copyright (c) 2022. All rights reserved.
 
-@preconcurrency import struct Foundation.Date
+import struct Foundation.Date
 
 /// Represents a post that will be published at a future scheduled date.
 public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendable {
@@ -131,7 +131,7 @@ public struct ScheduledPost: Codable, Equatable, Hashable, Identifiable, Sendabl
             self.sensitive = try? container.decodeBoolFromString(forKey: .sensitive)
             self.spoilerText = try? container.decodeIfPresent(String.self, forKey: .spoilerText)
             self.visibility = try container.decode(PostVisibility.self, forKey: .visibility)
-            self.language = try? container.decodeIfPresent(ISOCode.self, forKey: .language)
+            self.language = try? container.decodeISOCode(forKey: .language)
             self.idempotency = try? container.decodeIfPresent(String.self, forKey: .idempotency)
             self.scheduledAt = try? container.decodeIfPresent(Date.self, forKey: .scheduledAt)
             self.contentType = try? container.decodeIfPresent(String.self, forKey: .contentType)

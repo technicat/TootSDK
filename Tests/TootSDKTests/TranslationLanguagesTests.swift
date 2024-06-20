@@ -36,7 +36,7 @@ final class TranslationLanguagesTests: XCTestCase {
         XCTAssertNotNil(result)
         XCTAssertNotNil(result.source)
         XCTAssertNotNil(result.target)
-        XCTAssertEqual(result.source?[0].code, "LV")
+        XCTAssertEqual(result.source?[0].code, .lv)
         XCTAssertEqual(result.source?[0].name, "Latvian")
     }
 }

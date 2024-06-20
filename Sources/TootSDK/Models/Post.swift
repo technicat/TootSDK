@@ -197,8 +197,8 @@ final public class Post: Codable, Identifiable, @unchecked Sendable {
         self.repost = try container.decodeIfPresent(Post.self, forKey: .repost)
         self.poll = try container.decodeIfPresent(Poll.self, forKey: .poll)
         self.card = try container.decodeIfPresent(Card.self, forKey: .card)
-        // have seen "EN" instead of "en" from gotosocial
-        self.language = (try? container.decodeIfPresent(ISOCode.self, forKey: .language)) ?? .en
+        // have seen "EN" instead of "en" on gotosocial
+        self.language = try? container.decodeISOCode(forKey: .language)
         self.text = try container.decodeIfPresent(String.self, forKey: .text)
         self.editedAt = try container.decodeIfPresent(Date.self, forKey: .editedAt)
         self.favourited = try container.decodeIfPresent(Bool.self, forKey: .favourited)

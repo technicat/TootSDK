@@ -6,7 +6,7 @@ extension TootClient {
         var translations: Translations = [:]
         if let sources = trans.source {
             for lang in sources {
-                translations[lang.code] = trans.target?.map{$0.code} ?? []
+                translations[lang.code] = trans.target?.map { $0.code } ?? []
             }
         }
         return translations
