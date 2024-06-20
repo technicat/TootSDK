@@ -65,11 +65,11 @@ extension TootClient {
 
     /// Translation language pairs supported by the translation engine used by the server.
     /// https://docs.joinmastodon.org/methods/instance/#translation_languages
-    public func getTranslationLanguages() async throws -> [String: [String]] {
+    public func getTranslationLanguages() async throws -> Translations {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "instance", "translation_languages"])
             $0.method = .get
         }
-        return try await fetch([String: [String]].self, req)
+        return try await fetch(Translations.self, req)
     }
 }

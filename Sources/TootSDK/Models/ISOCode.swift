@@ -58,7 +58,7 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
         zhTW = "zh-TW"
     case
         zhYUE = "zh-YUE"
-    // indicates auto-detection
+    // The source language code und indicates that the server supports auto-detection the language of statuses with an empty language attribute and translating these into either British English (en-GB), German or Spanish.
     // https://docs.joinmastodon.org/methods/instance/#translation_languages
     case
         und

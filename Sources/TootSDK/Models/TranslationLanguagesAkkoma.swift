@@ -14,7 +14,7 @@ public struct TranslationLanguagesAkkoma: Codable {
     public var target: [Language]? = nil
 
     public struct Language: Codable {
-        public var code: String
+        public var code: ISOCode
         public var name: String
     }
 }
