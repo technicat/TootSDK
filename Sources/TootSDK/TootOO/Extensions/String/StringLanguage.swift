@@ -8,7 +8,7 @@ extension String {
 }
 
 extension ISOCode {
-    
+
     public var localizedName: String {
         rawValue.localizedLanguageName
     }
