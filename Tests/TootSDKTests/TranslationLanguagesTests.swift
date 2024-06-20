@@ -38,5 +38,7 @@ final class TranslationLanguagesTests: XCTestCase {
         XCTAssertNotNil(result.target)
         XCTAssertEqual(result.source?[0].code, .lv)
         XCTAssertEqual(result.source?[0].name, "Latvian")
+        XCTAssertEqual(result.target?[0].code, .en)
+        XCTAssertEqual(result.target?[0].name, "English (British)")
     }
 }
