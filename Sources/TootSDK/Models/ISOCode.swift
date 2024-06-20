@@ -6,7 +6,7 @@ import Foundation
 /// Mastodon doesn't support Kurdish, Samoan, Gaurani
 /// Hometown doesn't support regional Chinese
 /// and so on...
-public enum ISOCode: String, CaseIterable, Codable {
+public enum ISOCode: String, CaseIterable, Codable, Sendable {
 
     case
         // ISO639.1
