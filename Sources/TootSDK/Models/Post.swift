@@ -6,7 +6,7 @@ import Foundation
 /// Represents a post posted by an account.
 /// https://docs.joinmastodon.org/entities/Status/
 /// note - must be a class because of recursive reference
-public class Post: Codable, Identifiable, @unchecked Sendable {
+final public class Post: Codable, Identifiable, @unchecked Sendable {
     public init(
         id: String,
         uri: String,
@@ -171,6 +171,42 @@ public class Post: Codable, Identifiable, @unchecked Sendable {
         case bookmarked
         case pinned
         case filtered
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: .id)
+        self.uri = try container.decode(String.self, forKey: .uri)
+        self.createdAt = try container.decode(Date.self, forKey: .createdAt)
+        self.account = try container.decode(Account.self, forKey: .account)
+        self.content = try container.decodeIfPresent(String.self, forKey: .content)
+        self.visibility = try container.decode(PostVisibility.self, forKey: .visibility)
+        self.sensitive = try container.decode(Bool.self, forKey: .sensitive)
+        self.spoilerText = try container.decode(String.self, forKey: .spoilerText)
+        self.mediaAttachments = try container.decode([MediaAttachment].self, forKey: .mediaAttachments)
+        self.application = try container.decodeIfPresent(Application.self, forKey: .application)
+        self.mentions = try container.decode([Mention].self, forKey: .mentions)
+        self.tags = try container.decode([Tag].self, forKey: .tags)
+        self.emojis = try container.decode([Emoji].self, forKey: .emojis)
+        self.repostsCount = try container.decode(Int.self, forKey: .repostsCount)
+        self.favouritesCount = try container.decode(Int.self, forKey: .favouritesCount)
+        self.repliesCount = try container.decode(Int.self, forKey: .repliesCount)
+        self.url = try container.decodeIfPresent(String.self, forKey: .url)
+        self.inReplyToId = try container.decodeIfPresent(String.self, forKey: .inReplyToId)
+        self.inReplyToAccountId = try container.decodeIfPresent(String.self, forKey: .inReplyToAccountId)
+        self.repost = try container.decodeIfPresent(Post.self, forKey: .repost)
+        self.poll = try container.decodeIfPresent(Poll.self, forKey: .poll)
+        self.card = try container.decodeIfPresent(Card.self, forKey: .card)
+        // have seen "EN" instead of "en" from gotosocial
+        self.language = (try? container.decodeIfPresent(ISOCode.self, forKey: .language)) ?? .en
+        self.text = try container.decodeIfPresent(String.self, forKey: .text)
+        self.editedAt = try container.decodeIfPresent(Date.self, forKey: .editedAt)
+        self.favourited = try container.decodeIfPresent(Bool.self, forKey: .favourited)
+        self.reposted = try container.decodeIfPresent(Bool.self, forKey: .reposted)
+        self.muted = try container.decodeIfPresent(Bool.self, forKey: .muted)
+        self.bookmarked = try container.decodeIfPresent(Bool.self, forKey: .bookmarked)
+        self.pinned = try container.decodeIfPresent(Bool.self, forKey: .pinned)
+        self.filtered = try container.decodeIfPresent([FilterResult].self, forKey: .filtered)
     }
 }
 
