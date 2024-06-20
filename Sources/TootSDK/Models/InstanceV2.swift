@@ -12,7 +12,7 @@ public struct InstanceV2: Codable, Hashable {
         description: String? = nil,
         usage: Usage,
         thumbnail: Thumbnail? = nil,
-        languages: [String]? = nil,
+        languages: [ISOCode]? = nil,
         configuration: Configuration,
         rules: [InstanceRule]? = nil,
         registrations: Registrations,
@@ -49,7 +49,7 @@ public struct InstanceV2: Codable, Hashable {
     /// Not optional in spec but missing in Mitra
     public var thumbnail: Thumbnail?
     /// Primary languages of the website and its staff.
-    public var languages: [String]?
+    public var languages: [ISOCode]?
     /// Configured values and limits for this website.
     /// Not optional in spec but consistent with V1
     public var configuration: Configuration?

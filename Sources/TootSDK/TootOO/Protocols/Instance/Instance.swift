@@ -6,7 +6,7 @@ public protocol Instance: Headable {
     var title: String? { get }
     var version: String { get }
     var rules: [InstanceRule]? { get }
-    var languages: [String]? { get }
+    var languages: [ISOCode]? { get }
     var configuration: Configuration? { get }
     var streaming: String? { get }
     var registrationEnabled: Bool? { get }

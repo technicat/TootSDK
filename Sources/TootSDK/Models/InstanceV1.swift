@@ -13,7 +13,7 @@ public struct InstanceV1: Codable, Hashable {
         shortDescription: String? = nil,
         email: String? = nil,
         version: String,
-        languages: [String]? = nil,
+        languages: [ISOCode]? = nil,
         registrations: Bool? = nil,
         approvalRequired: Bool? = nil,
         invitesEnabled: Bool? = nil,
@@ -55,7 +55,7 @@ public struct InstanceV1: Codable, Hashable {
     /// The version of  the server installed on the instance.
     public var version: String
     /// Primary languages of the website and its staff.
-    public var languages: [String]?
+    public var languages: [ISOCode]?
     /// Whether registrations are enabled.
     public var registrations: Bool?
     /// Whether registrations require moderator approval.
@@ -112,7 +112,7 @@ public struct InstanceV1: Codable, Hashable {
         self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
         self.email = try container.decodeIfPresent(String.self, forKey: .email)
         self.version = try container.decode(String.self, forKey: .version)
-        self.languages = try container.decodeIfPresent([String].self, forKey: .languages)
+        self.languages = try container.decodeIfPresent([ISOCode].self, forKey: .languages)
         self.registrations = try container.decodeIfPresent(Bool.self, forKey: .registrations)
         self.approvalRequired = try container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
         self.invitesEnabled = try container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
