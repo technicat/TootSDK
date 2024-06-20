@@ -23,6 +23,6 @@ public struct TranslationAkkoma: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.text = try container.decode(String.self, forKey: .text)
-        self.detectedLanguage = try container.decodeISOCode(forKey: .detectedLanguage)
+        self.detectedLanguage = try container.decodeISOCode(forKey: .detectedLanguage) ?? .und // improve this
     }
 }

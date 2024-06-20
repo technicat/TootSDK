@@ -42,9 +42,9 @@ extension KeyedDecodingContainerProtocol {
     }
 
     // make this optional?
-    func decodeISOCode(forKey key: Key) throws -> ISOCode {
+    func decodeISOCode(forKey key: Key) throws -> ISOCode? {
         do {
-            return try decode(ISOCode.self, forKey: key)
+            return try decodeIfPresent(ISOCode.self, forKey: key)
         } catch {
             // workaround two problems
             // (both evident in Akkoma translations):
