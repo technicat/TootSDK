@@ -8,7 +8,7 @@ import Foundation
 #endif
 
 // MARK: - Initialization
-public class TootClient: @unchecked Sendable {
+final public class TootClient: @unchecked Sendable {
 
     // MARK: - Public properties
     /// The URL of the instance we're connected to
