@@ -9,7 +9,7 @@ import Foundation
 
 // https://docs.joinmastodon.org/entities/Account/#MutedAccount
 /// An extra entity to be used with API methods to verify credentials and update credentials
-public class MutedAccount: Account {
+final public class MutedAccount: Account {
 
     /// When a timed mute will expire, if applicable.
     /// Only returned in getMutedAccounts

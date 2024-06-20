@@ -9,7 +9,7 @@ import Foundation
 
 // https://docs.joinmastodon.org/entities/Account/#CredentialAccount
 /// An extra entity to be used with API methods to verify credentials and update credentials
-public class CredentialAccount: Account {
+final public class CredentialAccount: Account {
 
     public let source: TootSource?
     /// The role assigned to the currently authorized user.
