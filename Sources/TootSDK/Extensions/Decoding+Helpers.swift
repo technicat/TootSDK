@@ -46,9 +46,17 @@ extension KeyedDecodingContainerProtocol {
         do {
             return try decode(ISOCode.self, forKey: key)
         } catch {
+            // workaround two problems
+            // (both evident in Akkoma translations):
+            // uppercase codes
+            // unsupported hyphenated codes
             let string = try decode(String.self, forKey: key)
-            return ISOCode(rawValue: string.lowercased()) ?? .en
-            // todo - mixed case codes
+            let split = string.split(separator: "-")
+            if split.count > 1 {
+                return ISOCode(rawValue: split[0].lowercased()) ?? .en
+            } else {
+                return ISOCode(rawValue: string.lowercased()) ?? .en
+            }
         }
     }
 }
