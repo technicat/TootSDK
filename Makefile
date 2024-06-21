@@ -16,6 +16,9 @@ buildswiftexample: ## Builds the examples
 
 checklint: ## Checks the project for linting errors, used by the CI
 	@swift-format lint -s --configuration ./.swift-format --recursive ./Sources
+	@swift-format lint -s --configuration ./.swift-format --recursive ./Tests
+	@swift-format lint -s --configuration ./.swift-format --recursive ./Examples/swiftui-toot/TootSDK-Demo
+	@swift-format lint -s --configuration ./.swift-format --recursive ./Examples/swiftyadmin/Sources
 
 lint: ## Applies all auto-correctable lint issues and reformats all source files
 	@swift-format format -i --configuration ./.swift-format --recursive ./Sources
