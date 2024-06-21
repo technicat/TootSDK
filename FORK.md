@@ -83,19 +83,20 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 - Added `TootClient.getPreferences()`
 
-### ScheduledPost
-
-- Added `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
-- Handle nil/missing `ScheduledPost.mediaAttachments` from Pleroma/Akkoma
-- Removed throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
-- Updating a `ScheduledPost` no longer returns an optional
-
 ### Relationship
 
 - `blocking` is optional to accomodate Mitra (now updated to set blocking always to false), but this is consistent with all the other optionals in `Relationship`, anyway.
 - Pleroma follow by URI moved to a separate file (also renamed and takes a param struct)
 - `followAccountURI` moved to `Extensions` and renamed, along with a convenience function `pleromaLookupAccount`.
 - `lookupAccount` moved to `TootClient+Account.swift`
+
+### ScheduledPost
+
+- Added `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
+- Handle nil/missing `ScheduledPost.mediaAttachments` from Pleroma/Akkoma
+- Removed throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
+- Updating a `ScheduledPost` no longer returns an optional
+- `getScheduledPost` no longer returns an optional
 
 ### Report
 
