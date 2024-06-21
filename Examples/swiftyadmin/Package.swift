@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "swiftyadmin",
     platforms: [
-        .macOS(.v12)
+        .macOS(.v13)
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser", exact: "1.3.0"),
