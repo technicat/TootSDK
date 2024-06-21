@@ -45,7 +45,7 @@ struct RegisterAccount: AsyncParsableCommand {
             print("Invalid url")
             return nil
         }
-        let scopes: [String] = ["read", "write:accounts"]
+        let scopes: [OAuthScope] = [.read, .writeAccounts]
 
         let callbackURI: String = "urn:ietf:wg:oauth:2.0:oob"
         let client = TootClient(instanceURL: serverUrl, scopes: scopes)

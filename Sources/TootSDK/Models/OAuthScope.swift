@@ -9,6 +9,7 @@
 public enum OAuthScope: String {
     case read
     case write
+    case writeAccounts = "write:accounts"
     case follow
     case push
     case adminRead = "admin:read"
