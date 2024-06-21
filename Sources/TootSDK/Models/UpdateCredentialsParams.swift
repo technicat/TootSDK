@@ -14,10 +14,10 @@ public struct UpdateCredentialsParams: Codable {
     public var note: String?
     /// Avatar image encoded using multipart/form-data
     public var avatar: Data?
-    public var avatarMimeType: String?
+    public var avatarMimeType: MIMEType?
     /// Header image encoded using multipart/form-data
     public var header: Data?
-    public var headerMimeType: String?
+    public var headerMimeType: MIMEType?
     /// Whether manual approval of follow requests is required.
     public var locked: Bool?
     /// Whether the account has a bot flag.
@@ -34,8 +34,8 @@ public struct UpdateCredentialsParams: Codable {
     public let source: Source?
 
     public init(
-        displayName: String? = nil, note: String? = nil, avatar: Data? = nil, avatarMimeType: String? = nil, header: Data? = nil,
-        headerMimeType: String? = nil, locked: Bool? = nil, bot: Bool? = nil, discoverable: Bool? = nil, hideCollections: Bool? = nil,
+        displayName: String? = nil, note: String? = nil, avatar: Data? = nil, avatarMimeType: MIMEType? = nil, header: Data? = nil,
+        headerMimeType: MIMEType? = nil, locked: Bool? = nil, bot: Bool? = nil, discoverable: Bool? = nil, hideCollections: Bool? = nil,
         indexable: Bool? = nil,
         fieldsAttributes: [String: Field]? = nil,
         source: Source? = nil

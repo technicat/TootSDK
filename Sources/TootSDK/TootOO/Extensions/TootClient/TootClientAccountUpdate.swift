@@ -63,9 +63,9 @@ extension TootClient {
             displayName: displayName,
             note: note,
             avatar: avatar,
-            avatarMimeType: avatarMimeType?.rawValue,
+            avatarMimeType: avatarMimeType,
             header: header,
-            headerMimeType: headerMimeType?.rawValue,
+            headerMimeType: headerMimeType,
             fieldsAttributes: fields)
         return try await updateCredentials(params: params)
     }

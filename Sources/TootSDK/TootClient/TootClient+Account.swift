@@ -50,7 +50,7 @@ extension TootClient {
                 parts.append(
                     MultipartPart(
                         file: "avatar",
-                        mimeType: mimeType,
+                        mimeType: mimeType.rawValue,
                         body: data))
             }
             if let data = params.header,
@@ -59,7 +59,7 @@ extension TootClient {
                 parts.append(
                     MultipartPart(
                         file: "header",
-                        mimeType: mimeType,
+                        mimeType: mimeType.rawValue,
                         body: data))
             }
             if let name = params.displayName {
