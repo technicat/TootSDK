@@ -5,8 +5,8 @@ import TootSDK
 struct ListAllNotifications: AsyncParsableCommand {
 
     @OptionGroup var auth: AuthOptions
-    @Option var types: [TootNotification.NotificationType] = [.mention]
-    @Option var excludeTypes: [TootNotification.NotificationType] = []
+    @Option var types: [NotificationType] = [.mention]
+    @Option var excludeTypes: [NotificationType] = []
 
     mutating func run() async throws {
         let client = TootClient(instanceURL: auth.url, accessToken: auth.token)
@@ -32,7 +32,7 @@ struct ListAllNotifications: AsyncParsableCommand {
     }
 }
 
-extension TootNotification.NotificationType: ExpressibleByArgument {
+extension NotificationType: ExpressibleByArgument {
     public init?(argument: String) {
         self.init(rawValue: argument)
     }

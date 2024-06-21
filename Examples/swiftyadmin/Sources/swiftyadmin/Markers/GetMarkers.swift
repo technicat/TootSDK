@@ -20,12 +20,12 @@ struct GetMarkers: AsyncParsableCommand {
     @Option(
         name: .long, parsing: .remaining,
         transform: { rawValue in
-            guard let timeline = Marker.Timeline(rawValue: rawValue) else {
+            guard let timeline = MarkerTimeline(rawValue: rawValue) else {
                 throw ValidationError("Unknown timeline")
             }
             return timeline
         })
-    var timelines: [Marker.Timeline]
+    var timelines: [MarkerTimeline]
 
     mutating func run() async throws {
         let client = TootClient(instanceURL: URL(string: url)!, accessToken: token)
