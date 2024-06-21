@@ -70,6 +70,13 @@ extension TootClient {
             $0.url = getURL(["api", "v1", "instance", "translation_languages"])
             $0.method = .get
         }
-        return try await fetch(Translations.self, req)
+        let map = try await fetch([String: [String]].self, req)
+        var translations: Translations = [:]
+        for (key, value) in map {
+            if let source = ISOCode(rawValue: key) {
+                translations[source] = value.compactMap { ISOCode(rawValue: $0) }
+            }
+        }
+        return translations
     }
 }
