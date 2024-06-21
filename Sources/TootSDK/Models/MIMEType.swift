@@ -1,5 +1,6 @@
 import Foundation
 
+/// https://www.iana.org/assignments/media-types/media-types.xhtml
 public enum MIMEType: String, CaseIterable, Codable {
     // image mime types supported by fediverse platformsmastodon for attachments
     // (media_attachment.rb)
@@ -19,6 +20,7 @@ public enum MIMEType: String, CaseIterable, Codable {
     case audioXpnwav = "audio/x-pn-wav"
     case audioVndwav = "audio/vnd.wav"
     case audioVorbis = "audio/vorbis"
+    case imageAces = "image/aces"
     case imageApng = "image/apng"
     case imageAvif = "image/avif"
     case imageBmp = "image/bmp"
