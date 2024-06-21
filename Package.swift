@@ -71,6 +71,7 @@ let package = Package(
                 .copy("Resources/instancev2_mastodon.json"),
                 .copy("Resources/instancev2_universeodon.json"),
                 .copy("Resources/list.json"),
+                .copy("Resources/post_attachments.json"),
                 .copy("Resources/post_edited.json"),
                 .copy("Resources/post_mitra.json"),
                 .copy("Resources/post no emojis.json"),
