@@ -32,7 +32,7 @@ struct FeedPostView: View {
 
                     EmojiText(
                         markdown: (post.tootPost.account.displayName ?? "") + " boosted",
-                        emojis: post.tootPost.account.emojis.remoteEmojis()
+                        emojis: post.tootPost.account.emojis?.remoteEmojis() ?? []
                     )
                     .font(.caption.italic())
 
@@ -54,7 +54,7 @@ struct FeedPostView: View {
                     HStack(alignment: .top) {
                         EmojiText(
                             markdown: (post.tootPost.displayPost.account.displayName ?? ""),
-                            emojis: post.tootPost.displayPost.account.emojis.remoteEmojis()
+                            emojis: post.tootPost.displayPost.account.emojis?.remoteEmojis() ?? []
                         )
                         .font(.caption.bold())
                         Text(post.tootPost.displayPost.account.username ?? "?")

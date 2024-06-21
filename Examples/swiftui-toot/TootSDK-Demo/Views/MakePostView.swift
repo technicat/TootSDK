@@ -25,7 +25,7 @@ struct MakePostView: View {
 
     @State private var path = NavigationPath()
 
-    @State var visibility: Post.Visibility = .public {
+    @State var visibility: PostVisibility = .public {
         didSet {
             print(visibility)
         }
@@ -37,7 +37,7 @@ struct MakePostView: View {
         NavigationStack(path: $path) {
             Form {
                 Picker(selection: $visibility, label: Text("Position")) {
-                    ForEach(Post.Visibility.allCases, id: \.self) { visibility in
+                    ForEach(PostVisibility.allCases, id: \.self) { visibility in
                         Text(visibility.rawValue)
                     }
                 }

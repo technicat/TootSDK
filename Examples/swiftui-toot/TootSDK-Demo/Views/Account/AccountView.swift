@@ -33,7 +33,7 @@ struct AccountView: View {
             AccountItemView(description: "displayName") {
                 EmojiText(
                     markdown: account.displayName ?? "",
-                    emojis: account.emojis.remoteEmojis())
+                    emojis: account.emojis?.remoteEmojis() ?? [])
             }
 
             AccountItemView(description: "username", value: account.username)

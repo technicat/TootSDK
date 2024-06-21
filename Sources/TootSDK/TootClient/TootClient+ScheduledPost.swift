@@ -37,7 +37,8 @@ extension TootClient {
     ///
     /// - Parameter id: the ID of the post to be retrieved
     /// - Returns: the scheduled post retrieved, if successful, throws an error if not
-    public func getScheduledPost(id: String) async throws -> ScheduledPost? {
+    /// https://docs.joinmastodon.org/methods/scheduled_statuses/#get-one
+    public func getScheduledPost(id: String) async throws -> ScheduledPost {
         let req = HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "scheduled_statuses", id])
             $0.method = .get
