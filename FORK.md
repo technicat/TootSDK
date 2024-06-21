@@ -131,7 +131,7 @@ General cleanup and reorg
 
 ### Code
 
-- Moved HTML rendering code (and SwiftSoup dependency) to the demo where it is used
+- Moved HTML rendering code (and SwiftSoup dependency) to the swiftui-toot demo where it is used (but this breaks vapor-toot) as we don't want rendering implementation here.
 - Removed unused TootSDKError enums
 - Remove deprecated code (not trying to support anyone)
 - Misc code and comment cleanup
