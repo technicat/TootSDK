@@ -43,4 +43,19 @@ final class TranslationLanguagesTests: XCTestCase {
         XCTAssertEqual(result.target?[0].code, .en)
         XCTAssertEqual(result.target?[0].name, "English (British)")
     }
+
+    /// Mastodon
+    func testTranslationLanguages() throws {
+        // arrange
+        let json = localContent("translation_languages")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(
+            [String: [String]]
+                .self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
