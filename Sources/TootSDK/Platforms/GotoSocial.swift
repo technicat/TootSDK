@@ -19,8 +19,7 @@ open class GotoSocial: MastoCompatible {
 
     // supports
 
-    /// blocking domains not supported
-    open override var blockedDomainsLimit: Int { 0 }
+    open override var supportsAnnouncements: Bool { false }
     /// doesn't support featured tags
     open override var supportsFeaturedTags: Bool { false }
     /// doesn't support instance stats
@@ -51,6 +50,9 @@ open class GotoSocial: MastoCompatible {
     open override var supportsTranslate: Bool { false }
 
     // limits
+    
+    /// blocking domains not supported
+    open override var blockedDomainsLimit: Int { 0 }
 
     /// conversations not supported
     open override var conversationsPageLimit: Int { 0 }

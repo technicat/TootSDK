@@ -3,6 +3,7 @@ open class Mitra: MastoCompatible {
 
     open override var name: String { "Mitra" }
 
+    open override var supportsAnnouncements: Bool { false }
     open override var supportsPostDeleteAndEdit: Bool { false }
     open override var supportsFamiliarFollowers: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
