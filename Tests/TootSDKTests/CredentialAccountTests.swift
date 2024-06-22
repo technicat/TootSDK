@@ -3,7 +3,7 @@ import XCTest
 @testable import TootSDK
 
 final class CredentialAccountTests: XCTestCase {
-   
+
     func testCondensed() throws {
         // arrange
         let json = localContent("credential_account_condensed")
@@ -34,7 +34,7 @@ final class CredentialAccountTests: XCTestCase {
         XCTAssertEqual(result.role?.name, "")
         XCTAssertEqual(result.role?.color, "")
     }
-    
+
     func testUniverseodon() throws {
         // arrange
         let json = localContent("credential_account_universeodon")
@@ -46,7 +46,7 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testMitra() throws {
         // arrange
         let json = localContent("credential_account_mitra")
@@ -58,7 +58,7 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testGotoSocial() throws {
         // arrange
         let json = localContent("credential_account_gotosocial")
@@ -70,7 +70,7 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testSharkey() throws {
         // arrange
         let json = localContent("credential_account_sharkey")
