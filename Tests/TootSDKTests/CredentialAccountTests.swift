@@ -46,4 +46,16 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testMitra() throws {
+        // arrange
+        let json = localContent("credential_account_mitra")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(CredentialAccount.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
