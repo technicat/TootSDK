@@ -58,4 +58,16 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testGotoSocial() throws {
+        // arrange
+        let json = localContent("credential_account_gotosocial")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(CredentialAccount.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
