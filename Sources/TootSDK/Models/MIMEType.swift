@@ -1,7 +1,7 @@
 import Foundation
 
 /// https://www.iana.org/assignments/media-types/media-types.xhtml
-public enum MIMEType: String, CaseIterable, Codable {
+public enum MIMEType: String, CaseIterable, Codable, Sendable {
     // image mime types supported by fediverse platformsmastodon for attachments
     // (media_attachment.rb)
     case audio3gpp = "audio/3gpp"
