@@ -16,7 +16,7 @@ public struct TootRole: Codable, Hashable, Sendable {
 
     /// The ID of the Role in the database.
     /// not in gotosocial
-    public var id: String
+    public var id: String?
     /// The name of the role.
     public var name: String
     /// The hex code assigned to this role. If no hex code is assigned, the string will be empty.
@@ -38,11 +38,9 @@ public struct TootRole: Codable, Hashable, Sendable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        // spec says these are strings
         // but Mitra return int
-        // gotosocial only returns name, so use that
+        self.id = try? container.decodeStringFromInt(forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.id = (try? container.decodeStringFromInt(forKey: .id)) ?? name
         self.color = try container.decodeIfPresent(String.self, forKey: .color)
         // mitra returns an array
         self.permissions = (try? container.decodeIfPresent(String.self, forKey: .permissions)) ?? ""
