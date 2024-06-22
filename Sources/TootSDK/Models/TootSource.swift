@@ -38,4 +38,31 @@ public struct TootSource: Codable, Hashable, Sendable {
     public let hideCollections: Bool?
     /// Whether the account has opted into discovery features such as the profile directory
     public let discoverable: Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        case note
+        case fields
+        case privacy
+        case sensitive
+        case language
+        case followRequestsCount
+        case indexable
+        case hideCollections
+        case discoverable
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.note = try container.decodeIfPresent(String.self, forKey: .note)
+        self.fields = try container.decode([TootField].self, forKey: .fields)
+        // sharkey can return ""
+        self.privacy = try? container.decodeIfPresent(PostVisibility.self, forKey: .privacy)
+        self.sensitive = try container.decodeIfPresent(Bool.self, forKey: .sensitive)
+        // sharkey can return ""
+        self.language = try? container.decodeIfPresent(ISOCode.self, forKey: .language)
+        self.followRequestsCount = try container.decodeIfPresent(Int.self, forKey: .followRequestsCount)
+        self.indexable = try container.decodeIfPresent(Bool.self, forKey: .indexable)
+        self.hideCollections = try container.decodeIfPresent(Bool.self, forKey: .hideCollections)
+        self.discoverable = try container.decodeIfPresent(Bool.self, forKey: .discoverable)
+    }
 }

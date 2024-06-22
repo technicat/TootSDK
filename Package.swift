@@ -59,6 +59,7 @@ let package = Package(
                 .copy("Resources/credential_account_condensed.json"),
                 .copy("Resources/credential_account_gotosocial.json"),
                 .copy("Resources/credential_account_mitra.json"),
+                .copy("Resources/credential_account_sharkey.json"),
                 .copy("Resources/credential_account_universeodon.json"),
                 .copy("Resources/familiar_followers_nofollowers.json"),
                 .copy("Resources/featured_tag.json"),

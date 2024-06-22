@@ -70,4 +70,16 @@ final class CredentialAccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testSharkey() throws {
+        // arrange
+        let json = localContent("credential_account_sharkey")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(CredentialAccount.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
