@@ -34,7 +34,7 @@ final class PostTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testAttachments() throws {
         // arrange
         let json = localContent("post_attachments")

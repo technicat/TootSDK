@@ -50,7 +50,7 @@ open class GotoSocial: MastoCompatible {
     open override var supportsTranslate: Bool { false }
 
     // limits
-    
+
     /// blocking domains not supported
     open override var blockedDomainsLimit: Int { 0 }
 

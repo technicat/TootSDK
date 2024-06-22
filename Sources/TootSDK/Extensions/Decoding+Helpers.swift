@@ -17,13 +17,13 @@ extension KeyedDecodingContainerProtocol {
             throw error
         }
     }
-    
+
     func decodeStringFromInt(forKey key: Key) throws -> String {
         do {
             return try decode(String.self, forKey: key)
         } catch {
             let int = try decode(Int.self, forKey: key)
-            return String(int) 
+            return String(int)
         }
     }
 

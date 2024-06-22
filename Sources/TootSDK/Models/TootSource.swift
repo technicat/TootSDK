@@ -38,7 +38,7 @@ public struct TootSource: Codable, Hashable, Sendable {
     public let hideCollections: Bool?
     /// Whether the account has opted into discovery features such as the profile directory
     public let discoverable: Bool?
-    
+
     enum CodingKeys: String, CodingKey {
         case note
         case fields
@@ -50,7 +50,7 @@ public struct TootSource: Codable, Hashable, Sendable {
         case hideCollections
         case discoverable
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.note = try container.decodeIfPresent(String.self, forKey: .note)

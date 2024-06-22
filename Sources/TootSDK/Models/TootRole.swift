@@ -27,7 +27,7 @@ public struct TootRole: Codable, Hashable, Sendable {
     public var permissions: String?
     /// Whether the role is publicly visible as a badge on user profiles.
     public var highlighted: Bool?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -35,7 +35,7 @@ public struct TootRole: Codable, Hashable, Sendable {
         case permissions
         case highlighted
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         // spec says these are strings

@@ -4,14 +4,14 @@ extension CredentialAccount {
         role != nil
     }
 
-//    public var highlightedRole: TootRole? {
-//        guard let role else {
-//            return nil
-//        }
-//        guard let highlighted = role.highlighted else {
-//            return nil
-//        }
-//        return highlighted
-//    }
+    //    public var highlightedRole: TootRole? {
+    //        guard let role else {
+    //            return nil
+    //        }
+    //        guard let highlighted = role.highlighted else {
+    //            return nil
+    //        }
+    //        return highlighted
+    //    }
 
 }
