@@ -1,0 +1,8 @@
+{
+    "muting_notifications" : false,
+    "domain_blocking" : false,
+    "showing_reblogs" : true,
+    "endorsed" : false,
+    "notifying" : false,
+    "note" : null
+  }

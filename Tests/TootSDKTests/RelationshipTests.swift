@@ -35,4 +35,16 @@ final class RelationshipTests: XCTestCase {
         XCTAssertEqual(result.note, "")
 
     }
+    
+    func testRelationshipSharkey() throws {
+        // arrange
+        let json = localContent("relationship_sharkey")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(Relationship.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }

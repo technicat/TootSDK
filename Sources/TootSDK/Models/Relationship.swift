@@ -8,12 +8,12 @@ import Foundation
 public struct Relationship: Codable, Hashable, Identifiable, Sendable {
 
     public init(
-        id: String,
-        following: Bool,
-        requested: Bool,
+        id: String? = nil,
+        following: Bool? = nil,
+        requested: Bool? = nil,
         endorsed: Bool? = nil,
-        followedBy: Bool,
-        muting: Bool,
+        followedBy: Bool? = nil,
+        muting: Bool? = nil,
         mutingNotifications: Bool? = nil,
         showingReposts: Bool? = nil,
         notifying: Bool? = nil,
@@ -38,17 +38,22 @@ public struct Relationship: Codable, Hashable, Identifiable, Sendable {
     }
 
     /// The account id.
-    public let id: String
+    /// Sharkey doesn't return this
+    public let id: String?
     /// Are you following this user?
-    public let following: Bool
+    /// Sharkey doesn't always return this
+    public let following: Bool?
     /// Do you have a pending follow request for this user?
-    public let requested: Bool
+    /// Sharkey doesn't always return this
+    public let requested: Bool?
     /// Are you featuring this user on your profile?
     public var endorsed: Bool?
     /// Are you followed by this user?
-    public let followedBy: Bool
+    /// Sharkey doesn't always return this
+    public let followedBy: Bool?
     /// Are you muting this user?
-    public let muting: Bool
+    /// Sharkey doesn't always return this
+    public let muting: Bool?
     /// Are you muting notifications from this user?
     public var mutingNotifications: Bool?
     /// Are you receiving this user's posts in your home timeline?
