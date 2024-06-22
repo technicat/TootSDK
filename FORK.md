@@ -112,6 +112,10 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 - Add `direct` timeline for Mitra, Pleroma, and Akkoma
 
+### TootRole
+
+- Change id to optional (GotoSocial doesn't include it) and decoder will convert int to string (Mitra provides an int id)
+
 ### TootSDKFeature/Flavour
 
 - Removed. Use Platform or something else nothing.
