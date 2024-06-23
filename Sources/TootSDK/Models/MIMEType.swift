@@ -53,5 +53,6 @@ public enum MIMEType: String, CaseIterable, Codable, Sendable {
     case videoVndavi = "video/vnd.avi"
     case videoWebm = "video/webm"
     case videoXm4a = "video/x-m4a"
+    case videoXm4v = "video/x-m4v"
     case videoXmsasf = "video/x-ms-asf"
 }
