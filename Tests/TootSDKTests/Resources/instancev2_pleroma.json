@@ -1,0 +1,151 @@
+{
+  "description" : "",
+  "languages" : [
+    "en"
+  ],
+  "rules" : [
+
+  ],
+  "version" : "2.7.2 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)",
+  "usage" : {
+    "users" : {
+      "active_month" : 2
+    }
+  },
+  "contact" : {
+    "account" : null,
+    "email" : "contact@social.thisworksonmycomputer.local"
+  },
+  "configuration" : {
+    "statuses" : {
+      "max_media_attachments" : 1000,
+      "max_characters" : 5000
+    },
+    "vapid" : {
+      "public_key" : "BIQt_6bsQiq_KBQTQDQ1Q9ZdSGQxNnTphPsuONmpSmjMFM4j3kg6mD0GpcFwK4CACTGXaoMp2c3Kj-sb-kJd_8o"
+    },
+    "polls" : {
+      "max_options" : 20,
+      "min_expiration" : 0,
+      "max_characters_per_option" : 200,
+      "max_expiration" : 31536000
+    },
+    "accounts" : {
+      "max_featured_tags" : 0
+    },
+    "media_attachments" : {
+      "video_size_limit" : 16000000,
+      "image_size_limit" : 16000000,
+      "supported_mime_types" : [
+        "application/octet-stream"
+      ]
+    },
+    "urls" : {
+      "status" : null,
+      "streaming" : "wss://wienermobile.rentals"
+    }
+  },
+  "domain" : "wienermobile.rentals",
+  "title" : "Wienermobile Rentals",
+  "source_url" : "https://git.pleroma.social/pleroma/pleroma",
+  "thumbnail" : {
+    "url" : "https://wienermobile.rentals/media/d2dde1b40b1bae3cf1035a4903c848b53871d4e79f726d16c129752a8d8d00af.png"
+  },
+  "pleroma" : {
+    "stats" : {
+      "mau" : 2
+    },
+    "vapid_public_key" : "BIQt_6bsQiq_KBQTQDQ1Q9ZdSGQxNnTphPsuONmpSmjMFM4j3kg6mD0GpcFwK4CACTGXaoMp2c3Kj-sb-kJd_8o",
+    "metadata" : {
+      "banner_upload_limit" : 4000000,
+      "background_upload_limit" : 4000000,
+      "description_limit" : 5000,
+      "features" : [
+        "pleroma_api",
+        "mastodon_api",
+        "mastodon_api_streaming",
+        "polls",
+        "v2_suggestions",
+        "pleroma_explicit_addressing",
+        "shareable_emoji_packs",
+        "multifetch",
+        "pleroma:api/v1/notifications:include_types_filter",
+        "editing",
+        "quote_posting",
+        "blockers_visible",
+        "chat",
+        "shout",
+        "relay",
+        "pleroma_emoji_reactions",
+        "pleroma_custom_emoji_reactions",
+        "pleroma_chat_messages",
+        "exposable_reactions",
+        "profile_directory",
+        "pleroma:get:main/ostatus",
+        "pleroma:group_actors",
+        "pleroma:bookmark_folders"
+      ],
+      "federation" : {
+        "mrf_object_age" : {
+          "actions" : [
+            "delist",
+            "strip_followers"
+          ],
+          "threshold" : 604800
+        },
+        "enabled" : true,
+        "mrf_policies" : [
+          "ObjectAgePolicy",
+          "TagPolicy",
+          "InlineQuotePolicy",
+          "HashtagPolicy"
+        ],
+        "quarantined_instances" : [
+
+        ],
+        "exclusions" : false,
+        "mrf_hashtag" : {
+          "sensitive" : [
+            "nsfw"
+          ],
+          "reject" : [
+
+          ],
+          "federated_timeline_removal" : [
+
+          ]
+        },
+        "quarantined_instances_info" : {
+          "quarantined_instances" : {
+
+          }
+        }
+      },
+      "account_activation_required" : false,
+      "post_formats" : [
+        "text/plain",
+        "text/html",
+        "text/markdown",
+        "text/bbcode"
+      ],
+      "avatar_upload_limit" : 2000000,
+      "shout_limit" : 5000,
+      "fields_limits" : {
+        "name_length" : 512,
+        "value_length" : 2048,
+        "max_fields" : 10,
+        "max_remote_fields" : 20
+      },
+      "chat_limit" : null,
+      "birthday_required" : false,
+      "birthday_min_age" : 0,
+      "background_image" : "https://wienermobile.rentals/images/city.jpg"
+    }
+  },
+  "registrations" : {
+    "approval_required" : false,
+    "enabled" : true,
+    "message" : null,
+    "url" : null
+  }
+}
