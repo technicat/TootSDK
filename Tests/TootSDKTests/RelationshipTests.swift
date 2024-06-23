@@ -35,7 +35,7 @@ final class RelationshipTests: XCTestCase {
         XCTAssertEqual(result.note, "")
 
     }
-    
+
     func testRelationshipSharkey() throws {
         // arrange
         let json = localContent("relationship_sharkey")

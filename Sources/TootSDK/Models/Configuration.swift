@@ -53,7 +53,7 @@ public struct Configuration: Codable, Hashable {
 
     public struct MediaAttachments: Codable, Hashable {
         /// Contains MIME types that can be uploaded.
-        public var supportedMimeTypes: [String]?
+        public var supportedMimeTypes: [MIMEType]?
         /// The maximum size of any uploaded image, in bytes.
         public var imageSizeLimit: Int?
         /// The maximum number of pixels (width times height) for image uploads.
