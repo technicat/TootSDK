@@ -108,7 +108,7 @@ final class InstanceV1Tests: XCTestCase {
 
     func testPleroma() throws {
         // arrange
-        let json = localContent("pleroma")
+        let json = localContent("instancev1_pleroma_iamkonstantin")
         let decoder = TootDecoder()
 
         // act
@@ -144,7 +144,7 @@ final class InstanceV1Tests: XCTestCase {
     
     func testWienermobile() throws {
         // arrange
-        let json = localContent("instancev1_pleroma")
+        let json = localContent("instancev1_pleroma_wienermobile")
         let decoder = TootDecoder()
 
         // act
