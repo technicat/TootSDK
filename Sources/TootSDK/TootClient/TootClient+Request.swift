@@ -80,6 +80,9 @@ extension TootClient {
             throw TootSDKError.clientAuthorizationFailed
         }
 
+        // https://docs.joinmastodon.org/spec/oauth/#authorization
+    // https://docs.joinmastodon.org/methods/oauth/#authorize
+        // todo - pass language (system language?)
         let signUrlReq = HTTPRequestBuilder {
             $0.url = getURL(["oauth", "authorize"])
             $0.addQueryParameter(name: "client_id", value: clientId)
@@ -97,6 +100,8 @@ extension TootClient {
         return .init(url: url, application: app)
     }
 
+// https://docs.joinmastodon.org/spec/oauth/#token
+// https://docs.joinmastodon.org/methods/oauth/#token
     internal func getAccessToken(
         code: String?, clientId: String, clientSecret: String, callbackURI: String, grantType: TootGrantType = .login,
         scopes: [OAuthScope]? = nil
