@@ -15,6 +15,7 @@ extension TootClient {
     /// - Parameters:
     ///   - clientId: The client ID, obtained during app registration.
     ///   - clientSecret: The client secret, obtained during app registration.
+    ///   https://docs.joinmastodon.org/spec/oauth/#revoke
     public func logout(clientId: String, clientSecret: String) async throws {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["oauth", "revoke"])
