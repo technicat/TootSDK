@@ -5,6 +5,9 @@ open class Akkoma: Pleroma {
     open override var name: String { "Akkoma" }
 
     // supports
+    
+    // pleroma supports v2/instance but not akkoma
+    open override var supportsInstanceV2: Bool { false }
 
     /// akkoma has its own translate api
     open override var supportsTranslate: Bool { build >= Version(3, 11, 0) }

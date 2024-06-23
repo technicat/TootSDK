@@ -5,15 +5,21 @@ open class Pleroma: MastoCompatible {
 
     // supports
 
+    // doesn't support featured tags
     open override var supportsFeaturedTags: Bool { false }
-
+    // doesn't support instance activity stats
     open override var supportsInstanceActivity: Bool { false }
+    // supports v2/instance
+    open override var supportsInstanceV2: Bool { true }
+    // can't mute notifications
     open override var supportsMuteNotifications: Bool { false }
+    // can't update scheduled posts
     open override var supportsScheduleUpdate: Bool { false }
-
+    // can't specify post default language
     open override var supportsPostDefaultLanguage: Bool { false }
+    // can't specify post default sensitivity
     open override var supportsPostDefaultSensitive: Bool { false }
-
+    // can't revoke token
     open override var supportsRevoke: Bool { false }
 
     // lists
