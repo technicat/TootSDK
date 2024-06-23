@@ -42,7 +42,7 @@
     }
   },
   "contact" : {
-    "email" : "staff@mastodon.social",
+    "email" : "contact@social.thisworksonmycomputer.local",
     "account" : {
       "acct" : "Mastodon",
       "bot" : false,

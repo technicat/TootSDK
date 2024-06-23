@@ -129,7 +129,7 @@
   "uri" : "wienermobile.rentals",
   "version" : "2.7.2 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)",
   "max_toot_chars" : 5000,
-  "email" : "server@alexsdigital.rodeo",
+  "email" : "contact@social.thisworksonmycomputer.local",
   "short_description" : "",
   "shout_limit" : 5000,
   "urls" : {
