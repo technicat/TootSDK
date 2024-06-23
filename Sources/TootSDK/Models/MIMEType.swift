@@ -58,6 +58,7 @@ public enum MIMEType: String, CaseIterable, Codable, Sendable {
     case video3gp2 = "video/3gp2"
     case video3gpp = "video/3gpp"
     case video3gpp2 = "video/3gpp2"
+    case videoFlv = "video/flv"
     case videoMp4 = "video/mp4"
     case videoMpeg = "video/mpeg"
     case videoOgg = "video/ogg"
