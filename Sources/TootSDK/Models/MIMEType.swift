@@ -4,6 +4,7 @@ import Foundation
 public enum MIMEType: String, CaseIterable, Codable, Sendable {
     // image mime types supported by fediverse platformsmastodon for attachments
     // (media_attachment.rb)
+    case applicationOctetstream = "application/octet-stream"
     case applicationOgg = "application/ogg"
     case audio3gp2 = "audio/3gp2"
     case audio3gpp = "audio/3gpp"

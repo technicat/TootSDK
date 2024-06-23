@@ -141,4 +141,16 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testWienermobile() throws {
+        // arrange
+        let json = localContent("instancev1_pleroma")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(InstanceV1.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }

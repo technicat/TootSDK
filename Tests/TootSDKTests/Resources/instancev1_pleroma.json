@@ -1,0 +1,149 @@
+{
+  "poll_limits" : {
+    "max_options" : 20,
+    "min_expiration" : 0,
+    "max_option_chars" : 200,
+    "max_expiration" : 31536000
+  },
+  "thumbnail" : "https://wienermobile.rentals/media/d2dde1b40b1bae3cf1035a4903c848b53871d4e79f726d16c129752a8d8d00af.png",
+  "configuration" : {
+    "statuses" : {
+      "max_media_attachments" : 1000,
+      "max_characters" : 5000
+    },
+    "polls" : {
+      "max_options" : 20,
+      "min_expiration" : 0,
+      "max_characters_per_option" : 200,
+      "max_expiration" : 31536000
+    },
+    "accounts" : {
+      "max_featured_tags" : 0
+    },
+    "media_attachments" : {
+      "video_size_limit" : 16000000,
+      "image_size_limit" : 16000000,
+      "supported_mime_types" : [
+        "application/octet-stream"
+      ]
+    }
+  },
+  "banner_upload_limit" : 4000000,
+  "contact_account" : null,
+  "description_limit" : 5000,
+  "title" : "Wienermobile Rentals",
+  "background_upload_limit" : 4000000,
+  "pleroma" : {
+    "stats" : {
+      "mau" : 2
+    },
+    "vapid_public_key" : "BIQt_6bsQiq_KBQTQDQ1Q9ZdSGQxNnTphPsuONmpSmjMFM4j3kg6mD0GpcFwK4CACTGXaoMp2c3Kj-sb-kJd_8o",
+    "metadata" : {
+      "birthday_min_age" : 0,
+      "federation" : {
+        "mrf_object_age" : {
+          "actions" : [
+            "delist",
+            "strip_followers"
+          ],
+          "threshold" : 604800
+        },
+        "enabled" : true,
+        "mrf_policies" : [
+          "ObjectAgePolicy",
+          "TagPolicy",
+          "InlineQuotePolicy",
+          "HashtagPolicy"
+        ],
+        "quarantined_instances" : [
+
+        ],
+        "exclusions" : false,
+        "mrf_hashtag" : {
+          "sensitive" : [
+            "nsfw"
+          ],
+          "reject" : [
+
+          ],
+          "federated_timeline_removal" : [
+
+          ]
+        },
+        "quarantined_instances_info" : {
+          "quarantined_instances" : {
+
+          }
+        }
+      },
+      "birthday_required" : false,
+      "fields_limits" : {
+
+        "name_length" : 512,
+        "value_length" : 2048,
+        "max_fields" : 10,
+        "max_remote_fields" : 20
+      },
+      "features" : [
+        "pleroma_api",
+        "mastodon_api",
+        "mastodon_api_streaming",
+        "polls",
+        "v2_suggestions",
+        "pleroma_explicit_addressing",
+        "shareable_emoji_packs",
+        "multifetch",
+        "pleroma:api/v1/notifications:include_types_filter",
+        "editing",
+        "quote_posting",
+        "blockers_visible",
+        "chat",
+        "shout",
+        "relay",
+        "pleroma_emoji_reactions",
+        "pleroma_custom_emoji_reactions",
+        "pleroma_chat_messages",
+        "exposable_reactions",
+        "profile_directory",
+        "pleroma:get:main/ostatus",
+        "pleroma:group_actors",
+        "pleroma:bookmark_folders"
+      ],
+      "account_activation_required" : false,
+      "post_formats" : [
+        "text/plain",
+        "text/html",
+        "text/markdown",
+        "text/bbcode"
+      ]
+    }
+  },
+  "registrations" : true,
+  "approval_required" : false,
+  "rules" : [
+
+  ],
+  "background_image" : "https://wienermobile.rentals/images/city.jpg",
+  "upload_limit" : 16000000,
+  "max_media_attachments" : 1000,
+  "uri" : "wienermobile.rentals",
+  "version" : "2.7.2 (compatible; Pleroma 2.6.52-725-g987f44d8-2-6-2)",
+  "max_toot_chars" : 5000,
+  "email" : "server@alexsdigital.rodeo",
+  "short_description" : "",
+  "shout_limit" : 5000,
+  "urls" : {
+    "streaming_api" : "wss://wienermobile.rentals"
+  },
+  "stats" : {
+    "status_count" : 627,
+    "user_count" : 20,
+    "domain_count" : 5366
+  },
+  "chat_limit" : null,
+  "languages" : [
+    "en"
+  ],
+  "avatar_upload_limit" : 2000000,
+  "description" : "When life is a highway..."
+}
