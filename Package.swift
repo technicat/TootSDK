@@ -78,6 +78,7 @@ let package = Package(
                 .copy("Resources/instancev1_pleroma_wienermobile.json"),
                 .copy("Resources/instancev1_snac.json"),
                 .copy("Resources/instancev2_mastodon.json"),
+                .copy("Resources/instancev2_pleroma.json"),
                 .copy("Resources/instancev2_universeodon.json"),
                 .copy("Resources/list.json"),
                 .copy("Resources/post_attachments.json"),

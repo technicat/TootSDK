@@ -5,7 +5,7 @@ open class Akkoma: Pleroma {
     open override var name: String { "Akkoma" }
 
     // supports
-    
+
     // pleroma supports v2/instance but not akkoma
     open override var supportsInstanceV2: Bool { false }
 
