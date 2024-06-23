@@ -105,10 +105,34 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
+    
+    func testPixelfedTokyo() throws {
+        // arrange
+        let json = localContent("instancev1_pixelfed_tokyo")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(InstanceV1.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 
     func testPleroma() throws {
         // arrange
         let json = localContent("instancev1_pleroma_iamkonstantin")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(InstanceV1.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
+    
+    func testPixelfedWienermobile() throws {
+        // arrange
+        let json = localContent("instancev1_pleroma_wienermobile")
         let decoder = TootDecoder()
 
         // act
@@ -141,19 +165,6 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
-    func testWienermobile() throws {
-        // arrange
-        let json = localContent("instancev1_pleroma_wienermobile")
-        let decoder = TootDecoder()
-
-        // act
-        let result = try decoder.decode(InstanceV1.self, from: json)
-
-        // assert
-        XCTAssertNotNil(result)
-    }
-    
     
     func testSnac() throws {
         // arrange

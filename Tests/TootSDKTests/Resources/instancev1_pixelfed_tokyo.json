@@ -1,0 +1,126 @@
+{
+  "description" : "Pixelfed.Tokyoは東京にサーバーを置くPixefedサーバーです。自由でオープンなイメージシェアの場を広く提供する目的で維持・管理されています。\r\nPixelfed.Tokyo is a Pixelfed server located in Tokyo, Japan. It is maintained with the aim of providing a free and open forum for image sharing.",
+  "languages" : [
+    "ja"
+  ],
+  "stats" : {
+    "domain_count" : 5701,
+    "user_count" : 4271,
+    "status_count" : 384710
+  },
+  "version" : "3.5.3 (compatible; Pixelfed 0.12.1)",
+  "uri" : "pixelfed.tokyo",
+  "short_description" : "Pixelfed.Tokyoは東京にサーバーを置くPixefedサーバーです。自由でオープンなイメージシェアの場を広く提供する目的で維持・管理されています。\r\nPixelfed.Tokyo is a Pixelfed server located in Tokyo, Japan. It is maintained with the aim of providing a free and open forum for image sharing.",
+  "rules" : [
+    {
+      "id" : "1",
+      "text" : "pixelfed.tokyoでは日本および米国の法律に違反するコンテンツの投稿、違法行為を行うためのサービスの利用を禁止しています。"
+    },
+    {
+      "id" : "2",
+      "text" : "ウイルスなどの悪意のあるソフトウエアの配布などに当サービスを利用することを禁止します。フィッシング詐欺の目的でこのサービスを利用することを禁止します。"
+    },
+    {
+      "id" : "3",
+      "text" : "pixelfed.tokyoでは自由なコミュニケーションの場を提供していますが、悪意のある表現や差別的な発言は許可されません。"
+    },
+    {
+      "id" : "4",
+      "text" : "嫌がらせやいじめ、脅迫的な行為を禁止します。"
+    },
+    {
+      "id" : "5",
+      "text" : "虚偽の情報でユーザーを過剰に煽動する行為(フェイクニュースなど)を禁止します。"
+    },
+    {
+      "id" : "6",
+      "text" : "一般的に個人情報とされる情報(クレジットカード番号や顔写真、住所、本名、生年月日など)を本人の許可無く共有しないでください。"
+    },
+    {
+      "id" : "7",
+      "text" : "児童からの搾取、虐待に当てはまるコンテンツを共有することを固く禁止します。"
+    },
+    {
+      "id" : "8",
+      "text" : "児童ポルノ等を始めとした違法な性的コンテンツの共有はおやめください。"
+    },
+    {
+      "id" : "9",
+      "text" : "衝撃を与えること、世間を騒がせること、もしくは不当に不快感を与えることを主な目的とする暴力的または残虐なコンテンツを投稿することを禁止します。"
+    },
+    {
+      "id" : "10",
+      "text" : "他人または代表しない組織になりすましてコンテンツを共有することを禁止します。"
+    },
+    {
+      "id" : "11",
+      "text" : "pixelfed.tokyoは運営の許可無くスパム行為(当サービスの目的としない広告目的のみとみなされる画像/動画の共有)を行うことを認めていません。"
+    },
+    {
+      "id" : "12",
+      "text" : "ブロックやミュートなどの機能・アカウント停止などの運営によるモデレーション行為をかいくぐるためなど、悪意によってアカウントを複数作成することを禁止します。"
+    }
+  ],
+  "configuration" : {
+    "media_attachments" : {
+      "image_matrix_limit" : 16777216,
+      "supported_mime_types" : [
+        "image/jpeg",
+        "image/png",
+        "image/gif",
+        "video/mp4",
+        "video/m4v",
+        "image/webp"
+      ],
+      "video_frame_rate_limit" : 120,
+      "video_matrix_limit" : 2304000,
+      "video_size_limit" : 17408000,
+      "image_size_limit" : 17408000
+    },
+    "polls" : {
+      "max_options" : 4,
+      "min_expiration" : 300,
+      "max_characters_per_option" : 50,
+      "max_expiration" : 2629746
+    },
+    "statuses" : {
+      "characters_reserved_per_url" : 23,
+      "max_media_attachments" : 6,
+      "max_characters" : 500
+    }
+  },
+  "title" : "Pixelfed.Tokyo",
+  "urls" : {
+    "streaming_api" : null
+  },
+  "approval_required" : false,
+  "thumbnail" : "https://pixelfed.tokyo/storage/headers/TCXXwvZ5Jnvck5Ayj6DuUVEG8bUk9IhufBNU4i6F.jpg",
+  "contact_account" : {
+    "acct" : "PixelfedTokyo",
+    "avatar_static" : "https://pixelfed.tokyo/storage/avatars/008/212/824/443/388/313/6/PiIWNcLGpqfOTVj4FnKu_avatar.jpeg?v=2",
+    "locked" : false,
+    "statuses_count" : 2,
+    "bot" : false,
+    "following_count" : 0,
+    "url" : "https://pixelfed.tokyo/PixelfedTokyo",
+    "emojis" : [
+
+    ],
+    "discoverable" : true,
+    "last_status_at" : null,
+    "id" : "82128244433883136",
+    "header_static" : "https://pixelfed.tokyo/storage/headers/missing.png",
+    "followers_count" : 3165,
+    "note" : "Admin of Pixelfed.Tokyo",
+    "avatar" : "https://pixelfed.tokyo/storage/avatars/008/212/824/443/388/313/6/PiIWNcLGpqfOTVj4FnKu_avatar.jpeg?v=2",
+    "display_name" : "Pixelfed.Tokyo",
+    "header" : "https://pixelfed.tokyo/storage/headers/missing.png",
+    "created_at" : "2019-09-24T15:08:19.000000Z",
+    "fields" : [
+
+    ],
+    "username" : "PixelfedTokyo"
+  },
+  "email" : "y.maemura@pcgf.io",
+  "registrations" : true
+}
