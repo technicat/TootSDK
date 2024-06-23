@@ -105,7 +105,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testPixelfedTokyo() throws {
         // arrange
         let json = localContent("instancev1_pixelfed_tokyo")
@@ -129,7 +129,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testPixelfedWienermobile() throws {
         // arrange
         let json = localContent("instancev1_pleroma_wienermobile")
@@ -165,7 +165,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testSnac() throws {
         // arrange
         let json = localContent("instancev1_snac")
