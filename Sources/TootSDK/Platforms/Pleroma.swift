@@ -9,8 +9,9 @@ open class Pleroma: MastoCompatible {
     open override var supportsFeaturedTags: Bool { false }
     // doesn't support instance activity stats
     open override var supportsInstanceActivity: Bool { false }
-    // supports v2/instance
-    open override var supportsInstanceV2: Bool { true }
+    // I've seen once instance support v2/instance
+    // maybe can version check but leave off for now
+    open override var supportsInstanceV2: Bool { false }
     // can't mute notifications
     open override var supportsMuteNotifications: Bool { false }
     // can't update scheduled posts
