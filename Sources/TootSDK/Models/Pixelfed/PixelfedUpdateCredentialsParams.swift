@@ -2,7 +2,7 @@
 //  UpdateCredentialsParamsPixelfed.swift
 //
 //
-//  Created by Philip Chu on 5/11/26.
+//  Created by Philip Chu on 5/11/24.
 //
 
 import Foundation
