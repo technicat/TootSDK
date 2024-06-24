@@ -68,4 +68,9 @@ extension KeyedDecodingContainerProtocol {
             }
         }
     }
+    
+    func decodeUnixDate(forKey key: Key) throws -> Date { 
+        let weekUnixEpoc = try decodeIntFromString(forKey: key)
+        return Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
+    }
 }

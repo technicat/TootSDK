@@ -37,8 +37,7 @@ public struct Activity: Codable, Hashable {
         self.logins = try container.decodeIntFromString(forKey: .logins)
         self.registrations = try container.decodeIntFromString(forKey: .registrations)
 
-        let weekUnixEpoc = try container.decodeIntFromString(forKey: .week)
-        self.week = Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
+        self.week = try container.decodeUnixDate(forKey: .week)
     }
 
     public func encode(to encoder: Encoder) throws {

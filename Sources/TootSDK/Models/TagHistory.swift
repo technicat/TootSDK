@@ -34,8 +34,6 @@ public struct TagHistory: Codable, Hashable, Sendable {
         // but Takahe return ints (which makes more sense)
         self.uses = try container.decodeIntFromString(forKey: .uses)
         self.accounts = try container.decodeIntFromString(forKey: .accounts)
-
-        let weekUnixEpoc = try container.decodeIntFromString(forKey: .day)
-        self.day = Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
+        self.day = try container.decodeUnixDate(forKey: .day)
     }
 }
