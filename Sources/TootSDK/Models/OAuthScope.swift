@@ -33,12 +33,22 @@ public enum OAuthScope: String {
     case writeNotifications = "write:notifications"
     case writePosts = "write:statuses"
     case writeReports = "write:reports"
-    case follow // deprecated
+    case follow // deprecated in 3.5
     case push
     case adminRead = "admin:read"
     case adminReadAccounts = "admin:read:accounts"
+    case adminReadCanonicalEmailBlocks = "admin:read:canonical_email_blocks"
+    case adminReadDomainAllows = "admin:read:domain_allows"
+    case adminReadDomainBlocks = "admin:read:domain_blocks"
+    case adminReadEmailDomainBlocks = "admin:read:email_domain_blocks"
+    case adminReadIPBlocks = "admin:read:ip_blocks"
     case adminReadReports = "admin:read:reports"
     case adminWrite = "admin:write"
+    case adminWriteAccounts = "admin:write:accounts"
+    case adminWriteCanonicalEmailBlocks = "admin:write:canonical_email_blocks"
+    case adminWriteDomainAllows = "admin:write:domain_allows"
+    case adminWriteDomainBlocks = "admin:write:domain_blocks"
+    case adminWriteEmailDomainBlocks = "admin:write:email_domain_blocks"
+    case adminWriteIPBlocks = "admin:write:ip_blocks"
     case adminWriteReports = "admin:write:reports"
-    // todo - add granular scopes
 }
