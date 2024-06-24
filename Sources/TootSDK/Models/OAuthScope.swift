@@ -33,7 +33,7 @@ public enum OAuthScope: String {
     case writeNotifications = "write:notifications"
     case writePosts = "write:statuses"
     case writeReports = "write:reports"
-    case follow // deprecated in 3.5
+    case follow  // deprecated in 3.5
     case push
     case adminRead = "admin:read"
     case adminReadAccounts = "admin:read:accounts"
