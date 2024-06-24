@@ -14,7 +14,7 @@ A protocol for use at the app level to check feature support. Depends on TootSDK
 
 Implements a class hierarchy that mirrors the forking relationship among fediverse platform is provided. For example, `Hometown` is a subclass of `Mastodon`, which is a subclass of `MastodonAPI`. `Platform` exposes feature support queries like `supportsProfileFields`.
 
-An instance getter is provided for deriving platforms from instance version strings, but in practice (at the Fedicat app level), a platform is first derived from a site's nodeinfo if a available and then replaced by a more complete instance-derived one if available.
+An instance getter is provided for deriving platforms from instance version strings, but in practice (at the Fedicat app level), a platform is first derived from a site's nodeinfo if available and then replaced by a more complete instance-derived one if available.
 
 ## TootSDK
 
@@ -44,10 +44,11 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
 - Moved `Configuration` up so it  an be shared among the two instance versions
 - `InstanceRule` text is not optional
-- added `TootClient.getInstancePeers`
-- make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
-- added `TootClient.getInstanceActivity`
-- made `Activity` fields public
+- Added `TootClient.getInstancePeers`
+- Make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
+- Added `TootClient.getInstanceActivity`
+- Made `Activity` fields public
+- Added optional `pleroma` field
 
 ### ISOCode
 
@@ -59,10 +60,18 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - Pass `OAuthScope` enums instead of strings.
 - Pass `TootGrantType` all the way down.
 
+### MIMEType
+
+- Enum for MIME types used in attachments, instance MIME type lists, pleroma post content type...
+
 ### Notifications
 
 - `TootClient.getNotifications()` takes an optional with `include_types` parameter, corresponding to the ones supported by Pleroma/Akkoma, but just specifying `types` (flavour-specific handling of arguments is removed) seems to work for all platforms that filter (except friendica which only filter using `exclude_types`, but that seems buggy, e.g. doesn't filter out reblog, so better to not filter in that case).
 - Added Mitra notification types
+
+### OAuthScope
+
+- Enum for OAuth scopes, passed and returned in the TootClient init and app connection.
 
 ### Post
 
@@ -112,9 +121,20 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 - Add `direct` timeline for Mitra, Pleroma, and Akkoma
 
+### TootGrantType
+
+- Add `refreshToken` for pleroma
+
 ### TootRole
 
-- Change id to optional (GotoSocial doesn't include it) and decoder will convert int to string (Mitra provides an int id)
+- Change id to optional (GotoSocial doesn't include it)
+- Decoder will convert id int to string (Mitra provides an int id)
+- Decoder will ignore decoder error for permissions (Mitra provides a list instead of string)
+- More optionals for platforms that don't return all fields
+
+### TootSource
+
+- Make most fields optional (not all supplied by various platforms, especially Sharkey)
 
 ### TootSDKFeature/Flavour
 
@@ -143,6 +163,7 @@ General cleanup and reorg
 - Add spec links to API functions and entities for convenient reference
 - Tempted to remove public inits for JSON entities (would remove a big chunk of code) but I do have a Post copy in fedicat so guess I'll leave it alone
 - Move nested enums up to top level
-- Rename `status` to `post`
+- Rename remaining uses of `status` to `post`
+- Move platform-specific model files into respective folders
 
 
