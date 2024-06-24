@@ -16,7 +16,8 @@ public struct InstanceV2: Codable, Hashable {
         configuration: Configuration,
         rules: [InstanceRule]? = nil,
         registrations: Registrations,
-        contact: Contact
+        contact: Contact,
+        pleroma: PleromaInstance? = nil
     ) {
         self.domain = domain
         self.title = title
@@ -27,9 +28,10 @@ public struct InstanceV2: Codable, Hashable {
         self.thumbnail = thumbnail
         self.languages = languages
         self.configuration = configuration
+        self.rules = rules
         self.registrations = registrations
         self.contact = contact
-        self.rules = rules
+        self.pleroma = pleroma
     }
 
     /// The domain name of the instance.
@@ -59,6 +61,9 @@ public struct InstanceV2: Codable, Hashable {
     public var contact: Contact
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
+    /// Pleroma
+    /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    public var pleroma: PleromaInstance?
 
     public struct Thumbnail: Codable, Hashable {
         /// The URL for the thumbnail image.
