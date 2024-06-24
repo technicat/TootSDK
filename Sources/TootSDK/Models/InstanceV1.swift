@@ -75,6 +75,9 @@ public struct InstanceV1: Codable, Hashable {
     public var contactAccount: Account?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
+    /// Pleroma
+    /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    public var pleroma: PleromaInstance?
 
     public struct InstanceURLs: Codable, Hashable {
         /// Websockets address for push streaming. String (URL).
