@@ -25,9 +25,14 @@ public struct PleromaInstance: Codable, Hashable {
         public var features: [String]
         public var postFormats: [MIMEType]
         public var fieldsLimits: FieldsLimits
+        public var federation: Federation
     }
     
     public struct FieldsLimits: Codable, Hashable {
+       
+    }
+    
+    public struct Federation: Codable, Hashable {
        
     }
 }
