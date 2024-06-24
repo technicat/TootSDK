@@ -11,7 +11,7 @@ import MultipartKitTootSDK
 extension TootClient {
 
     // https://github.com/pixelfed/pixelfed/issues/4250#issuecomment-1483798056
-    public func updateCredentials(params: UpdateCredentialsParamsPixelfed) async throws -> CredentialAccount {
+    public func updateCredentials(params: PixelfedUpdateCredentialsParams) async throws -> CredentialAccount {
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v1", "accounts", "update_credentials"])
             $0.method = .post
@@ -36,7 +36,7 @@ extension TootClient {
         return try await fetch(CredentialAccount.self, req)
     }
 
-    func getSourceParts(_ params: UpdateCredentialsParamsPixelfed) -> [MultipartPart] {
+    func getSourceParts(_ params: PixelfedUpdateCredentialsParams) -> [MultipartPart] {
         var parts = [MultipartPart]()
         if let language = params.source?.language {
             parts.append(

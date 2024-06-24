@@ -29,7 +29,7 @@ extension Translation: Translated {
 
 }
 
-extension TranslationAkkoma: Translated {
+extension AkkomaTranslation: Translated {
     public var translatedPoll: Translation.Poll? {
         nil
     }

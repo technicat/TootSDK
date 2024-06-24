@@ -30,7 +30,7 @@ extension TootClient {
     public func updatePixelfedAccountSettings(
         locked: Bool? = nil
     ) async throws -> CredentialAccount {
-        let params = UpdateCredentialsParamsPixelfed(
+        let params = PixelfedUpdateCredentialsParams(
             locked: locked)
         return try await updateCredentials(params: params)
     }
@@ -76,7 +76,7 @@ extension TootClient {
         note: String? = nil,
         avatar: Data? = nil
     ) async throws -> CredentialAccount {
-        let params = UpdateCredentialsParamsPixelfed(
+        let params = PixelfedUpdateCredentialsParams(
             displayName: displayName,
             note: note,
             avatar: avatar)

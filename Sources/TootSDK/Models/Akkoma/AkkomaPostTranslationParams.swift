@@ -8,7 +8,7 @@
 import Foundation
 
 /// Params to translate a post in Akkoma
-public struct PostTranslationParamsAkkoma: Codable {
+public struct AkkomaPostTranslationParams: Codable {
     /// (ISO 639 language code).
     /// The post content will be translated into this language.
     public var language: ISOCode

@@ -8,7 +8,7 @@
 import Foundation
 
 // in status_operation.ex
-public struct TranslationAkkoma: Codable {
+public struct AkkomaTranslation: Codable {
 
     /// HTML-encoded translated content of the post.
     public var text: String

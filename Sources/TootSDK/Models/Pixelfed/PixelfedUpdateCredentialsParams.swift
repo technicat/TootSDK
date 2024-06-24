@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UpdateCredentialsParamsPixelfed: Codable {
+public struct PixelfedUpdateCredentialsParams: Codable {
     /// The display name to use for the profile.
     public var displayName: String?
     /// The account bio.
