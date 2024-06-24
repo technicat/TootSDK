@@ -13,4 +13,5 @@ public protocol Instance: Headable {
     var registrationApprovalRequired: Bool? { get }
     var contactEmail: String? { get }
     var contactAccount: Account? { get }
+    var pleroma: PleromaInstance? { get }
 }
