@@ -19,6 +19,7 @@ public struct PleromaInstance: Codable, Hashable {
     }
     
     public struct Metadata: Codable, Hashable {
-    // todo fill in
+        public var features: [String]
+        public var postFormats: [MIMEType]
     }
 }
