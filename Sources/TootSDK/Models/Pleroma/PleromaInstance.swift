@@ -24,5 +24,10 @@ public struct PleromaInstance: Codable, Hashable {
         public var birthdayMinAge: Int
         public var features: [String]
         public var postFormats: [MIMEType]
+        public var fieldsLimits: FieldsLimits
+    }
+    
+    public struct FieldsLimits: Codable, Hashable {
+       
     }
 }
