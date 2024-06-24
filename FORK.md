@@ -151,6 +151,7 @@ General cleanup and reorg
 ### Tests (not tests)
 - Added instance and translation decoder tests
 - Removed obsolete tests
+- Renamed some tests files to be more specifically descriptive
 
 
 ### Code
@@ -164,7 +165,7 @@ General cleanup and reorg
 - Tempted to remove public inits for JSON entities (would remove a big chunk of code) but I do have a Post copy in fedicat so guess I'll leave it alone
 - Move nested enums up to top level
 - Rename remaining uses of `status` to `post`
-- Move platform-specific model files into respective folders
+- Move platform-specific Model and TootClient files into respective folders
 - Enums everywhere
 
 
