@@ -155,7 +155,7 @@ General cleanup and reorg
 
 ### Code
 
-- Moved HTML rendering code (and SwiftSoup dependency) to the swiftui-toot demo where it is used (but this breaks vapor-toot) as we don't want rendering implementation here.
+- Moved HTML rendering code (and SwiftSoup dependency) to the swiftui-toot demo where it is used (but this breaks vapor-toot) as we don't want rendering implementation here
 - Removed unused TootSDKError enums
 - Remove deprecated code (not trying to support anyone)
 - Misc code and comment cleanup
@@ -165,5 +165,6 @@ General cleanup and reorg
 - Move nested enums up to top level
 - Rename remaining uses of `status` to `post`
 - Move platform-specific model files into respective folders
+- Enums everywhere
 
 
