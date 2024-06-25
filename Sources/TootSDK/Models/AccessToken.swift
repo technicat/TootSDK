@@ -9,14 +9,14 @@ public struct AccessToken: Codable {
     public let tokenType: String?
     public let accessToken: String
     public let createdAt: Date
-    
+
     enum CodingKeys: String, CodingKey {
         case scope
         case tokenType
         case accessToken
         case createdAt
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.scope = try container.decodeIfPresent(String.self, forKey: .scope)

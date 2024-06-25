@@ -280,9 +280,9 @@ extension TootClient {
             grantType: .login,
             scopes: scopes)
 
-//        guard let accessToken = info.accessToken else {
-//            throw TootSDKError.clientAuthorizationFailed
-//        }
+        //        guard let accessToken = info.accessToken else {
+        //            throw TootSDKError.clientAuthorizationFailed
+        //        }
 
         self.accessToken = info.accessToken
 
@@ -298,9 +298,9 @@ extension TootClient {
             grantType: .register,
             scopes: scopes)
 
-//        guard let accessToken = info.accessToken else {
-//            throw TootSDKError.clientAuthorizationFailed
-//        }
+        //        guard let accessToken = info.accessToken else {
+        //            throw TootSDKError.clientAuthorizationFailed
+        //        }
 
         self.accessToken = info.accessToken
 

@@ -22,7 +22,7 @@ extension InstanceV2: Instance {
     public var streaming: String? {
         configuration?.urls?.streaming
     }
-    
+
     public var backgroundImage: String? {
         pleroma?.backgroundImage
     }

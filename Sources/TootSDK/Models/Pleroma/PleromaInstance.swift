@@ -10,7 +10,7 @@ import Foundation
 public struct PleromaInstance: Codable, Hashable {
 
     public var vapidPublicKey: String
-    
+
     public var backgroundImage: String?
 
     public var stats: Stats
@@ -29,12 +29,12 @@ public struct PleromaInstance: Codable, Hashable {
         public var fieldsLimits: FieldsLimits
         public var federation: Federation
     }
-    
+
     public struct FieldsLimits: Codable, Hashable {
-       // todo - fill in
+        // todo - fill in
     }
-    
+
     public struct Federation: Codable, Hashable {
-       // todo - fill in
+        // todo - fill in
     }
 }
