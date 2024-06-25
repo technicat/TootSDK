@@ -22,7 +22,9 @@ public struct InstanceV1: Codable, Hashable {
         thumbnail: String? = nil,
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
-        rules: [InstanceRule]? = nil
+        rules: [InstanceRule]? = nil,
+        pleroma: PleromaInstance? = nil,
+        backgroundImage: String? = nil
     ) {
         self.uri = uri
         self.title = title
@@ -40,6 +42,8 @@ public struct InstanceV1: Codable, Hashable {
         self.configuration = configuration
         self.contactAccount = contactAccount
         self.rules = rules
+        self.pleroma = pleroma
+        self.backgroundImage = backgroundImage
     }
 
     /// The domain name of the instance.
@@ -128,6 +132,7 @@ public struct InstanceV1: Codable, Hashable {
         // also handles some friendica instances returning []
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
+        self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
     }
 
