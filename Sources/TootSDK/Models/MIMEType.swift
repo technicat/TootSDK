@@ -1,9 +1,9 @@
 import Foundation
 
+/// image mime types supported by fediverse platforms
+/// includes attachments types, pleroma post types, instance mimetype list...
 /// https://www.iana.org/assignments/media-types/media-types.xhtml
 public enum MIMEType: String, CaseIterable, Codable, Sendable {
-    // image mime types supported by fediverse platformsmastodon for attachments
-    // (media_attachment.rb)
     case applicationOctetstream = "application/octet-stream"
     case applicationOgg = "application/ogg"
     case audio3gp2 = "audio/3gp2"
@@ -59,6 +59,7 @@ public enum MIMEType: String, CaseIterable, Codable, Sendable {
     case textHtml = "text/html"
     case textMarkdown = "text/markdown"
     case textPlain = "text/plain"
+    case textXmisskeymarkdown = "text/x.misskeymarkdown"
     case video3gp2 = "video/3gp2"
     case video3gpp = "video/3gpp"
     case video3gpp2 = "video/3gpp2"
