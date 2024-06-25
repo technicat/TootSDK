@@ -18,15 +18,19 @@ An instance getter is provided for deriving platforms from instance version stri
 
 ## TootSDK
 
+### AccessToken
+
+- Added `createdAt` (per the Mastodon API spec)
+
 ### Account
 
 - `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
 - `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 - `postsCount` is optional to accomodate Firefish (nil in boosts)
-- created `CredentialAccount` and split up the fields accordingly
-- removed the non-decoding initializer
-- return `CredentialAccount` from the appropriate functions, per the spec
-- created `MutedAccount`, returned from `getMutedAccounts`
+- Created `CredentialAccount` and split up the fields accordingly
+- Removed the non-decoding initializer
+- Return `CredentialAccount` from the appropriate functions, per the spec
+- Created `MutedAccount`, returned from `getMutedAccounts`
 
 ### Admin Functions
 
