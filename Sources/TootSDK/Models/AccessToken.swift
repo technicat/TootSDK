@@ -7,7 +7,7 @@ import Foundation
 public struct AccessToken: Codable {
     public let scope: String?
     public let tokenType: String?
-    public let accessToken: String?
+    public let accessToken: String
     public let createdAt: Date
     
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ public struct AccessToken: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.scope = try container.decodeIfPresent(String.self, forKey: .scope)
         self.tokenType = try container.decodeIfPresent(String.self, forKey: .tokenType)
-        self.accessToken = try container.decodeIfPresent(String.self, forKey: .accessToken)
+        self.accessToken = try container.decode(String.self, forKey: .accessToken)
         self.createdAt = try container.decodeUnixDate(forKey: .createdAt)
     }
 }

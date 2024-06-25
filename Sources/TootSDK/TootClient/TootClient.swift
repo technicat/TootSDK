@@ -280,13 +280,13 @@ extension TootClient {
             grantType: .login,
             scopes: scopes)
 
-        guard let accessToken = info.accessToken else {
-            throw TootSDKError.clientAuthorizationFailed
-        }
+//        guard let accessToken = info.accessToken else {
+//            throw TootSDKError.clientAuthorizationFailed
+//        }
 
-        self.accessToken = accessToken
+        self.accessToken = info.accessToken
 
-        return accessToken
+        return info.accessToken
     }
 
     public func collectRegistrationToken(clientId: String, clientSecret: String, callbackURI: String) async throws -> String {
@@ -298,13 +298,13 @@ extension TootClient {
             grantType: .register,
             scopes: scopes)
 
-        guard let accessToken = info.accessToken else {
-            throw TootSDKError.clientAuthorizationFailed
-        }
+//        guard let accessToken = info.accessToken else {
+//            throw TootSDKError.clientAuthorizationFailed
+//        }
 
-        self.accessToken = accessToken
+        self.accessToken = info.accessToken
 
-        return accessToken
+        return info.accessToken
     }
 }
 
