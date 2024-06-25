@@ -10,6 +10,8 @@ import Foundation
 public struct PleromaInstance: Codable, Hashable {
 
     public var vapidPublicKey: String
+    
+    public var backgroundImage: String?
 
     public var stats: Stats
     public var metadata: Metadata

@@ -78,6 +78,8 @@ public struct InstanceV1: Codable, Hashable {
     /// Pleroma
     /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
     public var pleroma: PleromaInstance?
+    /// A background image that frontends can use
+    public var backgroundImage: String?
 
     public struct InstanceURLs: Codable, Hashable {
         /// Websockets address for push streaming. String (URL).

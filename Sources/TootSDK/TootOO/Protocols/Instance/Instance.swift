@@ -14,4 +14,5 @@ public protocol Instance: Headable {
     var contactEmail: String? { get }
     var contactAccount: Account? { get }
     var pleroma: PleromaInstance? { get }
+    var backgroundImage: String? { get }
 }
