@@ -128,6 +128,7 @@ public struct InstanceV1: Codable, Hashable {
         // also handles some friendica instances returning []
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
+        self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
     }
 
 }
