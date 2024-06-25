@@ -72,7 +72,7 @@ final class InstanceV1Tests: XCTestCase {
 
     func testAkkoma() throws {
         // arrange
-        let json = localContent("instance_akkoma")
+        let json = localContent("instancev1_akkoma")
         let decoder = TootDecoder()
 
         // act

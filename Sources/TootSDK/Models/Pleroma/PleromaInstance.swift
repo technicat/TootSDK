@@ -22,8 +22,8 @@ public struct PleromaInstance: Codable, Hashable {
 
     public struct Metadata: Codable, Hashable {
         public var accountActivationRequired: Bool
-        public var birthdayRequired: Bool
-        public var birthdayMinAge: Int
+        public var birthdayRequired: Bool?
+        public var birthdayMinAge: Int?
         public var features: [String]
         public var postFormats: [MIMEType]
         public var fieldsLimits: FieldsLimits
@@ -31,10 +31,10 @@ public struct PleromaInstance: Codable, Hashable {
     }
     
     public struct FieldsLimits: Codable, Hashable {
-       
+       // todo - fill in
     }
     
     public struct Federation: Codable, Hashable {
-       
+       // todo - fill in
     }
 }
