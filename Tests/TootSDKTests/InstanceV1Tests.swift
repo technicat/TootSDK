@@ -5,7 +5,7 @@ import XCTest
 final class InstanceV1Tests: XCTestCase {
     func testFriendicaNoContact() throws {
         // arrange
-        let json = localContent("instance_friendica_nocontact")
+        let json = localContent("instancev1_friendica_nocontact")
         let decoder = TootDecoder()
 
         // act
@@ -169,6 +169,18 @@ final class InstanceV1Tests: XCTestCase {
     func testSnac() throws {
         // arrange
         let json = localContent("instancev1_snac")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(InstanceV1.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
+    
+    func testFriendicaVenera() throws {
+        // arrange
+        let json = localContent("instancev1_friendica_venera")
         let decoder = TootDecoder()
 
         // act

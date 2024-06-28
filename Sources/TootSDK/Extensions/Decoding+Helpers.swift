@@ -60,11 +60,12 @@ extension KeyedDecodingContainerProtocol {
             // uppercase codes
             // unsupported hyphenated codes
             let string = try decode(String.self, forKey: key)
+            // todo - move this into a function so we can map on array
             let split = string.split(separator: "-")
             if split.count > 1 {
-                return ISOCode(rawValue: split[0].lowercased()) ?? .en
+                return ISOCode(rawValue: split[0].lowercased())
             } else {
-                return ISOCode(rawValue: string.lowercased()) ?? .en
+                return ISOCode(rawValue: string.lowercased())
             }
         }
     }
