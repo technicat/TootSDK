@@ -111,14 +111,15 @@ extension TootClient {
     func getFieldParts(_ params: UpdateCredentialsParams) -> [MultipartPart] {
         var parts = [MultipartPart]()
         if let fields = params.fieldsAttributes {
-            for field in fields {
+            for (index, field) in fields.enumerated() {
+                let key = String(index)
                 parts.append(
                     MultipartPart(
-                        name: "fields_attributes[\(field.key)][name]",
+                        name: "fields_attributes[\(key)][name]",
                         body: field.name))
                 parts.append(
                     MultipartPart(
-                        name: "fields_attributes[\(field.key)][value]",
+                        name: "fields_attributes[\(key)][value]",
                         body: field.value))
             }
         }

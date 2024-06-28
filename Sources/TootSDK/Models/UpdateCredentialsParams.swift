@@ -58,14 +58,11 @@ public struct UpdateCredentialsParams: Codable {
 
     /// Represents a profile field as a name-value pair
     public struct Field: Codable, Hashable, Sendable {
-        public init(key: String, name: String, value: String) {
-            self.key = key
+        public init(name: String, value: String) {
             self.name = name
             self.value = value
         }
 
-        /// The name of the profile field. By default, max 255 characters.
-        public var key: String
         /// The name of the profile field. By default, max 255 characters.
         public var name: String
         /// The value of the profile field. By default, max 255 characters.
