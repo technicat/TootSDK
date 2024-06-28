@@ -31,6 +31,7 @@ An instance getter is provided for deriving platforms from instance version stri
 - Removed the non-decoding initializer
 - Return `CredentialAccount` from the appropriate functions, per the spec
 - Created `MutedAccount`, returned from `getMutedAccounts`
+- updateCredentials takes a list of fields instead of a map and generates the keys from the indices. This preserves the order.
 
 ### Admin Functions
 
