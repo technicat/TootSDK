@@ -16,3 +16,10 @@ public protocol Instance: Headable {
     var pleroma: PleromaInstance? { get }
     var backgroundImage: String? { get }
 }
+
+extension Instance {
+    
+    public var profileFieldsLimit: Int? {
+        pleroma?.metadata.fieldsLimits.maxFields
+    }
+}
