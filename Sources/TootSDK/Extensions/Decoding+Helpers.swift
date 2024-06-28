@@ -59,19 +59,43 @@ extension KeyedDecodingContainerProtocol {
             // (both evident in Akkoma translations):
             // uppercase codes
             // unsupported hyphenated codes
-            let string = try decode(String.self, forKey: key)
-            // todo - move this into a function so we can map on array
-            let split = string.split(separator: "-")
-            if split.count > 1 {
-                return ISOCode(rawValue: split[0].lowercased())
-            } else {
-                return ISOCode(rawValue: string.lowercased())
+            guard let string = try decodeIfPresent(String.self, forKey: key) else {
+                return nil
             }
+                return string.isoCode
+            }
+    }
+    
+    func decodeISOList(forKey key: Key) throws -> [ISOCode]? {
+        if let list = try decodeIfPresent([String].self, forKey: key) {
+            return list.compactMap { $0.isoCode }
+        } else {
+            return nil
         }
     }
+       
+       
 
     func decodeUnixDate(forKey key: Key) throws -> Date {
         let weekUnixEpoc = try decodeIntFromString(forKey: key)
         return Date(timeIntervalSince1970: TimeInterval(weekUnixEpoc))
+    }
+}
+
+extension String {
+    
+    public var isoCode: ISOCode? {
+        if let code = ISOCode(rawValue: self) {
+            return code
+        }
+            // if it failed on a hyphenated name
+        // try just the first part
+            let split = split(separator: "-")
+            if split.count > 1 {
+                return ISOCode(rawValue: split[0].lowercased())
+            } else {
+                // in case it's uppercase
+                return ISOCode(rawValue: lowercased())
+            }
     }
 }

@@ -99,5 +99,22 @@ public struct InstanceV2: Codable, Hashable {
         /// An account that can be contacted natively over the network regarding inquiries or issues.
         public var account: Account?  // causing crashes?
     }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.domain = try container.decode(String.self, forKey: .domain)
+        self.title = try container.decodeIfPresent(String.self, forKey: .title)
+        self.version = try container.decode(String.self, forKey: .version)
+        self.sourceUrl = try container.decode(String.self, forKey: .sourceUrl)
+        self.description = try container.decodeIfPresent(String.self, forKey: .description)
+        self.usage = try container.decode(Usage.self, forKey: .usage)
+        self.thumbnail = try container.decodeIfPresent(Thumbnail.self, forKey: .thumbnail)
+        self.languages = try container.decodeISOList(forKey: .languages)
+        self.configuration = try container.decodeIfPresent(Configuration.self, forKey: .configuration)
+        self.contact = try container.decode(Contact.self, forKey: .contact)
+        self.registrations = try container.decode(Registrations.self, forKey: .registrations)
+        self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
+        self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
+    }
 
 }

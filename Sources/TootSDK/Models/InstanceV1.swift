@@ -121,7 +121,7 @@ public struct InstanceV1: Codable, Hashable {
         self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
         self.email = try container.decodeIfPresent(String.self, forKey: .email)
         self.version = try container.decode(String.self, forKey: .version)
-        self.languages = try container.decodeIfPresent([ISOCode].self, forKey: .languages)
+        self.languages = try container.decodeISOList(forKey: .languages)
         self.registrations = try container.decodeIfPresent(Bool.self, forKey: .registrations)
         self.approvalRequired = try container.decodeIfPresent(Bool.self, forKey: .approvalRequired)
         self.invitesEnabled = try container.decodeIfPresent(Bool.self, forKey: .invitesEnabled)
