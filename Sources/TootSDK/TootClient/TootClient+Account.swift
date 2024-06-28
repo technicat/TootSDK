@@ -111,7 +111,9 @@ extension TootClient {
     func getFieldParts(_ params: UpdateCredentialsParams) -> [MultipartPart] {
         var parts = [MultipartPart]()
         if let fields = params.fieldsAttributes {
-            for (key, field) in fields {
+            // assume field keys are stringed numbers
+            // indicating the order the fields should be displayed
+            for (key, field) in fields.sorted(by: { $0.key < $1.key }) {
                 parts.append(
                     MultipartPart(
                         name: "fields_attributes[\(key)][name]",
