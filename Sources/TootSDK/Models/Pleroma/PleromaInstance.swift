@@ -7,6 +7,7 @@
 
 import Foundation
 
+///https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
 public struct PleromaInstance: Codable, Hashable {
 
     public var vapidPublicKey: String
@@ -31,10 +32,13 @@ public struct PleromaInstance: Codable, Hashable {
     }
 
     public struct FieldsLimits: Codable, Hashable {
-        // todo - fill in
+        public var nameLength: Int
+        public var valueLength: Int
+        public var maxFields: Int
+        public var maxRemoteFields: Int
     }
 
     public struct Federation: Codable, Hashable {
-        // todo - fill in
+       // todo - fill in
     }
 }
