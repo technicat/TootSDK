@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// https://docs-p.joinmastodon.org/methods/accounts/#update_credentials
 public struct UpdateCredentialsParams: Codable {
     /// The display name to use for the profile.
     public var displayName: String?
@@ -28,8 +29,8 @@ public struct UpdateCredentialsParams: Codable {
     public var hideCollections: Bool?
     /// Whether public posts should be searchable to anyone.
     public var indexable: Bool?
-    /// Additional metadata attached to a profile as name-value pairs
-    public let fieldsAttributes: [String: Field]?
+    /// The profile fields to be set. Inside this hash, the key is an integer cast to a string (although the exact integer does not matter), and the value is another hash including name and value. By default, max 4 fields.
+    public let fieldsAttributes: [Field]?
     /// An extra entity to be used with API methods to verify credentials and update credentials
     public let source: Source?
 
@@ -37,7 +38,7 @@ public struct UpdateCredentialsParams: Codable {
         displayName: String? = nil, note: String? = nil, avatar: Data? = nil, avatarMimeType: MIMEType? = nil, header: Data? = nil,
         headerMimeType: MIMEType? = nil, locked: Bool? = nil, bot: Bool? = nil, discoverable: Bool? = nil, hideCollections: Bool? = nil,
         indexable: Bool? = nil,
-        fieldsAttributes: [String: Field]? = nil,
+        fieldsAttributes: [Field]? = nil,
         source: Source? = nil
     ) {
         self.displayName = displayName
@@ -57,14 +58,17 @@ public struct UpdateCredentialsParams: Codable {
 
     /// Represents a profile field as a name-value pair
     public struct Field: Codable, Hashable, Sendable {
-        public init(name: String, value: String) {
+        public init(key: String, name: String, value: String) {
+            self.key = key
             self.name = name
             self.value = value
         }
 
-        /// The key of a given field's key-value pair.
+        /// The name of the profile field. By default, max 255 characters.
+        public var key: String
+        /// The name of the profile field. By default, max 255 characters.
         public var name: String
-        /// The value associated with the name key.
+        /// The value of the profile field. By default, max 255 characters.
         public var value: String
     }
 
