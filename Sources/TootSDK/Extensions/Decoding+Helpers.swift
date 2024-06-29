@@ -92,7 +92,9 @@ extension String {
         // try just the first part
             let split = split(separator: "-")
             if split.count > 1 {
-                return ISOCode(rawValue: split[0].lowercased())
+                let first = split[0].lowercased()
+                let second = split[1].uppercased()
+                return ISOCode(rawValue: "\(first)-\(second)")
             } else {
                 // in case it's uppercase
                 return ISOCode(rawValue: lowercased())

@@ -51,9 +51,21 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
         zba, zgh
     // ISO_639_1 Regional
     case
+        enAU = "en-AU"
+    case
+        enGB = "en-GB"
+    case
+        enIE = "en-IE"
+    case
+        enUS = "en-US"
+    case
         zhCN = "zh-CN"
     case
         zhHK = "zh-HK"
+    case
+        zhMO = "zh-MO"
+    case
+        zhSG = "zh-SG"
     case
         zhTW = "zh-TW"
     case
