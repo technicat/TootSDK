@@ -53,11 +53,29 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
     case
         enAU = "en-AU"
     case
+        enBZ = "en-BZ"
+    case
+        enCA = "en-CA"
+    case
+        enCB = "en-CB"
+    case
         enGB = "en-GB"
     case
         enIE = "en-IE"
     case
+        enJM = "en-JM"
+    case
+        enNZ = "en-NZ"
+    case
+        enPH = "en-PH"
+    case
         enUS = "en-US"
+    case
+        enTT = "en-TT"
+    case
+        enZA = "en-ZA"
+    case
+        enZW = "en-ZW"
     case
         zhCN = "zh-CN"
     case
