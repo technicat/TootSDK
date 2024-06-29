@@ -48,7 +48,8 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
         xal,
         zba, zgh
     // ISO_639_1 Regional
-    // these show up in instance primary languages
+    // i.e. with country codes
+    // English
     case
         enAU = "en-AU"
     case
@@ -75,6 +76,42 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
         enZA = "en-ZA"
     case
         enZW = "en-ZW"
+    // Spanish
+    case
+        esAR = "es-AR"
+    case
+        esBO = "es-BO"
+    case
+        esCL = "es-CL"
+    case
+        esCO = "es-CO"
+    case
+        esCR = "es-CR"
+    case
+        esDO = "es-DO"
+    case
+        esEC = "es-EC"
+    case
+        esES = "es-ES"
+    case
+        esMX = "es-MX"
+    case
+        esNI = "es-NI"
+    case
+        esPA = "es-PA"
+    case
+        esPE = "es-PE"
+    case
+        esPR = "es-PR"
+    case
+        esPY = "es-PY"
+    case
+        esSV = "es-SV"
+    case
+        esUY = "es-UY"
+    case
+        esVE = "es-VE"
+    // Chinese
     case
         zhCN = "zh-CN"
     case
