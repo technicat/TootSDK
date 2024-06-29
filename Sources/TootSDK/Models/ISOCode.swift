@@ -50,6 +50,7 @@ public enum ISOCode: String, CaseIterable, Codable, Sendable {
         xal,
         zba, zgh
     // ISO_639_1 Regional
+    // these show up in instance primary languages
     case
         enAU = "en-AU"
     case
