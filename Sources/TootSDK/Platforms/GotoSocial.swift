@@ -59,6 +59,9 @@ open class GotoSocial: MastoCompatible {
 
     /// muted accounts not supported
     open override var mutedAccountsLimit: Int { 0 }
+    
+    ///
+    open override var profileFieldsLimit: Int { 6 }
 
     // scheduled posts not supported
     open override var scheduledPageLimit: Int { 0 }
