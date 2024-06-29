@@ -82,7 +82,6 @@ public protocol Platform {
     var supportsPostHistory: Bool { get }
     var supportsPostSource: Bool { get }
 
-    var supportsProfileFields: Bool { get }
     /// delete profile avatar/header
     var supportsProfileImageDelete: Bool { get }
 
@@ -124,17 +123,19 @@ public protocol Platform {
     func directoryLimit(_ auth: Bool) -> Int
     ///
     var findAccountsLimit: Int { get }
-    ///
+    /// maximum number of queried muted accounts
     var mutedAccountsLimit: Int { get }
-    ///
+    /// maximum number of profile fields
+    var profileFieldsLimit: Int { get }
+    /// maximum number of queried search results
     var searchLimit: Int { get }
-    ///
+    /// maximum number of queried suggestions
     var suggestionsLimit: Int { get }
-    ///
+    /// maximum number of queried trending links
     func trendingLinksLimit(_ auth: Bool) -> Int
-    ///
+    /// maximum number of queried trending posts
     func trendingPostsLimit(_ auth: Bool) -> Int
-    ///
+    /// maximum number of queried trending tags
     func trendingTagsLimit(_ auth: Bool) -> Int
 
     ///

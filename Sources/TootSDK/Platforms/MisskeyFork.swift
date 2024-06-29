@@ -32,6 +32,8 @@ open class MisskeyFork: MastoAPI {
     open override var blockedDomainsLimit: Int { 0 }
     /// profile directories not supported
     open override func directoryLimit(_ auth: Bool) -> Int { 0 }
+    /// profile fields have no limit?
+    open override var profileFieldsLimit: Int { 100 }
     /// followed tags not supported
     open override var followedTagsPageLimit: Int { 0 }
     /// scheduled posts not supported

@@ -105,7 +105,6 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/preferences/
     open var supportsPreferences: Bool { api >= Version(2, 8) }
 
-    open var supportsProfileFields: Bool { api >= Version(2, 4) }
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
     open var supportsRelationshipWithSuspended: Bool {
@@ -157,6 +156,8 @@ open class MastoAPI: Platform {
     open var blockedAccountsLimit: Int { 80 }
     ///
     open var mutedAccountsLimit: Int { 80 }
+    ///
+    open var profileFieldsLimit: Int { 4 }
     ///
     open func directoryLimit(_ auth: Bool) -> Int {
         api >= Version(4, 0) ? 80 : 0

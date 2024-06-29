@@ -34,8 +34,6 @@ open class Pixelfed: MastoCompatible {
 
     open override var supportsPostSource: Bool { false }
 
-    open override var supportsProfileFields: Bool { false }
-
     open override var supportsRevoke: Bool { false }
 
     /// doesn't support search in account
@@ -51,6 +49,9 @@ open class Pixelfed: MastoCompatible {
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
         auth ? super.getLimit(for: timeline, auth) : 0
     }
+
+    /// profile fields not supported
+    open override var profileFieldsLimit: Int { 0 }
 
     /// trends not supported
     open override func trendingLinksLimit(_ auth: Bool) -> Int { 0 }

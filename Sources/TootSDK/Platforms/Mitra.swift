@@ -22,7 +22,7 @@ open class Mitra: MastoCompatible {
     open override var supportsNotificationDeleteAll: Bool { false }
     /// doesn't support post revision history
     open override var supportsPostHistory: Bool { false }
-    open override var supportsProfileFields: Bool { false }
+    ///
     open override var supportsRemoveFollower: Bool { build >= Version(2, 17) }
     open override var supportsReport: Bool { false }
     /// doesn't support search in account
@@ -44,6 +44,8 @@ open class Mitra: MastoCompatible {
     open override var mutedAccountsLimit: Int { 0 }
     // blocking domains not supported
     open override var blockedDomainsLimit: Int { 0 }
+    /// profile fields not supported
+    open override var profileFieldsLimit: Int { 0 }
     // followed tags not supported
     open override var followedTagsPageLimit: Int { 0 }
     // scheduled posts not supported

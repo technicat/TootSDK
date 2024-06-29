@@ -11,12 +11,11 @@ open class Friendica: MastoAPI {
     open override var supportsInstanceV2: Bool { true }
     // does not support voting on polls
     open override var supportsPollVote: Bool { false }
-    open override var supportsProfileFields: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
     open override var supportsUpdateAccount: Bool { false }
 
     // lists
-    
+
     // all the two-letter codes
     open override var languages: ISOCodes { ISOCode.iso6391 }
 
@@ -29,9 +28,11 @@ open class Friendica: MastoAPI {
     }
 
     // limits
-    // domain blocking not supported
+    /// domain blocking not supported
     open override var blockedDomainsLimit: Int { 0 }
-    // tag following supported
+    /// profile fields not supported
+    open override var profileFieldsLimit: Int { 0 }
+    /// tag following supported
     open override var followedTagsPageLimit: Int { 200 }  // check this
 
     open override func getLimit(for timeline: Timeline, _ auth: Bool) -> Int {
