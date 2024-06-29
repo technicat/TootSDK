@@ -27,5 +27,5 @@ open class Akkoma: Pleroma {
 
     // all the two-letter codes
     // todo - check version 2023.02
-    open override var languages: ISOCodes { ISOCode.iso639_1 }
+    open override var languages: ISOCodes { ISOCode.iso6391 }
 }

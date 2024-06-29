@@ -16,8 +16,9 @@ open class Friendica: MastoAPI {
     open override var supportsUpdateAccount: Bool { false }
 
     // lists
+    
     // all the two-letter codes
-    open override var languages: ISOCodes { ISOCode.iso639_1 }
+    open override var languages: ISOCodes { ISOCode.iso6391 }
 
     open override var notificationTypes: NotificationTypes {
         // setting this to empty (unsupported)
