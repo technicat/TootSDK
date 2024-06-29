@@ -62,10 +62,10 @@ extension KeyedDecodingContainerProtocol {
             guard let string = try decodeIfPresent(String.self, forKey: key) else {
                 return nil
             }
-                return string.isoCode
-            }
+            return string.isoCode
+        }
     }
-    
+
     func decodeISOList(forKey key: Key) throws -> [ISOCode]? {
         if let list = try decodeIfPresent([String].self, forKey: key) {
             return list.compactMap { $0.isoCode }
@@ -73,8 +73,6 @@ extension KeyedDecodingContainerProtocol {
             return nil
         }
     }
-       
-       
 
     func decodeUnixDate(forKey key: Key) throws -> Date {
         let weekUnixEpoc = try decodeIntFromString(forKey: key)
@@ -83,21 +81,21 @@ extension KeyedDecodingContainerProtocol {
 }
 
 extension String {
-    
+
     public var isoCode: ISOCode? {
         if let code = ISOCode(rawValue: self) {
             return code
         }
-            // if it failed on a hyphenated name
+        // if it failed on a hyphenated name
         // try just the first part
-            let split = split(separator: "-")
-            if split.count > 1 {
-                let first = split[0].lowercased()
-                let second = split[1].uppercased()
-                return ISOCode(rawValue: "\(first)-\(second)")
-            } else {
-                // in case it's uppercase
-                return ISOCode(rawValue: lowercased())
-            }
+        let split = split(separator: "-")
+        if split.count > 1 {
+            let first = split[0].lowercased()
+            let second = split[1].uppercased()
+            return ISOCode(rawValue: "\(first)-\(second)")
+        } else {
+            // in case it's uppercase
+            return ISOCode(rawValue: lowercased())
+        }
     }
 }

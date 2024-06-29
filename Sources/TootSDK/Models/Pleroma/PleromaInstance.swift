@@ -39,6 +39,6 @@ public struct PleromaInstance: Codable, Hashable {
     }
 
     public struct Federation: Codable, Hashable {
-       // todo - fill in
+        // todo - fill in
     }
 }

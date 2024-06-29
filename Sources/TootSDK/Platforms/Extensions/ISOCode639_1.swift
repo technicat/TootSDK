@@ -1,7 +1,7 @@
 extension ISOCode {
     // all the two-letter codes
     // todo - check version 2023.02
-    public static var ISO639_1: ISOCodes =
+    public static var iso639_1: ISOCodes =
         [
             .aa, .ab, .ae, .af, .ak, .am, .an, .ar, .as, .av, .ay, .az,
             .ba, .be, .bg, .bh, .bi, .bm, .bn, .bo, .br, .bs,
@@ -30,5 +30,5 @@ extension ISOCode {
             .yi, .yo,
             .za, .zh, .zu,
         ]
-        
+
 }

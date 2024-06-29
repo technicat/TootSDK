@@ -6,7 +6,7 @@ open class Akkoma: Pleroma {
 
     // supports
 
-    // pleroma supports v2/instance but not akkoma
+    // pleroma (sometimes?) supports v2/instance but not akkoma
     open override var supportsInstanceV2: Bool { false }
 
     /// akkoma has its own translate api
@@ -27,5 +27,5 @@ open class Akkoma: Pleroma {
 
     // all the two-letter codes
     // todo - check version 2023.02
-    open override var languages: ISOCodes { ISOCode.ISO639_1 }
+    open override var languages: ISOCodes { ISOCode.iso639_1 }
 }

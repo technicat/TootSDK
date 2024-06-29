@@ -18,7 +18,7 @@ public protocol Instance: Headable {
 }
 
 extension Instance {
-    
+
     public var profileFieldsLimit: Int? {
         pleroma?.metadata.fieldsLimits.maxFields
     }

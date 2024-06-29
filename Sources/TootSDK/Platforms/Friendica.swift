@@ -8,7 +8,7 @@ open class Friendica: MastoAPI {
     // open override var supportsFollowTag: Bool { true }
     open override var supportsMuteNotifications: Bool { false }
     open override var supportsInstanceActivity: Bool { false }
-    open override var supportsInstanceV2: Bool { true}
+    open override var supportsInstanceV2: Bool { true }
     // does not support voting on polls
     open override var supportsPollVote: Bool { false }
     open override var supportsProfileFields: Bool { false }
@@ -17,7 +17,7 @@ open class Friendica: MastoAPI {
 
     // lists
     // all the two-letter codes
-    open override var languages: ISOCodes { ISOCode.ISO639_1 }
+    open override var languages: ISOCodes { ISOCode.iso639_1 }
 
     open override var notificationTypes: NotificationTypes {
         // setting this to empty (unsupported)

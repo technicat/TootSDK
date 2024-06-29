@@ -99,7 +99,7 @@ public struct InstanceV2: Codable, Hashable {
         /// An account that can be contacted natively over the network regarding inquiries or issues.
         public var account: Account?  // causing crashes?
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.domain = try container.decode(String.self, forKey: .domain)

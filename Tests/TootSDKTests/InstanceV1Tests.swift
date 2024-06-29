@@ -177,7 +177,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testFriendicaVenera() throws {
         // arrange
         let json = localContent("instancev1_friendica_venera")
