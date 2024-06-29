@@ -38,9 +38,9 @@ final class TranslationLanguagesTests: XCTestCase {
         XCTAssertNotNil(result.target)
         XCTAssertEqual(result.source?[0].code, .lv)
         XCTAssertEqual(result.source?[0].name, "Latvian")
-        XCTAssertEqual(result.source?[2].code, .en)
+        XCTAssertEqual(result.source?[2].code, .enUS)
         XCTAssertEqual(result.source?[2].name, "English (American)")
-        XCTAssertEqual(result.target?[0].code, .en)
+        XCTAssertEqual(result.target?[0].code, .enGB)
         XCTAssertEqual(result.target?[0].name, "English (British)")
     }
 
