@@ -59,7 +59,7 @@ open class GotoSocial: MastoCompatible {
 
     /// muted accounts not supported
     open override var mutedAccountsLimit: Int { 0 }
-    
+
     ///
     open override var profileFieldsLimit: Int { 6 }
 
