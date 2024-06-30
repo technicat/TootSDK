@@ -33,5 +33,28 @@ extension InstanceV1: Instance {
     public var maxPostChars: Int? {
         configuration?.posts?.maxCharacters ?? maxTootChars
     }
+    
+    // polls
+
+    public var maxPollOptions: Int? {
+        configuration?.polls?.maxOptions ?? 
+        pollLimits?.maxOptions
+    }
+
+    public var maxPollChars: Int? {
+        configuration?.polls?.maxCharactersPerOption ?? 
+        pollLimits?.maxOptionChars
+    }
+
+    public var minPollExpiration: Int? {
+        configuration?.polls?.minExpiration ??
+        pollLimits?.minExpiration
+    }
+
+    public var maxPollExpiration: Int? {
+        configuration?.polls?.maxExpiration ??
+        pollLimits?.maxExpiration
+    }
+
 
 }

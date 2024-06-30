@@ -17,4 +17,15 @@ public protocol Instance: Headable {
     var backgroundImage: String? { get }
 
     var maxPostChars: Int? { get }
+    
+    // polls
+
+    var maxPollOptions: Int? { get }
+
+    var maxPollChars: Int? { get }
+
+    var minPollExpiration: Int? { get }
+
+    var maxPollExpiration: Int? { get }
+
 }
