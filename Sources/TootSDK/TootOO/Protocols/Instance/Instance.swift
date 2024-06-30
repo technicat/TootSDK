@@ -19,7 +19,7 @@ public protocol Instance: Headable {
     // post limits
     var maxPostChars: Int? { get }
     var maxAttachments: Int? { get }
-    
+
     // poll limits
 
     var maxPollOptions: Int? { get }

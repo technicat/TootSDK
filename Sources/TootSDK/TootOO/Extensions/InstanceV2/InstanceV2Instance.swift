@@ -28,15 +28,15 @@ extension InstanceV2: Instance {
     }
 
     // post limits
-    
+
     public var maxPostChars: Int? {
         configuration?.posts?.maxCharacters
     }
-    
+
     public var maxAttachments: Int? {
         configuration?.posts?.maxMediaAttachments
     }
-    
+
     // poll limits
 
     public var maxPollOptions: Int? {
@@ -54,6 +54,5 @@ extension InstanceV2: Instance {
     public var maxPollExpiration: Int? {
         configuration?.polls?.maxExpiration
     }
-
 
 }
