@@ -15,11 +15,6 @@ public protocol Instance: Headable {
     var contactAccount: Account? { get }
     var pleroma: PleromaInstance? { get }
     var backgroundImage: String? { get }
-}
 
-extension Instance {
-
-    public var profileFieldsLimit: Int? {
-        pleroma?.metadata.fieldsLimits.maxFields
-    }
+    var maxPostChars: Int? { get }
 }

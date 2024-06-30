@@ -27,4 +27,8 @@ extension InstanceV2: Instance {
         pleroma?.backgroundImage
     }
 
+    public var maxPostChars: Int? {
+        configuration?.posts?.maxCharacters
+    }
+
 }

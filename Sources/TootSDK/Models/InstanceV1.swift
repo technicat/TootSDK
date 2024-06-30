@@ -141,7 +141,7 @@ public struct InstanceV1: Codable, Hashable {
         self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
-        
+
     }
 
 }

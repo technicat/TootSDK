@@ -30,4 +30,8 @@ extension InstanceV1: Instance {
         urls?.streamingApi
     }
 
+    public var maxPostChars: Int? {
+        configuration?.posts?.maxCharacters ?? maxTootChars
+    }
+
 }

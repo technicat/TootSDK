@@ -1,6 +1,6 @@
 //
 //  PleromaPollLimits.swift
-//  
+//
 //
 //  Created by Philip Chu on 6/30/24.
 //
