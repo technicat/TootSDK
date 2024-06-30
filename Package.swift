@@ -69,6 +69,7 @@ let package = Package(
                 .copy("Resources/instance_iceshrimp_contact_removed.json"),
                 .copy("Resources/instance_sharkey_contact_removed.json"),
                 .copy("Resources/instancev1_akkoma.json"),
+                .copy("Resources/instancev1_akkoma_miraiverse.json"),
                 .copy("Resources/instancev1_bookwyrm.json"),
                 .copy("Resources/instancev1_friendica_nocontact.json"),
                 .copy("Resources/instancev1_friendica_venera.json"),

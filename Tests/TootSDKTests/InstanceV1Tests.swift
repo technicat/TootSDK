@@ -82,6 +82,18 @@ final class InstanceV1Tests: XCTestCase {
         XCTAssertNotNil(result)
     }
 
+    func testAkkomaMiraiverse() throws {
+        // arrange
+        let json = localContent("instancev1_akkoma_miraiverse")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(InstanceV1.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
+
     func testMastodon() throws {
         // arrange
         let json = localContent("mastodon")

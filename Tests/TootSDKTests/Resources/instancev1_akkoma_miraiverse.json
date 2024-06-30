@@ -1,0 +1,157 @@
+{
+  "poll_limits" : {
+    "max_options" : 20,
+    "min_expiration" : 0,
+    "max_option_chars" : 200,
+    "max_expiration" : 31536000
+  },
+  "thumbnail" : "https://miraiverse.s3.fr-par.scw.cloud/43faa448afe33373f4194deed7ea3d873e550b50176e66a04d21e02bc24e60a7.png",
+  "title" : "miraiverse",
+  "banner_upload_limit" : 1000000,
+  "description_limit" : 5000,
+  "background_upload_limit" : 1000000,
+  "pleroma" : {
+    "stats" : {
+      "mau" : 108
+    },
+    "vapid_public_key" : "BAuOPe54gHB-_NU0yMKppnY4JtKd925UvqOXYLjN5HAtQkvROCrjZ-gk6hTlZzGWn7dy9VAWRlexM5-XGTcAOG8",
+    "metadata" : {
+      "account_activation_required" : true,
+      "federation" : {
+        "mrf_simple_info" : {
+
+        },
+        "mrf_object_age" : {
+          "actions" : [
+            "delist",
+            "strip_followers"
+          ],
+          "threshold" : 604800
+        },
+        "enabled" : true,
+        "mrf_simple" : {
+          "accept" : [
+
+          ],
+          "reject" : [
+
+          ],
+          "federated_timeline_removal" : [
+
+          ],
+          "followers_only" : [
+
+          ],
+          "report_removal" : [
+
+          ],
+          "media_nsfw" : [
+
+          ],
+          "banner_removal" : [
+
+          ],
+          "reject_deletes" : [
+
+          ],
+          "avatar_removal" : [
+
+          ],
+          "media_removal" : [
+
+          ],
+          "background_removal" : [
+
+          ]
+        },
+        "mrf_policies" : [
+          "ObjectAgePolicy",
+          "TagPolicy",
+          "SimplePolicy",
+          "HashtagPolicy",
+          "InlineQuotePolicy",
+          "NormalizeMarkup",
+          "DirectMessageDisabledPolicy"
+        ],
+        "quarantined_instances" : [
+
+        ],
+        "mrf_hashtag" : {
+          "federated_timeline_removal" : [
+
+          ],
+          "sensitive" : [
+            "nsfw"
+          ],
+          "reject" : [
+
+          ]
+        },
+        "exclusions" : false,
+        "quarantined_instances_info" : {
+
+          "quarantined_instances" : {
+
+          }
+        }
+      },
+      "features" : [
+        "pleroma_api",
+        "akkoma_api",
+        "mastodon_api",
+        "mastodon_api_streaming",
+        "polls",
+        "v2_suggestions",
+        "pleroma_explicit_addressing",
+        "shareable_emoji_packs",
+        "multifetch",
+        "pleroma:api/v1/notifications:include_types_filter",
+        "quote_posting",
+        "editing",
+        "bubble_timeline",
+        "pleroma_emoji_reactions",
+        "exposable_reactions",
+        "profile_directory",
+        "custom_emoji_reactions",
+        "pleroma:get:main/ostatus"
+      ],
+      "fields_limits" : {
+        "name_length" : 512,
+        "value_length" : 2048,
+        "max_fields" : 10,
+        "max_remote_fields" : 20
+      },
+      "post_formats" : [
+        "text/plain",
+        "text/html",
+        "text/markdown",
+        "text/bbcode",
+        "text/x.misskeymarkdown"
+      ],
+      "privileged_staff" : false
+    }
+  },
+  "registrations" : true,
+  "approval_required" : false,
+  "background_image" : "https://miraiverse.xyz/images/city.jpg",
+  "upload_limit" : 25000000,
+  "version" : "2.7.2 (compatible; Akkoma 3.13.2-0-g050bc74)",
+  "uri" : "https://miraiverse.xyz",
+  "max_toot_chars" : 5000,
+  "email" : "sukino@miraiverse.me",
+  "urls" : {
+    "streaming_api" : "wss://miraiverse.xyz"
+  },
+  "stats" : {
+    "user_count" : 743,
+    "remote_user_count" : 334643,
+    "domain_count" : 18983,
+    "status_count" : 52454
+  },
+  "languages" : [
+    "th",
+    "en"
+  ],
+  "avatar_upload_limit" : 1000000,
+  "description" : "สังคม Fediverse แห่งอนาคตที่เปิดโอกาสให้ทุกคนได้แสดงออกอย่างเต็มที่"
+}
