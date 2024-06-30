@@ -27,6 +27,8 @@ public struct InstanceV1: Codable, Hashable {
         pollLimits: PleromaPollLimits? = nil,
         maxTootChars: Int? = nil,
         maxMediaAttachments: Int? = nil,
+        uploadLimit: Int? = nil,
+        avatarUploadLimit: Int? = nil,
         backgroundImage: String? = nil
     ) {
         self.uri = uri
@@ -46,6 +48,11 @@ public struct InstanceV1: Codable, Hashable {
         self.contactAccount = contactAccount
         self.rules = rules
         self.pleroma = pleroma
+        self.pollLimits = pollLimits
+        self.maxTootChars = maxTootChars
+        self.maxMediaAttachments = maxMediaAttachments
+        self.uploadLimit = uploadLimit
+        self.avatarUploadLimit = avatarUploadLimit
         self.backgroundImage = backgroundImage
     }
 
@@ -88,6 +95,8 @@ public struct InstanceV1: Codable, Hashable {
     public var pollLimits: PleromaPollLimits?
     public var maxTootChars: Int?
     public var maxMediaAttachments: Int?
+    public var uploadLimit: Int?
+    public var avatarUploadLimit: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
 
@@ -143,6 +152,8 @@ public struct InstanceV1: Codable, Hashable {
         self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
         self.maxMediaAttachments = try container.decodeIfPresent(Int.self, forKey: .maxMediaAttachments)
+        self.uploadLimit = try container.decodeIfPresent(Int.self, forKey: .uploadLimit)
+        self.avatarUploadLimit = try container.decodeIfPresent(Int.self, forKey: .avatarUploadLimit)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
 
     }

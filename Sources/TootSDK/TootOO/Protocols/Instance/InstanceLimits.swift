@@ -16,6 +16,7 @@ extension Instance {
         configuration?.accounts?.maxPinnedStatuses
     }
 
+    // configurable overrides platform default
     public var profileFieldsLimit: Int? {
         pleroma?.metadata.fieldsLimits.maxFields
     }
