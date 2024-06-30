@@ -26,6 +26,7 @@ public struct InstanceV1: Codable, Hashable {
         pleroma: PleromaInstance? = nil,
         pollLimits: PleromaPollLimits? = nil,
         maxTootChars: Int? = nil,
+        maxMediaAttachments: Int? = nil,
         backgroundImage: String? = nil
     ) {
         self.uri = uri
@@ -86,6 +87,7 @@ public struct InstanceV1: Codable, Hashable {
     public var pleroma: PleromaInstance?
     public var pollLimits: PleromaPollLimits?
     public var maxTootChars: Int?
+    public var maxMediaAttachments: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
 
@@ -140,6 +142,7 @@ public struct InstanceV1: Codable, Hashable {
         self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
         self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
+        self.maxMediaAttachments = try container.decodeIfPresent(Int.self, forKey: .maxMediaAttachments)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
 
     }

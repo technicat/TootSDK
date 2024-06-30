@@ -27,11 +27,17 @@ extension InstanceV2: Instance {
         pleroma?.backgroundImage
     }
 
+    // post limits
+    
     public var maxPostChars: Int? {
         configuration?.posts?.maxCharacters
     }
     
-    // polls
+    public var maxAttachments: Int? {
+        configuration?.posts?.maxMediaAttachments
+    }
+    
+    // poll limits
 
     public var maxPollOptions: Int? {
         configuration?.polls?.maxOptions

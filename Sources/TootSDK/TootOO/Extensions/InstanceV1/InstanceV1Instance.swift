@@ -29,12 +29,18 @@ extension InstanceV1: Instance {
     public var streaming: String? {
         urls?.streamingApi
     }
+    
+    // post limits
 
     public var maxPostChars: Int? {
         configuration?.posts?.maxCharacters ?? maxTootChars
     }
     
-    // polls
+    public var maxAttachments: Int? {
+        configuration?.posts?.maxMediaAttachments ?? maxMediaAttachments
+    }
+    
+    // poll limits
 
     public var maxPollOptions: Int? {
         configuration?.polls?.maxOptions ?? 

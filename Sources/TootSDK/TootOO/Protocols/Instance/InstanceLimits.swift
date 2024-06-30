@@ -2,10 +2,6 @@ extension Instance {
 
     // posts
 
-    public var maxAttachments: Int? {
-        configuration?.posts?.maxMediaAttachments
-    }
-
     public var charsPerURL: Int? {
         configuration?.posts?.charactersReservedPerUrl
     }

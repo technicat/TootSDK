@@ -16,16 +16,15 @@ public protocol Instance: Headable {
     var pleroma: PleromaInstance? { get }
     var backgroundImage: String? { get }
 
+    // post limits
     var maxPostChars: Int? { get }
+    var maxAttachments: Int? { get }
     
-    // polls
+    // poll limits
 
     var maxPollOptions: Int? { get }
-
     var maxPollChars: Int? { get }
-
     var minPollExpiration: Int? { get }
-
     var maxPollExpiration: Int? { get }
 
 }
