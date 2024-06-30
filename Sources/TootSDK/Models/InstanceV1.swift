@@ -24,6 +24,8 @@ public struct InstanceV1: Codable, Hashable {
         contactAccount: Account? = nil,
         rules: [InstanceRule]? = nil,
         pleroma: PleromaInstance? = nil,
+        pollLimits: PleromaPollLimits? = nil,
+        maxTootChars: Int? = nil,
         backgroundImage: String? = nil
     ) {
         self.uri = uri
@@ -82,6 +84,8 @@ public struct InstanceV1: Codable, Hashable {
     /// Pleroma
     /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
     public var pleroma: PleromaInstance?
+    public var pollLimits: PleromaPollLimits?
+    public var maxTootChars: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
 
@@ -132,8 +136,12 @@ public struct InstanceV1: Codable, Hashable {
         // also handles some friendica instances returning []
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
+        // pleroma
         self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
+        self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
+        self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
+        
     }
 
 }
