@@ -8,7 +8,8 @@ open class Friendica: MastoAPI {
     // open override var supportsFollowTag: Bool { true }
     open override var supportsMuteNotifications: Bool { false }
     open override var supportsInstanceActivity: Bool { false }
-    open override var supportsInstanceV2: Bool { true }
+    // instance v2 available but need to version check
+    open override var supportsInstanceV2: Bool { false }
     // does not support voting on polls
     open override var supportsPollVote: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
