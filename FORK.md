@@ -27,15 +27,15 @@ An instance getter is provided for deriving platforms from instance version stri
 - `avatar` is optional to accomodate Mitra (when user hasn't selected an avatar)
 - `header` is optional to accomodate Pixelfed (sometimes stubbed, sometimes nil)
 - `postsCount` is optional to accomodate Firefish (nil in boosts)
-- Created `CredentialAccount` and split up the fields accordingly
-- Removed the non-decoding initializer
+- Create `CredentialAccount` and split up the fields accordingly
+- Remove the non-decoding initializer
 - Return `CredentialAccount` from the appropriate functions, per the spec
-- Created `MutedAccount`, returned from `getMutedAccounts`
+- Create `MutedAccount`, returned from `getMutedAccounts`
 - updateCredentials takes a list of fields instead of a map and generates the keys from the indices. This preserves the order.
 
 ### Admin Functions
 
-Added most of the account operations.
+Add most of the account operations.
 
 ### Follow Requests
 
@@ -47,13 +47,14 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 - Add `InstanceV2` (and `getInstanceV2`)
 - Rename `Instance` to `InstanceV1`
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
-- Moved `Configuration` up so it  an be shared among the two instance versions
+- Move `Configuration` up so it  an be shared among the two instance versions
 - `InstanceRule` text is not optional
-- Added `TootClient.getInstancePeers`
+- Adde `TootClient.getInstancePeers`
 - Make InstanceV1.stats optional (not optional in spec but missing in micro.blog)
-- Added `TootClient.getInstanceActivity`
-- Made `Activity` fields public
-- Added optional `pleroma` field
+- Add `TootClient.getInstanceActivity`
+- `Activity` fields are public
+- Add optional `pleroma` field
+- Add old pleroma/akkoma fields `max_toot_chars` and poll limits to `InstanceV1`
 
 ### ISOCode
 
@@ -80,22 +81,22 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 ### Post
 
-- Changed `deletePost` to `deletePostAndEdit` (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
-- Changed the form type in `publishPost` and `editPost` to `application/json` instead of `multipart/form-data` to accomodate Mitra and Sharkey.
-- Moved Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
-- Added `local` visibility for Pleroma and Akkoma.
-- Added `mutualsOnly` visibility for GotoSocial.
-- Added `Post.Application` instead of repurposing `TootApplication`.
+- Change `deletePost` to `deletePostAndEdit` (to indicate its returning a Post for editing after the deletion) and add a deletePost with no return value to accomodate those platforms that don't return a Post (friendica, mitra, sharkey, firefox, and very old Mastodon).
+- Change the form type in `publishPost` and `editPost` to `application/json` instead of `multipart/form-data` to accomodate Mitra and Sharkey.
+- Move Pixelfed-specific behavior in `updateCredentials` to a version that takes `PixelfedUpdateCredentialsParams`.
+- Add `local` visibility for Pleroma and Akkoma.
+- Add `mutualsOnly` visibility for GotoSocial.
+- Add `Post.Application` instead of repurposing `TootApplication`.
 - Remove `displayingRepost` (replaced by `isBoosted`)
 - Move `displayPost` to TootOO
 
 ### PostEdit
 
-- Replaced `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
+- Replace `poll` property with a simplified PostEdit.Poll struct matching the API spec, i.e. only containing poll option titles. Fixes a decoding error trying to read Poll.id.
 
 ### Preferences
 
-- Added `TootClient.getPreferences()`
+- Add `TootClient.getPreferences()`
 
 ### Relationship
 
@@ -106,16 +107,16 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 ### ScheduledPost
 
-- Added `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
+- Add `ScheduledPost.Params` so `ScheduledPostParams` can be used solely for requests, no longer need to translate to `ScheduledPostRequest`
 - Handle nil/missing `ScheduledPost.mediaAttachments` from Pleroma/Akkoma
-- Removed throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
+- Remove throws for missing date (no longer optional in `ScheduledPostParams`) and scheduled too soon (handle enforcement at the calling level)
 - Updating a `ScheduledPost` no longer returns an optional
 - `getScheduledPost` no longer returns an optional
 
 ### Report
 
 - Reporting accounts/posts on Pixelfed is moved to a separate function that takes `PixelfedReportParams`
-- Filled in remaining `Report` fields added with Mastodon 4.0
+- Fill in remaining `Report` fields added with Mastodon 4.0
 
 ### Tag
 
@@ -143,7 +144,7 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 ### TootSDKFeature/Flavour
 
-- Removed. Use Platform or something else nothing.
+- Removed. Use `Platform` or something else or nothing.
 
 ### HTTP
 - For HTTP requests with no body, set content-type to nil and if no body, content-length to 0 (previously just for sharkey)
