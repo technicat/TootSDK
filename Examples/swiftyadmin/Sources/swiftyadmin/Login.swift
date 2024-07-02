@@ -15,7 +15,7 @@ struct Login: AsyncParsableCommand {
         help:
             "List of scopes to request during authentication. e.g. '-s admin:read -s admin:write'"
     )
-    var scopes: [String] = ["read", "write", "follow", "push"]
+    var scopes: [OAuthScope] = [.read, .write, .follow, .push]
 
     mutating func run() async throws {
         guard let serverUrl = URL(string: url) else {
@@ -23,7 +23,7 @@ struct Login: AsyncParsableCommand {
             return
         }
 
-        print("Logging into (serverUrl.absoluteString) with scopes \(scopes.joined(separator: ", "))")
+        print("Logging into (serverUrl.absoluteString) with scopes \(scopes.map{$0.rawValue}.joined(separator: ", "))")
         let callbackURI: String = "urn:ietf:wg:oauth:2.0:oob"
         let client = TootClient(instanceURL: serverUrl, scopes: scopes)
 

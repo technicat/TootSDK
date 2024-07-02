@@ -5,6 +5,8 @@
 //  Created by Philip Chu on 6/18/24.
 //
 
+import ArgumentParser
+
 /// https://docs.joinmastodon.org/api/oauth-scopes/
 public enum OAuthScope: String {
     case read
@@ -51,4 +53,10 @@ public enum OAuthScope: String {
     case adminWriteEmailDomainBlocks = "admin:write:email_domain_blocks"
     case adminWriteIPBlocks = "admin:write:ip_blocks"
     case adminWriteReports = "admin:write:reports"
+}
+
+extension OAuthScope: ExpressibleByArgument {
+    public init?(argument: String) {
+        self.init(rawValue: argument)
+    }
 }

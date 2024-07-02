@@ -25,7 +25,7 @@ struct FollowByURI: AsyncParsableCommand {
     mutating func run() async throws {
         print("Following \(account)")
         let client = TootClient(instanceURL: URL(string: url)!, accessToken: token)
-        let relationship = try await client.followAccountURI(by: account)
-        print(relationship)
+        let relationship = try await client.followAccount(uri: account)
+        print(relationship ?? "")
     }
 }
