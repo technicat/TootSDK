@@ -138,7 +138,7 @@
   "version" : "2.7.2 (compatible; Akkoma 3.13.2-0-g050bc74)",
   "uri" : "https://miraiverse.xyz",
   "max_toot_chars" : 5000,
-  "email" : "sukino@miraiverse.me",
+  "email" : "contact@social.thisworksonmycomputer.local",
   "urls" : {
     "streaming_api" : "wss://miraiverse.xyz"
   },
