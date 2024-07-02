@@ -312,13 +312,6 @@ public actor StreamingClient {
                     Self.logger.notice("Streaming connection cancelled.")
                 #endif
                 return
-//            } catch TootSDKError.unsupportedFlavour(let current, let required) {
-//                // If the instance flavour is unsupported, don't retry.
-//                #if canImport(OSLog)
-//                    Self.logger.notice("Instance flavour '\(current.rawValue)' does not support streaming.")
-//                #endif
-//                throwToSubscribers(TootSDKError.unsupportedFlavour(current: current, required: required))
-//                return
             } catch TootSDKError.streamingUnsupported {
                 // If the instance doesn't provide a streaming URL, don't retry.
                 #if canImport(OSLog)
