@@ -102,7 +102,7 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 - boolean properties are now mostly optional to accomodate platforms that don't always include them (Mitra, temporarily, Sharkey, lately).
 - Pleroma follow by URI moved to a separate file (also renamed and takes a param struct)
-- `followAccountURI` moved to `Extensions` and renamed, along with a convenience function `pleromaLookupAccount`.
+- `followAccountURI` moved to `Extensions` and renamed to `followAccount`, along with a convenience function `pleromaLookupAccount`.
 - `lookupAccount` moved to `TootClient+Account.swift`
 
 ### ScheduledPost
