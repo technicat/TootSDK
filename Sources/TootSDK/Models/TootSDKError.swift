@@ -16,6 +16,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
     case unexpectedError(_ description: String)
     /// The remote instance did not respond with the expected payload during authorization
     case clientAuthorizationFailed
+    /// A "this should never happen" assertion has failed
+    case internalError(_ description: String)
     /// A specific error message was returned from the server
     case serverError(_ message: String)
     /// The server does not have a streaming endpoint.
@@ -46,6 +48,8 @@ public enum TootSDKError: Error, LocalizedError, Equatable {
             return "Unexpected error: \(description)"
         case .clientAuthorizationFailed:
             return "The remote instance did not respond with the expected payload during authorization."
+        case .internalError(let description):
+            return "[TootSDK bug] " + description + "."
         case .serverError(let message):
             return message
         case .streamingUnsupported:

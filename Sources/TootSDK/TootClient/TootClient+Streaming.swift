@@ -126,10 +126,10 @@ extension TootClient {
     /// > - ``TootSDKError/unsupportedFlavour(current:required:)`` if TootSDK doesn't support streaming to the instance flavour.
     /// > - `CancellationError` if the task is cancelled prior to creating the socket.
     public func beginStreaming() async throws -> TootSocket {
-        try requireFeature(.streaming)
+       // try requireFeature(.streaming)
 
         // get streaming endpoint URL from instance info
-        async let streamingEndpoint = getInstanceInfo().urls?.streamingApi
+        async let streamingEndpoint = getInstanceV1().urls?.streamingApi
         async let streamingHealthy = getStreamingHealth()
 
         guard let streamingEndpoint = try await streamingEndpoint,
@@ -188,9 +188,9 @@ extension TootClient {
     }
 }
 
-extension TootFeature {
-
-    /// Ability to stream incoming events via WebSocket
-    ///
-    public static let streaming = TootFeature(supportedFlavours: [.mastodon, .pleroma, .akkoma])
-}
+//extension TootFeature {
+//
+//    /// Ability to stream incoming events via WebSocket
+//    ///
+//    public static let streaming = TootFeature(supportedFlavours: [.mastodon, .pleroma, .akkoma])
+//}

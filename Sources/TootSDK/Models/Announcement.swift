@@ -107,7 +107,7 @@ public struct Announcement: Codable, Hashable, Identifiable, Sendable {
         public var acct: String
     }
 
-    public struct Status: Codable, Hashable, Identifiable, Sendable {
+    public struct Post: Codable, Hashable, Identifiable, Sendable {
         public init(id: String, url: String) {
             self.id = id
             self.url = url
