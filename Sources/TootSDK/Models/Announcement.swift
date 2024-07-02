@@ -4,7 +4,7 @@
 import Foundation
 
 /// Represents an announcement set by an administrator.
-public struct Announcement: Codable, Hashable, Identifiable {
+public struct Announcement: Codable, Hashable, Identifiable, Sendable {
     public init(
         id: String,
         content: String,
@@ -88,7 +88,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
         case endsAt
     }
 
-    public struct Account: Codable, Hashable, Identifiable {
+    public struct Account: Codable, Hashable, Identifiable, Sendable {
         public init(id: String, username: String, url: String, acct: String) {
             self.id = id
             self.username = username
@@ -107,7 +107,7 @@ public struct Announcement: Codable, Hashable, Identifiable {
         public var acct: String
     }
 
-    public struct Post: Codable, Hashable, Identifiable {
+    public struct Status: Codable, Hashable, Identifiable, Sendable {
         public init(id: String, url: String) {
             self.id = id
             self.url = url

@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.2.0"),
         .package(url: "https://github.com/apple/swift-collections.git", from: "1.0.2"),
-        .package(url: "https://github.com/karwa/swift-url.git", from: "0.4.1"),
+        .package(url: "https://github.com/karwa/swift-url.git", from: "0.4.2"),
         .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0"..<"4.0.0"),
     ],
     targets: [
@@ -98,6 +98,9 @@ let package = Package(
                 .copy("Resources/scheduled_post_attachment.json"),
                 .copy("Resources/scheduled_post_multiple_attachments.json"),
                 .copy("Resources/scheduled_post_reply.json"),
+                .copy("Resources/streaming_delete.json"),
+                .copy("Resources/streaming_filters_changed.json"),
+                .copy("Resources/streaming_update.json"),
                 .copy("Resources/tag.json"),
                 .copy("Resources/translation_attachment.json"),
                 .copy("Resources/translation_languages.json"),
