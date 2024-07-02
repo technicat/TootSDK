@@ -40,6 +40,9 @@ open class Pixelfed: MastoCompatible {
     open override var supportsSearchAccount: Bool { false }
 
     open override var supportsSearchPosts: Bool { false }
+    
+    /// doesn't support streaming via websockets
+    open override var supportsStreaming: Bool { false }
 
     open override var supportsTagStats: Bool { false }
 

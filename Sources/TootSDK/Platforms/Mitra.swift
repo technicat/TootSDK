@@ -32,6 +32,8 @@ open class Mitra: MastoCompatible {
     /// doesn't support tag results in search (without # prefix)
     open override var supportsSearchTags: Bool { false }
     open override var supportsSpoiler: Bool { false }
+    /// doesn't support streaming via websockets
+    open override var supportsStreaming: Bool { false }
     /// doesn't support tag statistics
     open override var supportsTagStats: Bool { false }
     open override var supportsTranslate: Bool { false }

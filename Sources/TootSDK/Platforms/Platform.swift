@@ -102,6 +102,8 @@ public protocol Platform {
     var supportsSearchTags: Bool { get }
 
     var supportsSpoiler: Bool { get }
+    /// websockets - should this be finer grained?
+    var supportsStreaming: Bool { get }
 
     var supportsTagStats: Bool { get }
 

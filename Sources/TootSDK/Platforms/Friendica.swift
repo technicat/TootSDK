@@ -13,6 +13,8 @@ open class Friendica: MastoAPI {
     // does not support voting on polls
     open override var supportsPollVote: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
+    /// doesn't support streaming via websockets
+    open override var supportsStreaming: Bool { false }
     open override var supportsUpdateAccount: Bool { false }
 
     // lists

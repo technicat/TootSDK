@@ -170,6 +170,8 @@ open class MastoAPI: Platform {
     open var suggestionsLimit: Int {
         api >= Version(3, 4) ? 80 : 0
     }
+    /// https://docs.joinmastodon.org/methods/streaming/
+    open var supportsStreaming: Bool { true } // todo - version
     ///
     open func trendingLinksLimit(_ auth: Bool) -> Int {
         api >= Version(3, 5) ? 20 : 0
