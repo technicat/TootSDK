@@ -47,6 +47,9 @@ public protocol Platform {
     var supportsInstanceExtendedDescription: Bool { get }
     /// query for rules (separate from instance v1/v2)
     var supportsInstanceRules: Bool { get }
+    // we assume every Platform has Instance V1
+    // but should probably have it here
+    // if we want to handle anything with nodeinfo
     ///
     var supportsInstanceV2: Bool { get }
     // only need this because it's broken on Firefish and Sharkey
