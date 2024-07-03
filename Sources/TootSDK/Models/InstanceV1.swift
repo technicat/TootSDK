@@ -31,6 +31,7 @@ public struct InstanceV1: Codable, Hashable {
         shoutLimit: Int? = nil,
         uploadLimit: Int? = nil,
         avatarUploadLimit: Int? = nil,
+        backgroundUploadLimit: Int? = nil,
         backgroundImage: String? = nil,
         pleroma: PleromaInstance? = nil
     ) {
@@ -58,6 +59,7 @@ public struct InstanceV1: Codable, Hashable {
         self.shoutLimit = shoutLimit
         self.uploadLimit = uploadLimit
         self.avatarUploadLimit = avatarUploadLimit
+        self.backgroundUploadLimit = backgroundUploadLimit
         self.backgroundImage = backgroundImage
         self.pleroma = pleroma
     }
@@ -105,8 +107,7 @@ public struct InstanceV1: Codable, Hashable {
     public var shoutLimit: Int?
     public var uploadLimit: Int?
     public var avatarUploadLimit: Int?
-    // todo - add these
-    //    public var backgroundUploadLimit: Int?
+    public var backgroundUploadLimit: Int?
     //    public var bannerUploadLimit: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
@@ -168,6 +169,7 @@ public struct InstanceV1: Codable, Hashable {
         self.shoutLimit = try container.decodeIfPresent(Int.self, forKey: .shoutLimit)
         self.uploadLimit = try container.decodeIfPresent(Int.self, forKey: .uploadLimit)
         self.avatarUploadLimit = try container.decodeIfPresent(Int.self, forKey: .avatarUploadLimit)
+        self.backgroundUploadLimit = try container.decodeIfPresent(Int.self, forKey: .backgroundUploadLimit)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
         self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
 
