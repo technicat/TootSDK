@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Pleroma additions to instance v1 and v2
+/// Some fields are at the instance level in v1
 ///https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
 public struct PleromaInstance: Codable, Hashable {
 
@@ -36,7 +38,7 @@ public struct PleromaInstance: Codable, Hashable {
         public var avatarUploadLimit: Int?
         public var bannerUploadLimit: Int?
         public var backgroundUploadLimit: Int?
-        
+
     }
 
     public struct FieldsLimits: Codable, Hashable {
