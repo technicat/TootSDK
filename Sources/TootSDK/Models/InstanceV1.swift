@@ -99,17 +99,27 @@ public struct InstanceV1: Codable, Hashable {
     public var contactAccount: Account?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
-    /// Pleroma additions (ordered according to this doc)
-    /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    // Pleroma additions (ordered according to this doc)
+    // https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    /// The maximum characters per post
     public var maxTootChars: Int?
+    /// Maximum number of post media attachments
     public var maxMediaAttachments: Int?
+    /// The maximum characters per chat message
     public var chatLimit: Int?
+    /// The maximum characters per image description
     public var descriptionLimit: Int?
+    /// The limits of polls
     public var pollLimits: PleromaPollLimits?
+    /// The maximum characters per Shoutbox message
     public var shoutLimit: Int?
+    /// The maximum upload file size
     public var uploadLimit: Int?
+    /// The same for avatars
     public var avatarUploadLimit: Int?
+    /// The same for backgrounds
     public var backgroundUploadLimit: Int?
+    /// The same for banners
     public var bannerUploadLimit: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
