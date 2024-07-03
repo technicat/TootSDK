@@ -28,6 +28,7 @@ public struct InstanceV1: Codable, Hashable {
         chatLimit: Int? = nil,
         descriptionLimit: Int? = nil,
         pollLimits: PleromaPollLimits? = nil,
+        shoutLimit: Int? = nil,
         uploadLimit: Int? = nil,
         avatarUploadLimit: Int? = nil,
         backgroundImage: String? = nil,
@@ -54,6 +55,7 @@ public struct InstanceV1: Codable, Hashable {
         self.chatLimit = chatLimit
         self.descriptionLimit = descriptionLimit
         self.pollLimits = pollLimits
+        self.shoutLimit = shoutLimit
         self.uploadLimit = uploadLimit
         self.avatarUploadLimit = avatarUploadLimit
         self.backgroundImage = backgroundImage
@@ -100,6 +102,7 @@ public struct InstanceV1: Codable, Hashable {
     public var chatLimit: Int?
     public var descriptionLimit: Int?
     public var pollLimits: PleromaPollLimits?
+    public var shoutLimit: Int?
     public var uploadLimit: Int?
     public var avatarUploadLimit: Int?
     // todo - add these
@@ -162,6 +165,7 @@ public struct InstanceV1: Codable, Hashable {
         self.chatLimit = try container.decodeIfPresent(Int.self, forKey: .chatLimit)
         self.descriptionLimit = try container.decodeIfPresent(Int.self, forKey: .descriptionLimit)
         self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
+        self.shoutLimit = try container.decodeIfPresent(Int.self, forKey: .shoutLimit)
         self.uploadLimit = try container.decodeIfPresent(Int.self, forKey: .uploadLimit)
         self.avatarUploadLimit = try container.decodeIfPresent(Int.self, forKey: .avatarUploadLimit)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
