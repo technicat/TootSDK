@@ -25,6 +25,7 @@ public struct InstanceV1: Codable, Hashable {
         rules: [InstanceRule]? = nil,
         maxTootChars: Int? = nil,
         maxMediaAttachments: Int? = nil,
+        descriptionLimit: Int? = nil,
         pollLimits: PleromaPollLimits? = nil,
         uploadLimit: Int? = nil,
         avatarUploadLimit: Int? = nil,
@@ -47,13 +48,14 @@ public struct InstanceV1: Codable, Hashable {
         self.configuration = configuration
         self.contactAccount = contactAccount
         self.rules = rules
-        self.pleroma = pleroma
-        self.pollLimits = pollLimits
         self.maxTootChars = maxTootChars
         self.maxMediaAttachments = maxMediaAttachments
+        self.descriptionLimit = descriptionLimit
+        self.pollLimits = pollLimits
         self.uploadLimit = uploadLimit
         self.avatarUploadLimit = avatarUploadLimit
         self.backgroundImage = backgroundImage
+        self.pleroma = pleroma
     }
 
     /// The domain name of the instance.
@@ -94,7 +96,7 @@ public struct InstanceV1: Codable, Hashable {
     public var maxTootChars: Int?
     public var maxMediaAttachments: Int?
     //public var chatLimit: Int?
-    //public var descriptionLimit: Int?
+    public var descriptionLimit: Int?
     public var pollLimits: PleromaPollLimits?
     public var uploadLimit: Int?
     public var avatarUploadLimit: Int?
@@ -155,6 +157,7 @@ public struct InstanceV1: Codable, Hashable {
         // pleroma
         self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
         self.maxMediaAttachments = try container.decodeIfPresent(Int.self, forKey: .maxMediaAttachments)
+        self.descriptionLimit = try container.decodeIfPresent(Int.self, forKey: .descriptionLimit)
         self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.uploadLimit = try container.decodeIfPresent(Int.self, forKey: .uploadLimit)
         self.avatarUploadLimit = try container.decodeIfPresent(Int.self, forKey: .avatarUploadLimit)
