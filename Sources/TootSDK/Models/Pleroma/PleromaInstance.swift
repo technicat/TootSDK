@@ -29,6 +29,14 @@ public struct PleromaInstance: Codable, Hashable {
         public var postFormats: [MIMEType]
         public var fieldsLimits: FieldsLimits
         public var federation: Federation
+        // v2
+        public var chatLimit: Int?
+        public var descriptionLimit: Int?
+        public var shoutLimit: Int?
+        public var avatarUploadLimit: Int?
+        public var bannerUploadLimit: Int?
+        public var backgroundUploadLimit: Int?
+        
     }
 
     public struct FieldsLimits: Codable, Hashable {
