@@ -5,8 +5,6 @@
 //  Created by Philip Chu on 6/18/24.
 //
 
-import ArgumentParser
-
 /// https://docs.joinmastodon.org/api/oauth-scopes/
 public enum OAuthScope: String {
     case read
