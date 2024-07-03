@@ -26,5 +26,10 @@ public protocol Instance: Headable {
     var maxPollChars: Int? { get }
     var minPollExpiration: Int? { get }
     var maxPollExpiration: Int? { get }
+    
+    // media limits
+    
+    var imageSizeLimit: Int? { get }
+    var videoSizeLimit: Int? { get }
 
 }

@@ -57,5 +57,15 @@ extension InstanceV1: Instance {
     public var maxPollExpiration: Int? {
         configuration?.polls?.maxExpiration ?? pollLimits?.maxExpiration
     }
+    
+    // media limits
+    
+    public var imageSizeLimit: Int? {
+      configuration?.mediaAttachments?.imageSizeLimit ?? uploadLimit
+    }
+    
+    public var videoSizeLimit: Int? {
+      configuration?.mediaAttachments?.imageSizeLimit ?? uploadLimit
+    }
 
 }
