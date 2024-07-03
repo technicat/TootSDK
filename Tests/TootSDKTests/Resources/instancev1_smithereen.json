@@ -1,0 +1,16 @@
+{
+    "uri": "friends.grishka.me",
+    "email": "",
+    "stats": {
+        "user_count": 100,
+        "domain_count": 1248,
+        "status_count": 346
+    },
+    "title": "Gregory's Instance",
+    "version": "Smithereen 0.0.1-pre-alpha",
+    "description": "<p>\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440 \u0442\u043e\u0433\u043e fediverse-\u043f\u0440\u043e\u0435\u043a\u0442\u0430, \u043f\u044b\u0442\u0430\u044e\u0449\u0435\u0433\u043e\u0441\u044f \u0431\u044b\u0442\u044c \u043f\u043e\u0445\u043e\u0436\u0438\u043c \u043d\u0430 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435.</p>\n<p>Test instance for that fediverse project that tries to be like VK.</p>\n<p><a href=\"https://github.com/grishka/Smithereen\">Source code &amp; issue tracker</a></p>",
+    "registrations": false,
+    "invites_enabled": false,
+    "approval_required": false,
+    "short_description": "<p>\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440 \u0442\u043e\u0433\u043e fediverse-\u043f\u0440\u043e\u0435\u043a\u0442\u0430, \u043f\u044b\u0442\u0430\u044e\u0449\u0435\u0433\u043e\u0441\u044f \u0431\u044b\u0442\u044c \u043f\u043e\u0445\u043e\u0436\u0438\u043c \u043d\u0430 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435.</p>\n<p>Test instance for that fediverse project that tries to be like VK.</p>\n<p><a href=\"https://github.com/grishka/Smithereen\">Source code &amp; issue tracker</a></p>"
+}

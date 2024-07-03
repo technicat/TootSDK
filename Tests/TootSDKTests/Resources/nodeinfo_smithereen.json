@@ -1,0 +1,26 @@
+{
+    "usage": {
+        "users": {
+            "total": 253,
+            "activeMonth": 33,
+            "activeHalfyear": 56
+        },
+        "localPosts": 1790,
+        "localComments": 8141
+    },
+    "version": "2.1",
+    "metadata": {
+        "nodeName": "Gregory's Server",
+        "nodeDescription": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0441\u0435\u0440\u0432\u0435\u0440 \u0442\u043e\u0433\u043e fediverse-\u043f\u0440\u043e\u0435\u043a\u0442\u0430, \u043f\u044b\u0442\u0430\u044e\u0449\u0435\u0433\u043e\u0441\u044f \u0431\u044b\u0442\u044c \u043f\u043e\u0445\u043e\u0436\u0438\u043c \u043d\u0430 \u0412\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0435. \n\nTest instance for that fediverse project that tries to be like VK. \n\nSource code & issue tracker"
+    },
+    "software": {
+        "name": "smithereen",
+        "version": "0.8.1-dev.8.dirty+dd0249ed",
+        "homepage": "https://smithereen.software",
+        "repository": "https://github.com/grishka/Smithereen"
+    },
+    "protocols": [
+        "activitypub"
+    ],
+    "openRegistrations": false
+}
