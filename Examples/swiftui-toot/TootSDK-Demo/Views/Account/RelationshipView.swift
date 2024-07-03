@@ -45,7 +45,7 @@ struct RelationshipView: View {
         }
         .onChange(of: muting) { newValue in
             if let id = relationship.id {
-            Task {
+                Task {
                     if muting {
                         self.relationship = try await tootManager.currentClient.muteAccount(by: id)
                     } else {
@@ -57,7 +57,7 @@ struct RelationshipView: View {
         .onChange(of: blocking) { newValue in
             if let id = relationship.id {
                 Task {
-                    
+
                     if blocking {
                         self.relationship = try await tootManager.currentClient.blockAccount(by: id)
                     } else {
@@ -90,9 +90,9 @@ struct RelationshipView: View {
                                 reposts: followShowingReblogs,
                                 notify: followNotify))
                     }
-                    
+
                     Spacer()
-                    
+
                     Toggle("Show Boosts", isOn: $followShowingReblogs)
                     Toggle("Show Notify", isOn: $followNotify)
                 }

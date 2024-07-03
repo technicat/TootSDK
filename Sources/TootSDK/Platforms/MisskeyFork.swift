@@ -22,7 +22,7 @@ open class MisskeyFork: MastoAPI {
     open override var supportsPostDefaultVisibility: Bool { false }
 
     open override var supportsRevoke: Bool { false }
-    
+
     /// doesn't support streaming via websockets
     open override var supportsStreaming: Bool { false }
 
