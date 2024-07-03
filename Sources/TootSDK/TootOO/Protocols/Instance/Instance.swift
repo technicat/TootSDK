@@ -31,5 +31,6 @@ public protocol Instance: Headable {
 
     var imageSizeLimit: Int? { get }
     var videoSizeLimit: Int? { get }
+    var descriptionLimit: Int? { get }
 
 }

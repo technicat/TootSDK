@@ -64,5 +64,9 @@ extension InstanceV2: Instance {
     public var videoSizeLimit: Int? {
         configuration?.mediaAttachments?.imageSizeLimit
     }
+    
+    public var descriptionLimit: Int? {
+        pleroma?.metadata.descriptionLimit
+    }
 
 }
