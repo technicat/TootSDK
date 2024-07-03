@@ -27,7 +27,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testBookwyrm() throws {
         // arrange
         let json = localContent("instancev1_bookwyrm")
@@ -39,7 +39,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testCatodonContact() throws {
         // arrange
         let json = localContent("instance_catodon_contact_removed")
@@ -51,7 +51,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testFirefishNoContact() throws {
         // arrange
         let json = localContent("instance_firefish_contact_removed")
@@ -63,7 +63,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testFriendicaNoContact() throws {
         // arrange
         let json = localContent("instancev1_friendica_nocontact")
@@ -82,7 +82,7 @@ final class InstanceV1Tests: XCTestCase {
         XCTAssertEqual(result.invitesEnabled, false)
         XCTAssertEqual(result.registrations, true)
     }
-    
+
     func testFriendicaVenera() throws {
         // arrange
         let json = localContent("instancev1_friendica_venera")
@@ -94,7 +94,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testIceshrimpNoContact() throws {
         // arrange
         let json = localContent("instance_iceshrimp_contact_removed")
@@ -178,7 +178,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testSharkeyNoContact() throws {
         // arrange
         let json = localContent("instance_sharkey_contact_removed")
@@ -190,7 +190,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testSmithereen() throws {
         // arrange
         let json = localContent("instancev1_smithereen")
@@ -202,7 +202,7 @@ final class InstanceV1Tests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
     }
-    
+
     func testSnac() throws {
         // arrange
         let json = localContent("instancev1_snac")
