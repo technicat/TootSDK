@@ -74,7 +74,8 @@ public protocol Platform {
 
     var supportsPins: Bool { get }
 
-    var supportsPollVote: Bool { get }
+    /// create and vote on polls
+    var supportsPoll: Bool { get }
     var supportsPostDefaultLanguage: Bool { get }
     var supportsPostDefaultSensitive: Bool { get }
     var supportsPostDefaultVisibility: Bool { get }

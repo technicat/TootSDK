@@ -11,7 +11,7 @@ open class Friendica: MastoAPI {
     // instance v2 available but need to version check
     open override var supportsInstanceV2: Bool { false }
     // does not support voting on polls
-    open override var supportsPollVote: Bool { false }
+    open override var supportsPoll: Bool { false }
     open override var supportsScheduleUpdate: Bool { false }
     /// doesn't support streaming via websockets
     open override var supportsStreaming: Bool { false }

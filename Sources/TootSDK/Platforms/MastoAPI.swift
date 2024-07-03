@@ -86,7 +86,7 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/accounts/#statuses
     open var supportsPins: Bool { api >= Version(1, 6) }
 
-    open var supportsPollVote: Bool { api >= Version(2, 8) }  // supportsPoll
+    open var supportsPoll: Bool { api >= Version(2, 8) }
 
     open var supportsPostDeleteAndEdit: Bool { api >= Version(2, 9) }
     /// https://docs.joinmastodon.org/methods/statuses/#edit
