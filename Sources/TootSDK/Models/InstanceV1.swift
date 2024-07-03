@@ -23,13 +23,13 @@ public struct InstanceV1: Codable, Hashable {
         configuration: Configuration? = nil,
         contactAccount: Account? = nil,
         rules: [InstanceRule]? = nil,
-        pleroma: PleromaInstance? = nil,
-        pollLimits: PleromaPollLimits? = nil,
         maxTootChars: Int? = nil,
         maxMediaAttachments: Int? = nil,
+        pollLimits: PleromaPollLimits? = nil,
         uploadLimit: Int? = nil,
         avatarUploadLimit: Int? = nil,
-        backgroundImage: String? = nil
+        backgroundImage: String? = nil,
+        pleroma: PleromaInstance? = nil
     ) {
         self.uri = uri
         self.title = title
@@ -89,16 +89,21 @@ public struct InstanceV1: Codable, Hashable {
     public var contactAccount: Account?
     /// An itemized list of rules for users of the instance.
     public var rules: [InstanceRule]?
-    /// Pleroma
+    /// Pleroma additions (ordered according to this doc)
     /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
-    public var pleroma: PleromaInstance?
-    public var pollLimits: PleromaPollLimits?
     public var maxTootChars: Int?
     public var maxMediaAttachments: Int?
+    //public var chatLimit: Int?
+    //public var descriptionLimit: Int?
+    public var pollLimits: PleromaPollLimits?
     public var uploadLimit: Int?
     public var avatarUploadLimit: Int?
+    // todo - add these
+    //    public var backgroundUploadLimit: Int?
+    //    public var bannerUploadLimit: Int?
     /// A background image that frontends can use
     public var backgroundImage: String?
+    public var pleroma: PleromaInstance?
 
     public struct InstanceURLs: Codable, Hashable {
         /// Websockets address for push streaming. String (URL).
@@ -148,13 +153,13 @@ public struct InstanceV1: Codable, Hashable {
         self.contactAccount = try? container.decodeIfPresent(Account.self, forKey: .contactAccount)
         self.rules = try container.decodeIfPresent([InstanceRule].self, forKey: .rules)
         // pleroma
-        self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
-        self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.maxTootChars = try container.decodeIfPresent(Int.self, forKey: .maxTootChars)
         self.maxMediaAttachments = try container.decodeIfPresent(Int.self, forKey: .maxMediaAttachments)
+        self.pollLimits = try container.decodeIfPresent(PleromaPollLimits.self, forKey: .pollLimits)
         self.uploadLimit = try container.decodeIfPresent(Int.self, forKey: .uploadLimit)
         self.avatarUploadLimit = try container.decodeIfPresent(Int.self, forKey: .avatarUploadLimit)
         self.backgroundImage = try container.decodeIfPresent(String.self, forKey: .backgroundImage)
+        self.pleroma = try container.decodeIfPresent(PleromaInstance.self, forKey: .pleroma)
 
     }
 
