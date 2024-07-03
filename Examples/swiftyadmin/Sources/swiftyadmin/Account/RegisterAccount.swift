@@ -37,7 +37,7 @@ struct RegisterAccount: AsyncParsableCommand {
         let params = RegisterAccountParams(
             username: name, email: email, password: password, agreement: true, locale: "en")
         let token = try await client.registerAccount(params: params)
-        print("Registration success, access token: (\(token.accessToken ?? "nil"))")
+        print("Registration success, access token: (\(token.accessToken))")
     }
 
     func login() async throws -> String? {

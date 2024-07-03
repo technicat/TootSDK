@@ -49,3 +49,10 @@ struct ListOauthApps: AsyncParsableCommand {
         }
     }
 }
+
+
+extension OAuthScope: ExpressibleByArgument {
+    public init?(argument: String) {
+        self.init(rawValue: argument)
+    }
+}

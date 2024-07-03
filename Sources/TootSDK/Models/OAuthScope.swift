@@ -54,9 +54,3 @@ public enum OAuthScope: String {
     case adminWriteIPBlocks = "admin:write:ip_blocks"
     case adminWriteReports = "admin:write:reports"
 }
-
-extension OAuthScope: ExpressibleByArgument {
-    public init?(argument: String) {
-        self.init(rawValue: argument)
-    }
-}
