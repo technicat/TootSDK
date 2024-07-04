@@ -68,6 +68,8 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let bot: Bool?
     /// Indicates that the account represents a Group actor.
     public let group: Bool?
+    ///https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    public let pleroma: PleromaAccount?
 }
 
 extension Account {
@@ -99,6 +101,7 @@ extension Account {
         case fields
         case bot
         case group
+        case pleroma
     }
 }
 
