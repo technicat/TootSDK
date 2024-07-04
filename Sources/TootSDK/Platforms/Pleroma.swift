@@ -11,7 +11,7 @@ open class Pleroma: MastoCompatible {
     open override var supportsInstanceActivity: Bool { false }
     // I've seen once instance support v2/instance
     // maybe can version check but leave off for now
-    open override var supportsInstanceV2: Bool { false }
+    open override var supportsInstanceV2: Bool { build >= Version(2,6,52) }
     // can't mute notifications
     open override var supportsMuteNotifications: Bool { false }
     // can't update scheduled posts
