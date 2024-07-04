@@ -135,6 +135,7 @@ extension Account: Hashable {
         hasher.combine(fields)
         hasher.combine(bot)
         hasher.combine(group)
+        hasher.combine(pleroma)
     }
 
     public static func == (lhs: Account, rhs: Account) -> Bool {
