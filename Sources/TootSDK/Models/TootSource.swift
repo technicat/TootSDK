@@ -3,7 +3,7 @@
 
 import Foundation
 
-/// Represents display or publishing preferences of user's own account. Returned as an additional entity when verifying and updated credentials, as an attribute of Account.
+/// Represents display or publishing preferences of user's own account. Returned as an additional entity when verifying and updated credentials, as an attribute of CredentialAccount.
 public struct TootSource: Codable, Hashable, Sendable {
     public init(
         note: String? = nil, fields: [TootField], privacy: PostVisibility? = nil, sensitive: Bool? = nil, language: ISOCode? = nil,
