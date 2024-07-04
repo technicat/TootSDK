@@ -9,6 +9,7 @@ extension CredentialAccount {
 
 }
 
+// should rethink how the precedence works here
 extension Account {
     
     public var isHidingFollowLists: Bool {
@@ -37,6 +38,7 @@ extension Account {
         hideCollections ?? pleroma?.hideFollowsCount ?? false
     }
     
+    // todo - move
     public var isHidingFaves: Bool {
         pleroma?.hideFavorites ?? false
     }
