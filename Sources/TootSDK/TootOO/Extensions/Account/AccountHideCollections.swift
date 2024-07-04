@@ -3,12 +3,20 @@ extension CredentialAccount {
     // ideally check on CredentialAccount source which works on 4.2
     // otherwise fallback to plain account which works on 4.3
     public var isHidingCollections: Bool {
-        source?.hideCollections ?? hideCollections ?? false
+        source?.hideCollections ?? false 
+        // ?? hideCollections ?? false
     }
 
 }
 
 extension Account {
+    
+    public var isHidingFollowLists: Bool {
+        isHidingFollows &&
+        isHidingFollowers
+      //  isHidingFollowerCount &&
+      //  isHidingFollowCount
+    }
     
     public var isHidingFollows: Bool {
         hideCollections ?? pleroma?.hideFollows ?? false
@@ -19,11 +27,11 @@ extension Account {
     }
     
     public var isHidingFollowerCount: Bool {
-        hideCollections ?? pleroma?.hideFollowersCount ?? false
+        pleroma?.hideFollowersCount ?? false
     }
     
     public var isHidingFollowCount: Bool {
-        hideCollections ?? pleroma?.hideFollowsCount ?? false
+        pleroma?.hideFollowsCount ?? false
     }
     
     public var isHidingFaves: Bool {
