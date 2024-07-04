@@ -18,6 +18,11 @@ extension Account {
       //  isHidingFollowCount
     }
     
+    public var isHidingFollowCounts: Bool {
+        isHidingFollowerCount &&
+        isHidingFollowCount
+    }
+    
     public var isHidingFollows: Bool {
         hideCollections ?? pleroma?.hideFollows ?? false
     }
