@@ -1,0 +1,114 @@
+    {
+      "bot" : false,
+      "avatar_static" : "https://media.universeodon.com/accounts/avatars/109/821/003/814/913/641/original/e68319e668749152.jpg",
+      "source" : {
+        "pleroma" : {
+          "actor_type" : "Person",
+          "discoverable" : true
+        },
+        "fields" : [
+
+        ],
+        "sensitive" : false,
+        "note" : ""
+      },
+      "locked" : false,
+      "statuses_count" : 2330,
+      "url" : "https://universeodon.com/@technicat",
+      "following_count" : 437,
+      "acct" : "technicat@universeodon.com",
+      "emojis" : [
+
+      ],
+      "pleroma" : {
+        "skip_thread_containment" : false,
+        "also_known_as" : [
+
+        ],
+        "hide_follows_count" : false,
+        "tags" : [
+
+        ],
+        "is_moderator" : false,
+        "hide_follows" : false,
+        "hide_followers_count" : false,
+        "hide_followers" : false,
+        "is_confirmed" : true,
+        "is_suggested" : false,
+        "ap_id" : "https://universeodon.com/users/technicat",
+        "relationship" : {
+
+        },
+        "is_admin" : false,
+        "hide_favorites" : true,
+        "favicon" : "https://universeodon.com/favicon.ico",
+        "background_image" : null
+      },
+      "last_status_at" : "2024-07-04",
+      "akkoma" : {
+        "status_ttl_days" : null,
+        "instance" : {
+          "name" : "universeodon.com",
+          "favicon" : "https://universeodon.com/favicon.ico",
+          "nodeinfo" : {
+            "openRegistrations" : true,
+            "services" : {
+              "inbound" : [
+
+              ],
+              "outbound" : [
+
+              ]
+            },
+            "protocols" : [
+              "activitypub"
+            ],
+            "software" : {
+              "name" : "mastodon",
+              "version" : "4.2.7"
+            },
+            "usage" : {
+              "users" : {
+                "total" : 79948,
+                "activeMonth" : 5264,
+                "activeHalfyear" : 13850
+              },
+              "localPosts" : 3351193
+            },
+            "metadata" : {
+
+            },
+            "version" : "2.0"
+          }
+        },
+        "permit_followback" : false
+      },
+      "id" : "AT7ECsy5VceFhhmhyy",
+      "header_static" : "https://media.universeodon.com/accounts/headers/109/821/003/814/913/641/original/6a6d879a38c226fd.jpeg",
+      "followers_count" : 374,
+      "fqn" : "technicat@universeodon.com",
+      "header" : "https://media.universeodon.com/accounts/headers/109/821/003/814/913/641/original/6a6d879a38c226fd.jpeg",
+      "note" : "<p>This is my talk (and block) about anything account. I’ve got other accounts all over the fediverse.</p>",
+      "display_name" : "technicat",
+      "avatar" : "https://media.universeodon.com/accounts/avatars/109/821/003/814/913/641/original/e68319e668749152.jpg",
+      "created_at" : "2023-02-27T20:15:53.000Z",
+      "fields" : [
+        {
+          "name" : "Fedicat",
+          "value" : "<a href=\"https://fedicat.com/\">https://fedicat.com/</a>"
+        },
+        {
+          "name" : "GitHub",
+          "value" : "<a href=\"https://github.com/technicat\">https://github.com/technicat</a>"
+        },
+        {
+          "name" : "Phil Chu",
+          "value" : "<a href=\"https://philipchu.com/\">https://philipchu.com/</a>"
+        },
+        {
+          "name" : "Technicat LLC",
+          "value" : "<a href=\"https://technicat.com/\">https://technicat.com/</a>"
+        }
+      ],
+      "username" : "technicat"
+    }

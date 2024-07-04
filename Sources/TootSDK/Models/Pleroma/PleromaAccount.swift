@@ -38,7 +38,8 @@ public struct PleromaAccount: Codable, Hashable {
     /// true when the user is deactivated
     public var deactivated: Bool?
     /// true when the user allows automatically follow moved following accounts
-    public var allowFollowingMove: Bool
+    /// spec doesn't say optional but not always present (when viewing non-pleroma account)
+    public var allowFollowingMove: Bool?
     ///
     // public var notificationSettings // todo
     /// 

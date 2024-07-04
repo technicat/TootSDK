@@ -129,4 +129,16 @@ final class AccountTests: XCTestCase {
         XCTAssertEqual(result.role?.name, "")
         XCTAssertEqual(result.role?.color, "")
     }
+    
+    func testAkkoma() throws {
+        // arrange
+        let json = localContent("account_akkoma_miraiverse")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(Account.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+    }
 }
