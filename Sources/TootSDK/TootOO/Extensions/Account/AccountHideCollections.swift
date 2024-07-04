@@ -14,8 +14,6 @@ extension Account {
     public var isHidingFollowLists: Bool {
         isHidingFollows &&
         isHidingFollowers
-      //  isHidingFollowerCount &&
-      //  isHidingFollowCount
     }
     
     public var isHidingFollowCounts: Bool {
@@ -32,11 +30,11 @@ extension Account {
     }
     
     public var isHidingFollowerCount: Bool {
-        pleroma?.hideFollowersCount ?? false
+        hideCollections ?? pleroma?.hideFollowersCount ?? false
     }
     
     public var isHidingFollowCount: Bool {
-        pleroma?.hideFollowsCount ?? false
+        hideCollections ?? pleroma?.hideFollowsCount ?? false
     }
     
     public var isHidingFaves: Bool {
