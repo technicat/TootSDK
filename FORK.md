@@ -1,4 +1,4 @@
-This fork is geared toward supporting [Fedicat](https://fedicat.com) and changes daily, so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Not much effort is made to maintain the admin and demo apps. Here's a summary of the changes:
+This fork is geared toward supporting [Fedicat](https://fedicat.com) and changes daily, so expect instability and divergence from the [official branch](https://github.com/TootSDK/TootSDK). Minimal effort is made to maintain the example apps. Here's a summary of the changes:
 
 ## TootOO
 
@@ -32,6 +32,7 @@ An instance getter is provided for deriving platforms from instance version stri
 - Return `CredentialAccount` from the appropriate functions, per the spec
 - Create `MutedAccount`, returned from `getMutedAccounts`
 - updateCredentials takes a list of fields instead of a map and generates the keys from the indices. This preserves the order.
+- Add Pleroma extensions in the `pleroma` field.
 
 ### Admin Functions
 
