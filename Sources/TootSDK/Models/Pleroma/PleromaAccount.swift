@@ -42,7 +42,7 @@ public struct PleromaAccount: Codable, Hashable {
     public var allowFollowingMove: Bool?
     ///
     // public var notificationSettings // todo
-    /// 
+    ///
     public var acceptsChatStrings: Bool?
     /// Favicon image of the user's instance
     public var favicon: String?
@@ -54,7 +54,7 @@ public struct PleromaAccount: Codable, Hashable {
     // only in CredentialAccount
     /// A generic map of settings for frontends. Opaque to the backend
     // public var settingsStore // todo - check this
-    ///  The token needed for Pleroma shoutbox. 
+    ///  The token needed for Pleroma shoutbox.
     public var chatToken: String?
-   
+
 }
