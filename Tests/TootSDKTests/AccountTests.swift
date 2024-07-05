@@ -46,7 +46,21 @@ final class AccountTests: XCTestCase {
         XCTAssertEqual(encodedModel, model)
         //        XCTAssertEqual(encodedData.hashValue, model.hashValue)
     }
-    
+
+    func testAkkoma() throws {
+        // arrange
+        let json = localContent("account_akkoma_miraiverse")
+        let decoder = TootDecoder()
+
+        // act
+        let result = try decoder.decode(Account.self, from: json)
+
+        // assert
+        XCTAssertNotNil(result)
+        XCTAssertNotNil(result.pleroma)
+        XCTAssertNotNil(result.akkoma)
+    }
+
     func testDecodingMastodonOfficialAccount() throws {
         // arrange
         let json = localContent("account_mastodon_official")
@@ -97,18 +111,5 @@ final class AccountTests: XCTestCase {
         // assert
         XCTAssertNotNil(result)
         XCTAssertEqual(result.id, "650577272541390361")
-    }
-
-   
-    func testAkkoma() throws {
-        // arrange
-        let json = localContent("account_akkoma_miraiverse")
-        let decoder = TootDecoder()
-
-        // act
-        let result = try decoder.decode(Account.self, from: json)
-
-        // assert
-        XCTAssertNotNil(result)
     }
 }

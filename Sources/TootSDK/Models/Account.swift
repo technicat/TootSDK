@@ -68,8 +68,10 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let bot: Bool?
     /// Indicates that the account represents a Group actor.
     public let group: Bool?
-    ///https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
+    /// https://docs-develop.pleroma.social/backend/development/API/differences_in_mastoapi_responses/
     public let pleroma: PleromaAccount?
+    /// https://docs.akkoma.dev/stable/development/API/differences_in_mastoapi_responses/
+    public let akkoma: AkkomaAccount?
 }
 
 extension Account {
@@ -102,6 +104,7 @@ extension Account {
         case bot
         case group
         case pleroma
+        case akkoma
     }
 }
 
@@ -136,6 +139,7 @@ extension Account: Hashable {
         hasher.combine(bot)
         hasher.combine(group)
         hasher.combine(pleroma)
+        hasher.combine(akkoma)
     }
 
     public static func == (lhs: Account, rhs: Account) -> Bool {
