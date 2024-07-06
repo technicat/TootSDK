@@ -10,7 +10,7 @@ A layer of TootClient extensions that provides an object-oriented interface (thi
 
 ## Platform
 
-A protocol for use at the app level to check feature support. Depends on TootSDK and TootExt but could be a separate package. Totally optional, you can use TootSDK with another feature checking system or none.
+A protocol for use at the app level to check feature support (reasoning is that the UI needs to check features anyway, so make platform-dependent decisions at that level). Depends on TootSDK and TootOO but could be a separate package. Totally optional, you can use TootSDK with another feature checking system or none.
 
 Implements a class hierarchy that mirrors the forking relationship among fediverse platform is provided. For example, `Hometown` is a subclass of `Mastodon`, which is a subclass of `MastodonAPI`. `Platform` exposes feature support queries like `supportsProfileFields`.
 
