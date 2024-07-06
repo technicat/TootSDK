@@ -44,7 +44,7 @@ Consistent with other functions, made `limit` optional in `TootClient.getFollowR
 
 ### Instance
 
-- Retrieve with `getInstance` instead of `getInstanceInfo`
+- Rename `getInstanceInfo` to `getInstanceV11
 - Add `InstanceV2` (and `getInstanceV2`)
 - Rename `Instance` to `InstanceV1`
 ` Define `Instance` as a protocol featuring the commonality between `InstanceV1` and `InstanceV2`
