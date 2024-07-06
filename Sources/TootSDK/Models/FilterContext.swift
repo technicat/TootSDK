@@ -3,7 +3,7 @@
 
 import Foundation
 
-public enum FilterContext: String, Codable {
+public enum FilterContext: String, Codable, Sendable, Hashable {
     /// home timeline and lists
     case home
     /// notifications timeline

@@ -14,9 +14,9 @@ public struct UpdateFilterParams: Sendable, Hashable {
     /// New name for the filter.
     public let title: String?
     /// New contexts for the filter.
-    public let context: Set<Filter.Context>?
+    public let context: Set<FilterContext>?
     /// New action of the filter.
-    public let action: Filter.Action?
+    public let action: FilterAction?
     /// New expiry time of the filter.
     public let expiry: Expiry?
     /// Keyword changes to perform.
@@ -42,8 +42,8 @@ public struct UpdateFilterParams: Sendable, Hashable {
     public init(
         id: String,
         title: String? = nil,
-        context: Set<Filter.Context>? = nil,
-        action: Filter.Action? = nil,
+        context: Set<FilterContext>? = nil,
+        action: FilterAction? = nil,
         expiry: Expiry? = nil,
         keywords: [KeywordChange] = []
     ) {

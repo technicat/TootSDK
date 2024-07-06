@@ -10,8 +10,8 @@ import Foundation
 /// Parameters to create a new filter.
 public struct CreateFilterParams: Sendable {
     let title: String
-    let context: Set<Filter.Context>
-    let action: Filter.Action
+    let context: Set<FilterContext>
+    let action: FilterAction
     let expiresInSeconds: Int?
     let keywords: [Keyword]
 
@@ -25,8 +25,8 @@ public struct CreateFilterParams: Sendable {
     ///   - keywords: Keywords to be added to the newly-created filter.
     public init(
         title: String,
-        context: Set<Filter.Context>,
-        action: Filter.Action,
+        context: Set<FilterContext>,
+        action: FilterAction,
         expiresInSeconds: Int?,
         keywords: [Keyword]
     ) {

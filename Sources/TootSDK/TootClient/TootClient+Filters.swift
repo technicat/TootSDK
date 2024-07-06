@@ -51,7 +51,6 @@ extension TootClient {
     /// - Returns: The created filter.
     @discardableResult
     public func createFilter(_ params: CreateFilterParams) async throws -> Filter {
-        try requireFeature(.filtersV2)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v2", "filters"])
             $0.method = .post
@@ -66,7 +65,6 @@ extension TootClient {
     /// - Returns: The updated filter.
     @discardableResult
     public func updateFilter(_ params: UpdateFilterParams) async throws -> Filter {
-        try requireFeature(.filtersV2)
         let req = try HTTPRequestBuilder {
             $0.url = getURL(["api", "v2", "filters", params.id])
             $0.method = .put

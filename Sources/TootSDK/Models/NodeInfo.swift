@@ -34,27 +34,3 @@ public struct WellKnownNodeInfo: Codable {
         public let href: String
     }
 }
-
-extension NodeInfo {
-    public var flavour: TootSDKFlavour {
-        if software.name == "pleroma" {
-            return .pleroma
-        }
-        if software.name == "pixelfed" {
-            return .pixelfed
-        }
-        if software.name == "friendica" {
-            return .friendica
-        }
-        if software.name == "akkoma" {
-            return .akkoma
-        }
-        if software.name == "firefish" || software.name == "catodon" || software.name == "iceshrimp" {
-            return .firefish
-        }
-        if software.name == "sharkey" {
-            return .sharkey
-        }
-        return .mastodon
-    }
-}
