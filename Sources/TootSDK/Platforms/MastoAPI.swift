@@ -95,7 +95,7 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/statuses/#history
     open var supportsPostHistory: Bool { api >= Version(3, 5) }
 
-    open var supportsPostDefaultLanguage: Bool { api >= Version(2, 4, 2) }
+    open var supportsPostDefaultLanguage: Bool { api >= Version(2, 4, 2) && !languages.isEmpty}
     open var supportsPostDefaultSensitive: Bool { api >= Version(2, 4) }
     open var supportsPostDefaultVisibility: Bool { api >= Version(2, 4) }
 

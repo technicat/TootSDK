@@ -6,7 +6,7 @@ open class Takahe: MastoCompatible {
         // arbitrary mastodon api
         super.init(masto: Version(3, 5), platform: api)
     }
-    
+
     /// doesn't support bot indicator in account settings
     open override var supportsBot: Bool { false }
 }

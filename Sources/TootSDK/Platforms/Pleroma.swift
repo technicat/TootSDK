@@ -17,7 +17,7 @@ open class Pleroma: MastoCompatible {
     // can't update scheduled posts
     open override var supportsScheduleUpdate: Bool { false }
     // can't specify post default language
-    open override var supportsPostDefaultLanguage: Bool { false }
+    //open override var supportsPostDefaultLanguage: Bool { false }
     // can't specify post default sensitivity
     open override var supportsPostDefaultSensitive: Bool { false }
     // can't revoke token

@@ -17,7 +17,7 @@ open class MisskeyFork: MastoAPI {
 
     open override var supportsPostDeleteAndEdit: Bool { false }
 
-    open override var supportsPostDefaultLanguage: Bool { false }
+    // open override var supportsPostDefaultLanguage: Bool { false }
     open override var supportsPostDefaultSensitive: Bool { false }
     open override var supportsPostDefaultVisibility: Bool { false }
 
