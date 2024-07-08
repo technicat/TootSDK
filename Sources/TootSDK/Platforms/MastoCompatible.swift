@@ -10,5 +10,6 @@ open class MastoCompatible: MastoAPI {
     // todo - rename this, it's not a build number
     public var build: Version
 
+    // so far as we know, only Mastodon supports their admin API
     open override var supportsAdmin: Bool { false }
 }
