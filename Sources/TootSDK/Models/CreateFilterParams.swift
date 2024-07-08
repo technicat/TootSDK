@@ -8,6 +8,7 @@
 import Foundation
 
 /// Parameters to create a new filter.
+/// https://docs.joinmastodon.org/methods/filters/#create
 public struct CreateFilterParams: Sendable {
     let title: String
     let context: Set<FilterContext>

@@ -49,6 +49,7 @@ extension TootClient {
     ///
     /// - Parameter params: Parameters of filter to create.
     /// - Returns: The created filter.
+    /// https://docs.joinmastodon.org/methods/filters/#create
     @discardableResult
     public func createFilter(_ params: CreateFilterParams) async throws -> Filter {
         let req = try HTTPRequestBuilder {
