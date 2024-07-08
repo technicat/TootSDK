@@ -3,6 +3,8 @@
 
 import Foundation
 
+/// https://docs.joinmastodon.org/methods/filters/#create
+/// https://docs.joinmastodon.org/api/guidelines/#filters
 public enum FilterAction: String, Codable, Sendable, Hashable {
     /// show a warning that identifies the matching filter by title, and allow the user to expand the filtered post. This is the default (and unknown values should be treated as equivalent to warn).
     case warn

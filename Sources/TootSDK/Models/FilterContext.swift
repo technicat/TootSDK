@@ -3,6 +3,7 @@
 
 import Foundation
 
+/// https://docs.joinmastodon.org/methods/filters/#create
 public enum FilterContext: String, Codable, Sendable, Hashable {
     /// home timeline and lists
     case home
