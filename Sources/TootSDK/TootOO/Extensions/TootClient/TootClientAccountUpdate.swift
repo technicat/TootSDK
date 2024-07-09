@@ -14,14 +14,18 @@ extension TootClient {
         bot: Bool? = nil,
         discoverable: Bool? = nil,
         hideCollections: Bool? = nil,
-        indexable: Bool? = nil
+        indexable: Bool? = nil,
+        avatarText: String? = nil,
+        headerText: String? = nil
     ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParams(
             locked: locked,
             bot: bot,
             discoverable: discoverable,
             hideCollections: hideCollections,
-            indexable: indexable)
+            indexable: indexable,
+            avatarDescription: avatarText,
+            headerDescription: headerText)
         return try await updateCredentials(params: params)
     }
 
