@@ -72,6 +72,11 @@ public class Account: Codable, Identifiable, @unchecked Sendable {
     public let pleroma: PleromaAccount?
     /// https://docs.akkoma.dev/stable/development/API/differences_in_mastoapi_responses/
     public let akkoma: AkkomaAccount?
+    // gotosocial
+    /// Description of this account's avatar, for alt text.
+    public let avatarDescription: String?
+    /// Description of this account's avatar, for alt text.
+    public let headerDescription: String?
 }
 
 extension Account {
@@ -105,6 +110,8 @@ extension Account {
         case group
         case pleroma
         case akkoma
+        case avatarDescription
+        case headerDescription
     }
 }
 
@@ -140,6 +147,8 @@ extension Account: Hashable {
         hasher.combine(group)
         hasher.combine(pleroma)
         hasher.combine(akkoma)
+        hasher.combine(avatarDescription)
+        hasher.combine(headerDescription)
     }
 
     public static func == (lhs: Account, rhs: Account) -> Bool {
