@@ -105,6 +105,8 @@ open class MastoAPI: Platform {
     /// https://docs.joinmastodon.org/methods/preferences/
     open var supportsPreferences: Bool { api >= Version(2, 8) }
 
+    open var supportsProfileAltText: Bool { false }
+    open var supportsProfileHeader: Bool { true }
     open var supportsProfileImageDelete: Bool { api >= Version(4, 2) }
 
     open var supportsRelationshipWithSuspended: Bool {

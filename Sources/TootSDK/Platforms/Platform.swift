@@ -86,6 +86,10 @@ public protocol Platform {
     var supportsPostHistory: Bool { get }
     var supportsPostSource: Bool { get }
 
+    /// profile avatar/header alt text
+    var supportsProfileAltText: Bool { get }
+    /// profile header image
+    var supportsProfileHeader: Bool { get }
     /// delete profile avatar/header
     var supportsProfileImageDelete: Bool { get }
 

@@ -30,6 +30,8 @@ open class GotoSocial: MastoCompatible {
     open override var supportsNotificationDelete: Bool { false }
     /// doesn't support post revision history
     open override var supportsPostHistory: Bool { false }
+    /// supports profile alt text
+    open override var supportsProfileAltText: Bool { true }
     /// supports profile avatar/header delete
     open override var supportsProfileImageDelete: Bool {
         build >= Version(0, 15, 0)

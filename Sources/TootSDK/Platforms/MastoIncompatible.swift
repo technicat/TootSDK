@@ -102,6 +102,10 @@ open class MastoIncompatible: Platform {
     public var supportsPostHistory: Bool { false }
 
     public var supportsPostSource: Bool { false }
+    
+    public var supportsProfileAltText: Bool { false }
+    
+    public var supportsProfileHeader: Bool { false }
 
     public var supportsProfileImageDelete: Bool { false }
 

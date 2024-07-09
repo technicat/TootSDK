@@ -33,6 +33,8 @@ open class Pixelfed: MastoCompatible {
     open override var supportsPostHistory: Bool { false }
 
     open override var supportsPostSource: Bool { false }
+    
+    open override var supportsProfileHeader: Bool { true }
 
     open override var supportsRevoke: Bool { false }
 
