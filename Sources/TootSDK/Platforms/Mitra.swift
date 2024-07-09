@@ -7,6 +7,7 @@ open class Mitra: MastoCompatible {
     open override var supportsPostDeleteAndEdit: Bool { false }
     open override var supportsFamiliarFollowers: Bool { false }
     open override var supportsFeaturedTags: Bool { false }
+    /// doesn't support filters
     open override var supportsFilter: Bool { false }
     /// doesn't support instance stats
     open override var supportsInstanceActivity: Bool { false }
