@@ -59,8 +59,10 @@ extension TootClient {
         note: String? = nil,
         avatar: Data? = nil,
         avatarMimeType: MIMEType? = nil,
+        avatarText: String? = nil,
         header: Data? = nil,
         headerMimeType: MIMEType? = nil,
+        headerText: String? = nil,
         fields: [UpdateCredentialsParams.Field]? = nil
     ) async throws -> CredentialAccount {
         let params = UpdateCredentialsParams(
@@ -70,7 +72,10 @@ extension TootClient {
             avatarMimeType: avatarMimeType,
             header: header,
             headerMimeType: headerMimeType,
-            fieldsAttributes: fields)
+            fieldsAttributes: fields,
+            avatarDescription: avatarText,
+            headerDescription: headerText
+        )
         return try await updateCredentials(params: params)
     }
 
