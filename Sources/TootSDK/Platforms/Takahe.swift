@@ -12,6 +12,8 @@ open class Takahe: MastoCompatible {
 
     /// doesn't support bot indicator in account settings
     open override var supportsBot: Bool { false }
+    /// doesn't support filters
+    open override var supportsFilter: Bool { false }
     
     // limits
     
