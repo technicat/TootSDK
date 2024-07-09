@@ -33,13 +33,20 @@ public struct UpdateCredentialsParams: Codable {
     public let fieldsAttributes: [Field]?
     /// An extra entity to be used with API methods to verify credentials and update credentials
     public let source: Source?
+    // gotosocial
+    /// Description of avatar image, for alt-text.
+    public let avatarDescription: String?
+    /// Description of header image, for alt-text.
+    public let headerDescription: String?
 
     public init(
         displayName: String? = nil, note: String? = nil, avatar: Data? = nil, avatarMimeType: MIMEType? = nil, header: Data? = nil,
         headerMimeType: MIMEType? = nil, locked: Bool? = nil, bot: Bool? = nil, discoverable: Bool? = nil, hideCollections: Bool? = nil,
         indexable: Bool? = nil,
         fieldsAttributes: [Field]? = nil,
-        source: Source? = nil
+        source: Source? = nil,
+        avatarDescription: String? = nil,
+        headerDescription: String? = nil
     ) {
         self.displayName = displayName
         self.note = note
@@ -54,6 +61,8 @@ public struct UpdateCredentialsParams: Codable {
         self.indexable = indexable
         self.fieldsAttributes = fieldsAttributes
         self.source = source
+        self.avatarDescription = avatarDescription
+        self.headerDescription = headerDescription
     }
 
     /// Represents a profile field as a name-value pair
